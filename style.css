@@ -1,0 +1,83 @@
+.radial-wheel {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  border-radius: 50%;
+  clip-path: circle(50%);
+}
+
+.radial-wheel-indicator {
+  user-select: none;
+
+  border: 4px solid yellow;
+  background: white;
+  border-radius: 50%;
+}
+
+.radial-wheel-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  pointer-events: none;
+
+  width: 20px;
+  height: 20px;
+}
+
+.radial-wheel-anchor,
+.radial-wheel-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 50%;
+  left: 50%;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  overflow: hidden;
+  transform-origin: bottom left;
+}
+
+.radial-wheel-button {
+  appearance: none;
+  background: none;
+}
+
+.radial-wheel-anchor {
+  text-decoration: none;
+}
+
+.radial-wheel-slice {
+  display: block;
+
+  width: 200%;
+  height: 200%;
+
+  border-radius: 50%;
+
+  transform-origin: center;
+}
+
+.radial-wheel-label {
+  position: absolute;
+  top: 37.5%;
+
+  transform: translateY(-50%);
+
+  display: block;
+  width: 100%;
+}
+
+.radial-wheel-label__content {
+  display: block;
+}

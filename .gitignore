@@ -1,0 +1,33 @@
+# Hidden files
+.*
+
+# Temporary files
+*~
+
+# Git
+!.git*
+
+# GitHub
+!.github
+
+# EditorConfig
+!.editorconfig
+
+# IntelliJ Idea
+*.iml
+*.ipr
+*.iws
+
+# npm
+!.npm*
+/node_modules
+npm-debug.log*
+/*.tgz
+/dist
+
+# ESLint
+!.eslintrc.js
+
+# Storybook
+!/.storybook
+/storybook-static

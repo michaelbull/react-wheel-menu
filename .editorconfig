@@ -1,0 +1,35 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{ts,tsx,js,jsx}]
+indent_style = space
+indent_size = 4
+continuation_indent_size = 4
+ij_html_space_inside_empty_tag = true
+ij_typescript_imports_wrap = split_into_lines
+ij_typescript_spaces_within_imports = true
+ij_typescript_use_double_quotes = false
+ij_typescript_force_quote_style = true
+ij_typescript_force_semicolon_style = true
+ij_typescript_enforce_trailing_comma = remove
+ij_typescript_spaces_within_object_literal_braces = true
+ij_typescript_spaces_within_object_type_braces = true
+ij_javascript_imports_wrap = split_into_lines
+ij_javascript_spaces_within_imports = true
+ij_javascript_use_double_quotes = false
+ij_javascript_force_quote_style = true
+ij_javascript_force_semicolon_style = true
+ij_javascript_enforce_trailing_comma = remove
+ij_javascript_spaces_within_object_literal_braces = true
+ij_javascript_spaces_within_object_type_braces = true
+
+[*.{html,css,scss,json,yml}]
+indent_style = space
+indent_size = 2
+continuation_indent_size = 2
+ij_html_space_inside_empty_tag = true

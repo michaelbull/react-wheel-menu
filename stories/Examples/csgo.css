@@ -1,0 +1,72 @@
+.csgo-buy-menu {
+  position: relative;
+
+  width: 600px;
+  height: 600px;
+}
+
+.csgo-buy-menu__team {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+
+  border: 0.25em solid hsl(0, 0%, 40%);
+  padding: 0.5em;
+  border-radius: 100%;
+
+  z-index: 1;
+}
+
+.csgo-buy-menu__wheel {
+  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 60%);
+}
+
+.csgo-buy-menu-button {
+  padding: 2px;
+  background-clip: content-box;
+  background-color: hsl(0, 0%, 0%);
+}
+
+.csgo-buy-menu-button:hover .radial-wheel-slice {
+  background-size: 300%;
+  background-image: radial-gradient(circle, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 3%, hsl(0, 0%, 50%) 3%, hsl(0, 0%, 0%) 35%);
+  background-position-x: 50%;
+  background-position-y: 100%;
+}
+
+.csgo-buy-menu-button__content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.csgo-buy-menu-button__hotkey {
+  top: 44%;
+  font-size: 1.25rem;
+  color: hsl(0, 0%, 60%);
+}
+
+.csgo-buy-menu-button__item {
+  top: 35%;
+}
+
+.csgo-buy-menu-item {
+  display: flex;
+  flex-direction: column;
+
+  width: 150px;
+  margin: 0 auto;
+}
+
+.csgo-buy-menu-item__price {
+  font-size: 1.25rem;
+  color: hsl(114, 88%, 41%);
+  margin-bottom: 0.25em;
+}
+
+.csgo-buy-menu-item__name {
+  font-size: 1.25rem;
+  color: hsl(0, 0%, 70%);
+}
