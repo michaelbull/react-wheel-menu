@@ -5,19 +5,19 @@ import React, {
     useRef,
     useState
 } from 'react';
-import { RadialWheelArrow } from './RadialWheelArrow';
+import { Arrow } from './Arrow';
 
 const DEFAULT_SIZE = '50px';
 const DEFAULT_ARROW_SIZE = '20px';
 const DEFAULT_ARROW_OFFSET = '40px';
 
-export interface RadialWheelIndicatorProps {
+export interface IndicatorProps {
     readonly size?: string;
     readonly arrowSize?: string;
     readonly arrowOffset?: string;
 }
 
-export function RadialWheelIndicator(props: RadialWheelIndicatorProps) {
+export function Indicator(props: IndicatorProps) {
     const {
         size = DEFAULT_SIZE,
         arrowSize = DEFAULT_ARROW_SIZE,
@@ -65,7 +65,7 @@ export function RadialWheelIndicator(props: RadialWheelIndicatorProps) {
     return (
         <div className="radial-wheel-indicator" style={style} aria-hidden ref={ref}>
             {angle !== null &&
-                <RadialWheelArrow
+                <Arrow
                     angle={angle}
                     size={arrowSize}
                     offset={arrowOffset}

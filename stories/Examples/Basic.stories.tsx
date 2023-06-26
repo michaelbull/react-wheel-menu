@@ -1,15 +1,15 @@
 import React from 'react';
 import {
+    Button,
+    Label,
     RadialWheel,
-    RadialWheelButton
+    Slice
 } from '../../src';
 import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import './csgo.css';
-import { RadialWheelLabel } from '../../src/components/RadialWheelLabel';
-import { RadialWheelSlice } from '../../src/components/RadialWheelSlice';
+import './CsGoBuyMenu.css';
 
 const meta: Meta = {
     title: 'Examples',
@@ -25,29 +25,29 @@ export const BasicExample: StoryObj = {
     render: () => {
         return (
             <RadialWheel style={{ width: '300px', height: '300px' }}>
-                <RadialWheelSlice style={{ background: 'red' }}>
-                    <RadialWheelButton>
-                        <RadialWheelLabel style={{ color: 'white' }}>
+                <Slice style={{ background: 'red' }} from={0} to={120}>
+                    <Button>
+                        <Label style={{ color: 'white' }}>
                             One
-                        </RadialWheelLabel>
-                    </RadialWheelButton>
-                </RadialWheelSlice>
+                        </Label>
+                    </Button>
+                </Slice>
 
-                <RadialWheelSlice style={{ background: 'green' }}>
-                    <RadialWheelButton>
-                        <RadialWheelLabel style={{ color: 'white' }}>
+                <Slice style={{ background: 'green' }} from={120} to={240}>
+                    <Button>
+                        <Label style={{ color: 'white' }}>
                             Two
-                        </RadialWheelLabel>
-                    </RadialWheelButton>
-                </RadialWheelSlice>
+                        </Label>
+                    </Button>
+                </Slice>
 
-                <RadialWheelSlice style={{ background: 'blue' }}>
-                    <RadialWheelButton>
-                        <RadialWheelLabel style={{ color: 'white' }}>
+                <Slice style={{ background: 'blue' }} from={240} to={360}>
+                    <Button>
+                        <Label style={{ color: 'white' }}>
                             Three
-                        </RadialWheelLabel>
-                    </RadialWheelButton>
-                </RadialWheelSlice>
+                        </Label>
+                    </Button>
+                </Slice>
             </RadialWheel>
         );
     }

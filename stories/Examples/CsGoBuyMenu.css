@@ -53,6 +53,9 @@
 
 .csgo-buy-menu-button__item {
   top: 35%;
+
+  display: flex;
+  justify-content: center;
 }
 
 .csgo-buy-menu-item {
@@ -60,7 +63,6 @@
   flex-direction: column;
 
   width: 150px;
-  margin: 0 auto;
 }
 
 .csgo-buy-menu-item__price {

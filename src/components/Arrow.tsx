@@ -3,13 +3,13 @@ import React, { CSSProperties } from 'react';
 const DEFAULT_SIZE = '30%';
 const DEFAULT_OFFSET = '50px';
 
-export interface RadialWheelArrowProps {
+export interface ArrowProps {
     readonly angle: number;
     readonly size?: string;
     readonly offset?: string;
 }
 
-export function RadialWheelArrow(props: RadialWheelArrowProps) {
+export function Arrow(props: ArrowProps) {
     const {
         angle,
         size = DEFAULT_SIZE,
