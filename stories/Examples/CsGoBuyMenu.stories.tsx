@@ -1,5 +1,4 @@
 import React, {
-    CSSProperties,
     ReactNode,
     useState
 } from 'react';
@@ -14,6 +13,7 @@ import {
 } from '@storybook/react';
 import './csgo.css';
 import { RadialWheelLabel } from '../../src/components/RadialWheelLabel';
+import { RadialWheelSlice } from '../../src/components/RadialWheelSlice';
 
 const meta: Meta = {
     title: 'Examples',
@@ -51,7 +51,7 @@ function RootMenu(props: RootMenuProps) {
     const { onReset, onChoose } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-30} direction="cw">
+        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-60} direction="cw">
             <Button hotkey={1} onClick={() => onChoose(<PistolsMenu onReset={onReset} />)}>PISTOLS</Button>
             <Button hotkey={2} onClick={() => onChoose(<HeavyMenu onReset={onReset} />)}>HEAVY</Button>
             <Button hotkey={3} onClick={() => onChoose(<SmgsMenu onReset={onReset} />)}>SMGs</Button>
@@ -70,7 +70,7 @@ function PistolsMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-30} direction="cw">
+        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-60} direction="cw">
             <Button hotkey={1} onClick={onReset} price={200}>Glock-18</Button>
             <Button hotkey={2} onClick={onReset} price={500}>Dual Berettas</Button>
             <Button hotkey={3} onClick={onReset} price={300}>P250</Button>
@@ -85,7 +85,7 @@ function HeavyMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-30} direction="cw">
+        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-60} direction="cw">
             <Button hotkey={1} onClick={onReset} price={1200}>Nova</Button>
             <Button hotkey={2} onClick={onReset} price={2000}>XM1014</Button>
             <Button hotkey={3} onClick={onReset} price={1200}>Sawed-Off</Button>
@@ -100,7 +100,7 @@ function SmgsMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-30} direction="cw">
+        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-60} direction="cw">
             <Button hotkey={1} onClick={onReset} price={1050}>MAC-10</Button>
             <Button hotkey={2} onClick={onReset} price={1700}>MP7</Button>
             <Button hotkey={3} onClick={onReset} price={1200}>UMP-45</Button>
@@ -115,7 +115,7 @@ function RiflesMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-30} direction="cw">
+        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-60} direction="cw">
             <Button hotkey={1} onClick={onReset} price={2000}>Galil AR</Button>
             <Button hotkey={2} onClick={onReset} price={2700}>AK-47</Button>
             <Button hotkey={3} onClick={onReset} price={1700}>SSG 08</Button>
@@ -143,7 +143,7 @@ function GrenadesMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-30} direction="cw">
+        <RadialWheel className="csgo-buy-menu__wheel" startAngle={-60} direction="cw">
             <Button hotkey={1} onClick={onReset} price={400}>Molotov</Button>
             <Button hotkey={2} onClick={onReset} price={50}>Decoy Grenade</Button>
             <Button hotkey={3} onClick={onReset} price={200}>Flashbang</Button>
@@ -180,24 +180,26 @@ function Button(props: ButtonProps) {
     } = props;
 
     return (
-        <RadialWheelButton className="csgo-buy-menu-button" {...rest}>
-            <RadialWheelLabel className="csgo-buy-menu-button__hotkey">
-                {hotkey}
-            </RadialWheelLabel>
+        <RadialWheelSlice className="csgo-buy-menu-slice">
+            <RadialWheelButton className="csgo-buy-menu-button" {...rest}>
+                <RadialWheelLabel className="csgo-buy-menu-button__hotkey">
+                    {hotkey}
+                </RadialWheelLabel>
 
-            <RadialWheelLabel className="csgo-buy-menu-button__item">
-                <span className="csgo-buy-menu-item">
-                    {price &&
-                        <span className="csgo-buy-menu-item__price">
-                            ${price}
+                <RadialWheelLabel className="csgo-buy-menu-button__item">
+                    <span className="csgo-buy-menu-item">
+                        {price &&
+                            <span className="csgo-buy-menu-item__price">
+                                ${price}
+                            </span>
+                        }
+
+                        <span className="csgo-buy-menu-item__name">
+                            {children}
                         </span>
-                    }
-
-                    <span className="csgo-buy-menu-item__name">
-                        {children}
                     </span>
-                </span>
-            </RadialWheelLabel>
-        </RadialWheelButton>
+                </RadialWheelLabel>
+            </RadialWheelButton>
+        </RadialWheelSlice>
     );
 }

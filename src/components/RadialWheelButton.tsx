@@ -2,8 +2,7 @@ import React, {
     ComponentProps,
     CSSProperties
 } from 'react';
-import { useRadialWheelButton } from '../hooks';
-import { RadialWheelSlice } from './RadialWheelSlice';
+import { useRadialWheelItem } from '../hooks';
 import clsx from 'clsx';
 
 export type RadialWheelButtonProps = ComponentProps<'button'>;
@@ -16,17 +15,17 @@ export function RadialWheelButton(props: RadialWheelButtonProps) {
         ...rest
     } = props;
 
-    const className = clsx('radial-wheel-button', classNameProp);
-    const { style: buttonStyle } = useRadialWheelButton();
+    const className = clsx('radial-wheel-item', 'radial-wheel-item--button', classNameProp);
+    const { style: itemStyle } = useRadialWheelItem();
 
     const style: CSSProperties = {
         ...styleProp,
-        ...buttonStyle
+        ...itemStyle
     };
 
     return (
         <button className={className} style={style} {...rest}>
-            <RadialWheelSlice>{children}</RadialWheelSlice>
+            {children}
         </button>
     );
 }

@@ -31,41 +31,39 @@
   height: 20px;
 }
 
-.radial-wheel-anchor,
-.radial-wheel-button {
+.radial-wheel-slice {
   position: absolute;
   width: 100%;
   height: 100%;
   bottom: 50%;
   left: 50%;
 
+  overflow: hidden;
+
+  transform-origin: bottom left;
+}
+
+.radial-wheel-item {
+  display: block;
+
+  width: 100%;
+  height: 200%;
+
   border: 0;
   margin: 0;
   padding: 0;
 
+  transform-origin: center;
   text-align: center;
-  overflow: hidden;
-  transform-origin: bottom left;
 }
 
-.radial-wheel-button {
+.radial-wheel-item--button {
   appearance: none;
   background: none;
 }
 
-.radial-wheel-anchor {
+.radial-wheel-item--anchor {
   text-decoration: none;
-}
-
-.radial-wheel-slice {
-  display: block;
-
-  width: 200%;
-  height: 200%;
-
-  border-radius: 50%;
-
-  transform-origin: center;
 }
 
 .radial-wheel-label {

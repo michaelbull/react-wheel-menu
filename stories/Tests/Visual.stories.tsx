@@ -1,21 +1,22 @@
 import React, { CSSProperties } from 'react';
 import {
-    DEFAULT_DIRECTION,
-    DEFAULT_START_ANGLE,
     RadialWheel,
     RadialWheelButton,
-    RadialWheelButtonProps,
-    RadialWheelProps
+    RadialWheelButtonProps
 } from '../../src';
 import {
     Meta,
     StoryObj
 } from '@storybook/react';
 import { RadialWheelLabel } from '../../src/components/RadialWheelLabel';
+import { RadialWheelSlice } from '../../src/components/RadialWheelSlice';
 
 const meta: Meta<typeof RadialWheel> = {
     title: 'Tests/Visual',
-    component: RadialWheel
+    component: RadialWheel,
+    parameters: {
+        layout: 'centered'
+    }
 }
 
 export default meta;
@@ -141,12 +142,14 @@ function ButtonTest(props: ButtonTestProps) {
     };
 
     return (
-        <RadialWheelButton style={style} {...rest}>
-            <RadialWheelLabel style={labelStyle}>
-                <span style={contentStyle}>
-                    <span>{children}</span>
-                </span>
-            </RadialWheelLabel>
-        </RadialWheelButton>
+        <RadialWheelSlice>
+            <RadialWheelButton style={style} {...rest}>
+                <RadialWheelLabel style={labelStyle}>
+                    <span style={contentStyle}>
+                        <span>{children}</span>
+                    </span>
+                </RadialWheelLabel>
+            </RadialWheelButton>
+        </RadialWheelSlice>
     );
 }

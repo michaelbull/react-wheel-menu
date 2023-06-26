@@ -22,17 +22,20 @@
   background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 60%);
 }
 
-.csgo-buy-menu-button {
+.csgo-buy-menu-slice {
   padding: 2px;
   background-clip: content-box;
   background-color: hsl(0, 0%, 0%);
 }
 
-.csgo-buy-menu-button:hover .radial-wheel-slice {
+.csgo-buy-menu-button {
   background-size: 300%;
-  background-image: radial-gradient(circle, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 3%, hsl(0, 0%, 50%) 3%, hsl(0, 0%, 0%) 35%);
   background-position-x: 50%;
   background-position-y: 100%;
+}
+
+.csgo-buy-menu-button:hover {
+  background-image: radial-gradient(circle, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 5%, hsl(0, 0%, 50%) 5%, hsl(0, 0%, 0%) 35%);
 }
 
 .csgo-buy-menu-button__content {

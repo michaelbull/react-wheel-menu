@@ -1,19 +1,31 @@
 import { useRadialWheelState } from './useRadialWheelState';
 import { CSSProperties } from 'react';
+import { directionSign } from '../state';
 
 export interface UseRadialWheelSliceReturn {
     readonly style: CSSProperties;
 }
 
 export function useRadialWheelSlice(): UseRadialWheelSliceReturn {
-    const { sliceAngle } = useRadialWheelState();
+    const {
+        direction,
+        startAngle,
+        sliceIndex,
+        sliceAngle
+    } = useRadialWheelState();
 
-    const skew = -(Math.min(60, sliceAngle - 90));
-    const rotation = 90 - (sliceAngle / 2);
+    const sign = directionSign(direction);
+    const sliceStartAngle = sign * sliceAngle * sliceIndex;
+
+    const skew = Math.min(60, sliceAngle - 90);
+    const rotation = startAngle + sliceStartAngle + skew;
+    const transform = `rotate(${rotation}deg) skew(${skew}deg)`;
+
+    const style: CSSProperties = {
+        transform
+    };
 
     return {
-        style: {
-            transform: `translate3d(-50%, 0, 0) skew(${skew}deg) rotate(${rotation}deg)`
-        }
+        style
     };
 }
