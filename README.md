@@ -1,8 +1,14 @@
 # react-radial-wheel
 
-[![npm](https://img.shields.io/npm/v/react-radial-wheel.svg)][npm]
-[![CI Status](https://github.com/michaelbull/kotlin-result/workflows/ci/badge.svg)](https://github.com/michaelbull/react-radial-wheel/actions?query=workflow%3Aci)
-[![License](https://img.shields.io/github/license/michaelbull/react-radial-wheel.svg)](https://github.com/michaelbull/react-radial-wheel/blob/master/LICENSE)
+<a href="https://www.npmjs.com/package/react-radial-wheel" target="_blank" rel="noreferrer">
+  <img alt="npm" src="https://img.shields.io/npm/v/react-radial-wheel.svg" />
+</a>&nbsp;
+<a href="https://github.com/michaelbull/react-radial-wheel/actions?query=workflow%3Aci" target="_blank" rel="noreferrer">
+  <img alt="CI Status" src="https://github.com/michaelbull/kotlin-result/workflows/ci/badge.svg" />
+</a>&nbsp;
+<a href="https://github.com/michaelbull/react-radial-wheel/blob/master/LICENSE" target="_blank" rel="noreferrer">
+  <img alt="License" src="https://img.shields.io/github/license/michaelbull/react-radial-wheel.svg" />
+</a>
 
 React components & hooks for page splitting.
 

@@ -16,12 +16,12 @@ const preview: Preview = {
         options: {
             storySort: {
                 order: [
-                    'Examples',
+                    ['Basic Example', 'CS:GO Buy Menu'],
                     'Tests'
                 ]
             }
         }
     }
-}
+};
 
 export default preview;
