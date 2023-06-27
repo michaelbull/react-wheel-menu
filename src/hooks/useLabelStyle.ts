@@ -16,7 +16,6 @@ export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
 
     const {
         from,
-        to,
         angle
     } = useSliceState();
 
@@ -50,18 +49,14 @@ export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
         }
 
         case 'clockwise': {
-            const rotation = (to - from) + (angle / 2);
-
             return {
-                transform: `translateY(-50%) rotate(${-rotation}deg)`
+                transform: `translateY(-50%) rotate(270deg)`
             };
         }
 
         case 'counterclockwise': {
-            const rotation = (to - from) + (angle / 2);
-
             return {
-                transform: `translateY(-50%) rotate(${rotation}deg)`
+                transform: `translateY(-50%) rotate(90deg)`
             };
         }
     }
