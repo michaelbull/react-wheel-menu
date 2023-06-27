@@ -298,7 +298,7 @@ function Button(props: ButtonProps) {
     } = props;
 
     return (
-        <Slice className="csgo-buy-menu-slice" from={from} to={to}>
+        <Slice className="csgo-buy-menu-slice" from={from} to={to} gapBefore={2} gapAfter={2}>
             <RadialWheelButton className="csgo-buy-menu-button" {...rest}>
                 <Label className="csgo-buy-menu-button__hotkey">
                     {hotkey}

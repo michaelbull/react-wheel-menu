@@ -8,7 +8,7 @@ import {
     Button,
     Label,
     RadialWheel,
-    Slice,
+    Slice as RadialWheelSlice,
     useElementAngle,
     useMousePosition
 } from '../../src';
@@ -17,6 +17,7 @@ import {
     StoryObj
 } from '@storybook/react';
 import './LoLPingMenu.css';
+import clsx from 'clsx';
 
 const meta: Meta = {
     title: 'Examples',
@@ -75,116 +76,118 @@ function LoLPingMenu() {
     return (
         <div className="lol-ping-menu" ref={setWheel}>
             <RadialWheel className="lol-ping-menu__wheel" onMouseOut={clearHover}>
-                <Slice className="lol-ping-menu__slice" from={338} to={22}>
-                    <Button className="lol-ping-menu__button lol-ping-menu__button--major" onMouseOver={hoverRetreat}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
-                                alt="Retreat"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={337.5}
+                    to={22.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
+                    alt="Retreat"
+                    onMouseOver={hoverRetreat}
+                    major
+                />
 
-                <Slice className="lol-ping-menu__slice" from={23} to={67}>
-                    <Button className="lol-ping-menu__button" onMouseOver={hoverPush}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
-                                alt="Push"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={22.5}
+                    to={67.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
+                    alt="Push"
+                    onMouseOver={hoverPush}
+                />
 
-                <Slice className="lol-ping-menu__slice" from={68} to={112}>
-                    <Button className="lol-ping-menu__button lol-ping-menu__button--major" onMouseOver={hoverOnMyWay}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
-                                alt="On My Way"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={67.5}
+                    to={112.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
+                    alt="On My Way"
+                    onMouseOver={hoverOnMyWay}
+                    major
+                />
 
-                <Slice className="lol-ping-menu__slice" from={113} to={157}>
-                    <Button className="lol-ping-menu__button" onMouseOver={hoverAllIn}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
-                                alt="All In"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={112.5}
+                    to={157.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
+                    alt="All In"
+                    onMouseOver={hoverAllIn}
+                />
 
-                <Slice className="lol-ping-menu__slice" from={158} to={202}>
-                    <Button className="lol-ping-menu__button lol-ping-menu__button--major" onMouseOver={hoverAssistMe}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
-                                alt="Assist Me"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={157.5}
+                    to={202.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
+                    alt="Assist Me"
+                    onMouseOver={hoverAssistMe}
+                    major
+                />
 
-                <Slice className="lol-ping-menu__slice" from={203} to={247}>
-                    <Button className="lol-ping-menu__button" onMouseOver={hoverHold}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
-                                alt="Hold"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={202.5}
+                    to={247.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
+                    alt="Hold"
+                    onMouseOver={hoverHold}
+                />
 
-                <Slice className="lol-ping-menu__slice" from={248} to={292}>
-                    <Button className="lol-ping-menu__button lol-ping-menu__button--major"
-                            onMouseOver={hoverEnemyMissing}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
-                                alt="Enemy Missing"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={247.5}
+                    to={292.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
+                    alt="Enemy Missing"
+                    onMouseOver={hoverEnemyMissing}
+                    major
+                />
 
-                <Slice className="lol-ping-menu__slice" from={293} to={337}>
-                    <Button className="lol-ping-menu__button" onMouseOver={hoverBait}>
-                        <Label className="lol-ping-menu__label">
-                            <img
-                                className="lol-ping-menu__icon"
-                                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
-                                alt="Bait"
-                                referrerPolicy="no-referrer"
-                            />
-                        </Label>
-                    </Button>
-                </Slice>
+                <Slice
+                    from={292.5}
+                    to={337.5}
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
+                    alt="Bait"
+                    onMouseOver={hoverBait}
+                />
 
                 <Indicator>
                     {indicatorLabel}
                 </Indicator>
             </RadialWheel>
         </div>
+    );
+}
+
+interface SliceProps {
+    readonly from: number;
+    readonly to: number;
+    readonly major?: boolean;
+    readonly src: string;
+    readonly alt: string;
+    readonly onMouseOver: () => void;
+}
+
+function Slice(props: SliceProps) {
+    const {
+        from,
+        to,
+        major = false,
+        src,
+        alt,
+        onMouseOver
+    } = props;
+
+    const className = clsx('lol-ping-menu__button', {
+        'lol-ping-menu__button--major': major
+    });
+
+    return (
+        <RadialWheelSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
+            <Button className={className} onMouseOver={onMouseOver}>
+                <Label className="lol-ping-menu__label">
+                    <img
+                        className="lol-ping-menu__icon"
+                        src={src}
+                        alt={alt}
+                        referrerPolicy="no-referrer"
+                    />
+                </Label>
+            </Button>
+        </RadialWheelSlice>
     );
 }
 

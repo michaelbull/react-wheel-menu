@@ -11,8 +11,8 @@
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
 
-  width: 51%;
-  height: 51%;
+  width: 54%;
+  height: 54%;
   border-radius: 50%;
 
   user-select: none;
@@ -21,8 +21,6 @@
 }
 
 .gta-weapon-menu__button {
-  padding: 5px;
-  background-clip: padding-box;
   background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(0, 0%, 76%) 18%, hsl(0, 0%, 76%) 28%, hsl(0, 0%, 70%) 28%, hsl(0, 0%, 70%) 29%, transparent 29%);
 }
 

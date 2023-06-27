@@ -1,9 +1,12 @@
-import React, { ComponentProps } from 'react';
+import React, {
+    ComponentProps,
+    PropsWithChildren
+} from 'react';
 import {
     Button,
     Label,
     RadialWheel,
-    Slice
+    Slice as RadialWheelSlice
 } from '../../src';
 import {
     Meta,
@@ -29,112 +32,103 @@ function GtaWeaponMenu() {
     return (
         <div className="gta-weapon-menu">
             <RadialWheel className="gta-weapon-menu__wheel">
-                <Slice className="gta-weapon-menu__slice" from={338} to={22}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label" orientation="parent">
-                            <Icon
-                                src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
-                                alt="Pistol"
-                            />
+                <Slice from={337.5} to={22.5}>
+                    <Icon
+                        src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
+                        alt="Pistol"
+                    />
 
-                            <Ammo current={88} reserve={12} />
-                        </Label>
-                    </Button>
+                    <Ammo current={88} reserve={12} />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={23} to={67}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/SMG-GTAVPC-HUD.png"
-                                alt="SMG"
-                            />
+                <Slice from={22.5} to={67.5}>
+                    <Icon
+                        src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/SMG-GTAVPC-HUD.png"
+                        alt="SMG"
+                    />
 
-                            <Ammo current={754} reserve={1} />
-                        </Label>
-                    </Button>
+                    <Ammo current={754} reserve={1} />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={68} to={112}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7a/CarbineRifle-GTAVPC-HUD.png"
-                                alt="Rifle"
-                            />
+                <Slice from={67.5} to={112.5}>
+                    <Icon
+                        src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7a/CarbineRifle-GTAVPC-HUD.png"
+                        alt="Rifle"
+                    />
 
-                            <Ammo current={34} reserve={60} />
-                        </Label>
-                    </Button>
+                    <Ammo current={34} reserve={60} />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={113} to={157}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://static.wikia.nocookie.net/gtawiki/images/5/59/SniperRifle-GTAVPC-HUD.png"
-                                alt="Sniper"
-                                style={{ marginLeft: '53px', marginTop: '-10px' }}
-                            />
+                <Slice from={112.5} to={157.5}>
+                    <Icon
+                        src="https://static.wikia.nocookie.net/gtawiki/images/5/59/SniperRifle-GTAVPC-HUD.png"
+                        alt="Sniper"
+                        style={{ marginLeft: 43, marginTop: -6 }}
+                    />
 
-                            <Ammo current={90} reserve={10} />
-                        </Label>
-                    </Button>
+                    <Ammo current={1} reserve={11} />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={158} to={202}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://vignette.wikia.nocookie.net/gtawiki/images/e/e0/Fist-GTAVPC-HUD.png"
-                                alt="Fists"
-                            />
-                        </Label>
-                    </Button>
+                <Slice from={157.5} to={202.5}>
+                    <Icon
+                        src="https://vignette.wikia.nocookie.net/gtawiki/images/e/e0/Fist-GTAVPC-HUD.png"
+                        alt="Fists"
+                    />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={203} to={247}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://vignette.wikia.nocookie.net/gtawiki/images/b/b4/SawedoffShotgun-GTAVPC-HUD.png"
-                                alt="Shotgun"
-                            />
+                <Slice from={202.5} to={247.5}>
+                    <Icon
+                        src="https://vignette.wikia.nocookie.net/gtawiki/images/b/b4/SawedoffShotgun-GTAVPC-HUD.png"
+                        alt="Shotgun"
+                    />
 
-                            <Ammo current={92} reserve={8} />
-                        </Label>
-                    </Button>
+                    <Ammo current={92} reserve={8} />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={248} to={292}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://vignette.wikia.nocookie.net/gtawiki/images/2/27/Minigun-GTAVPC-HUD.png"
-                                alt="Minigun"
-                            />
+                <Slice from={247.5} to={292.5}>
+                    <Icon
+                        src="https://vignette.wikia.nocookie.net/gtawiki/images/2/27/Minigun-GTAVPC-HUD.png"
+                        alt="Minigun"
+                    />
 
-                            <Ammo current={77} reserve={100} />
-                        </Label>
-                    </Button>
+                    <Ammo current={77} reserve={100} />
                 </Slice>
 
-                <Slice className="gta-weapon-menu__slice" from={293} to={337}>
-                    <Button className="gta-weapon-menu__button">
-                        <Label className="gta-weapon-menu__label">
-                            <Icon
-                                src="https://static.wikia.nocookie.net/gtawiki/images/a/a6/Grenade-GTAVPC-HUD.png"
-                                alt="Grenade"
-                            />
+                <Slice from={292.5} to={337.5}>
+                    <Icon
+                        src="https://static.wikia.nocookie.net/gtawiki/images/a/a6/Grenade-GTAVPC-HUD.png"
+                        alt="Grenade"
+                    />
 
-                            <Ammo current={6} />
-                        </Label>
-                    </Button>
+                    <Ammo current={6} />
                 </Slice>
 
                 <div className="gta-weapon-menu__center" />
             </RadialWheel>
         </div>
+    );
+}
+
+interface SliceProps {
+    readonly from: number;
+    readonly to: number;
+}
+
+function Slice(props: PropsWithChildren<SliceProps>) {
+    const {
+        from,
+        to,
+        children
+    } = props;
+
+    return (
+        <RadialWheelSlice className="gta-weapon-menu__slice" from={from} to={to} gapBefore={4} gapAfter={4}>
+            <Button className="gta-weapon-menu__button">
+                <Label className="gta-weapon-menu__label">
+                    {children}
+                </Label>
+            </Button>
+        </RadialWheelSlice>
     );
 }
 

@@ -25,7 +25,7 @@ export const BasicExample: StoryObj = {
     render: () => {
         return (
             <RadialWheel style={{ width: '300px', height: '300px' }}>
-                <Slice style={{ background: 'red' }} from={0} to={120}>
+                <Slice style={{ backgroundColor: 'red' }} from={0} to={120}>
                     <Button>
                         <Label style={{ color: 'white' }}>
                             One
@@ -33,7 +33,7 @@ export const BasicExample: StoryObj = {
                     </Button>
                 </Slice>
 
-                <Slice style={{ background: 'green' }} from={120} to={240}>
+                <Slice style={{ backgroundColor: 'green' }} from={120} to={240}>
                     <Button>
                         <Label style={{ color: 'white' }}>
                             Two
@@ -41,7 +41,7 @@ export const BasicExample: StoryObj = {
                     </Button>
                 </Slice>
 
-                <Slice style={{ background: 'blue' }} from={240} to={360}>
+                <Slice style={{ backgroundColor: 'blue' }} from={240} to={360}>
                     <Button>
                         <Label style={{ color: 'white' }}>
                             Three

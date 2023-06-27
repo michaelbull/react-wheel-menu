@@ -12,6 +12,8 @@ import { SliceState } from '../models';
 export interface SliceProps extends ComponentProps<'div'> {
     readonly from: number;
     readonly to: number;
+    readonly gapBefore?: string | number;
+    readonly gapAfter?: string | number;
 }
 
 export function Slice(props: SliceProps) {
@@ -20,6 +22,8 @@ export function Slice(props: SliceProps) {
         style: styleProp,
         from: fromProp,
         to: toProp,
+        gapBefore,
+        gapAfter,
         children,
         ...rest
     } = props;
@@ -31,7 +35,12 @@ export function Slice(props: SliceProps) {
         from,
         to,
         angle
-    } = useSlice({ from: fromProp, to: toProp });
+    } = useSlice({
+        from: fromProp,
+        to: toProp,
+        gapBefore,
+        gapAfter
+    });
 
     const state: SliceState = {
         from,
