@@ -9,7 +9,7 @@ import {
 import clsx from 'clsx';
 import { SliceState } from '../models';
 
-export interface SliceProps extends ComponentProps<'span'> {
+export interface SliceProps extends ComponentProps<'div'> {
     readonly from: number;
     readonly to: number;
 }
@@ -45,10 +45,10 @@ export function Slice(props: SliceProps) {
     };
 
     return (
-        <span className={className} style={style} {...rest} >
+        <div className={className} style={style} {...rest} >
             <SliceStateContext.Provider value={state}>
                 {children}
             </SliceStateContext.Provider>
-        </span>
+        </div>
     );
 }

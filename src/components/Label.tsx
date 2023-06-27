@@ -33,6 +33,7 @@ export function Label(props: PropsWithChildren<LabelProps>) {
 
     return <span
         className={className}
-        style={style} {...rest}
+        style={style}
+        {...rest}
     />;
 }
