@@ -69,12 +69,17 @@
 }
 
 .csgo-buy-menu-item__price {
-  font-size: 1.25rem;
-  color: hsl(114, 88%, 41%);
   margin-bottom: 0.25em;
+
+  font-family: sans-serif;
+  font-size: 1.25rem;
+
+  color: hsl(114, 88%, 41%);
 }
 
 .csgo-buy-menu-item__name {
+  font-family: sans-serif;
   font-size: 1.25rem;
+
   color: hsl(0, 0%, 70%);
 }
