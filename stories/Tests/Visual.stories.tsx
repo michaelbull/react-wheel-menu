@@ -20,6 +20,22 @@ const meta: Meta<StoryProps> = {
     title: 'Tests/Visual',
     parameters: {
         layout: 'centered'
+    },
+    args: {
+        labelOrientation: 'downwards'
+    },
+    argTypes: {
+        labelOrientation: {
+            control: 'select',
+            options: [
+                'downwards',
+                'upwards',
+                'inwards',
+                'outwards',
+                'clockwise',
+                'counterclockwise'
+            ]
+        }
     }
 };
 
@@ -47,9 +63,6 @@ export const Polar: Story = {
                 </ButtonTest>
             </RadialWheel>
         );
-    },
-    args: {
-        labelOrientation: 'document'
     }
 };
 
@@ -84,9 +97,6 @@ export const Acute: Story = {
                 </ButtonTest>
             </RadialWheel>
         );
-    },
-    args: {
-        labelOrientation: 'document'
     }
 };
 
