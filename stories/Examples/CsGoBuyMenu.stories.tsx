@@ -24,23 +24,25 @@ const meta: Meta = {
 
 export default meta;
 
-export const CsGoBuyMenu: StoryObj = {
+export const CsGoBuyMenuStory: StoryObj = {
     name: 'CS:GO Buy Menu',
-    render: () => {
-        const [submenu, setSubMenu] = useState<ReactNode>(null);
-
-        function onReset() {
-            setSubMenu(null);
-        }
-
-        return (
-            <div className="csgo-buy-menu">
-                <TeamImage />
-                {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
-            </div>
-        );
-    }
+    render: () => <CsGoBuyMenu />
 };
+
+function CsGoBuyMenu() {
+    const [submenu, setSubMenu] = useState<ReactNode>(null);
+
+    function onReset() {
+        setSubMenu(null);
+    }
+
+    return (
+        <div className="csgo-buy-menu">
+            <TeamImage />
+            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
+        </div>
+    );
+}
 
 interface RootMenuProps {
     readonly onReset: () => void;
@@ -271,10 +273,9 @@ function TeamImage() {
     return (
         <img
             className="csgo-buy-menu__team"
-            alt="CT"
             src="https://static.wikia.nocookie.net/cswikia/images/e/e0/Icon-t-patch-small.png"
-            width={100}
-            height={100}
+            alt="CT"
+            referrerPolicy="no-referrer"
         />
     );
 }
