@@ -75,7 +75,6 @@ function LoLPingMenu() {
     return (
         <div className="lol-ping-menu" ref={setWheel}>
             <RadialWheel className="lol-ping-menu__wheel" onMouseOut={clearHover}>
-
                 <Slice className="lol-ping-menu__slice" from={338} to={22}>
                     <Button className="lol-ping-menu__button lol-ping-menu__button--major" onMouseOver={hoverRetreat}>
                         <Label className="lol-ping-menu__label">

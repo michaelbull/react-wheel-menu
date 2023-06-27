@@ -38,7 +38,7 @@
 }
 
 .csgo-buy-menu-button:hover {
-  background-image: radial-gradient(circle, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 5%, hsl(0, 0%, 50%) 5%, hsl(0, 0%, 0%) 35%);
+  background-image: radial-gradient(circle, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 3%, hsl(0, 0%, 50%) 3%, hsl(0, 0%, 0%) 15%);
 }
 
 .csgo-buy-menu-button__content {

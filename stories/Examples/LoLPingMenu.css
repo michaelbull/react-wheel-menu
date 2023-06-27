@@ -10,19 +10,19 @@
 }
 
 .lol-ping-menu__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(0, 0%, 40%) 18%, hsl(0, 0%, 95%) 35%, transparent 35%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 14%, hsl(0, 0%, 40%) 14%, hsl(0, 0%, 95%) 28%, transparent 28%);
 }
 
 .lol-ping-menu__button:hover {
-  background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(180, 70%, 40%) 18%, hsl(180, 70%, 95%) 35%, transparent 35%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 14%, hsl(180, 70%, 40%) 14%, hsl(180, 70%, 95%) 28%, transparent 28%);
 }
 
 .lol-ping-menu__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(0, 0%, 40%) 18%, hsl(0, 0%, 100%) 50%, transparent 50%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 14%, hsl(0, 0%, 40%) 14%, hsl(0, 0%, 100%) 37%, transparent 37%);
 }
 
 .lol-ping-menu__button--major:hover {
-  background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(180, 70%, 50%) 18%, hsl(180, 70%, 100%) 50%, transparent 50%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 14%, hsl(180, 70%, 50%) 14%, hsl(180, 70%, 100%) 37%, transparent 37%);
 }
 
 .lol-ping-menu__label {
@@ -55,6 +55,7 @@
   outline: 0.1875em solid hsl(41, 39%, 56%);
   outline-offset: -0.375em;
 
+  user-select: none;
   z-index: 1;
 }
 
