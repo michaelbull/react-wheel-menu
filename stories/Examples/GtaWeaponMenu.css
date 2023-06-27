@@ -1,0 +1,55 @@
+.gta-weapon-menu {
+  position: relative;
+
+  width: 600px;
+  height: 600px;
+}
+
+.gta-weapon-menu__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+
+  width: 51%;
+  height: 51%;
+  border-radius: 50%;
+
+  user-select: none;
+
+  z-index: 1;
+}
+
+.gta-weapon-menu__button {
+  padding: 5px;
+  background-clip: padding-box;
+  background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(0, 0%, 76%) 18%, hsl(0, 0%, 76%) 28%, hsl(0, 0%, 70%) 28%, hsl(0, 0%, 70%) 29%, transparent 29%);
+}
+
+.gta-weapon-menu__button:hover {
+  background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(100, 70%, 76%) 18%, hsl(100, 70%, 76%) 28%, hsl(100, 70%, 70%) 28%, hsl(100, 70%, 70%) 29%, transparent 29%);
+}
+
+.gta-weapon-menu__label {
+  display: flex;
+  flex-direction: column;
+
+  top: 33.75%;
+}
+
+.gta-weapon-menu__icon {
+  width: auto;
+  height: 46px;
+}
+
+.gta-weapon-menu-ammo {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-shadow: 0 0 1px transparent, 1px 2px 2px hsla(0, 0%, 0%, 0.8);
+  margin-top: 0.25em;
+}
+
+.gta-weapon-menu-ammo__reserve {
+  color: hsl(0, 0%, 60%);
+}
