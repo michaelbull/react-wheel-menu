@@ -1,7 +1,6 @@
 import React, {
     ComponentProps,
-    CSSProperties,
-    PropsWithChildren
+    CSSProperties
 } from 'react';
 import {
     SliceStateContext,
@@ -15,7 +14,7 @@ export interface SliceProps extends ComponentProps<'span'> {
     readonly to: number;
 }
 
-export function Slice(props: PropsWithChildren<SliceProps>) {
+export function Slice(props: SliceProps) {
     const {
         className: classNameProp,
         style: styleProp,

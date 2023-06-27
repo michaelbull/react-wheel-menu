@@ -1,12 +1,9 @@
-import React, {
-    ComponentProps,
-    PropsWithChildren
-} from 'react';
+import React, { ComponentProps } from 'react';
 import clsx from 'clsx';
 
 export type RadialWheelProps = ComponentProps<'div'>;
 
-export function RadialWheel(props: PropsWithChildren<RadialWheelProps>) {
+export function RadialWheel(props: RadialWheelProps) {
     const {
         className: classNameProp,
         ...rest
