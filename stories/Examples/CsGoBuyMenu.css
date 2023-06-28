@@ -3,6 +3,8 @@
 
   width: 600px;
   height: 600px;
+
+  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 60%);
 }
 
 .csgo-buy-menu__team {
@@ -19,10 +21,6 @@
   height: 100px;
 
   z-index: 1;
-}
-
-.csgo-buy-menu__wheel {
-  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 60%);
 }
 
 .csgo-buy-menu-slice {

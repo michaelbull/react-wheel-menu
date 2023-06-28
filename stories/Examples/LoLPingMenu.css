@@ -3,9 +3,7 @@
 
   width: 450px;
   height: 450px;
-}
 
-.lol-ping-menu__wheel {
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 100%) 28%, hsl(41, 48%, 38%, 0%) 56%);
 }
 

@@ -37,10 +37,10 @@ function CsGoBuyMenu() {
     }
 
     return (
-        <div className="csgo-buy-menu">
+        <RadialWheel className="csgo-buy-menu">
             <TeamImage />
             {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
-        </div>
+        </RadialWheel>
     );
 }
 
@@ -53,7 +53,7 @@ function RootMenu(props: RootMenuProps) {
     const { onReset, onChoose } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={300} to={0} hotkey={1} onClick={() => onChoose(<PistolsMenu onReset={onReset} />)}>
                 PISTOLS
             </Button>
@@ -77,7 +77,7 @@ function RootMenu(props: RootMenuProps) {
             <Button from={240} to={300} hotkey={6} onClick={() => onChoose(<GrenadesMenu onReset={onReset} />)}>
                 GRENADES
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 
@@ -89,7 +89,7 @@ function PistolsMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={300} to={360} hotkey={1} onClick={onReset} price={200}>
                 Glock-18
             </Button>
@@ -113,7 +113,7 @@ function PistolsMenu(props: SubMenuProps) {
             <Button from={240} to={300} hotkey={6}>
                 &nbsp;
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 
@@ -121,7 +121,7 @@ function HeavyMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={300} to={360} hotkey={1} onClick={onReset} price={1200}>
                 Nova
             </Button>
@@ -145,7 +145,7 @@ function HeavyMenu(props: SubMenuProps) {
             <Button from={240} to={300} hotkey={6}>
                 &nbsp;
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 
@@ -153,7 +153,7 @@ function SmgsMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={300} to={360} hotkey={1} onClick={onReset} price={1050}>
                 MAC-10
             </Button>
@@ -177,7 +177,7 @@ function SmgsMenu(props: SubMenuProps) {
             <Button from={240} to={300} hotkey={6}>
                 &nbsp;
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 
@@ -185,7 +185,7 @@ function RiflesMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={300} to={360} hotkey={1} onClick={onReset} price={2000}>
                 Galil AR
             </Button>
@@ -209,7 +209,7 @@ function RiflesMenu(props: SubMenuProps) {
             <Button from={240} to={300} hotkey={6} onClick={onReset} price={5000}>
                 G3SG1
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 
@@ -217,7 +217,7 @@ function GearMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={315} to={45} hotkey={1} onClick={onReset} price={650}>
                 Kevlar Vest
             </Button>
@@ -233,7 +233,7 @@ function GearMenu(props: SubMenuProps) {
             <Button from={225} to={315} hotkey={4} onClick={onReset} price={400}>
                 Defuse Kit
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 
@@ -241,7 +241,7 @@ function GrenadesMenu(props: SubMenuProps) {
     const { onReset } = props;
 
     return (
-        <RadialWheel className="csgo-buy-menu__wheel">
+        <>
             <Button from={300} to={360} hotkey={1} onClick={onReset} price={400}>
                 Molotov
             </Button>
@@ -265,7 +265,7 @@ function GrenadesMenu(props: SubMenuProps) {
             <Button from={240} to={300} hotkey={6}>
                 &nbsp;
             </Button>
-        </RadialWheel>
+        </>
     );
 }
 

@@ -34,7 +34,6 @@ export const LoLPingMenuStory: StoryObj = {
 };
 
 function LoLPingMenu() {
-    const [wheel, setWheel] = useState<HTMLDivElement | null>(null);
     const [indicatorLabel, setIndicatorLabel] = useState<ReactNode>(null);
 
     function clearHover() {
@@ -74,81 +73,79 @@ function LoLPingMenu() {
     }
 
     return (
-        <div className="lol-ping-menu" ref={setWheel}>
-            <RadialWheel className="lol-ping-menu__wheel" onMouseOut={clearHover}>
-                <Slice
-                    from={337.5}
-                    to={22.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
-                    alt="Retreat"
-                    onMouseOver={hoverRetreat}
-                    major
-                />
+        <RadialWheel className="lol-ping-menu" onMouseOut={clearHover}>
+            <Slice
+                from={337.5}
+                to={22.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
+                alt="Retreat"
+                onMouseOver={hoverRetreat}
+                major
+            />
 
-                <Slice
-                    from={22.5}
-                    to={67.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
-                    alt="Push"
-                    onMouseOver={hoverPush}
-                />
+            <Slice
+                from={22.5}
+                to={67.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
+                alt="Push"
+                onMouseOver={hoverPush}
+            />
 
-                <Slice
-                    from={67.5}
-                    to={112.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
-                    alt="On My Way"
-                    onMouseOver={hoverOnMyWay}
-                    major
-                />
+            <Slice
+                from={67.5}
+                to={112.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
+                alt="On My Way"
+                onMouseOver={hoverOnMyWay}
+                major
+            />
 
-                <Slice
-                    from={112.5}
-                    to={157.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
-                    alt="All In"
-                    onMouseOver={hoverAllIn}
-                />
+            <Slice
+                from={112.5}
+                to={157.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
+                alt="All In"
+                onMouseOver={hoverAllIn}
+            />
 
-                <Slice
-                    from={157.5}
-                    to={202.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
-                    alt="Assist Me"
-                    onMouseOver={hoverAssistMe}
-                    major
-                />
+            <Slice
+                from={157.5}
+                to={202.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
+                alt="Assist Me"
+                onMouseOver={hoverAssistMe}
+                major
+            />
 
-                <Slice
-                    from={202.5}
-                    to={247.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
-                    alt="Hold"
-                    onMouseOver={hoverHold}
-                />
+            <Slice
+                from={202.5}
+                to={247.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
+                alt="Hold"
+                onMouseOver={hoverHold}
+            />
 
-                <Slice
-                    from={247.5}
-                    to={292.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
-                    alt="Enemy Missing"
-                    onMouseOver={hoverEnemyMissing}
-                    major
-                />
+            <Slice
+                from={247.5}
+                to={292.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
+                alt="Enemy Missing"
+                onMouseOver={hoverEnemyMissing}
+                major
+            />
 
-                <Slice
-                    from={292.5}
-                    to={337.5}
-                    src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
-                    alt="Bait"
-                    onMouseOver={hoverBait}
-                />
+            <Slice
+                from={292.5}
+                to={337.5}
+                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
+                alt="Bait"
+                onMouseOver={hoverBait}
+            />
 
-                <Indicator>
-                    {indicatorLabel}
-                </Indicator>
-            </RadialWheel>
-        </div>
+            <Indicator>
+                {indicatorLabel}
+            </Indicator>
+        </RadialWheel>
     );
 }
 
