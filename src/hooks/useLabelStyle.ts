@@ -1,63 +1,80 @@
 import { useSliceState } from './useSliceState';
 import { CSSProperties } from 'react';
 import {
-    DEFAULT_LABEL_ORIENTATION,
-    LabelOrientation
+    DEFAULT_JUSTIFY,
+    DEFAULT_ORIENTATION,
+    Justify,
+    Orientation
 } from '../models';
 
 export interface UseLabelStyleProps {
-    readonly orientation?: LabelOrientation;
+    readonly justify?: Justify;
+    readonly offset?: number | string;
+    readonly orientation?: Orientation;
 }
 
 export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
     const {
-        orientation = DEFAULT_LABEL_ORIENTATION
+        justify = DEFAULT_JUSTIFY,
+        offset = 0,
+        orientation = DEFAULT_ORIENTATION
     } = props;
 
+    const rotation = useLabelRotation(orientation);
+    const verticalTranslation = addUnit(offset, 'px');
+
+    switch (justify) {
+        case 'start':
+            return {
+                justifyContent: orientation === 'counterclockwise' ? 'flex-end' : 'flex-start',
+                transform: `translateY(${verticalTranslation}) rotate(${rotation}deg)`
+            };
+
+        case 'center':
+            return {
+                justifyContent: 'center',
+                transform: `translateY(${verticalTranslation}) rotate(${rotation}deg)`
+            };
+
+        case 'end':
+            return {
+                justifyContent: orientation === 'counterclockwise' ? 'flex-start' : 'flex-end',
+                transform: `translateY(${verticalTranslation}) rotate(${rotation}deg)`
+            };
+    }
+}
+
+function useLabelRotation(orientation: Orientation): number {
     const {
         from,
         angle
     } = useSliceState();
 
     switch (orientation) {
-        case 'downwards': {
-            const rotation = -(from + (angle / 2));
+        case 'downwards':
+            return -(from + (angle / 2));
 
-            return {
-                transform: `translateY(-50%) rotate(${rotation}deg)`
-            };
-        }
+        case 'upwards':
+            return 180 - (from + (angle / 2));
 
-        case 'upwards': {
-            const rotation = 180 - (from + (angle / 2));
+        case 'inwards':
+            return 0;
 
-            return {
-                transform: `translateY(-50%) rotate(${rotation}deg)`
-            };
-        }
+        case 'outwards':
+            return 180;
 
-        case 'inwards': {
-            return {
-                transform: `translateY(-50%)`
-            };
-        }
+        case 'clockwise':
+            return 270;
 
-        case 'outwards': {
-            return {
-                transform: `translateY(-50%) rotate(180deg)`
-            };
-        }
+        case 'counterclockwise':
+            return 90;
+    }
+}
 
-        case 'clockwise': {
-            return {
-                transform: `translateY(-50%) rotate(270deg)`
-            };
-        }
-
-        case 'counterclockwise': {
-            return {
-                transform: `translateY(-50%) rotate(90deg)`
-            };
-        }
+function addUnit(value: string | number, unit: string): string {
+    if (typeof value === 'number') {
+        return `${value}${unit}`;
+    } else {
+        return value;
     }
 }

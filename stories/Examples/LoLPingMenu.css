@@ -23,10 +23,6 @@
   background-image: radial-gradient(circle, transparent 0%, transparent 14%, hsl(180, 70%, 50%) 14%, hsl(180, 70%, 100%) 37%, transparent 37%);
 }
 
-.lol-ping-menu__label {
-  top: 35%;
-}
-
 .lol-ping-menu__icon {
   width: 40px;
   height: 40px;
@@ -92,6 +88,6 @@
   filter: drop-shadow(0 0 1px hsla(0, 0%, 0%, 0.4));
 }
 
-.lol-ping-menu-arrow__middle {
+.lol-ping-menu-arrow__center {
   fill: hsla(0, 0%, 0%, 65%);
 }

@@ -6,34 +6,43 @@ import React, {
 import { useLabelStyle } from '../hooks';
 import clsx from 'clsx';
 import {
-    DEFAULT_LABEL_ORIENTATION,
-    LabelOrientation
+    Justify,
+    Orientation
 } from '../models';
 
 export interface LabelProps extends ComponentProps<'span'> {
-    readonly orientation?: LabelOrientation;
+    readonly justify?: Justify;
+    readonly offset?: string | number;
+    readonly orientation?: Orientation;
 }
 
 export function Label(props: PropsWithChildren<LabelProps>) {
     const {
         className: classNameProp,
         style: styleProp,
-        orientation = DEFAULT_LABEL_ORIENTATION,
+        justify,
+        offset,
+        orientation,
+        children,
         ...rest
     } = props;
 
     const className = clsx('radial-wheel-label', classNameProp);
 
-    const labelStyle = useLabelStyle({ orientation });
+    const labelStyle = useLabelStyle({
+        justify,
+        offset,
+        orientation
+    });
 
     const style: CSSProperties = {
         ...labelStyle,
         ...styleProp
     };
 
-    return <span
-        className={className}
-        style={style}
-        {...rest}
-    />;
+    return (
+        <span className={className} style={style}  {...rest}>
+            {children}
+        </span>
+    );
 }

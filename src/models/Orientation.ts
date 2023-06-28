@@ -1,4 +1,4 @@
-export type LabelOrientation =
+export type Orientation =
     | 'downwards'
     | 'upwards'
     | 'inwards'
@@ -6,4 +6,4 @@ export type LabelOrientation =
     | 'clockwise'
     | 'counterclockwise';
 
-export const DEFAULT_LABEL_ORIENTATION: LabelOrientation = 'downwards';
+export const DEFAULT_ORIENTATION: Orientation = 'downwards';

@@ -31,8 +31,6 @@
 .gta-weapon-menu__label {
   display: flex;
   flex-direction: column;
-
-  top: 33.75%;
 }
 
 .gta-weapon-menu__icon {

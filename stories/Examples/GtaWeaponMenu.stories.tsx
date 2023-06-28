@@ -121,8 +121,8 @@ function Slice(props: PropsWithChildren<SliceProps>) {
 
     return (
         <RadialWheelSlice className="gta-weapon-menu__slice" from={from} to={to} gapBefore={4} gapAfter={4}>
-            <Button className="gta-weapon-menu__button">
-                <Label className="gta-weapon-menu__label">
+            <Button className="gta-weapon-menu__button" justify="end">
+                <Label className="gta-weapon-menu__label" offset={70}>
                     {children}
                 </Label>
             </Button>

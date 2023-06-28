@@ -2,8 +2,10 @@ import React, { CSSProperties } from 'react';
 import {
     Button,
     ButtonProps,
+    Justify,
     Label,
-    LabelOrientation,
+    Layout,
+    Orientation,
     RadialWheel,
     Slice
 } from '../../src';
@@ -13,7 +15,12 @@ import {
 } from '@storybook/react';
 
 interface StoryProps {
-    readonly labelOrientation: LabelOrientation;
+    readonly itemJustify: Justify;
+    readonly itemLayout: Layout;
+
+    readonly labelJustify: Justify;
+    readonly labelOffset: string | number;
+    readonly labelOrientation: Orientation;
 }
 
 const meta: Meta<StoryProps> = {
@@ -22,10 +29,44 @@ const meta: Meta<StoryProps> = {
         layout: 'centered'
     },
     args: {
+        itemJustify: 'center',
+        itemLayout: 'vertical',
+        labelJustify: 'center',
+        labelOffset: '0px',
         labelOrientation: 'downwards'
     },
     argTypes: {
+        itemJustify: {
+            name: 'Item Justify',
+            control: 'select',
+            options: [
+                'start',
+                'center',
+                'end'
+            ]
+        },
+        itemLayout: {
+            name: 'Item Layout',
+            control: 'select',
+            options: [
+                'vertical',
+                'horizontal'
+            ]
+        },
+        labelJustify: {
+            name: 'Label Justify',
+            control: 'select',
+            options: [
+                'start',
+                'center',
+                'end'
+            ]
+        },
+        labelOffset: {
+            name: 'Label Offset'
+        },
         labelOrientation: {
+            name: 'Label Orientation',
             control: 'select',
             options: [
                 'downwards',
@@ -50,15 +91,13 @@ type Story = StoryObj<StoryProps>;
 
 export const Polar: Story = {
     render: (props) => {
-        const { labelOrientation, ...rest } = props;
-
         return (
-            <RadialWheel style={style} {...rest}>
-                <ButtonTest orientation={labelOrientation} background="red" height={20} from={195} to={345}>
+            <RadialWheel style={style}>
+                <ButtonTest {...props} background="red" height={20} from={195} to={345}>
                     Red
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="blue" height={20} from={15} to={165}>
+                <ButtonTest {...props} background="blue" height={20} from={15} to={165}>
                     Blue
                 </ButtonTest>
             </RadialWheel>
@@ -68,31 +107,29 @@ export const Polar: Story = {
 
 export const Acute: Story = {
     render: (props) => {
-        const { labelOrientation, ...rest } = props;
-
         return (
-            <RadialWheel style={style} {...rest}>
-                <ButtonTest orientation={labelOrientation} background="red" height={20} from={330} to={30}>
+            <RadialWheel style={style}>
+                <ButtonTest {...props} background="red" height={20} from={330} to={30}>
                     Red
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="yellow" height={20} from={30} to={90}>
+                <ButtonTest {...props} background="yellow" height={20} from={30} to={90}>
                     Yellow
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="pink" height={20} from={90} to={150}>
+                <ButtonTest {...props} background="pink" height={20} from={90} to={150}>
                     Pink
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="green" height={20} from={150} to={210}>
+                <ButtonTest {...props} background="green" height={20} from={150} to={210}>
                     Green
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="purple" height={20} from={210} to={270}>
+                <ButtonTest {...props} background="purple" height={20} from={210} to={270}>
                     Purple
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="orange" height={20} from={270} to={330}>
+                <ButtonTest {...props} background="orange" height={20} from={270} to={330}>
                     Orange
                 </ButtonTest>
             </RadialWheel>
@@ -102,19 +139,17 @@ export const Acute: Story = {
 
 export const Obtuse: Story = {
     render: (props) => {
-        const { labelOrientation, ...rest } = props;
-
         return (
-            <RadialWheel style={style} {...rest}>
-                <ButtonTest orientation={labelOrientation} background="red" height={60} from={0} to={120}>
+            <RadialWheel style={style}>
+                <ButtonTest {...props} background="red" height={30} from={0} to={120}>
                     Red
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="green" height={50} from={120} to={240}>
+                <ButtonTest {...props} background="green" height={25} from={120} to={240}>
                     Green
                 </ButtonTest>
 
-                <ButtonTest orientation={labelOrientation} background="blue" height={20} from={240} to={360}>
+                <ButtonTest {...props} background="blue" height={10} from={240} to={360}>
                     Blue
                 </ButtonTest>
             </RadialWheel>
@@ -127,7 +162,13 @@ interface ButtonTestProps extends ButtonProps {
     readonly to: number;
     readonly background: CSSProperties['background'];
     readonly height: number;
-    readonly orientation: LabelOrientation;
+
+    readonly itemJustify: Justify;
+    readonly itemLayout: Layout;
+
+    readonly labelJustify: Justify;
+    readonly labelOffset: string | number;
+    readonly labelOrientation: Orientation;
 }
 
 function ButtonTest(props: ButtonTestProps) {
@@ -136,7 +177,11 @@ function ButtonTest(props: ButtonTestProps) {
         to,
         background,
         height,
-        orientation,
+        itemJustify,
+        itemLayout,
+        labelJustify,
+        labelOffset,
+        labelOrientation,
         children,
         ...rest
     } = props;
@@ -146,18 +191,20 @@ function ButtonTest(props: ButtonTestProps) {
     };
 
     const labelStyle: CSSProperties = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         height,
+        width: '80px',
         color: 'white',
         background: 'hsla(0, 0%, 0%, 0.3)'
     };
 
     return (
         <Slice from={from} to={to}>
-            <Button style={style} {...rest}>
-                <Label orientation={orientation} style={labelStyle}>
+            <Button style={style} justify={itemJustify} layout={itemLayout} {...rest}>
+                <Label justify={labelJustify} orientation={labelOrientation} offset={labelOffset} style={labelStyle}>
+                    {children}
+                </Label>
+
+                <Label justify={labelJustify} orientation={labelOrientation} style={labelStyle}>
                     {children}
                 </Label>
             </Button>

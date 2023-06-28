@@ -45,14 +45,11 @@
 }
 
 .csgo-buy-menu-button__hotkey {
-  top: 44%;
   font-size: 1.25rem;
   color: hsl(0, 0%, 60%);
 }
 
 .csgo-buy-menu-button__item {
-  top: 35%;
-
   display: flex;
   justify-content: center;
 }

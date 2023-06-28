@@ -175,7 +175,7 @@ function Slice(props: SliceProps) {
     return (
         <RadialWheelSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
             <Button className={className} onMouseOver={onMouseOver}>
-                <Label className="lol-ping-menu__label">
+                <Label className="lol-ping-menu__label" offset={-25}>
                     <img
                         className="lol-ping-menu__icon"
                         src={src}
@@ -225,7 +225,7 @@ function Indicator(props: PropsWithChildren<unknown>) {
                         />
 
                         <path
-                            className="lol-ping-menu-arrow__middle"
+                            className="lol-ping-menu-arrow__center"
                             d="M8.59 7.41h1.38v9.17H8.59z"
                         />
 

@@ -299,12 +299,12 @@ function Button(props: ButtonProps) {
 
     return (
         <Slice className="csgo-buy-menu-slice" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <RadialWheelButton className="csgo-buy-menu-button" {...rest}>
-                <Label className="csgo-buy-menu-button__hotkey">
+            <RadialWheelButton className="csgo-buy-menu-button" justify="start" {...rest}>
+                <Label className="csgo-buy-menu-button__hotkey" offset={-60}>
                     {hotkey}
                 </Label>
 
-                <Label className="csgo-buy-menu-button__item">
+                <Label className="csgo-buy-menu-button__item" offset={-140}>
                     <span className="csgo-buy-menu-item">
                         {price &&
                             <span className="csgo-buy-menu-item__price">
