@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "React radial wheel menu component",
   "homepage": "https://github.com/michaelbull/react-radial-wheel#readme",
+  "type": "module",
   "license": "ISC",
   "style": "style.css",
   "main": "dist/index.cjs.js",
