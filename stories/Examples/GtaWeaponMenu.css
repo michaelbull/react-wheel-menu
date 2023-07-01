@@ -1,16 +1,9 @@
 .gta-weapon-menu {
-  position: relative;
-
   width: 600px;
   height: 600px;
 }
 
 .gta-weapon-menu__center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-
   width: 54%;
   height: 54%;
   border-radius: 50%;

@@ -1,6 +1,10 @@
 .radial-wheel {
   position: relative;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 100%;
 
@@ -29,13 +33,12 @@
   align-items: center;
   justify-content: center;
 
-  width: 200%;
-  height: 200%;
-
   border: 0;
   margin: 0;
   padding: 50% 75% 100%;
 
+  width: 200%;
+  height: 200%;
 
   transform-origin: center;
   text-align: center;
@@ -48,16 +51,6 @@
 
 .radial-wheel-item--anchor {
   text-decoration: none;
-}
-
-.radial-wheel-container {
-  display: flex;
-  flex-direction: column-reverse;
-
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
 }
 
 .radial-wheel-label {

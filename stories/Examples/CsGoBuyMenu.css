@@ -8,23 +8,17 @@
 }
 
 .csgo-buy-menu__team {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
+  position: relative;
 
-  border: 0.25em solid hsl(0, 0%, 40%);
   padding: 0.5em;
+  border: 0.25em solid hsl(0, 0%, 40%);
   border-radius: 100%;
+  background-color: black;
 
   width: 100px;
   height: 100px;
 
   z-index: 1;
-}
-
-.csgo-buy-menu-slice {
-  background-color: hsl(0, 0%, 0%);
 }
 
 .csgo-buy-menu-button {
@@ -33,9 +27,13 @@
   background-position-y: 100%;
 }
 
+.csgo-buy-menu-button {
+  background-color: black;
+}
+
 .csgo-buy-menu-button:hover,
 .csgo-buy-menu-button:focus {
-  background-image: radial-gradient(circle, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 0%) 3%, hsl(0, 0%, 50%) 3%, hsl(0, 0%, 0%) 15%);
+  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 15%);
 }
 
 .csgo-buy-menu-button__content {

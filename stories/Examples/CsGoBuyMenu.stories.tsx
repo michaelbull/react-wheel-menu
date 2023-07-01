@@ -38,8 +38,8 @@ function CsGoBuyMenu() {
 
     return (
         <RadialWheel className="csgo-buy-menu">
-            <TeamImage />
             {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
+            <TeamImage />
         </RadialWheel>
     );
 }

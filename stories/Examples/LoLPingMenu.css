@@ -31,11 +31,6 @@
 }
 
 .lol-ping-menu-indicator {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-
   width: 40%;
   height: 40%;
 
