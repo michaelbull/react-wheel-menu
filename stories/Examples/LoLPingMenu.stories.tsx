@@ -175,7 +175,7 @@ function Slice(props: SliceProps) {
     return (
         <RadialWheelSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
             <Button className={className} onMouseOver={onMouseOver}>
-                <Label className="lol-ping-menu__label" offset={-25}>
+                <Label className="lol-ping-menu__label" offset={-20}>
                     <img
                         className="lol-ping-menu__icon"
                         src={src}
