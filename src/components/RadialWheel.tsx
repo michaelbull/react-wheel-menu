@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 import clsx from 'clsx';
 
 export type RadialWheelProps = ComponentProps<'div'>;
