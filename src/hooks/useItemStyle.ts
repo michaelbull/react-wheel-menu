@@ -26,26 +26,51 @@ export function useItemStyle(props: UseItemStyleProps): CSSProperties {
     const transform = `translateX(-50%) skew(${skew}deg) rotate(${rotation}deg)`;
     const flexDirection = layout === 'vertical' ? 'column-reverse' : 'row-reverse';
 
-    switch (justify) {
-        case 'start':
-            return {
-                transform,
-                flexDirection,
-                justifyContent: 'flex-start'
-            };
+    if (layout === 'vertical') {
+        switch (justify) {
+            case 'start':
+                return {
+                    transform,
+                    flexDirection: 'column-reverse',
+                    justifyContent: 'flex-start'
+                };
 
-        case 'center':
-            return {
-                transform,
-                flexDirection,
-                justifyContent: 'center'
-            };
+            case 'center':
+                return {
+                    transform,
+                    flexDirection: 'column-reverse',
+                    justifyContent: 'center'
+                };
 
-        case 'end':
-            return {
-                transform,
-                flexDirection,
-                justifyContent: 'flex-end'
-            };
+            case 'end':
+                return {
+                    transform,
+                    flexDirection: 'column-reverse',
+                    justifyContent: 'flex-end'
+                };
+        }
+    } else {
+        switch (justify) {
+            case 'start':
+                return {
+                    transform,
+                    flexDirection: 'row-reverse',
+                    justifyContent: 'flex-end'
+                };
+
+            case 'center':
+                return {
+                    transform,
+                    flexDirection: 'row-reverse',
+                    justifyContent: 'center'
+                };
+
+            case 'end':
+                return {
+                    transform,
+                    flexDirection: 'row-reverse',
+                    justifyContent: 'flex-start'
+                };
+        }
     }
 }
