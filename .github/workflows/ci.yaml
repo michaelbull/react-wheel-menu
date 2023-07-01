@@ -49,6 +49,8 @@ jobs:
         with:
           cache: npm
 
+      - run: npm ci
+
       - run: npm run build:storybook
 
       - uses: actions/configure-pages@v3
