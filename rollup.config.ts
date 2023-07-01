@@ -24,6 +24,7 @@ const srcOptions: RollupOptions = {
         terser()
     ],
     external: [
+        'clsx',
         'react',
         'react/jsx-runtime'
     ]
