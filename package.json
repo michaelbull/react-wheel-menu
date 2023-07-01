@@ -26,6 +26,9 @@
     "react",
     "radial",
     "wheel",
+    "circle",
+    "circular",
+    "pie",
     "menu",
     "component",
     "hook"
