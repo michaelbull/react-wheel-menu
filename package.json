@@ -24,14 +24,15 @@
   },
   "keywords": [
     "react",
+    "reactjs",
+    "component",
+    "hook",
     "radial",
     "wheel",
     "circle",
     "circular",
     "pie",
-    "menu",
-    "component",
-    "hook"
+    "menu"
   ],
   "files": [
     "dist",
