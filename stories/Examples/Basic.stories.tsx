@@ -20,8 +20,8 @@ const meta: Meta = {
 
 export default meta;
 
-export const BasicExample: StoryObj = {
-    name: 'Basic Example',
+export const Basic: StoryObj = {
+    name: 'Basic',
     render: () => {
         return (
             <RadialWheel style={{ width: '300px', height: '300px' }}>
