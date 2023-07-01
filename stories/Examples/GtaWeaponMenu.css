@@ -24,7 +24,8 @@
   background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(0, 0%, 76%) 18%, hsl(0, 0%, 76%) 28%, hsl(0, 0%, 70%) 28%, hsl(0, 0%, 70%) 29%, transparent 29%);
 }
 
-.gta-weapon-menu__button:hover {
+.gta-weapon-menu__button:hover,
+.gta-weapon-menu__button:focus {
   background-image: radial-gradient(circle, transparent 0%, transparent 18%, hsl(100, 70%, 76%) 18%, hsl(100, 70%, 76%) 28%, hsl(100, 70%, 70%) 28%, hsl(100, 70%, 70%) 29%, transparent 29%);
 }
 
