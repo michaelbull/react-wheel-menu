@@ -23,8 +23,7 @@ export function useItemStyle(props: UseItemStyleProps): CSSProperties {
     const skew = -(angle - 90);
     const rotation = 90 - (angle / 2);
 
-    const transform = `translateX(-50%) skew(${skew}deg) rotate(${rotation}deg)`;
-    const flexDirection = layout === 'vertical' ? 'column-reverse' : 'row-reverse';
+    const transform = `translateX(-50%) translateY(50%) skew(${skew}deg) rotate(${rotation}deg)`;
 
     if (layout === 'vertical') {
         switch (justify) {

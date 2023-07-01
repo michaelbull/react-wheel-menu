@@ -22,18 +22,12 @@
 }
 
 .csgo-buy-menu-button {
-  background-size: 300%;
-  background-position-x: 50%;
-  background-position-y: 100%;
-}
-
-.csgo-buy-menu-button {
   background-color: black;
 }
 
 .csgo-buy-menu-button:hover,
 .csgo-buy-menu-button:focus {
-  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 15%);
+  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 10%, hsl(0, 0%, 0%) 70%);
 }
 
 .csgo-buy-menu-button__content {
