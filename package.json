@@ -6,13 +6,13 @@
   "type": "module",
   "license": "ISC",
   "style": "style.css",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     "types": "./dist/index.d.ts",
-    "import": "./dist/index.esm.js",
-    "default": "./dist/index.cjs.js"
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
   },
   "author": {
     "name": "Michael Bull",
