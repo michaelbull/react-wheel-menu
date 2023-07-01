@@ -6,6 +6,8 @@
 
   overflow: hidden;
   border-radius: 50%;
+
+  overflow: clip;
   clip-path: circle(50%);
 }
 
