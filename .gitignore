@@ -26,7 +26,7 @@ npm-debug.log*
 /dist
 
 # ESLint
-!.eslintrc.js
+!.eslintrc.cjs
 
 # Storybook
 !/.storybook
