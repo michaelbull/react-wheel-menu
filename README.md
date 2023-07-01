@@ -132,6 +132,6 @@ This project is available under the terms of the ISC license. See the
 [npm]: https://www.npmjs.com/package/react-radial-wheel
 [github]: https://github.com/michaelbull/react-radial-wheel
 
-[storybook]: https://michaelbull.github.io/react-radial-wheel/
+[storybook]: https://michaelbull.github.io/react-radial-wheel/?path=/story/examples
 
 [wikipedia-pie-menu]: https://en.wikipedia.org/wiki/Pie_menu
