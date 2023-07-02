@@ -1,6 +1,4 @@
 .wheel-of-fortune {
-  position: relative;
-
   width: 600px;
   height: 600px;
 
@@ -11,6 +9,10 @@
 .wheel-of-fortune__button:hover,
 .wheel-of-fortune__button:focus {
   background-color: hsla(0, 0%, 0%, 0.12);
+}
+
+.wheel-of-fortune__button:active {
+  background-color: hsla(0, 0%, 0%, 0.24);
 }
 
 .wheel-of-fortune__center {

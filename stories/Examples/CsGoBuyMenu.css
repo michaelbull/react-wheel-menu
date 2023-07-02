@@ -1,6 +1,4 @@
 .csgo-buy-menu {
-  position: relative;
-
   width: 600px;
   height: 600px;
 
@@ -27,7 +25,7 @@
 
 .csgo-buy-menu-button:hover,
 .csgo-buy-menu-button:focus {
-  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 10%, hsl(0, 0%, 0%) 70%);
+  background-image: radial-gradient(circle at bottom, hsl(0, 0%, 50%) 10%, hsl(0, 0%, 0%) 100%);
 }
 
 .csgo-buy-menu-button__content {

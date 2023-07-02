@@ -1,6 +1,4 @@
 .lol-ping-menu {
-  position: relative;
-
   width: 450px;
   height: 450px;
 
@@ -8,21 +6,21 @@
 }
 
 .lol-ping-menu__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 95%) 56%, transparent 56%);
+  background-image: radial-gradient(circle at bottom, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 95%) 56%, transparent 56%);
 }
 
 .lol-ping-menu__button:hover,
 .lol-ping-menu__button:focus {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 40%) 28%, hsl(180, 70%, 95%) 56%, transparent 56%);
+  background-image: radial-gradient(circle at bottom, transparent 0%, transparent 28%, hsl(180, 70%, 40%) 28%, hsl(180, 70%, 95%) 56%, transparent 56%);
 }
 
 .lol-ping-menu__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 100%) 74%, transparent 74%);
+  background-image: radial-gradient(circle at bottom, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 100%) 74%, transparent 74%);
 }
 
 .lol-ping-menu__button--major:hover,
 .lol-ping-menu__button--major:focus {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 50%) 28%, hsl(180, 70%, 100%) 74%, transparent 74%);
+  background-image: radial-gradient(circle at bottom, transparent 0%, transparent 28%, hsl(180, 70%, 50%) 28%, hsl(180, 70%, 100%) 74%, transparent 74%);
 }
 
 .lol-ping-menu__icon {
