@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+    Anchor,
+    Button,
     Item,
     Label,
     RadialWheel,
@@ -23,30 +25,34 @@ export default meta;
 export const Basic: StoryObj = {
     name: 'Basic',
     render: () => {
+        function onClickBlue() {
+            console.log('Clicked blue');
+        }
+
         return (
-            <RadialWheel style={{ width: '300px', height: '300px' }}>
-                <Slice style={{ backgroundColor: 'red' }} from={300} to={60}>
-                    <Item>
+            <RadialWheel style={{ width: 300, height: 300 }}>
+                <Slice from={300} to={60}>
+                    <Item style={{ backgroundColor: 'red' }}>
                         <Label style={{ color: 'white' }}>
-                            One
+                            Red
                         </Label>
                     </Item>
                 </Slice>
 
-                <Slice style={{ backgroundColor: 'green' }} from={60} to={180}>
-                    <Item>
+                <Slice from={60} to={180}>
+                    <Button style={{ backgroundColor: 'blue' }} onClick={onClickBlue}>
                         <Label style={{ color: 'white' }}>
-                            Two
+                            Blue
                         </Label>
-                    </Item>
+                    </Button>
                 </Slice>
 
-                <Slice style={{ backgroundColor: 'blue' }} from={180} to={300}>
-                    <Item>
+                <Slice from={180} to={300}>
+                    <Anchor style={{ backgroundColor: 'green' }} href="https://www.example.com" target="_blank">
                         <Label style={{ color: 'white' }}>
-                            Three
+                            Green
                         </Label>
-                    </Item>
+                    </Anchor>
                 </Slice>
             </RadialWheel>
         );

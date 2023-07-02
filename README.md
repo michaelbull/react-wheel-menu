@@ -132,22 +132,28 @@ export function Example() {
     }
 
     return (
-        <RadialWheel style={{width: 300, height: 300}}>
-            <Slice from={0} to={120}>
-                <Item style={{backgroundColor: 'red'}}>
-                    Red
+        <RadialWheel style={{ width: 300, height: 300 }}>
+            <Slice from={300} to={60}>
+                <Item style={{ backgroundColor: 'red' }}>
+                    <Label style={{ color: 'white' }}>
+                        Red
+                    </Label>
                 </Item>
             </Slice>
 
-            <Slice from={120} to={240}>
-                <Button style={{backgroundColor: 'blue'}} onClick={onClickBlue}>
-                    Blue
+            <Slice from={60} to={180}>
+                <Button style={{ backgroundColor: 'blue' }} onClick={onClickBlue}>
+                    <Label style={{ color: 'white' }}>
+                        Blue
+                    </Label>
                 </Button>
             </Slice>
 
-            <Slice from={240} to={360}>
-                <Anchor style={{backgroundColor: 'green'}} href="https://www.example.com">
-                    Green
+            <Slice from={180} to={300}>
+                <Anchor style={{ backgroundColor: 'green' }} href="https://www.example.com" target="_blank">
+                    <Label style={{ color: 'white' }}>
+                        Green
+                    </Label>
                 </Anchor>
             </Slice>
         </RadialWheel>
@@ -166,7 +172,5 @@ This project is available under the terms of the ISC license. See the
 
 [npm]: https://www.npmjs.com/package/react-radial-wheel
 [github]: https://github.com/michaelbull/react-radial-wheel
-
 [storybook]: https://michaelbull.github.io/react-radial-wheel/?path=/story/examples
-
 [wikipedia-pie-menu]: https://en.wikipedia.org/wiki/Pie_menu
