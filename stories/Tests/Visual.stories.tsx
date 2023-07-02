@@ -93,11 +93,11 @@ export const Polar: Story = {
     render: (props) => {
         return (
             <RadialWheel style={style}>
-                <ButtonTest {...props} background="red" height={20} from={195} to={345}>
+                <ButtonTest {...props} background="red" height={20} from={285} to={75}>
                     Red
                 </ButtonTest>
 
-                <ButtonTest {...props} background="blue" height={20} from={15} to={165}>
+                <ButtonTest {...props} background="blue" height={20} from={105} to={255}>
                     Blue
                 </ButtonTest>
             </RadialWheel>
