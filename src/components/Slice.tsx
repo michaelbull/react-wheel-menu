@@ -7,7 +7,6 @@ import {
     useSlice
 } from '../hooks';
 import clsx from 'clsx';
-import { SliceState } from '../models';
 
 export interface SliceProps extends ComponentProps<'div'> {
     readonly from: number;
@@ -31,22 +30,14 @@ export function Slice(props: SliceProps) {
     const className = clsx('radial-wheel-slice', classNameProp);
 
     const {
-        style: sliceStyle,
-        from,
-        to,
-        angle
+        state,
+        style: sliceStyle
     } = useSlice({
         from: fromProp,
         to: toProp,
         gapBefore,
         gapAfter
     });
-
-    const state: SliceState = {
-        from,
-        to,
-        angle
-    };
 
     const style: CSSProperties = {
         ...sliceStyle,

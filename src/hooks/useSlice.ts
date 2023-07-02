@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react';
+import { SliceState } from '../models';
 
 export interface UseSliceProps {
     readonly from: number;
@@ -8,9 +9,7 @@ export interface UseSliceProps {
 }
 
 export interface UseSliceReturn {
-    readonly from: number;
-    readonly to: number;
-    readonly angle: number;
+    readonly state: SliceState;
     readonly style: CSSProperties;
 }
 
@@ -31,14 +30,18 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const rotation = from + skew;
     const transform = `rotate(${rotation}deg) skew(${skew}deg) translate(${addUnit(gapBefore, 'px')}, -${addUnit(gapAfter, 'px')})`;
 
+    const state: SliceState = {
+        from,
+        to,
+        angle
+    };
+
     const style: CSSProperties = {
         transform
     };
 
     return {
-        from,
-        to,
-        angle,
+        state,
         style
     };
 }
