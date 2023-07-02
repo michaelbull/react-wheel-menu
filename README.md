@@ -117,7 +117,42 @@ npm install --save react-radial-wheel
 ## Usage
 
 ```tsx
+import {
+    Anchor,
+    Button,
+    Item,
+    Label,
+    RadialWheel,
+    Slice
+} from 'react-radial-wheel';
 
+export function Example() {
+    function onClickBlue() {
+        console.log('Clicked blue');
+    }
+
+    return (
+        <RadialWheel style={{width: 300, height: 300}}>
+            <Slice from={0} to={120}>
+                <Item style={{backgroundColor: 'red'}}>
+                    Red
+                </Item>
+            </Slice>
+
+            <Slice from={120} to={240}>
+                <Button style={{backgroundColor: 'blue'}} onClick={onClickBlue}>
+                    Blue
+                </Button>
+            </Slice>
+
+            <Slice from={240} to={360}>
+                <Anchor style={{backgroundColor: 'green'}} href="https://www.example.com">
+                    Green
+                </Anchor>
+            </Slice>
+        </RadialWheel>
+    )
+}
 ```
 
 ## Contributing

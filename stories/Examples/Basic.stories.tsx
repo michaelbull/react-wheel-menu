@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Button,
+    Item,
     Label,
     RadialWheel,
     Slice
@@ -26,27 +26,27 @@ export const Basic: StoryObj = {
         return (
             <RadialWheel style={{ width: '300px', height: '300px' }}>
                 <Slice style={{ backgroundColor: 'red' }} from={0} to={120}>
-                    <Button>
+                    <Item>
                         <Label style={{ color: 'white' }}>
                             One
                         </Label>
-                    </Button>
+                    </Item>
                 </Slice>
 
                 <Slice style={{ backgroundColor: 'green' }} from={120} to={240}>
-                    <Button>
+                    <Item>
                         <Label style={{ color: 'white' }}>
                             Two
                         </Label>
-                    </Button>
+                    </Item>
                 </Slice>
 
                 <Slice style={{ backgroundColor: 'blue' }} from={240} to={360}>
-                    <Button>
+                    <Item>
                         <Label style={{ color: 'white' }}>
                             Three
                         </Label>
-                    </Button>
+                    </Item>
                 </Slice>
             </RadialWheel>
         );
