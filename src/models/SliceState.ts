@@ -4,7 +4,7 @@ export interface SliceState {
     readonly angle: number;
 }
 
-export const DefaultSliceState: SliceState = {
+export const EmptySliceState: SliceState = {
     from: 0,
     to: 0,
     angle: 0

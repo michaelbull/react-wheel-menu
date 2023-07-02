@@ -3,11 +3,11 @@ import {
     useContext
 } from 'react';
 import {
-    DefaultSliceState,
+    EmptySliceState,
     SliceState
 } from '../models';
 
-export const SliceStateContext = createContext<SliceState>(DefaultSliceState);
+export const SliceStateContext = createContext<SliceState>(EmptySliceState);
 
 export function useSliceState(): SliceState {
     return useContext(SliceStateContext);
