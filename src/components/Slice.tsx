@@ -7,12 +7,13 @@ import {
     useSlice
 } from '../hooks';
 import clsx from 'clsx';
+import { Gap } from '../models';
 
 export interface SliceProps extends ComponentProps<'div'> {
     readonly from: number;
     readonly to: number;
-    readonly gapBefore?: string | number;
-    readonly gapAfter?: string | number;
+    readonly gapBefore?: Gap;
+    readonly gapAfter?: Gap;
 }
 
 export function Slice(props: SliceProps) {

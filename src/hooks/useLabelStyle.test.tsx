@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { PropsWithChildren } from 'react';
 import {
     Justify,
+    Offset,
     Orientation,
     SliceState
 } from '../models';
@@ -149,7 +150,7 @@ interface SetupProps {
     readonly state: SliceState;
     readonly orientation?: Orientation;
     readonly justify?: Justify;
-    readonly offset?: number | string;
+    readonly offset?: Offset;
 }
 
 function setup(props: SetupProps) {

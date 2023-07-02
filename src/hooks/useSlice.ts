@@ -1,11 +1,15 @@
 import { CSSProperties } from 'react';
-import { SliceState } from '../models';
+import {
+    DEFAULT_GAP,
+    Gap,
+    SliceState
+} from '../models';
 
 export interface UseSliceProps {
     readonly from: number;
     readonly to: number;
-    readonly gapBefore?: string | number;
-    readonly gapAfter?: string | number;
+    readonly gapBefore?: Gap;
+    readonly gapAfter?: Gap;
 }
 
 export interface UseSliceReturn {
@@ -17,8 +21,8 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const {
         from: fromProp,
         to: toProp,
-        gapBefore = 0,
-        gapAfter = 0
+        gapBefore = DEFAULT_GAP,
+        gapAfter = DEFAULT_GAP
     } = props;
 
     const from = modulo(fromProp, 360);
@@ -46,11 +50,11 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     };
 }
 
-function addUnit(value: string | number, unit: string): string {
-    if (typeof value === 'number') {
-        return `${value}${unit}`;
+function addUnit(gap: Gap, unit: string): string {
+    if (typeof gap === 'number') {
+        return `${gap}${unit}`;
     } else {
-        return value;
+        return gap;
     }
 }
 

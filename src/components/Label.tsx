@@ -7,13 +7,14 @@ import { useLabelStyle } from '../hooks';
 import clsx from 'clsx';
 import {
     Justify,
+    Offset,
     Orientation
 } from '../models';
 
 export interface LabelProps extends ComponentProps<'span'> {
     readonly orientation?: Orientation;
     readonly justify?: Justify;
-    readonly offset?: string | number;
+    readonly offset?: Offset;
 }
 
 export function Label(props: PropsWithChildren<LabelProps>) {

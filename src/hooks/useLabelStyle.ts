@@ -2,22 +2,24 @@ import { useSliceState } from './useSliceState';
 import { CSSProperties } from 'react';
 import {
     DEFAULT_JUSTIFY,
+    DEFAULT_OFFSET,
     DEFAULT_ORIENTATION,
     Justify,
+    Offset,
     Orientation
 } from '../models';
 
 export interface UseLabelStyleProps {
     readonly orientation?: Orientation;
     readonly justify?: Justify;
-    readonly offset?: number | string;
+    readonly offset?: Offset;
 }
 
 export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
     const {
         orientation = DEFAULT_ORIENTATION,
         justify = DEFAULT_JUSTIFY,
-        offset = 0
+        offset = DEFAULT_OFFSET
     } = props;
 
     const rotation = useLabelRotation(orientation);
@@ -57,11 +59,11 @@ function useLabelRotation(orientation: Orientation): number {
     }
 }
 
-function addUnit(value: string | number, unit: string): string {
-    if (typeof value === 'number') {
-        return `${value}${unit}`;
+function addUnit(offset: Offset, unit: string): string {
+    if (typeof offset === 'number') {
+        return `${offset}${unit}`;
     } else {
-        return value;
+        return offset;
     }
 }
 

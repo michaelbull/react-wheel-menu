@@ -5,6 +5,7 @@ import {
     Justify,
     Label,
     Layout,
+    Offset,
     Orientation,
     RadialWheel,
     Slice
@@ -19,7 +20,7 @@ interface StoryProps {
     readonly itemLayout: Layout;
 
     readonly labelJustify: Justify;
-    readonly labelOffset: string | number;
+    readonly labelOffset: Offset;
     readonly labelOrientation: Orientation;
 }
 
