@@ -11,18 +11,18 @@ import {
 } from '../models';
 
 export interface LabelProps extends ComponentProps<'span'> {
+    readonly orientation?: Orientation;
     readonly justify?: Justify;
     readonly offset?: string | number;
-    readonly orientation?: Orientation;
 }
 
 export function Label(props: PropsWithChildren<LabelProps>) {
     const {
         className: classNameProp,
         style: styleProp,
+        orientation,
         justify,
         offset,
-        orientation,
         children,
         ...rest
     } = props;
@@ -30,9 +30,9 @@ export function Label(props: PropsWithChildren<LabelProps>) {
     const className = clsx('radial-wheel-label', classNameProp);
 
     const labelStyle = useLabelStyle({
+        orientation,
         justify,
-        offset,
-        orientation
+        offset
     });
 
     const style: CSSProperties = {

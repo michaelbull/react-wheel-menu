@@ -10,24 +10,24 @@ import {
 } from '../models';
 
 export interface ItemProps extends ComponentProps<'div'> {
-    readonly justify?: Justify;
     readonly layout?: Layout;
+    readonly justify?: Justify;
 }
 
 export function Item(props: ItemProps) {
     const {
         className: classNameProp,
         style: styleProp,
-        justify,
         layout,
+        justify,
         ...rest
     } = props;
 
     const className = clsx('radial-wheel-item', classNameProp);
 
     const itemStyle = useItemStyle({
-        justify,
-        layout
+        layout,
+        justify
     });
 
     const style: CSSProperties = {

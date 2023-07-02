@@ -8,40 +8,26 @@ import {
 } from '../models';
 
 export interface UseLabelStyleProps {
+    readonly orientation?: Orientation;
     readonly justify?: Justify;
     readonly offset?: number | string;
-    readonly orientation?: Orientation;
 }
 
 export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
     const {
+        orientation = DEFAULT_ORIENTATION,
         justify = DEFAULT_JUSTIFY,
-        offset = 0,
-        orientation = DEFAULT_ORIENTATION
+        offset = 0
     } = props;
 
     const rotation = useLabelRotation(orientation);
     const verticalTranslation = addUnit(offset, 'px');
+    const transform = `translateY(${verticalTranslation}) rotate(${rotation}deg)`;
 
-    switch (justify) {
-        case 'start':
-            return {
-                justifyContent: orientation === 'counterclockwise' ? 'flex-end' : 'flex-start',
-                transform: `translateY(${verticalTranslation}) rotate(${rotation}deg)`
-            };
-
-        case 'center':
-            return {
-                justifyContent: 'center',
-                transform: `translateY(${verticalTranslation}) rotate(${rotation}deg)`
-            };
-
-        case 'end':
-            return {
-                justifyContent: orientation === 'counterclockwise' ? 'flex-start' : 'flex-end',
-                transform: `translateY(${verticalTranslation}) rotate(${rotation}deg)`
-            };
-    }
+    return {
+        ...orientationStyle(orientation, justify),
+        transform
+    };
 }
 
 function useLabelRotation(orientation: Orientation): number {
@@ -76,5 +62,53 @@ function addUnit(value: string | number, unit: string): string {
         return `${value}${unit}`;
     } else {
         return value;
+    }
+}
+
+function orientationStyle(orientation: Orientation, justify: Justify): CSSProperties {
+    switch (orientation) {
+        case 'counterclockwise':
+            return backwardsStyle(justify);
+
+        default:
+            return forwardsStyle(justify);
+    }
+}
+
+const START: CSSProperties = {
+    justifyContent: 'flex-start'
+};
+
+const CENTER: CSSProperties = {
+    justifyContent: 'center'
+};
+
+const END: CSSProperties = {
+    justifyContent: 'flex-end'
+};
+
+function forwardsStyle(justify: Justify): CSSProperties {
+    switch (justify) {
+        case 'start':
+            return START;
+
+        case 'center':
+            return CENTER;
+
+        case 'end':
+            return END;
+    }
+}
+
+function backwardsStyle(justify: Justify): CSSProperties {
+    switch (justify) {
+        case 'start':
+            return END;
+
+        case 'center':
+            return CENTER;
+
+        case 'end':
+            return START;
     }
 }

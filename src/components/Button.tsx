@@ -10,24 +10,24 @@ import {
 } from '../models';
 
 export interface ButtonProps extends ComponentProps<'button'> {
-    readonly justify?: Justify;
     readonly layout?: Layout;
+    readonly justify?: Justify;
 }
 
 export function Button(props: ButtonProps) {
     const {
         className: classNameProp,
         style: styleProp,
-        justify,
         layout,
+        justify,
         ...rest
     } = props;
 
     const className = clsx('radial-wheel-item', 'radial-wheel-item--button', classNameProp);
 
     const itemStyle = useItemStyle({
-        justify,
-        layout
+        layout,
+        justify
     });
 
     const style: CSSProperties = {

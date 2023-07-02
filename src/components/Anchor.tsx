@@ -10,24 +10,24 @@ import {
 } from '../models';
 
 export interface AnchorProps extends ComponentProps<'a'> {
-    readonly justify?: Justify;
     readonly layout?: Layout;
+    readonly justify?: Justify;
 }
 
 export function Anchor(props: AnchorProps) {
     const {
         className: classNameProp,
         style: styleProp,
-        justify,
         layout,
+        justify,
         ...rest
     } = props;
 
     const className = clsx('radial-wheel-item', 'radial-wheel-item--anchor', classNameProp);
 
     const itemStyle = useItemStyle({
-        justify,
-        layout
+        layout,
+        justify
     });
 
     const style: CSSProperties = {
