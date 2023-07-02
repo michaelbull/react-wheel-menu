@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import {
+    useLayoutEffect,
+    useState
+} from 'react';
 
 export interface UseElementAngleProps {
-    readonly element: Element | null;
+    readonly element: Element;
     readonly x: number;
     readonly y: number;
 }
@@ -9,38 +12,28 @@ export interface UseElementAngleProps {
 export function useElementAngle(props: UseElementAngleProps): number | null {
     const {
         element,
-        x,
-        y
+        x: x2,
+        y: y2
     } = props;
 
-    const [prevElement, setPrevElement] = useState(element);
-    const [prevX, setPrevX] = useState(x);
-    const [prevY, setPrevY] = useState(y);
-    const [angle, setAngle] = useState<number | null>(null);
+    const rect = useElementRect(element);
 
-    const moved = x !== prevX || y !== prevY;
-    const elementChanged = element !== prevElement;
-    const changed = moved || elementChanged;
-
-    if (changed) {
-        setPrevElement(element);
-        setPrevX(x);
-        setPrevY(y);
-
-        if (element === null) {
-            setAngle(null);
-        } else {
-            setAngle(angleToElement(x, y, element));
-        }
+    if (rect === null) {
+        return null;
+    } else {
+        const [x1, y1] = midpoint(rect);
+        return angleBetween(x1, y1, x2, y2);
     }
-
-    return angle;
 }
 
-function angleToElement(x: number, y: number, element: Element) {
-    const rect = element.getBoundingClientRect();
-    const [midpointX, midpointY] = midpoint(rect);
-    return angleBetween(midpointX, midpointY, x, y);
+function useElementRect(element: Element): DOMRect | null {
+    const [rect, setRect] = useState<DOMRect | null>(null);
+
+    useLayoutEffect(() => {
+        setRect(element.getBoundingClientRect());
+    }, [element]);
+
+    return rect;
 }
 
 function midpoint(rect: DOMRect): [number, number] {

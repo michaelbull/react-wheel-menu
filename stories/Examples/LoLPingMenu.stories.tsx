@@ -35,6 +35,7 @@ export const LoLPingMenuStory: StoryObj = {
 
 function LoLPingMenu() {
     const [indicatorLabel, setIndicatorLabel] = useState<ReactNode>(null);
+    const [mouseX, mouseY] = useMousePosition();
 
     function clearHover() {
         setIndicatorLabel(null);
@@ -142,7 +143,7 @@ function LoLPingMenu() {
                 onMouseOver={hoverBait}
             />
 
-            <Indicator>
+            <Indicator x={mouseX} y={mouseY}>
                 {indicatorLabel}
             </Indicator>
         </RadialWheel>
@@ -188,58 +189,94 @@ function Slice(props: SliceProps) {
     );
 }
 
-function Indicator(props: PropsWithChildren<unknown>) {
-    const { children } = props;
+interface IndicatorProps {
+    readonly x: number;
+    readonly y: number;
+}
+
+function Indicator(props: PropsWithChildren<IndicatorProps>) {
+    const {
+        x,
+        y,
+        children
+    } = props;
+
     const [indicator, setIndicator] = useState<HTMLDivElement | null>(null);
-    const [mouseX, mouseY] = useMousePosition();
-    const [hovered, setHovered] = useState(false);
-
-    const angle = useElementAngle({
-        element: indicator,
-        x: mouseX,
-        y: mouseY
-    });
-
-    const show = !hovered && angle !== null && children !== null;
-
-    const arrowStyle: CSSProperties = {
-        transform: `rotate(${angle}deg) translateX(182%)`
-    };
+    const [mouseOutside, setMouseOutside] = useState(true);
 
     function onMouseOver() {
-        setHovered(true);
+        setMouseOutside(false);
     }
 
     function onMouseOut() {
-        setHovered(false);
+        setMouseOutside(true);
     }
 
     return (
         <div className="lol-ping-menu-indicator" ref={setIndicator} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-            {show &&
-                <>
-                    <svg className="lol-ping-menu-arrow" style={arrowStyle} viewBox="0 0 24 24">
-                        <path
-                            className="lol-ping-menu-arrow__bottom"
-                            d="M5 1h.5c1.98 5.77 2.02 15.08 0 22H5C7 16.03 7 6.78 5 1Z"
-                        />
-
-                        <path
-                            className="lol-ping-menu-arrow__center"
-                            d="M8.59 7.41h1.38v9.17H8.59z"
-                        />
-
-                        <path
-                            className="lol-ping-menu-arrow__top"
-                            d="M8.59 16.58 13.17 12 8.59 7.41v-2.8L16 12c-2.46 2.45-7.4 7.31-7.4 7.31z"
-                        />
-                    </svg>
-
-                    <span className="lol-ping-menu-indicator__label">
-                        {children}
-                    </span>
-                </>
+            {indicator &&
+                <Arrow x={x} y={y} parent={indicator} mouseOutside={mouseOutside}>
+                    {children}
+                </Arrow>
             }
         </div>
     );
+}
+
+interface ArrowProps {
+    readonly x: number,
+    readonly y: number;
+    readonly parent: Element;
+    readonly mouseOutside: boolean;
+}
+
+function Arrow(props: PropsWithChildren<ArrowProps>) {
+    const {
+        x,
+        y,
+        parent,
+        mouseOutside,
+        children
+    } = props;
+
+    const angle = useElementAngle({
+        element: parent,
+        x,
+        y
+    });
+
+    const show = mouseOutside && angle !== null && children !== null;
+
+    const style: CSSProperties = {
+        transform: `rotate(${angle}deg) translateX(182%)`
+    };
+
+    if (show) {
+        return (
+            <>
+                <svg className="lol-ping-menu-arrow" style={style} viewBox="0 0 24 24">
+                    <path
+                        className="lol-ping-menu-arrow__bottom"
+                        d="M5 1h.5c1.98 5.77 2.02 15.08 0 22H5C7 16.03 7 6.78 5 1Z"
+                    />
+
+                    <path
+                        className="lol-ping-menu-arrow__center"
+                        d="M8.59 7.41h1.38v9.17H8.59z"
+                    />
+
+                    <path
+                        className="lol-ping-menu-arrow__top"
+                        d="M8.59 16.58 13.17 12 8.59 7.41v-2.8L16 12c-2.46 2.45-7.4 7.31-7.4 7.31z"
+                    />
+                </svg>
+
+                <span className="lol-ping-menu-indicator__label">
+                    {children}
+                </span>
+            </>
+        );
+    } else {
+        return null;
+    }
 }
