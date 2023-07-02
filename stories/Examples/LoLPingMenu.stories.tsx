@@ -37,50 +37,52 @@ function LoLPingMenu() {
     const [indicatorLabel, setIndicatorLabel] = useState<ReactNode>(null);
     const [mouseX, mouseY] = useMousePosition();
 
-    function clearHover() {
+    function clearIndication() {
         setIndicatorLabel(null);
     }
 
-    function hoverRetreat() {
+    function indicateRetreat() {
         setIndicatorLabel(<span style={{ color: 'red' }}>Retreat</span>);
     }
 
-    function hoverPush() {
+    function indicatePush() {
         setIndicatorLabel(<span style={{ color: 'lightgreen' }}>Push</span>);
     }
 
-    function hoverOnMyWay() {
+    function indicateOnMyWay() {
         setIndicatorLabel(<span style={{ color: 'cyan' }}>On My Way</span>);
     }
 
-    function hoverAllIn() {
+    function indicateAllIn() {
         setIndicatorLabel(<span style={{ color: 'yellow' }}>All In</span>);
     }
 
-    function hoverAssistMe() {
+    function indicateAssistMe() {
         setIndicatorLabel(<span style={{ color: 'lightgreen' }}>Assist Me</span>);
     }
 
-    function hoverHold() {
+    function indicateHold() {
         setIndicatorLabel(<span style={{ color: 'lightgreen' }}>Hold</span>);
     }
 
-    function hoverEnemyMissing() {
+    function indicateEnemyMissing() {
         setIndicatorLabel(<span style={{ color: 'yellow' }}>Enemy Missing</span>);
     }
 
-    function hoverBait() {
+    function indicateBait() {
         setIndicatorLabel(<span style={{ color: 'yellow' }}>Bait</span>);
     }
 
     return (
-        <RadialWheel className="lol-ping-menu" onMouseOut={clearHover}>
+        <RadialWheel className="lol-ping-menu" onMouseOut={clearIndication}>
             <Slice
                 from={337.5}
                 to={22.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
                 alt="Retreat"
-                onMouseOver={hoverRetreat}
+                onMouseOver={indicateRetreat}
+                onFocus={indicateRetreat}
+                onBlur={clearIndication}
                 major
             />
 
@@ -89,7 +91,9 @@ function LoLPingMenu() {
                 to={67.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
                 alt="Push"
-                onMouseOver={hoverPush}
+                onMouseOver={indicatePush}
+                onFocus={indicatePush}
+                onBlur={clearIndication}
             />
 
             <Slice
@@ -97,7 +101,9 @@ function LoLPingMenu() {
                 to={112.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
                 alt="On My Way"
-                onMouseOver={hoverOnMyWay}
+                onMouseOver={indicateOnMyWay}
+                onFocus={indicateOnMyWay}
+                onBlur={clearIndication}
                 major
             />
 
@@ -106,7 +112,9 @@ function LoLPingMenu() {
                 to={157.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
                 alt="All In"
-                onMouseOver={hoverAllIn}
+                onMouseOver={indicateAllIn}
+                onFocus={indicateAllIn}
+                onBlur={clearIndication}
             />
 
             <Slice
@@ -114,7 +122,9 @@ function LoLPingMenu() {
                 to={202.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
                 alt="Assist Me"
-                onMouseOver={hoverAssistMe}
+                onMouseOver={indicateAssistMe}
+                onFocus={indicateAssistMe}
+                onBlur={clearIndication}
                 major
             />
 
@@ -123,7 +133,9 @@ function LoLPingMenu() {
                 to={247.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
                 alt="Hold"
-                onMouseOver={hoverHold}
+                onMouseOver={indicateHold}
+                onFocus={indicateHold}
+                onBlur={clearIndication}
             />
 
             <Slice
@@ -131,7 +143,9 @@ function LoLPingMenu() {
                 to={292.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
                 alt="Enemy Missing"
-                onMouseOver={hoverEnemyMissing}
+                onMouseOver={indicateEnemyMissing}
+                onFocus={indicateEnemyMissing}
+                onBlur={clearIndication}
                 major
             />
 
@@ -140,7 +154,9 @@ function LoLPingMenu() {
                 to={337.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
                 alt="Bait"
-                onMouseOver={hoverBait}
+                onMouseOver={indicateBait}
+                onFocus={indicateBait}
+                onBlur={clearIndication}
             />
 
             <Indicator x={mouseX} y={mouseY}>
@@ -156,6 +172,8 @@ interface SliceProps {
     readonly major?: boolean;
     readonly src: string;
     readonly alt: string;
+    readonly onFocus: () => void;
+    readonly onBlur: () => void;
     readonly onMouseOver: () => void;
 }
 
@@ -166,6 +184,8 @@ function Slice(props: SliceProps) {
         major = false,
         src,
         alt,
+        onFocus,
+        onBlur,
         onMouseOver
     } = props;
 
@@ -175,7 +195,7 @@ function Slice(props: SliceProps) {
 
     return (
         <RadialWheelSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <Button className={className} onMouseOver={onMouseOver}>
+            <Button className={className} onFocus={onFocus} onBlur={onBlur} onMouseOver={onMouseOver}>
                 <Label className="lol-ping-menu__label" offset={-20}>
                     <img
                         className="lol-ping-menu__icon"
