@@ -5,7 +5,7 @@
       <img alt="npm" src="https://img.shields.io/npm/v/react-radial-wheel.svg" />
     </a>&nbsp;
     <a href="https://github.com/michaelbull/react-radial-wheel/actions?query=workflow%3Aci" target="_blank" rel="noreferrer">
-      <img alt="CI Status" src="https://github.com/michaelbull/kotlin-result/workflows/ci/badge.svg" />
+      <img alt="CI Status" src="https://github.com/michaelbull/react-radial-wheel/workflows/ci/badge.svg" />
     </a>&nbsp;
     <a href="https://github.com/michaelbull/react-radial-wheel/blob/master/LICENSE" target="_blank" rel="noreferrer">
       <img alt="License" src="https://img.shields.io/github/license/michaelbull/react-radial-wheel.svg" />
