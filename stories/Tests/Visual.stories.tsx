@@ -38,36 +38,48 @@ const meta: Meta<StoryProps> = {
     },
     argTypes: {
         itemJustify: {
-            name: 'Item Justify',
+            name: 'Justify',
             control: 'select',
             options: [
                 'start',
                 'center',
                 'end'
-            ]
+            ],
+            table: {
+                category: 'Item'
+            }
         },
         itemLayout: {
-            name: 'Item Layout',
+            name: 'Layout',
             control: 'select',
             options: [
                 'vertical',
                 'horizontal'
-            ]
+            ],
+            table: {
+                category: 'Item'
+            }
         },
         labelJustify: {
-            name: 'Label Justify',
+            name: 'Justify',
             control: 'select',
             options: [
                 'start',
                 'center',
                 'end'
-            ]
+            ],
+            table: {
+                category: 'Label'
+            }
         },
         labelOffset: {
-            name: 'Label Offset'
+            name: 'Offset',
+            table: {
+                category: 'Label'
+            }
         },
         labelOrientation: {
-            name: 'Label Orientation',
+            name: 'Orientation',
             control: 'select',
             options: [
                 'downwards',
@@ -76,7 +88,10 @@ const meta: Meta<StoryProps> = {
                 'outwards',
                 'clockwise',
                 'counterclockwise'
-            ]
+            ],
+            table: {
+                category: 'Label'
+            }
         }
     }
 };
