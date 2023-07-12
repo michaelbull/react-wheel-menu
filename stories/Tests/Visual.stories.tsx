@@ -2,12 +2,12 @@ import React, { CSSProperties } from 'react';
 import {
     Button,
     ButtonProps,
+    CircleMenu,
     Justify,
     Label,
     Layout,
     Offset,
     Orientation,
-    RadialWheel,
     Slice
 } from '../../src';
 import {
@@ -93,7 +93,7 @@ type Story = StoryObj<StoryProps>;
 export const Polar: Story = {
     render: (props) => {
         return (
-            <RadialWheel style={style}>
+            <CircleMenu style={style}>
                 <ButtonTest {...props} background="red" height={20} from={285} to={75}>
                     Red
                 </ButtonTest>
@@ -101,7 +101,7 @@ export const Polar: Story = {
                 <ButtonTest {...props} background="blue" height={20} from={105} to={255}>
                     Blue
                 </ButtonTest>
-            </RadialWheel>
+            </CircleMenu>
         );
     }
 };
@@ -109,7 +109,7 @@ export const Polar: Story = {
 export const Acute: Story = {
     render: (props) => {
         return (
-            <RadialWheel style={style}>
+            <CircleMenu style={style}>
                 <ButtonTest {...props} background="red" height={20} from={330} to={30}>
                     Red
                 </ButtonTest>
@@ -133,7 +133,7 @@ export const Acute: Story = {
                 <ButtonTest {...props} background="orange" height={20} from={270} to={330}>
                     Orange
                 </ButtonTest>
-            </RadialWheel>
+            </CircleMenu>
         );
     }
 };
@@ -141,7 +141,7 @@ export const Acute: Story = {
 export const Obtuse: Story = {
     render: (props) => {
         return (
-            <RadialWheel style={style}>
+            <CircleMenu style={style}>
                 <ButtonTest {...props} background="red" height={30} from={0} to={120}>
                     Red
                 </ButtonTest>
@@ -153,7 +153,7 @@ export const Obtuse: Story = {
                 <ButtonTest {...props} background="blue" height={10} from={240} to={360}>
                     Blue
                 </ButtonTest>
-            </RadialWheel>
+            </CircleMenu>
         );
     }
 };

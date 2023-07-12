@@ -1,4 +1,4 @@
-.radial-wheel {
+.circle-menu {
   position: relative;
 
   display: flex;
@@ -21,7 +21,7 @@
   clip-path: circle(50%);
 }
 
-.radial-wheel-slice {
+.circle-menu-slice {
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -39,7 +39,7 @@
   transform-origin: bottom left;
 }
 
-.radial-wheel-item {
+.circle-menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,16 +60,16 @@
   transform-origin: bottom;
 }
 
-.radial-wheel-item--button {
+.circle-menu-item--button {
   appearance: none;
   background: none;
 }
 
-.radial-wheel-item--anchor {
+.circle-menu-item--anchor {
   text-decoration: none;
 }
 
-.radial-wheel-label {
+.circle-menu-label {
   display: flex;
   justify-content: center;
   align-items: center;

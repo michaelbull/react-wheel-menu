@@ -1,15 +1,15 @@
 import { ComponentProps } from 'react';
 import clsx from 'clsx';
 
-export type RadialWheelProps = ComponentProps<'div'>;
+export type CircleMenuProps = ComponentProps<'div'>;
 
-export function RadialWheel(props: RadialWheelProps) {
+export function CircleMenu(props: CircleMenuProps) {
     const {
         className: classNameProp,
         ...rest
     } = props;
 
-    const className = clsx('radial-wheel', classNameProp);
+    const className = clsx('circle-menu', classNameProp);
 
     return <div
         className={className}

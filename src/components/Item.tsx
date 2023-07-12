@@ -23,7 +23,7 @@ export function Item(props: ItemProps) {
         ...rest
     } = props;
 
-    const className = clsx('radial-wheel-item', classNameProp);
+    const className = clsx('circle-menu-item', classNameProp);
 
     const itemStyle = useItemStyle({
         layout,

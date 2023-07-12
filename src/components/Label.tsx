@@ -24,11 +24,10 @@ export function Label(props: PropsWithChildren<LabelProps>) {
         orientation,
         justify,
         offset,
-        children,
         ...rest
     } = props;
 
-    const className = clsx('radial-wheel-label', classNameProp);
+    const className = clsx('circle-menu-label', classNameProp);
 
     const labelStyle = useLabelStyle({
         orientation,
@@ -41,9 +40,9 @@ export function Label(props: PropsWithChildren<LabelProps>) {
         ...styleProp
     };
 
-    return (
-        <span className={className} style={style}  {...rest}>
-            {children}
-        </span>
-    );
+    return <span
+        className={className}
+        style={style}
+        {...rest}
+    />;
 }

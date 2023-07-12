@@ -4,9 +4,9 @@ import React, {
 } from 'react';
 import {
     Button,
+    CircleMenu,
     Label,
-    RadialWheel,
-    Slice as RadialWheelSlice
+    Slice as CircleMenuSlice
 } from '../../src';
 import {
     Meta,
@@ -30,7 +30,7 @@ export const GtaWeaponMenuStory: StoryObj = {
 
 function GtaWeaponMenu() {
     return (
-        <RadialWheel className="gta-weapon-menu">
+        <CircleMenu className="gta-weapon-menu">
             <Slice from={337.5} to={22.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
@@ -103,7 +103,7 @@ function GtaWeaponMenu() {
             </Slice>
 
             <div className="gta-weapon-menu__center" />
-        </RadialWheel>
+        </CircleMenu>
     );
 }
 
@@ -120,13 +120,13 @@ function Slice(props: PropsWithChildren<SliceProps>) {
     } = props;
 
     return (
-        <RadialWheelSlice className="gta-weapon-menu__slice" from={from} to={to} gapBefore={4} gapAfter={4}>
+        <CircleMenuSlice className="gta-weapon-menu__slice" from={from} to={to} gapBefore={4} gapAfter={4}>
             <Button className="gta-weapon-menu__button" justify="end">
                 <Label className="gta-weapon-menu__label" offset={70}>
                     {children}
                 </Label>
             </Button>
-        </RadialWheelSlice>
+        </CircleMenuSlice>
     );
 }
 

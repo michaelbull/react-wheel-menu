@@ -23,7 +23,7 @@ export function Anchor(props: AnchorProps) {
         ...rest
     } = props;
 
-    const className = clsx('radial-wheel-item', 'radial-wheel-item--anchor', classNameProp);
+    const className = clsx('circle-menu-item', 'circle-menu-item--anchor', classNameProp);
 
     const itemStyle = useItemStyle({
         layout,

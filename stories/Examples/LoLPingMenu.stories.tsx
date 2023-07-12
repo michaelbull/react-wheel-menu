@@ -6,9 +6,9 @@ import React, {
 } from 'react';
 import {
     Button,
+    CircleMenu,
     Label,
-    RadialWheel,
-    Slice as RadialWheelSlice,
+    Slice as CircleMenuSlice,
     useElementAngle,
     useMousePosition
 } from '../../src';
@@ -74,7 +74,7 @@ function LoLPingMenu() {
     }
 
     return (
-        <RadialWheel className="lol-ping-menu" onMouseOut={clearIndication}>
+        <CircleMenu className="lol-ping-menu" onMouseOut={clearIndication}>
             <Slice
                 from={337.5}
                 to={22.5}
@@ -162,7 +162,7 @@ function LoLPingMenu() {
             <Indicator x={mouseX} y={mouseY}>
                 {indicatorLabel}
             </Indicator>
-        </RadialWheel>
+        </CircleMenu>
     );
 }
 
@@ -194,7 +194,7 @@ function Slice(props: SliceProps) {
     });
 
     return (
-        <RadialWheelSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
+        <CircleMenuSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
             <Button className={className} onFocus={onFocus} onBlur={onBlur} onMouseOver={onMouseOver}>
                 <Label className="lol-ping-menu__label" offset={-20}>
                     <img
@@ -205,7 +205,7 @@ function Slice(props: SliceProps) {
                     />
                 </Label>
             </Button>
-        </RadialWheelSlice>
+        </CircleMenuSlice>
     );
 }
 

@@ -3,10 +3,10 @@ import React, {
     useState
 } from 'react';
 import {
-    Button as RadialWheelButton,
-    ButtonProps as RadialWheelButtonProps,
+    Button as CircleMenuButton,
+    ButtonProps as CircleMenuButtonProps,
+    CircleMenu,
     Label,
-    RadialWheel,
     Slice
 } from '../../src';
 import {
@@ -37,10 +37,10 @@ function CsGoBuyMenu() {
     }
 
     return (
-        <RadialWheel className="csgo-buy-menu">
+        <CircleMenu className="csgo-buy-menu">
             {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
             <TeamImage />
-        </RadialWheel>
+        </CircleMenu>
     );
 }
 
@@ -280,7 +280,7 @@ function TeamImage() {
     );
 }
 
-interface ButtonProps extends RadialWheelButtonProps {
+interface ButtonProps extends CircleMenuButtonProps {
     readonly from: number;
     readonly to: number;
     readonly hotkey: number;
@@ -299,7 +299,7 @@ function Button(props: ButtonProps) {
 
     return (
         <Slice className="csgo-buy-menu-slice" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <RadialWheelButton className="csgo-buy-menu-button" justify="start" {...rest}>
+            <CircleMenuButton className="csgo-buy-menu-button" justify="start" {...rest}>
                 <Label className="csgo-buy-menu-button__hotkey" offset={-60}>
                     {hotkey}
                 </Label>
@@ -317,7 +317,7 @@ function Button(props: ButtonProps) {
                         </span>
                     </span>
                 </Label>
-            </RadialWheelButton>
+            </CircleMenuButton>
         </Slice>
     );
 }

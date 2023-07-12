@@ -28,7 +28,7 @@ export function Slice(props: SliceProps) {
         ...rest
     } = props;
 
-    const className = clsx('radial-wheel-slice', classNameProp);
+    const className = clsx('circle-menu-slice', classNameProp);
 
     const {
         state,
@@ -46,7 +46,7 @@ export function Slice(props: SliceProps) {
     };
 
     return (
-        <div className={className} style={style} {...rest} >
+        <div className={className} style={style} {...rest}>
             <SliceStateContext.Provider value={state}>
                 {children}
             </SliceStateContext.Provider>

@@ -2,9 +2,9 @@ import React from 'react';
 import {
     Anchor,
     Button,
+    CircleMenu,
     Item,
     Label,
-    RadialWheel,
     Slice
 } from '../../src';
 import {
@@ -30,7 +30,7 @@ export const Basic: StoryObj = {
         }
 
         return (
-            <RadialWheel style={{ width: 300, height: 300 }}>
+            <CircleMenu style={{ width: 300, height: 300 }}>
                 <Slice from={300} to={60}>
                     <Item style={{ backgroundColor: 'red' }}>
                         <Label style={{ color: 'white' }}>
@@ -54,7 +54,7 @@ export const Basic: StoryObj = {
                         </Label>
                     </Anchor>
                 </Slice>
-            </RadialWheel>
+            </CircleMenu>
         );
     }
 };

@@ -4,9 +4,9 @@ import React, {
 } from 'react';
 import {
     Button,
+    CircleMenu,
     Label,
-    RadialWheel,
-    Slice as RadialWheelSlice
+    Slice as CircleMenuSlice
 } from '../../src';
 import {
     Meta,
@@ -30,7 +30,7 @@ export const WheelOfFortuneStory: StoryObj = {
 
 function WheelOfFortune() {
     return (
-        <RadialWheel className="wheel-of-fortune">
+        <CircleMenu className="wheel-of-fortune">
             <Slice from={352.5} to={7.5} backgroundColor="hsl(57, 100%, 50%)" price>
                 2000
             </Slice>
@@ -137,7 +137,7 @@ function WheelOfFortune() {
             </Slice>
 
             <div className="wheel-of-fortune__center" />
-        </RadialWheel>
+        </CircleMenu>
     );
 }
 
@@ -162,7 +162,7 @@ function Slice(props: PropsWithChildren<SliceProps>) {
     } = props;
 
     return (
-        <RadialWheelSlice style={{ backgroundColor }} from={from} to={to} gapBefore={1} gapAfter={1}>
+        <CircleMenuSlice style={{ backgroundColor }} from={from} to={to} gapBefore={1} gapAfter={1}>
             <Button className="wheel-of-fortune__button" justify="end" layout="vertical">
                 <Label orientation="inwards" justify="center" offset={10}>
                     <span className="wheel-of-fortune__label" style={{ color, fontSize }}>
@@ -174,6 +174,6 @@ function Slice(props: PropsWithChildren<SliceProps>) {
                     </span>
                 </Label>
             </Button>
-        </RadialWheelSlice>
+        </CircleMenuSlice>
     );
 }
