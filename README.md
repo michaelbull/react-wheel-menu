@@ -120,9 +120,9 @@ npm install --save react-circle-menu
 import {
     Anchor,
     Button,
+    CircleMenu,
     Item,
     Label,
-    CircleMenu,
     Slice
 } from 'react-circle-menu';
 
