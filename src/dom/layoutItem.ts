@@ -1,14 +1,14 @@
 import {
-    Justify,
+    Justification,
     Layout
 } from '../models';
 import * as CSS from 'csstype';
 
-export function layoutItem(layout: Layout, justify: Justify): CSS.Properties {
+export function layoutItem(layout: Layout, justification: Justification): CSS.Properties {
     switch (layout) {
         // @formatter:off
-        case 'vertical':    return layoutVertically(justify);
-        case 'horizontal':  return layoutHorizontally(justify);
+        case 'vertical':    return layoutVertically(justification);
+        case 'horizontal':  return layoutHorizontally(justification);
         // @formatter:on
     }
 }
@@ -28,8 +28,8 @@ const VERTICAL_END: CSS.Properties = {
     justifyContent: 'flex-end'
 };
 
-function layoutVertically(justify: Justify): CSS.Properties {
-    switch (justify) {
+function layoutVertically(justification: Justification): CSS.Properties {
+    switch (justification) {
         // @formatter:off
         case 'start':   return VERTICAL_START;
         case 'center':  return VERTICAL_CENTER;
@@ -53,8 +53,8 @@ const HORIZONTAL_END: CSS.Properties = {
     justifyContent: 'flex-start'
 };
 
-function layoutHorizontally(justify: Justify): CSS.Properties {
-    switch (justify) {
+function layoutHorizontally(justification: Justification): CSS.Properties {
+    switch (justification) {
         // @formatter:off
         case 'start':   return HORIZONTAL_START;
         case 'center':  return HORIZONTAL_CENTER;

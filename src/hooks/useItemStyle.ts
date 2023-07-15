@@ -1,9 +1,9 @@
 import { CSSProperties } from 'react';
 import { useSliceState } from './useSliceState';
 import {
-    DEFAULT_JUSTIFY,
+    DEFAULT_JUSTIFICATION,
     DEFAULT_LAYOUT,
-    Justify,
+    Justification,
     Layout
 } from '../models';
 import {
@@ -13,13 +13,13 @@ import {
 
 export interface UseItemStyleProps {
     readonly layout?: Layout;
-    readonly justify?: Justify;
+    readonly justify?: Justification;
 }
 
 export function useItemStyle(props: UseItemStyleProps): CSSProperties {
     const {
         layout = DEFAULT_LAYOUT,
-        justify = DEFAULT_JUSTIFY
+        justify = DEFAULT_JUSTIFICATION
     } = props;
 
     const { angle } = useSliceState();

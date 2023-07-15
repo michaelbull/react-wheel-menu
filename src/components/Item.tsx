@@ -5,13 +5,13 @@ import {
 import { useItemStyle } from '../hooks';
 import clsx from 'clsx';
 import {
-    Justify,
+    Justification,
     Layout
 } from '../models';
 
 export interface ItemProps extends ComponentProps<'div'> {
     readonly layout?: Layout;
-    readonly justify?: Justify;
+    readonly justify?: Justification;
 }
 
 export function Item(props: ItemProps) {

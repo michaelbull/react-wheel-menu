@@ -1,10 +1,10 @@
 import { useSliceState } from './useSliceState';
 import { CSSProperties } from 'react';
 import {
-    DEFAULT_JUSTIFY,
+    DEFAULT_JUSTIFICATION,
     DEFAULT_OFFSET,
     DEFAULT_ORIENTATION,
-    Justify,
+    Justification,
     Offset,
     Orientation
 } from '../models';
@@ -14,22 +14,22 @@ import {
 } from '../dom';
 
 export interface UseLabelStyleProps {
-    readonly orientation?: Orientation;
-    readonly justify?: Justify;
+    readonly orient?: Orientation;
+    readonly justify?: Justification;
     readonly offset?: Offset;
 }
 
 export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
     const {
-        orientation = DEFAULT_ORIENTATION,
-        justify = DEFAULT_JUSTIFY,
+        orient = DEFAULT_ORIENTATION,
+        justify = DEFAULT_JUSTIFICATION,
         offset = DEFAULT_OFFSET
     } = props;
 
     const state = useSliceState();
 
     return {
-        ...orientLabel(orientation, justify),
-        transform: transformLabel(state, orientation, offset)
+        ...orientLabel(orient, justify),
+        transform: transformLabel(state, orient, offset)
     };
 }

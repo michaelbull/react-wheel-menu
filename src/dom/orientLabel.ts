@@ -1,19 +1,19 @@
 import {
-    DEFAULT_JUSTIFY,
+    DEFAULT_JUSTIFICATION,
     DEFAULT_ORIENTATION,
-    Justify,
+    Justification,
     Orientation
 } from '../models';
 import * as CSS from 'csstype';
 
 export function orientLabel(
     orientation: Orientation = DEFAULT_ORIENTATION,
-    justify: Justify = DEFAULT_JUSTIFY
+    justification: Justification = DEFAULT_JUSTIFICATION
 ): CSS.Properties {
     if (orientation === 'counterclockwise') {
-        return orientBackwards(justify);
+        return orientBackwards(justification);
     } else {
-        return orientForwards(justify);
+        return orientForwards(justification);
     }
 }
 
@@ -29,8 +29,8 @@ const END: CSS.Properties = {
     justifyContent: 'flex-end'
 };
 
-function orientForwards(justify: Justify): CSS.Properties {
-    switch (justify) {
+function orientForwards(justification: Justification): CSS.Properties {
+    switch (justification) {
         // @formatter:off
         case 'start':   return START;
         case 'center':  return CENTER;
@@ -39,8 +39,8 @@ function orientForwards(justify: Justify): CSS.Properties {
     }
 }
 
-function orientBackwards(justify: Justify): CSS.Properties {
-    switch (justify) {
+function orientBackwards(justification: Justification): CSS.Properties {
+    switch (justification) {
         // @formatter:off
         case 'start':   return END;
         case 'center':  return CENTER;

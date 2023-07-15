@@ -3,7 +3,7 @@ import {
     Button,
     ButtonProps,
     CircleMenu,
-    Justify,
+    Justification,
     Label,
     Layout,
     Offset,
@@ -16,10 +16,10 @@ import {
 } from '@storybook/react';
 
 interface StoryProps {
-    readonly itemJustify: Justify;
+    readonly itemJustify: Justification;
     readonly itemLayout: Layout;
 
-    readonly labelJustify: Justify;
+    readonly labelJustify: Justification;
     readonly labelOffset: Offset;
     readonly labelOrientation: Orientation;
 }
@@ -179,10 +179,10 @@ interface ButtonTestProps extends ButtonProps {
     readonly background: CSSProperties['background'];
     readonly height: number;
 
-    readonly itemJustify: Justify;
+    readonly itemJustify: Justification;
     readonly itemLayout: Layout;
 
-    readonly labelJustify: Justify;
+    readonly labelJustify: Justification;
     readonly labelOffset: string | number;
     readonly labelOrientation: Orientation;
 }
@@ -216,11 +216,11 @@ function ButtonTest(props: ButtonTestProps) {
     return (
         <Slice from={from} to={to}>
             <Button style={style} justify={itemJustify} layout={itemLayout} {...rest}>
-                <Label justify={labelJustify} orientation={labelOrientation} offset={labelOffset} style={labelStyle}>
+                <Label justify={labelJustify} orient={labelOrientation} offset={labelOffset} style={labelStyle}>
                     {children}
                 </Label>
 
-                <Label justify={labelJustify} orientation={labelOrientation} style={labelStyle}>
+                <Label justify={labelJustify} orient={labelOrientation} style={labelStyle}>
                     {children}
                 </Label>
             </Button>

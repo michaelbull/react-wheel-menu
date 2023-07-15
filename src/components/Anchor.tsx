@@ -5,13 +5,13 @@ import {
 import { useItemStyle } from '../hooks';
 import clsx from 'clsx';
 import {
-    Justify,
+    Justification,
     Layout
 } from '../models';
 
 export interface AnchorProps extends ComponentProps<'a'> {
     readonly layout?: Layout;
-    readonly justify?: Justify;
+    readonly justify?: Justification;
 }
 
 export function Anchor(props: AnchorProps) {

@@ -164,7 +164,7 @@ function Slice(props: PropsWithChildren<SliceProps>) {
     return (
         <CircleMenuSlice style={{ backgroundColor }} from={from} to={to} gapBefore={1} gapAfter={1}>
             <Button className="wheel-of-fortune__button" justify="end" layout="vertical">
-                <Label orientation="inwards" justify="center" offset={10}>
+                <Label orient="inwards" justify="center" offset={10}>
                     <span className="wheel-of-fortune__label" style={{ color, fontSize }}>
                         {price &&
                             <span className="wheel-of-fortune__price">$</span>
