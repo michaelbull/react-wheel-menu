@@ -5,6 +5,7 @@ import {
     SliceState
 } from '../models';
 import { modulo } from '../math';
+import { transformSlice } from '../dom';
 
 export interface UseSliceProps {
     readonly from: number;
@@ -31,18 +32,6 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const delta = modulo(toProp - fromProp, 360);
     const angle = Math.min(150, delta);
 
-    const rotation = `rotate(${from + angle - 90}deg)`;
-    const skew = `skew(${angle - 90}deg)`;
-    const translateX = addUnit(gapBefore, 'px');
-    const translateY = addUnit(gapAfter, 'px');
-    const translation = `translate(${translateX}, -${translateY})`;
-
-    const transform = `
-        ${rotation}
-        ${skew}
-        ${translation}
-    `;
-
     const state: SliceState = {
         from,
         to,
@@ -50,19 +39,11 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     };
 
     const style: CSSProperties = {
-        transform
+        transform: transformSlice(state, gapBefore, gapAfter)
     };
 
     return {
         state,
         style
     };
-}
-
-function addUnit(gap: Gap, unit: string): string {
-    if (typeof gap === 'number') {
-        return `${gap}${unit}`;
-    } else {
-        return gap;
-    }
 }

@@ -14,7 +14,7 @@ describe('rectMidpoint', () => {
             height: 0
         } as DOMRect;
 
-        const [actual, _] = rectMidpoint(rect);
+        const [actual] = rectMidpoint(rect);
         expect(actual).toBe(200);
     });
 
@@ -26,7 +26,7 @@ describe('rectMidpoint', () => {
             height: 1000
         } as DOMRect;
 
-        const [_, actual] = rectMidpoint(rect);
+        const [, actual] = rectMidpoint(rect);
         expect(actual).toBe(800);
     });
 });

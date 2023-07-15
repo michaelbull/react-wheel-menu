@@ -6,6 +6,10 @@ import {
     Justify,
     Layout
 } from '../models';
+import {
+    layoutItem,
+    transformItem
+} from '../dom';
 
 export interface UseItemStyleProps {
     readonly layout?: Layout;
@@ -20,78 +24,8 @@ export function useItemStyle(props: UseItemStyleProps): CSSProperties {
 
     const { angle } = useSliceState();
 
-    const skew = `skew(${-(angle - 90)}deg)`;
-    const rotation = `rotate(${90 - (angle / 2)}deg)`;
-
-    const transform = `
-        translateX(-50%)
-        ${skew}
-        ${rotation}
-        translateY(50%)
-    `;
-
     return {
-        ...layoutStyle(layout, justify),
-        transform
+        ...layoutItem(layout, justify),
+        transform: transformItem(angle)
     };
-}
-
-function layoutStyle(layout: Layout, justify: Justify): CSSProperties {
-    switch (layout) {
-        case 'vertical':
-            return verticalStyle(justify);
-
-        case 'horizontal':
-            return horizontalStyle(justify);
-    }
-}
-
-const VERTICAL_START: CSSProperties = {
-    flexDirection: 'column-reverse',
-    justifyContent: 'flex-start'
-};
-
-const VERTICAL_CENTER: CSSProperties = {
-    flexDirection: 'column-reverse',
-    justifyContent: 'center'
-};
-
-const VERTICAL_END: CSSProperties = {
-    flexDirection: 'column-reverse',
-    justifyContent: 'flex-end'
-};
-
-function verticalStyle(justify: Justify): CSSProperties {
-    switch (justify) {
-        // @formatter:off
-        case 'start':   return VERTICAL_START;
-        case 'center':  return VERTICAL_CENTER;
-        case 'end':     return VERTICAL_END;
-        // @formatter:on
-    }
-}
-
-const HORIZONTAL_START: CSSProperties = {
-    flexDirection: 'row-reverse',
-    justifyContent: 'flex-end'
-};
-
-const HORIZONTAL_CENTER: CSSProperties = {
-    flexDirection: 'row-reverse',
-    justifyContent: 'center'
-};
-
-const HORIZONTAL_END: CSSProperties = {
-    flexDirection: 'row-reverse',
-    justifyContent: 'flex-start'
-};
-
-function horizontalStyle(justify: Justify): CSSProperties {
-    switch (justify) {
-        // @formatter:off
-        case 'start':   return HORIZONTAL_START;
-        case 'center':  return HORIZONTAL_CENTER;
-        case 'end':     return HORIZONTAL_END;
-        // @formatter:on
-    }
 }
