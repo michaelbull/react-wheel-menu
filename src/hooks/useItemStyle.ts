@@ -20,9 +20,15 @@ export function useItemStyle(props: UseItemStyleProps): CSSProperties {
 
     const { angle } = useSliceState();
 
-    const skew = -(angle - 90);
-    const rotation = 90 - (angle / 2);
-    const transform = `translateX(-50%) skew(${skew}deg) rotate(${rotation}deg) translateY(50%)`;
+    const skew = `skew(${-(angle - 90)}deg)`;
+    const rotation = `rotate(${90 - (angle / 2)}deg)`;
+
+    const transform = `
+        translateX(-50%)
+        ${skew}
+        ${rotation}
+        translateY(50%)
+    `;
 
     return {
         ...layoutStyle(layout, justify),
@@ -57,14 +63,11 @@ const VERTICAL_END: CSSProperties = {
 
 function verticalStyle(justify: Justify): CSSProperties {
     switch (justify) {
-        case 'start':
-            return VERTICAL_START;
-
-        case 'center':
-            return VERTICAL_CENTER;
-
-        case 'end':
-            return VERTICAL_END;
+        // @formatter:off
+        case 'start':   return VERTICAL_START;
+        case 'center':  return VERTICAL_CENTER;
+        case 'end':     return VERTICAL_END;
+        // @formatter:on
     }
 }
 
@@ -85,13 +88,10 @@ const HORIZONTAL_END: CSSProperties = {
 
 function horizontalStyle(justify: Justify): CSSProperties {
     switch (justify) {
-        case 'start':
-            return HORIZONTAL_START;
-
-        case 'center':
-            return HORIZONTAL_CENTER;
-
-        case 'end':
-            return HORIZONTAL_END;
+        // @formatter:off
+        case 'start':   return HORIZONTAL_START;
+        case 'center':  return HORIZONTAL_CENTER;
+        case 'end':     return HORIZONTAL_END;
+        // @formatter:on
     }
 }

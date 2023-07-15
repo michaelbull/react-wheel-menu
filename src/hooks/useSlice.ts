@@ -4,6 +4,7 @@ import {
     Gap,
     SliceState
 } from '../models';
+import { modulo } from '../math';
 
 export interface UseSliceProps {
     readonly from: number;
@@ -28,11 +29,19 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const from = modulo(fromProp, 360);
     const to = modulo(toProp, 360);
     const delta = modulo(toProp - fromProp, 360);
-
     const angle = Math.min(150, delta);
-    const skew = angle - 90;
-    const rotation = from + skew;
-    const transform = `rotate(${rotation}deg) skew(${skew}deg) translate(${addUnit(gapBefore, 'px')}, -${addUnit(gapAfter, 'px')})`;
+
+    const rotation = `rotate(${from + angle - 90}deg)`;
+    const skew = `skew(${angle - 90}deg)`;
+    const translateX = addUnit(gapBefore, 'px');
+    const translateY = addUnit(gapAfter, 'px');
+    const translation = `translate(${translateX}, -${translateY})`;
+
+    const transform = `
+        ${rotation}
+        ${skew}
+        ${translation}
+    `;
 
     const state: SliceState = {
         from,
@@ -56,8 +65,4 @@ function addUnit(gap: Gap, unit: string): string {
     } else {
         return gap;
     }
-}
-
-function modulo(n: number, d: number): number {
-    return (n !== 0 && n % d === 0) ? d : ((n % d) + d) % d;
 }

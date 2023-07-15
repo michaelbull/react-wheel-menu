@@ -1,4 +1,5 @@
-export * from './useElementAngle';
+export * from './useAngleToElement';
+export * from './useElementRect';
 export * from './useItemStyle';
 export * from './useLabelStyle';
 export * from './useMousePosition';

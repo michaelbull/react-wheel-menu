@@ -9,7 +9,7 @@ import {
     CircleMenu,
     Label,
     Slice as CircleMenuSlice,
-    useElementAngle,
+    useAngleToElement,
     useMousePosition
 } from '../../src';
 import {
@@ -259,7 +259,7 @@ function Arrow(props: PropsWithChildren<ArrowProps>) {
         children
     } = props;
 
-    const angle = useElementAngle({
+    const angle = useAngleToElement({
         element: parent,
         x,
         y
@@ -268,7 +268,7 @@ function Arrow(props: PropsWithChildren<ArrowProps>) {
     const show = mouseOutside && angle !== null && children !== null;
 
     const style: CSSProperties = {
-        transform: `rotate(${angle}deg) translateX(182%)`
+        transform: `rotate(${angle}rad) translateX(182%)`
     };
 
     if (show) {
