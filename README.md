@@ -44,7 +44,7 @@ npm install --save react-circle-menu
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--cs-go-buy-menu-story" target="_blank">
           Demo
         </a>
-        &middot;
+        ·
         <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/CsGoBuyMenu.stories.tsx" target="_blank">
           Code
         </a>
@@ -63,7 +63,7 @@ npm install --save react-circle-menu
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--gta-weapon-menu-story" target="_blank">
           Demo
         </a>
-        &middot;
+        ·
         <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/GtaWeaponMenu.stories.tsx" target="_blank">
           Code
         </a>
@@ -84,7 +84,7 @@ npm install --save react-circle-menu
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--lo-l-ping-menu-story" target="_blank">
           Demo
         </a>
-        &middot;
+        ·
         <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/LoLPingMenu.stories.tsx" target="_blank">
           Code
         </a>
@@ -103,7 +103,7 @@ npm install --save react-circle-menu
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--wheel-of-fortune-story" target="_blank">
           Demo
         </a>
-        &middot;
+        ·
         <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/WheelOfFortune.stories.tsx" target="_blank">
           Code
         </a>
