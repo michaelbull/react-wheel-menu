@@ -26,7 +26,7 @@ describe('useItemStyle', () => {
             state: ACUTE_ANGLE
         });
 
-        expect(style.transform).toBe('translateX(-50%) skew(30deg) rotate(60deg)');
+        expect(style.transform).toBe('translateX(-50%) skew(30deg) rotate(60deg) translateY(50%)');
     });
 
     it('transforms an obtuse angle', () => {
@@ -34,7 +34,7 @@ describe('useItemStyle', () => {
             state: OBTUSE_ANGLE
         });
 
-        expect(style.transform).toBe('translateX(-50%) skew(-30deg) rotate(30deg)');
+        expect(style.transform).toBe('translateX(-50%) skew(-30deg) rotate(30deg) translateY(50%)');
     });
 
     it('transforms a reflex angle', () => {
@@ -42,7 +42,7 @@ describe('useItemStyle', () => {
             state: REFLEX_ANGLE
         });
 
-        expect(style.transform).toBe('translateX(-50%) skew(-110deg) rotate(-10deg)');
+        expect(style.transform).toBe('translateX(-50%) skew(-110deg) rotate(-10deg) translateY(50%)');
     });
 
     it('lays out vertically at the start of the slice', () => {

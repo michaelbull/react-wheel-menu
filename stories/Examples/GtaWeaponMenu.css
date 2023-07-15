@@ -14,12 +14,12 @@
 }
 
 .gta-weapon-menu__button {
-  background-image: radial-gradient(circle at bottom, transparent 0%, transparent 36%, hsl(0, 0%, 76%) 36%, hsl(0, 0%, 76%) 58%, hsl(0, 0%, 70%) 58%, hsl(0, 0%, 70%) 60%, transparent 61%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 36%, hsl(0, 0%, 76%) 36%, hsl(0, 0%, 76%) 58%, hsl(0, 0%, 70%) 58%, hsl(0, 0%, 70%) 60%, transparent 61%);
 }
 
 .gta-weapon-menu__button:hover,
 .gta-weapon-menu__button:focus {
-  background-image: radial-gradient(circle at bottom, transparent 0%, transparent 36%, hsl(100, 70%, 76%) 36%, hsl(100, 70%, 76%) 58%, hsl(100, 70%, 70%) 58%, hsl(100, 70%, 70%) 60%, transparent 61%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 36%, hsl(100, 70%, 76%) 36%, hsl(100, 70%, 76%) 58%, hsl(100, 70%, 70%) 58%, hsl(100, 70%, 70%) 60%, transparent 61%);
 }
 
 .gta-weapon-menu__label {
