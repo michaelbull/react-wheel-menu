@@ -173,7 +173,7 @@ A `<Spoke>` is a straight line radiating from the centre of the `<CircleMenu>`.
 Spokes can be used to visually split slices, for example:
 
 ```tsx
-<CircleMenu style={{width: 300, height: 300 }}>
+<CircleMenu style={{ width: 300, height: 300 }}>
     <Slice from="0deg" to="45deg" style={{ background: 'red' }} />
     <Slice from="45deg" to="90deg" style={{ background: 'blue' }} />
     <Spoke angle="45deg" style={{ background: 'white', height: '100px' }} />
