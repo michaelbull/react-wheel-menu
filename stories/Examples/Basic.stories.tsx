@@ -12,7 +12,6 @@ import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import './CsGoBuyMenu.css';
 
 const meta: Meta = {
     title: 'Examples',

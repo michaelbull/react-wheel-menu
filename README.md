@@ -35,26 +35,26 @@ npm install --save react-circle-menu
       <td align="center" width="50%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--cs-go-buy-menu-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/85928f64-30f3-41d5-939d-a7523e88540a" alt="CS:GO Buy Menu" /></a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--overwatch-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/12a1010f-dfce-43d1-bd81-9c4b19c47201" alt="Overwatch" /></a>
         <br />
-        <strong>CS:GO Buy Menu</strong>
+        <strong>Overwatch</strong>
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--cs-go-buy-menu-story" target="_blank">Demo</a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--overwatch-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/CsGoBuyMenu.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/Overwatch.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
       <td align="center" width="50%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--gta-weapon-menu-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/3d45ef7c-2a75-4b66-891f-4bdb345844b6" alt="GTA Weapon Menu" /></a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--counter-strike-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/a0dec421-10dd-43e3-b335-b26a00c6f4c2" alt="Counter-Strike" /></a>
         <br />
-        <strong>GTA Weapon Menu</strong>
+        <strong>Counter-Strike</strong>
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--gta-weapon-menu-story" target="_blank">Demo</a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--counter-strike-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/GtaWeaponMenu.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/CounterStrike.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -63,26 +63,26 @@ npm install --save react-circle-menu
       <td align="center" width="50%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--lo-l-ping-menu-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/8099e467-db4d-421f-8440-68e8d9d5d919" alt="LoL Ping Menu" /></a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--league-of-legends-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/27812098-f3ff-446e-a794-1d26144d0cf5" alt="League of Legends" /></a>
         <br />
-        <strong>LoL Ping Menu</strong>
+        <strong>League of Legends</strong>
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--lo-l-ping-menu-story" target="_blank">Demo</a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--league-of-legends-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/LoLPingMenu.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/LeagueOfLegends.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
       <td align="center" width="50%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--wheel-of-fortune-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/7a41021f-3666-4c2d-997c-61d7db65e909" alt="Wheel of Fortune" /></a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--grand-theft-auto-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/c58c5221-3da6-4edf-b8b0-6d00baad6c6d" alt="Grand Theft Auto" /></a>
         <br />
-        <strong>Wheel of Fortune</strong>
+        <strong>Grand Theft Auto</strong>
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--wheel-of-fortune-story" target="_blank">Demo</a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--grand-theft-auto-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/WheelOfFortune.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/GrandTheftAuto.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>

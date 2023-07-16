@@ -1,26 +1,39 @@
-.lol-ping-menu {
+.lol-bg {
+  background-image: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd15eac8e2b0de8c5/5db0d3810b39e86c2f83df8d/Preseason_Gameplay_Reveal_Header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lol-menu {
   width: 450px;
   height: 450px;
 
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 100%) 28%, hsl(41, 48%, 38%, 0%) 56%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 1) 28%, hsla(41, 48%, 38%, 0) 56%);
 }
 
 .lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(0, 0%, 40%) 13.5%, hsl(0, 0%, 95%) 28%, transparent 28%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(0, 0%, 0%, 0.4) 13.5%, hsla(0, 0%, 0%, 0.4) 28%, transparent 28%);
 }
 
 .lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(0, 0%, 40%) 13.5%, hsl(0, 0%, 100%) 38%, transparent 38%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(0, 0%, 0%, 0.4) 13.5%, hsla(0, 0%, 0%, 0.4) 38%, transparent 38%);
 }
 
 .lol-ping:hover .lol-ping__button,
 .lol-ping:focus .lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(180, 70%, 40%) 13.5%, hsl(180, 70%, 95%) 28%, transparent 28%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(180, 70%, 40%, 1) 13.5%, hsla(0, 0%, 0%, 0.4) 28%, transparent 28%);
 }
 
 .lol-ping:hover .lol-ping__button--major,
 .lol-ping:focus .lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(180, 70%, 50%) 13.5%, hsl(180, 70%, 100%) 38%, transparent 38%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(180, 70%, 40%, 1) 13.5%, hsla(0, 0%, 0%, 0.4) 38%, transparent 38%);
 }
 
 .lol-ping__icon {

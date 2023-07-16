@@ -16,24 +16,24 @@ import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import './LoLPingMenu.css';
+import './LeagueOfLegends.css';
 import clsx from 'clsx';
 
 const meta: Meta = {
     title: 'Examples',
     parameters: {
-        layout: 'centered'
+        layout: 'fullscreen'
     }
 };
 
 export default meta;
 
-export const LoLPingMenuStory: StoryObj = {
-    name: 'LoL Ping Menu',
-    render: () => <LoLPingMenu />
+export const LeagueOfLegendsStory: StoryObj = {
+    name: 'League of Legends',
+    render: () => <LeagueOfLegends />
 };
 
-function LoLPingMenu() {
+function LeagueOfLegends() {
     const [indicatorLabel, setIndicatorLabel] = useState<ReactNode>(null);
     const [mouseX, mouseY] = useMousePosition();
 
@@ -74,95 +74,97 @@ function LoLPingMenu() {
     }
 
     return (
-        <CircleMenu className="lol-ping-menu" onMouseOut={clearIndication}>
-            <Ping
-                from={337.5}
-                to={22.5}
-                label="Retreat"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
-                onMouseOver={indicateRetreat}
-                onFocus={indicateRetreat}
-                onBlur={clearIndication}
-                major
-            />
+        <div className="lol-bg">
+            <CircleMenu className="lol-menu" onMouseOut={clearIndication}>
+                <Ping
+                    from={337.5}
+                    to={22.5}
+                    label="Retreat"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
+                    onMouseOver={indicateRetreat}
+                    onFocus={indicateRetreat}
+                    onBlur={clearIndication}
+                    major
+                />
 
-            <Ping
-                from={22.5}
-                to={67.5}
-                label="Push"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
-                onMouseOver={indicatePush}
-                onFocus={indicatePush}
-                onBlur={clearIndication}
-            />
+                <Ping
+                    from={22.5}
+                    to={67.5}
+                    label="Push"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
+                    onMouseOver={indicatePush}
+                    onFocus={indicatePush}
+                    onBlur={clearIndication}
+                />
 
-            <Ping
-                from={67.5}
-                to={112.5}
-                label="On My Way"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
-                onMouseOver={indicateOnMyWay}
-                onFocus={indicateOnMyWay}
-                onBlur={clearIndication}
-                major
-            />
+                <Ping
+                    from={67.5}
+                    to={112.5}
+                    label="On My Way"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
+                    onMouseOver={indicateOnMyWay}
+                    onFocus={indicateOnMyWay}
+                    onBlur={clearIndication}
+                    major
+                />
 
-            <Ping
-                from={112.5}
-                to={157.5}
-                label="All In"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
-                onMouseOver={indicateAllIn}
-                onFocus={indicateAllIn}
-                onBlur={clearIndication}
-            />
+                <Ping
+                    from={112.5}
+                    to={157.5}
+                    label="All In"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
+                    onMouseOver={indicateAllIn}
+                    onFocus={indicateAllIn}
+                    onBlur={clearIndication}
+                />
 
-            <Ping
-                from={157.5}
-                to={202.5}
-                label="Assist Me"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
-                onMouseOver={indicateAssistMe}
-                onFocus={indicateAssistMe}
-                onBlur={clearIndication}
-                major
-            />
+                <Ping
+                    from={157.5}
+                    to={202.5}
+                    label="Assist Me"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
+                    onMouseOver={indicateAssistMe}
+                    onFocus={indicateAssistMe}
+                    onBlur={clearIndication}
+                    major
+                />
 
-            <Ping
-                from={202.5}
-                to={247.5}
-                label="Hold"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
-                onMouseOver={indicateHold}
-                onFocus={indicateHold}
-                onBlur={clearIndication}
-            />
+                <Ping
+                    from={202.5}
+                    to={247.5}
+                    label="Hold"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
+                    onMouseOver={indicateHold}
+                    onFocus={indicateHold}
+                    onBlur={clearIndication}
+                />
 
-            <Ping
-                from={247.5}
-                to={292.5}
-                label="Enemy Missing"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
-                onMouseOver={indicateEnemyMissing}
-                onFocus={indicateEnemyMissing}
-                onBlur={clearIndication}
-                major
-            />
+                <Ping
+                    from={247.5}
+                    to={292.5}
+                    label="Enemy Missing"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
+                    onMouseOver={indicateEnemyMissing}
+                    onFocus={indicateEnemyMissing}
+                    onBlur={clearIndication}
+                    major
+                />
 
-            <Ping
-                from={292.5}
-                to={337.5}
-                label="Bait"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
-                onMouseOver={indicateBait}
-                onFocus={indicateBait}
-                onBlur={clearIndication}
-            />
+                <Ping
+                    from={292.5}
+                    to={337.5}
+                    label="Bait"
+                    src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
+                    onMouseOver={indicateBait}
+                    onFocus={indicateBait}
+                    onBlur={clearIndication}
+                />
 
-            <Indicator x={mouseX} y={mouseY}>
-                {indicatorLabel}
-            </Indicator>
-        </CircleMenu>
+                <Indicator x={mouseX} y={mouseY}>
+                    {indicatorLabel}
+                </Indicator>
+            </CircleMenu>
+        </div>
     );
 }
 

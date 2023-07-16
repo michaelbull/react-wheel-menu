@@ -1,0 +1,93 @@
+.gta {
+  position: relative;
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gta-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-image: url('https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/7772/5b063d8c17dd9394e2be4d36b500f9c7d8661096.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  filter: blur(6px);
+}
+
+.gta-bg::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  content: '';
+
+  background-color: hsla(0, 0%, 0%, 0.4);
+}
+
+.gta-menu {
+  width: 600px;
+  height: 600px;
+
+  border-radius: 0;
+  clip-path: none;
+}
+
+.gta-menu__center {
+  width: 54%;
+  height: 54%;
+  border-radius: 50%;
+
+  user-select: none;
+
+  z-index: 1;
+}
+
+.gta-weapon__button {
+  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(0, 0%, 20%, 0.6) 19%, hsla(0, 0%, 20%, 0.6) 30.5%, hsla(0, 0%, 10%, 0.8) 30.5%, hsla(0, 0%, 10%, 0.8) 31%, transparent 31%);
+}
+
+.gta-weapon:hover .gta-weapon__button,
+.gta-weapon:focus .gta-weapon__button {
+  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(230, 60%, 40%, 0.6) 19%, hsla(230, 60%, 40%, 0.6) 30.5%, hsla(0, 0%, 10%, 0.8) 30.5%, hsla(0, 0%, 10%, 0.8) 31%, transparent 31%);
+}
+
+.gta-weapon:active .gta-weapon__button {
+  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(230, 60%, 40%, 0.6) 19%, hsla(230, 60%, 40%, 0.6) 30.5%, hsla(230, 80%, 20%, 0.6) 30.5%, hsla(230, 80%, 20%, 0.6) 31.5%, transparent 31.5%);
+}
+
+.gta-weapon__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.gta-weapon__icon {
+  width: auto;
+  height: 46px;
+}
+
+.gta-weapon-ammo {
+  flex-basis: 1em;
+  margin-top: 0.25em;
+
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  color: white;
+  text-shadow: 0 0 1px transparent, 1px 2px 2px hsla(0, 0%, 0%, 0.8);
+}
+
+.gta-weapon-ammo__reserve {
+  color: hsl(0, 0%, 60%);
+}

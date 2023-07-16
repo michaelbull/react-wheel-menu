@@ -11,7 +11,7 @@ import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import './OwCommunicationMenu.css';
+import './Overwatch.css';
 
 const meta: Meta = {
     title: 'Examples',

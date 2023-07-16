@@ -13,23 +13,23 @@ import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import './CsGoBuyMenu.css';
+import './CounterStrike.css';
 
 const meta: Meta = {
     title: 'Examples',
     parameters: {
-        layout: 'centered'
+        layout: 'fullscreen'
     }
 };
 
 export default meta;
 
-export const CsGoBuyMenuStory: StoryObj = {
-    name: 'CS:GO Buy Menu',
-    render: () => <CsGoBuyMenu />
+export const CounterStrikeStory: StoryObj = {
+    name: 'Counter-Strike',
+    render: () => <CounterStrike />
 };
 
-function CsGoBuyMenu() {
+function CounterStrike() {
     const [submenu, setSubMenu] = useState<ReactNode>(null);
 
     function onReset() {
@@ -37,10 +37,12 @@ function CsGoBuyMenu() {
     }
 
     return (
-        <CircleMenu as="ol" className="csgo-buy-menu">
-            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
-            <TeamImage />
-        </CircleMenu>
+        <div className="cs-background">
+            <CircleMenu as="ol" className="cs-menu">
+                {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
+                <TeamImage />
+            </CircleMenu>
+        </div>
     );
 }
 
@@ -272,7 +274,7 @@ function GrenadesMenu(props: SubMenuProps) {
 function TeamImage() {
     return (
         <img
-            className="csgo-buy-menu__team"
+            className="cs-menu__team"
             src="https://static.wikia.nocookie.net/cswikia/images/e/e0/Icon-t-patch-small.png"
             alt="CT"
             referrerPolicy="no-referrer"
@@ -299,19 +301,19 @@ function Item(props: ItemProps) {
 
     return (
         <Slice as="li" className="csgo-item" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <Layout as="button" className="csgo-item__button" justify="start" {...rest}>
-                <Label className="csgo-item__hotkey" offset={-60} aria-hidden>
+            <Layout as="button" className="cs-item__button" justify="start" {...rest}>
+                <Label className="cs-item__hotkey" offset={-60} aria-hidden>
                     {hotkey}
                 </Label>
 
-                <Label className="csgo-item__details" offset={-140}>
-                    <span className="csgo-item-details">
-                        <span className="csgo-item-details__name">
+                <Label className="cs-item__details" offset={-140}>
+                    <span className="cs-item-details">
+                        <span className="cs-item-details__name">
                             {children}
                         </span>
 
                         {price &&
-                            <span className="csgo-item-details__price">
+                            <span className="cs-item-details__price">
                                 ${price}
                             </span>
                         }
