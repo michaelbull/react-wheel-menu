@@ -1,6 +1,9 @@
 .gta-weapon-menu {
   width: 600px;
   height: 600px;
+
+  border-radius: 0;
+  clip-path: none;
 }
 
 .gta-weapon-menu__center {
@@ -14,12 +17,12 @@
 }
 
 .gta-weapon__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 36%, hsl(0, 0%, 76%) 36%, hsl(0, 0%, 76%) 58%, hsl(0, 0%, 70%) 58%, hsl(0, 0%, 70%) 60%, transparent 61%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsl(0, 0%, 76%) 19%, hsl(0, 0%, 76%) 30%, hsl(0, 0%, 70%) 30%, hsl(0, 0%, 70%) 31%, transparent 31.5%);
 }
 
 .gta-weapon:hover .gta-weapon__button,
 .gta-weapon:focus .gta-weapon__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 36%, hsl(100, 70%, 76%) 36%, hsl(100, 70%, 76%) 58%, hsl(100, 70%, 70%) 58%, hsl(100, 70%, 70%) 60%, transparent 61%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsl(100, 70%, 76%) 19%, hsl(100, 70%, 76%) 30%, hsl(100, 70%, 70%) 30%, hsl(100, 70%, 70%) 31%, transparent 31.5%);
 }
 
 .gta-weapon__label {

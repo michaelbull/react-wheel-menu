@@ -6,21 +6,21 @@
 }
 
 .lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 95%) 56%, transparent 56%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(0, 0%, 40%) 13.5%, hsl(0, 0%, 95%) 28%, transparent 28%);
 }
 
 .lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 100%) 74%, transparent 74%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(0, 0%, 40%) 13.5%, hsl(0, 0%, 100%) 38%, transparent 38%);
 }
 
 .lol-ping:hover .lol-ping__button,
 .lol-ping:focus .lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 40%) 28%, hsl(180, 70%, 95%) 56%, transparent 56%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(180, 70%, 40%) 13.5%, hsl(180, 70%, 95%) 28%, transparent 28%);
 }
 
 .lol-ping:hover .lol-ping__button--major,
 .lol-ping:focus .lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 50%) 28%, hsl(180, 70%, 100%) 74%, transparent 74%);
+  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsl(180, 70%, 50%) 13.5%, hsl(180, 70%, 100%) 38%, transparent 38%);
 }
 
 .lol-ping__icon {

@@ -152,18 +152,20 @@ interface PrizeProps {
 
 function Prize(props: PropsWithChildren<PrizeProps>) {
     const {
-        from,
-        to,
         fontSize = '3rem',
         color = 'black',
         backgroundColor = 'white',
         price = false,
-        children
+        children,
+        ...rest
     } = props;
 
+    const style: CSSProperties = {
+        backgroundColor
+    };
+
     return (
-        <Slice as="button" className="wheel-of-fortune__prize " style={{ backgroundColor }} from={from} to={to}
-               gapBefore={1} gapAfter={1}>
+        <Slice as="button" className="wheel-of-fortune__prize " style={style} gapBefore={1} gapAfter={1} {...rest}>
             <Layout justify="end" direction="vertical">
                 <Label orient="inwards" justify="center" offset={10}>
                     <span className="wheel-of-fortune__label" style={{ color, fontSize }}>
@@ -171,7 +173,7 @@ function Prize(props: PropsWithChildren<PrizeProps>) {
                             <span className="wheel-of-fortune__price">$</span>
                         }
 
-                        <span>{children}</span>
+                        {children}
                     </span>
                 </Label>
             </Layout>

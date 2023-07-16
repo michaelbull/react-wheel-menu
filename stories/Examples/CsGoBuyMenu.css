@@ -3,7 +3,7 @@
   height: 600px;
 
   border: 6px solid hsl(0, 0%, 50%);
-  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 0%) 60%);
+  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 0, hsl(0, 0%, 0%) 240px);
 }
 
 .csgo-buy-menu__team {
@@ -20,13 +20,13 @@
   z-index: 1;
 }
 
-.csgo-item {
+.csgo-item__button {
   background-color: black;
 }
 
-.csgo-item:hover,
-.csgo-item:focus {
-  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 10%, hsl(0, 0%, 0%) 100%);
+.csgo-item__button:hover,
+.csgo-item__button:focus {
+  background-image: radial-gradient(circle, hsl(0, 0%, 50%) 60px, hsl(0, 0%, 0%) 300px);
 }
 
 .csgo-item__hotkey {
@@ -41,7 +41,7 @@
 
 .csgo-item-details {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 
   width: 150px;
 }

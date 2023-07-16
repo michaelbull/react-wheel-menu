@@ -298,23 +298,23 @@ function Item(props: ItemProps) {
     } = props;
 
     return (
-        <Slice as="li" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <Layout as="button" className="csgo-item" justify="start" {...rest}>
-                <Label className="csgo-item__hotkey" offset={-60}>
+        <Slice as="li" className="csgo-item" from={from} to={to} gapBefore={2} gapAfter={2}>
+            <Layout as="button" className="csgo-item__button" justify="start" {...rest}>
+                <Label className="csgo-item__hotkey" offset={-60} aria-hidden>
                     {hotkey}
                 </Label>
 
                 <Label className="csgo-item__details" offset={-140}>
                     <span className="csgo-item-details">
+                        <span className="csgo-item-details__name">
+                            {children}
+                        </span>
+
                         {price &&
                             <span className="csgo-item-details__price">
                                 ${price}
                             </span>
                         }
-
-                        <span className="csgo-item-details__name">
-                            {children}
-                        </span>
                     </span>
                 </Label>
             </Layout>
