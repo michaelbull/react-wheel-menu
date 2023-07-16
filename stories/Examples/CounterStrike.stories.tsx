@@ -26,10 +26,17 @@ export default meta;
 
 export const CounterStrikeStory: StoryObj = {
     name: 'Counter-Strike',
-    render: () => <CounterStrike />
+    render: () => {
+        return (
+            <div className="cs">
+                <div className="cs-background" />
+                <Menu />
+            </div>
+        );
+    }
 };
 
-function CounterStrike() {
+function Menu() {
     const [submenu, setSubMenu] = useState<ReactNode>(null);
 
     function onReset() {
@@ -37,12 +44,10 @@ function CounterStrike() {
     }
 
     return (
-        <div className="cs-background">
-            <CircleMenu as="ol" className="cs-menu">
-                {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
-                <TeamImage />
-            </CircleMenu>
-        </div>
+        <CircleMenu as="ol" className="cs-menu">
+            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
+            <TeamImage />
+        </CircleMenu>
     );
 }
 

@@ -13,7 +13,7 @@ import { useSpokeStyle } from '../hooks';
 
 export type SpokeProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
-    readonly at: Angle;
+    readonly angle: Angle;
     readonly offset?: Offset;
 };
 
@@ -22,7 +22,7 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         as: Component = 'span',
         className: classNameProp,
         style: styleProp,
-        at,
+        angle,
         offset = DEFAULT_OFFSET,
         ...rest
     } = props;
@@ -33,7 +33,7 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
     );
 
     const spokeStyle = useSpokeStyle({
-        at,
+        angle,
         offset
     });
 

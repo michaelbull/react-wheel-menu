@@ -1,6 +1,4 @@
 .gta {
-  position: relative;
-
   height: 100vh;
 
   display: flex;
@@ -8,7 +6,7 @@
   align-items: center;
 }
 
-.gta-bg {
+.gta-background {
   position: absolute;
   top: 0;
   right: 0;
@@ -23,7 +21,7 @@
   filter: blur(6px);
 }
 
-.gta-bg::after {
+.gta-background::after {
   position: absolute;
   top: 0;
   right: 0;

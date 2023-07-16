@@ -25,75 +25,78 @@ export default meta;
 
 export const GrandTheftAutoStory: StoryObj = {
     name: 'Grand Theft Auto',
-    render: () => <GrandTheftAuto />
+    render: () => {
+        return (
+            <div className="gta">
+                <div className="gta-background" />
+                <Menu />
+            </div>
+        );
+    }
 };
 
-function GrandTheftAuto() {
+function Menu() {
     return (
-        <div className="gta">
-            <div className="gta-bg" />
+        <CircleMenu className="gta-menu">
+            <Weapon from={337.5} to={22.5} label="Pistol" ammo={88} reserve={12}>
+                <Icon
+                    src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
+                    alt="Pistol Icon"
+                />
+            </Weapon>
 
-            <CircleMenu className="gta-menu">
-                <Weapon from={337.5} to={22.5} label="Pistol" ammo={88} reserve={12}>
-                    <Icon
-                        src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
-                        alt="Pistol Icon"
-                    />
-                </Weapon>
+            <Weapon from={22.5} to={67.5} label="SMG" ammo={754} reserve={1}>
+                <Icon
+                    src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/SMG-GTAVPC-HUD.png"
+                    alt="SMG Icon"
+                />
+            </Weapon>
 
-                <Weapon from={22.5} to={67.5} label="SMG" ammo={754} reserve={1}>
-                    <Icon
-                        src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/SMG-GTAVPC-HUD.png"
-                        alt="SMG Icon"
-                    />
-                </Weapon>
+            <Weapon from={67.5} to={112.5} label="Rifle" ammo={34} reserve={60}>
+                <Icon
+                    src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7a/CarbineRifle-GTAVPC-HUD.png"
+                    alt="Rifle Icon"
+                />
+            </Weapon>
 
-                <Weapon from={67.5} to={112.5} label="Rifle" ammo={34} reserve={60}>
-                    <Icon
-                        src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7a/CarbineRifle-GTAVPC-HUD.png"
-                        alt="Rifle Icon"
-                    />
-                </Weapon>
+            <Weapon from={112.5} to={157.5} label="Sniper" ammo={1} reserve={11}>
+                <Icon
+                    src="https://static.wikia.nocookie.net/gtawiki/images/5/59/SniperRifle-GTAVPC-HUD.png"
+                    alt="Sniper Icon"
+                    style={{ marginLeft: 26, marginTop: -26 }}
+                />
+            </Weapon>
 
-                <Weapon from={112.5} to={157.5} label="Sniper" ammo={1} reserve={11}>
-                    <Icon
-                        src="https://static.wikia.nocookie.net/gtawiki/images/5/59/SniperRifle-GTAVPC-HUD.png"
-                        alt="Sniper Icon"
-                        style={{ marginLeft: 26, marginTop: -26 }}
-                    />
-                </Weapon>
+            <Weapon from={157.5} to={202.5} label="Fists">
+                <Icon
+                    src="https://vignette.wikia.nocookie.net/gtawiki/images/e/e0/Fist-GTAVPC-HUD.png"
+                    alt="Fists Icon"
+                />
+            </Weapon>
 
-                <Weapon from={157.5} to={202.5} label="Fists">
-                    <Icon
-                        src="https://vignette.wikia.nocookie.net/gtawiki/images/e/e0/Fist-GTAVPC-HUD.png"
-                        alt="Fists Icon"
-                    />
-                </Weapon>
+            <Weapon from={202.5} to={247.5} label="Shotgun" ammo={92} reserve={8}>
+                <Icon
+                    src="https://vignette.wikia.nocookie.net/gtawiki/images/b/b4/SawedoffShotgun-GTAVPC-HUD.png"
+                    alt="Shotgun Icon"
+                />
+            </Weapon>
 
-                <Weapon from={202.5} to={247.5} label="Shotgun" ammo={92} reserve={8}>
-                    <Icon
-                        src="https://vignette.wikia.nocookie.net/gtawiki/images/b/b4/SawedoffShotgun-GTAVPC-HUD.png"
-                        alt="Shotgun Icon"
-                    />
-                </Weapon>
+            <Weapon from={247.5} to={292.5} label="Minigun" ammo={77} reserve={100}>
+                <Icon
+                    src="https://vignette.wikia.nocookie.net/gtawiki/images/2/27/Minigun-GTAVPC-HUD.png"
+                    alt="Minigun Icon"
+                />
+            </Weapon>
 
-                <Weapon from={247.5} to={292.5} label="Minigun" ammo={77} reserve={100}>
-                    <Icon
-                        src="https://vignette.wikia.nocookie.net/gtawiki/images/2/27/Minigun-GTAVPC-HUD.png"
-                        alt="Minigun Icon"
-                    />
-                </Weapon>
+            <Weapon from={292.5} to={337.5} label="Grenade" ammo={6}>
+                <Icon
+                    src="https://static.wikia.nocookie.net/gtawiki/images/a/a6/Grenade-GTAVPC-HUD.png"
+                    alt="Grenade Icon"
+                />
+            </Weapon>
 
-                <Weapon from={292.5} to={337.5} label="Grenade" ammo={6}>
-                    <Icon
-                        src="https://static.wikia.nocookie.net/gtawiki/images/a/a6/Grenade-GTAVPC-HUD.png"
-                        alt="Grenade Icon"
-                    />
-                </Weapon>
-
-                <div className="gta-menu__center" />
-            </CircleMenu>
-        </div>
+            <div className="gta-menu__center" />
+        </CircleMenu>
     );
 }
 

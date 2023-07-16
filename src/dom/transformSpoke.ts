@@ -6,13 +6,13 @@ import {
 } from '../models';
 
 export function transformSpoke(
-    at: Degrees,
+    angle: Degrees,
     offset: Offset = DEFAULT_OFFSET
 ): CSS.Properties['transform'] {
-    const centreTranslation = `translate(-50%, 50%)`;
-    const rotation = `rotate(${at - 90}deg)`;
-    const offsetTranslation = `translateY(50%) translateY(${offsetWithUnit(offset)})`;
-    return `${centreTranslation} ${rotation} ${offsetTranslation}`;
+    const horizontalTranslation = `translateX(-50%)`;
+    const rotation = `rotate(${angle}deg)`;
+    const verticalTranslation = `translateY(${offsetWithUnit(offset)})`;
+    return `${horizontalTranslation} ${rotation} ${verticalTranslation}`;
 }
 
 function offsetWithUnit(offset: Offset, unit = 'px'): string {

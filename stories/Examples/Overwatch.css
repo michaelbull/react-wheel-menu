@@ -1,10 +1,18 @@
+.ow {
+  height: 100vh;
+}
+
 .ow-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   background-image: url('https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/bltdad361c29b29b03a/5cef227acf7aa6330ac66561/eichenwalde-screenshot-003.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  height: 100vh;
 }
 
 .ow-menu {
@@ -73,6 +81,7 @@
 
   font-size: 1rem;
   font-style: italic;
+  font-family: sans-serif;
   text-transform: uppercase;
 
   color: hsl(0, 0%, 20%);
@@ -83,6 +92,7 @@
 .ow-option__label {
   font-size: 1rem;
   font-weight: 700;
+  font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.05em;
   color: hsl(0, 0%, 80%);

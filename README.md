@@ -149,11 +149,11 @@ export function Example() {
 }
 ```
 
-## Usage
+## Components
 
-A `<CircleMenu>` is composed of one or more `<Slice>`s.
+### `<Slice>`
 
-Each `<Slice>` must specify the angle it starts `from` and spans `to`, such as:
+A `<Slice>` must specify the angle it starts `from` and spans `to`, such as:
 
 - A right-angled slice in [degrees][degree]:
   - `<Slice from={0} to={90} />`
@@ -166,18 +166,36 @@ Each `<Slice>` must specify the angle it starts `from` and spans `to`, such as:
 - An obtuse-angled slice in percentages:
   - `<Slice from="50%" to="85%" />`
 
+### `<Spoke>`
+
+A `<Spoke>` is a straight line radiating from the centre of the `<CircleMenu>`.
+
+Spokes can be used to visually split slices, for example:
+
+```tsx
+<CircleMenu style={{width: 300, height: 300 }}>
+    <Slice from="0deg" to="45deg" style={{ background: 'red' }} />
+    <Slice from="45deg" to="90deg" style={{ background: 'blue' }} />
+    <Spoke angle="45deg" style={{ background: 'white', height: '100px' }} />
+</CircleMenu>
+```
+
+### `<Layout>`
+
 The `<Layout>` of a slice determines how the `<Label>`s inside of it are laid
 out.
 
 In the `<Layout>` below, the `<Label>` is positioned at the edge of the slice
-with the the text facing inwards to the center of the circle.
+with the text facing inwards to the center of the circle.
 
 ```tsx
-<Slice from={0} to={90}>
-    <Layout direction="vertical" justify="end">
-        <Label orient="inwards">Inwards Label</Label>
-    </Layout>
-</Slice>
+<CircleMenu style={{width: 300, height: 300 }}>
+    <Slice from={0} to={90}>
+        <Layout direction="vertical" justify="end">
+            <Label orient="inwards">Inwards Label</Label>
+        </Layout>
+    </Slice>
+</CircleMenu>
 ```
 
 ## Contributing

@@ -1,5 +1,6 @@
 .circle-menu,
 .circle-menu-slice,
+.circle-menu-spoke,
 .circle-menu-layout,
 .circle-menu-label {
   box-sizing: border-box;
@@ -7,13 +8,6 @@
   margin: 0;
   padding: 0;
   border: 0;
-}
-
-.circle-menu,
-.circle-menu-slice,
-.circle-menu-layout {
-  width: 100%;
-  height: 100%;
 
   background: none;
   appearance: none;
@@ -26,19 +20,27 @@
 
   line-height: normal;
   text-align: center;
-
-  overflow: hidden;
-  overflow: clip;
 }
 
 .circle-menu:focus,
 .circle-menu-slice:focus,
-.circle-menu-layout:focus {
+.circle-menu-spoke:focus,
+.circle-menu-layout:focus,
+.circle-menu-label:focus {
   outline: none;
+}
+
+.circle-menu,
+.circle-menu-slice {
+  overflow: hidden;
+  overflow: clip;
 }
 
 .circle-menu {
   position: relative;
+
+  width: 100%;
+  height: 100%;
 
   display: flex;
   justify-content: center;
@@ -68,6 +70,8 @@
 
   width: 2px;
   height: 100%;
+
+  transform-origin: bottom;
 }
 
 .circle-menu-layout {
@@ -77,10 +81,13 @@
   bottom: 0;
   left: 0;
 
-  transform-origin: bottom;
-
   padding-top: 25%;
   padding-bottom: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: bottom;
 
   display: flex;
   align-items: center;

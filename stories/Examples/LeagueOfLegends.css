@@ -1,14 +1,22 @@
-.lol-bg {
-  background-image: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd15eac8e2b0de8c5/5db0d3810b39e86c2f83df8d/Preseason_Gameplay_Reveal_Header.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
+.lol {
   height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.lol-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-image: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd15eac8e2b0de8c5/5db0d3810b39e86c2f83df8d/Preseason_Gameplay_Reveal_Header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .lol-menu {

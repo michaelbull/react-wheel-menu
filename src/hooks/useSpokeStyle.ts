@@ -11,20 +11,20 @@ import {
 } from '../math';
 
 export interface UseSpokeStyleProps {
-    readonly at: Angle;
+    readonly angle: Angle;
     readonly offset?: Offset;
 }
 
 export function useSpokeStyle(props: UseSpokeStyleProps): CSSProperties {
     const {
-        at: atProp,
+        angle: atProp,
         offset = DEFAULT_OFFSET
     } = props;
 
-    const atDeg = angleToDegrees(atProp);
-    const at = modulo(atDeg, 360);
+    const angleDeg = angleToDegrees(atProp);
+    const angle = modulo(angleDeg, 360);
 
     return {
-        transform: transformSpoke(at, offset)
+        transform: transformSpoke(angle, offset)
     };
 }
