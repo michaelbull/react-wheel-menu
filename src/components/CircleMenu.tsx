@@ -15,7 +15,10 @@ export function CircleMenu<T extends ElementType = 'div'>(props: CircleMenuProps
         ...rest
     } = props;
 
-    const className = clsx('circle-menu', classNameProp);
+    const className = clsx(
+        'circle-menu',
+        classNameProp
+    );
 
     return <Component
         className={className}

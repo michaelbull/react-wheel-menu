@@ -1,37 +1,44 @@
 import {
-    ComponentProps,
+    ComponentPropsWithoutRef,
     CSSProperties,
-    PropsWithChildren
+    ElementType
 } from 'react';
 import { useLabelStyle } from '../hooks';
 import clsx from 'clsx';
 import {
+    DEFAULT_JUSTIFICATION,
+    DEFAULT_ORIENTATION,
     Justification,
     Offset,
     Orientation
 } from '../models';
 
-export interface LabelProps extends ComponentProps<'span'> {
+export type LabelProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
+    readonly as?: T;
     readonly orient?: Orientation;
     readonly justify?: Justification;
     readonly offset?: Offset;
 }
 
-export function Label(props: PropsWithChildren<LabelProps>) {
+export function Label<T extends ElementType = 'span'>(props: LabelProps<T>) {
     const {
+        as: Component = 'span',
         className: classNameProp,
         style: styleProp,
-        orient,
-        justify,
+        orient = DEFAULT_ORIENTATION,
+        justify = DEFAULT_JUSTIFICATION,
         offset,
         ...rest
     } = props;
 
-    const className = clsx('circle-menu-label', classNameProp);
+    const className = clsx(
+        'circle-menu-label',
+        `circle-menu-label--${justify}`,
+        classNameProp
+    );
 
     const labelStyle = useLabelStyle({
         orient,
-        justify,
         offset
     });
 
@@ -40,7 +47,7 @@ export function Label(props: PropsWithChildren<LabelProps>) {
         ...styleProp
     };
 
-    return <span
+    return <Component
         className={className}
         style={style}
         {...rest}

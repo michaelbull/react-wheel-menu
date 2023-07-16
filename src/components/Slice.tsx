@@ -34,7 +34,10 @@ export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
         ...rest
     } = props;
 
-    const className = clsx('circle-menu-slice', classNameProp);
+    const className = clsx(
+        'circle-menu-slice',
+        classNameProp
+    );
 
     const {
         state,

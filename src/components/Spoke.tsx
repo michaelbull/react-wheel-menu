@@ -27,7 +27,10 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         ...rest
     } = props;
 
-    const className = clsx('circle-menu-spoke', classNameProp);
+    const className = clsx(
+        'circle-menu-spoke',
+        classNameProp
+    );
 
     const spokeStyle = useSpokeStyle({
         at,

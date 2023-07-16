@@ -6,6 +6,8 @@ import {
 import { useLayoutStyle } from '../hooks';
 import clsx from 'clsx';
 import {
+    DEFAULT_DIRECTION,
+    DEFAULT_JUSTIFICATION,
     Direction,
     Justification
 } from '../models';
@@ -21,20 +23,22 @@ export function Layout<T extends ElementType = 'span'>(props: LayoutProps<T>) {
         as: Component = 'span',
         className: classNameProp,
         style: styleProp,
-        direction,
-        justify,
+        direction = DEFAULT_DIRECTION,
+        justify = DEFAULT_JUSTIFICATION,
         ...rest
     } = props;
 
-    const className = clsx('circle-menu-layout', classNameProp);
+    const className = clsx(
+        'circle-menu-layout',
+        `circle-menu-layout--${direction}`,
+        `circle-menu-layout--${justify}`,
+        classNameProp
+    );
 
-    const itemStyle = useLayoutStyle({
-        direction,
-        justify
-    });
+    const layoutStyle = useLayoutStyle();
 
     const style: CSSProperties = {
-        ...itemStyle,
+        ...layoutStyle,
         ...styleProp
     };
 
