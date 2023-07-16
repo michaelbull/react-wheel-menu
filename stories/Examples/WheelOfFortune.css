@@ -6,12 +6,23 @@
   border: 1px solid black;
 }
 
-.wheel-of-fortune__button:hover,
-.wheel-of-fortune__button:focus {
+.wheel-of-fortune__prize:hover::after,
+.wheel-of-fortune__prize:focus::after,
+.wheel-of-fortune__prize:active::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+}
+
+.wheel-of-fortune__prize:hover::after,
+.wheel-of-fortune__prize:focus::after {
   background-color: hsla(0, 0%, 0%, 0.12);
 }
 
-.wheel-of-fortune__button:active {
+.wheel-of-fortune__prize:active::after {
   background-color: hsla(0, 0%, 0%, 0.24);
 }
 

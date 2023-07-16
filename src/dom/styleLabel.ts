@@ -6,7 +6,7 @@ import {
 } from '../models';
 import * as CSS from 'csstype';
 
-export function orientLabel(
+export function styleLabel(
     orientation: Orientation = DEFAULT_ORIENTATION,
     justification: Justification = DEFAULT_JUSTIFICATION
 ): CSS.Properties {

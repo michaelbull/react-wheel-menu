@@ -1,15 +1,19 @@
 import { CSSProperties } from 'react';
 import {
+    Angle,
     DEFAULT_GAP,
     Gap,
     SliceState
 } from '../models';
-import { modulo } from '../math';
+import {
+    angleToDegrees,
+    modulo
+} from '../math';
 import { transformSlice } from '../dom';
 
 export interface UseSliceProps {
-    readonly from: number;
-    readonly to: number;
+    readonly from: Angle;
+    readonly to: Angle;
     readonly gapBefore?: Gap;
     readonly gapAfter?: Gap;
 }
@@ -27,9 +31,12 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
         gapAfter = DEFAULT_GAP
     } = props;
 
-    const from = modulo(fromProp, 360);
-    const to = modulo(toProp, 360);
-    const delta = modulo(toProp - fromProp, 360);
+    const fromDeg = angleToDegrees(fromProp);
+    const toDeg = angleToDegrees(toProp);
+
+    const from = modulo(fromDeg, 360);
+    const to = modulo(toDeg, 360);
+    const delta = modulo(toDeg - fromDeg, 360);
     const angle = Math.min(150, delta);
 
     const state: SliceState = {

@@ -3,10 +3,10 @@ import React, {
     PropsWithChildren
 } from 'react';
 import {
-    Button,
     CircleMenu,
     Label,
-    Slice as CircleMenuSlice
+    Layout,
+    Slice
 } from '../../src';
 import {
     Meta,
@@ -31,34 +31,34 @@ export const GtaWeaponMenuStory: StoryObj = {
 function GtaWeaponMenu() {
     return (
         <CircleMenu className="gta-weapon-menu">
-            <Slice from={337.5} to={22.5}>
+            <Weapon from={337.5} to={22.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
                     alt="Pistol"
                 />
 
                 <Ammo current={88} reserve={12} />
-            </Slice>
+            </Weapon>
 
-            <Slice from={22.5} to={67.5}>
+            <Weapon from={22.5} to={67.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/SMG-GTAVPC-HUD.png"
                     alt="SMG"
                 />
 
                 <Ammo current={754} reserve={1} />
-            </Slice>
+            </Weapon>
 
-            <Slice from={67.5} to={112.5}>
+            <Weapon from={67.5} to={112.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7a/CarbineRifle-GTAVPC-HUD.png"
                     alt="Rifle"
                 />
 
                 <Ammo current={34} reserve={60} />
-            </Slice>
+            </Weapon>
 
-            <Slice from={112.5} to={157.5}>
+            <Weapon from={112.5} to={157.5}>
                 <Icon
                     src="https://static.wikia.nocookie.net/gtawiki/images/5/59/SniperRifle-GTAVPC-HUD.png"
                     alt="Sniper"
@@ -66,53 +66,53 @@ function GtaWeaponMenu() {
                 />
 
                 <Ammo current={1} reserve={11} />
-            </Slice>
+            </Weapon>
 
-            <Slice from={157.5} to={202.5}>
+            <Weapon from={157.5} to={202.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/e/e0/Fist-GTAVPC-HUD.png"
                     alt="Fists"
                 />
-            </Slice>
+            </Weapon>
 
-            <Slice from={202.5} to={247.5}>
+            <Weapon from={202.5} to={247.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/b/b4/SawedoffShotgun-GTAVPC-HUD.png"
                     alt="Shotgun"
                 />
 
                 <Ammo current={92} reserve={8} />
-            </Slice>
+            </Weapon>
 
-            <Slice from={247.5} to={292.5}>
+            <Weapon from={247.5} to={292.5}>
                 <Icon
                     src="https://vignette.wikia.nocookie.net/gtawiki/images/2/27/Minigun-GTAVPC-HUD.png"
                     alt="Minigun"
                 />
 
                 <Ammo current={77} reserve={100} />
-            </Slice>
+            </Weapon>
 
-            <Slice from={292.5} to={337.5}>
+            <Weapon from={292.5} to={337.5}>
                 <Icon
                     src="https://static.wikia.nocookie.net/gtawiki/images/a/a6/Grenade-GTAVPC-HUD.png"
                     alt="Grenade"
                 />
 
                 <Ammo current={6} />
-            </Slice>
+            </Weapon>
 
             <div className="gta-weapon-menu__center" />
         </CircleMenu>
     );
 }
 
-interface SliceProps {
+interface WeaponProps {
     readonly from: number;
     readonly to: number;
 }
 
-function Slice(props: PropsWithChildren<SliceProps>) {
+function Weapon(props: PropsWithChildren<WeaponProps>) {
     const {
         from,
         to,
@@ -120,13 +120,13 @@ function Slice(props: PropsWithChildren<SliceProps>) {
     } = props;
 
     return (
-        <CircleMenuSlice className="gta-weapon-menu__slice" from={from} to={to} gapBefore={4} gapAfter={4}>
-            <Button className="gta-weapon-menu__button" justify="end">
-                <Label className="gta-weapon-menu__label" offset={70}>
+        <Slice as="button" className="gta-weapon" from={from} to={to} gapBefore={4} gapAfter={4}>
+            <Layout className="gta-weapon__button" justify="end">
+                <Label className="gta-weapon__label" offset={70}>
                     {children}
                 </Label>
-            </Button>
-        </CircleMenuSlice>
+            </Layout>
+        </Slice>
     );
 }
 
@@ -134,7 +134,7 @@ function Icon(props: ComponentProps<'img'>) {
     return (
         <span>
             <img
-                className="gta-weapon-menu__icon"
+                className="gta-weapon__icon"
                 referrerPolicy="no-referrer"
                 {...props}
             />
@@ -151,13 +151,13 @@ function Ammo(props: AmmoProps) {
     const { current, reserve } = props;
 
     return (
-        <span className="gta-weapon-menu-ammo">
+        <span className="gta-weapon-ammo">
             <span className="gta-weapon-menu-ammo__current">
                 {current}
             </span>
 
             {reserve &&
-                <span className="gta-weapon-menu-ammo__reserve">
+                <span className="gta-weapon-ammo__reserve">
                     &nbsp;/{reserve}
                 </span>
             }

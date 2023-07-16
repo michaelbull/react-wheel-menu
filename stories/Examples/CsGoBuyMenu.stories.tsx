@@ -1,12 +1,12 @@
 import React, {
+    ComponentProps,
     ReactNode,
     useState
 } from 'react';
 import {
-    Button as CircleMenuButton,
-    ButtonProps as CircleMenuButtonProps,
     CircleMenu,
     Label,
+    Layout,
     Slice
 } from '../../src';
 import {
@@ -37,7 +37,7 @@ function CsGoBuyMenu() {
     }
 
     return (
-        <CircleMenu className="csgo-buy-menu">
+        <CircleMenu as="ol" className="csgo-buy-menu">
             {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
             <TeamImage />
         </CircleMenu>
@@ -54,29 +54,29 @@ function RootMenu(props: RootMenuProps) {
 
     return (
         <>
-            <Button from={300} to={0} hotkey={1} onClick={() => onChoose(<PistolsMenu onReset={onReset} />)}>
+            <Item from={300} to={0} hotkey={1} onClick={() => onChoose(<PistolsMenu onReset={onReset} />)}>
                 PISTOLS
-            </Button>
+            </Item>
 
-            <Button from={0} to={60} hotkey={2} onClick={() => onChoose(<HeavyMenu onReset={onReset} />)}>
+            <Item from={0} to={60} hotkey={2} onClick={() => onChoose(<HeavyMenu onReset={onReset} />)}>
                 HEAVY
-            </Button>
+            </Item>
 
-            <Button from={60} to={120} hotkey={3} onClick={() => onChoose(<SmgsMenu onReset={onReset} />)}>
+            <Item from={60} to={120} hotkey={3} onClick={() => onChoose(<SmgsMenu onReset={onReset} />)}>
                 SMGs
-            </Button>
+            </Item>
 
-            <Button from={120} to={180} hotkey={4} onClick={() => onChoose(<RiflesMenu onReset={onReset} />)}>
+            <Item from={120} to={180} hotkey={4} onClick={() => onChoose(<RiflesMenu onReset={onReset} />)}>
                 RIFLES
-            </Button>
+            </Item>
 
-            <Button from={180} to={240} hotkey={5} onClick={() => onChoose(<GearMenu onReset={onReset} />)}>
+            <Item from={180} to={240} hotkey={5} onClick={() => onChoose(<GearMenu onReset={onReset} />)}>
                 GEAR
-            </Button>
+            </Item>
 
-            <Button from={240} to={300} hotkey={6} onClick={() => onChoose(<GrenadesMenu onReset={onReset} />)}>
+            <Item from={240} to={300} hotkey={6} onClick={() => onChoose(<GrenadesMenu onReset={onReset} />)}>
                 GRENADES
-            </Button>
+            </Item>
         </>
     );
 }
@@ -90,29 +90,29 @@ function PistolsMenu(props: SubMenuProps) {
 
     return (
         <>
-            <Button from={300} to={360} hotkey={1} onClick={onReset} price={200}>
+            <Item from={300} to={360} hotkey={1} onClick={onReset} price={200}>
                 Glock-18
-            </Button>
+            </Item>
 
-            <Button from={0} to={60} hotkey={2} onClick={onReset} price={500}>
+            <Item from={0} to={60} hotkey={2} onClick={onReset} price={500}>
                 Dual Berettas
-            </Button>
+            </Item>
 
-            <Button from={60} to={120} hotkey={3} onClick={onReset} price={300}>
+            <Item from={60} to={120} hotkey={3} onClick={onReset} price={300}>
                 P250
-            </Button>
+            </Item>
 
-            <Button from={120} to={180} hotkey={4} onClick={onReset} price={500}>
+            <Item from={120} to={180} hotkey={4} onClick={onReset} price={500}>
                 CZ75-Auto
-            </Button>
+            </Item>
 
-            <Button from={180} to={240} hotkey={5} onClick={onReset} price={700}>
+            <Item from={180} to={240} hotkey={5} onClick={onReset} price={700}>
                 Desert Eagle
-            </Button>
+            </Item>
 
-            <Button from={240} to={300} hotkey={6}>
+            <Item from={240} to={300} hotkey={6}>
                 &nbsp;
-            </Button>
+            </Item>
         </>
     );
 }
@@ -122,29 +122,29 @@ function HeavyMenu(props: SubMenuProps) {
 
     return (
         <>
-            <Button from={300} to={360} hotkey={1} onClick={onReset} price={1200}>
+            <Item from={300} to={360} hotkey={1} onClick={onReset} price={1200}>
                 Nova
-            </Button>
+            </Item>
 
-            <Button from={0} to={60} hotkey={2} onClick={onReset} price={2000}>
+            <Item from={0} to={60} hotkey={2} onClick={onReset} price={2000}>
                 XM1014
-            </Button>
+            </Item>
 
-            <Button from={60} to={120} hotkey={3} onClick={onReset} price={1200}>
+            <Item from={60} to={120} hotkey={3} onClick={onReset} price={1200}>
                 Sawed-Off
-            </Button>
+            </Item>
 
-            <Button from={120} to={180} hotkey={4} onClick={onReset} price={5200}>
+            <Item from={120} to={180} hotkey={4} onClick={onReset} price={5200}>
                 M249
-            </Button>
+            </Item>
 
-            <Button from={180} to={240} hotkey={5} onClick={onReset} price={5700}>
+            <Item from={180} to={240} hotkey={5} onClick={onReset} price={5700}>
                 Negev
-            </Button>
+            </Item>
 
-            <Button from={240} to={300} hotkey={6}>
+            <Item from={240} to={300} hotkey={6}>
                 &nbsp;
-            </Button>
+            </Item>
         </>
     );
 }
@@ -154,29 +154,29 @@ function SmgsMenu(props: SubMenuProps) {
 
     return (
         <>
-            <Button from={300} to={360} hotkey={1} onClick={onReset} price={1050}>
+            <Item from={300} to={360} hotkey={1} onClick={onReset} price={1050}>
                 MAC-10
-            </Button>
+            </Item>
 
-            <Button from={0} to={60} hotkey={2} onClick={onReset} price={1700}>
+            <Item from={0} to={60} hotkey={2} onClick={onReset} price={1700}>
                 MP7
-            </Button>
+            </Item>
 
-            <Button from={60} to={120} hotkey={3} onClick={onReset} price={1200}>
+            <Item from={60} to={120} hotkey={3} onClick={onReset} price={1200}>
                 UMP-45
-            </Button>
+            </Item>
 
-            <Button from={120} to={180} hotkey={4} onClick={onReset} price={2350}>
+            <Item from={120} to={180} hotkey={4} onClick={onReset} price={2350}>
                 P90
-            </Button>
+            </Item>
 
-            <Button from={180} to={240} hotkey={5} onClick={onReset} price={1400}>
+            <Item from={180} to={240} hotkey={5} onClick={onReset} price={1400}>
                 PP-Bizon
-            </Button>
+            </Item>
 
-            <Button from={240} to={300} hotkey={6}>
+            <Item from={240} to={300} hotkey={6}>
                 &nbsp;
-            </Button>
+            </Item>
         </>
     );
 }
@@ -186,29 +186,29 @@ function RiflesMenu(props: SubMenuProps) {
 
     return (
         <>
-            <Button from={300} to={360} hotkey={1} onClick={onReset} price={2000}>
+            <Item from={300} to={360} hotkey={1} onClick={onReset} price={2000}>
                 Galil AR
-            </Button>
+            </Item>
 
-            <Button from={0} to={60} hotkey={2} onClick={onReset} price={2700}>
+            <Item from={0} to={60} hotkey={2} onClick={onReset} price={2700}>
                 AK-47
-            </Button>
+            </Item>
 
-            <Button from={60} to={120} hotkey={3} onClick={onReset} price={1700}>
+            <Item from={60} to={120} hotkey={3} onClick={onReset} price={1700}>
                 SSG 08
-            </Button>
+            </Item>
 
-            <Button from={120} to={180} hotkey={4} onClick={onReset} price={3000}>
+            <Item from={120} to={180} hotkey={4} onClick={onReset} price={3000}>
                 SG 553
-            </Button>
+            </Item>
 
-            <Button from={180} to={240} hotkey={5} onClick={onReset} price={4750}>
+            <Item from={180} to={240} hotkey={5} onClick={onReset} price={4750}>
                 AWP
-            </Button>
+            </Item>
 
-            <Button from={240} to={300} hotkey={6} onClick={onReset} price={5000}>
+            <Item from={240} to={300} hotkey={6} onClick={onReset} price={5000}>
                 G3SG1
-            </Button>
+            </Item>
         </>
     );
 }
@@ -218,21 +218,21 @@ function GearMenu(props: SubMenuProps) {
 
     return (
         <>
-            <Button from={315} to={45} hotkey={1} onClick={onReset} price={650}>
+            <Item from={315} to={45} hotkey={1} onClick={onReset} price={650}>
                 Kevlar Vest
-            </Button>
+            </Item>
 
-            <Button from={45} to={135} hotkey={2} onClick={onReset} price={1000}>
+            <Item from={45} to={135} hotkey={2} onClick={onReset} price={1000}>
                 Kevlar + Helmet
-            </Button>
+            </Item>
 
-            <Button from={135} to={225} hotkey={3} onClick={onReset} price={400}>
+            <Item from={135} to={225} hotkey={3} onClick={onReset} price={400}>
                 Zeus x27
-            </Button>
+            </Item>
 
-            <Button from={225} to={315} hotkey={4} onClick={onReset} price={400}>
+            <Item from={225} to={315} hotkey={4} onClick={onReset} price={400}>
                 Defuse Kit
-            </Button>
+            </Item>
         </>
     );
 }
@@ -242,29 +242,29 @@ function GrenadesMenu(props: SubMenuProps) {
 
     return (
         <>
-            <Button from={300} to={360} hotkey={1} onClick={onReset} price={400}>
+            <Item from={300} to={360} hotkey={1} onClick={onReset} price={400}>
                 Molotov
-            </Button>
+            </Item>
 
-            <Button from={0} to={60} hotkey={2} onClick={onReset} price={50}>
+            <Item from={0} to={60} hotkey={2} onClick={onReset} price={50}>
                 Decoy Grenade
-            </Button>
+            </Item>
 
-            <Button from={60} to={120} hotkey={3} onClick={onReset} price={200}>
+            <Item from={60} to={120} hotkey={3} onClick={onReset} price={200}>
                 Flashbang
-            </Button>
+            </Item>
 
-            <Button from={120} to={180} hotkey={4} onClick={onReset} price={300}>
+            <Item from={120} to={180} hotkey={4} onClick={onReset} price={300}>
                 High Explosive Grenade
-            </Button>
+            </Item>
 
-            <Button from={180} to={240} hotkey={5} onClick={onReset} price={300}>
+            <Item from={180} to={240} hotkey={5} onClick={onReset} price={300}>
                 Smoke Grenade
-            </Button>
+            </Item>
 
-            <Button from={240} to={300} hotkey={6}>
+            <Item from={240} to={300} hotkey={6}>
                 &nbsp;
-            </Button>
+            </Item>
         </>
     );
 }
@@ -280,14 +280,14 @@ function TeamImage() {
     );
 }
 
-interface ButtonProps extends CircleMenuButtonProps {
+interface ItemProps extends ComponentProps<'button'> {
     readonly from: number;
     readonly to: number;
     readonly hotkey: number;
     readonly price?: number;
 }
 
-function Button(props: ButtonProps) {
+function Item(props: ItemProps) {
     const {
         from,
         to,
@@ -298,26 +298,26 @@ function Button(props: ButtonProps) {
     } = props;
 
     return (
-        <Slice className="csgo-buy-menu-slice" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <CircleMenuButton className="csgo-buy-menu-button" justify="start" {...rest}>
-                <Label className="csgo-buy-menu-button__hotkey" offset={-60}>
+        <Slice as="li" from={from} to={to} gapBefore={2} gapAfter={2}>
+            <Layout as="button" className="csgo-item" justify="start" {...rest}>
+                <Label className="csgo-item__hotkey" offset={-60}>
                     {hotkey}
                 </Label>
 
-                <Label className="csgo-buy-menu-button__item" offset={-140}>
-                    <span className="csgo-buy-menu-item">
+                <Label className="csgo-item__details" offset={-140}>
+                    <span className="csgo-item-details">
                         {price &&
-                            <span className="csgo-buy-menu-item__price">
+                            <span className="csgo-item-details__price">
                                 ${price}
                             </span>
                         }
 
-                        <span className="csgo-buy-menu-item__name">
+                        <span className="csgo-item-details__name">
                             {children}
                         </span>
                     </span>
                 </Label>
-            </CircleMenuButton>
+            </Layout>
         </Slice>
     );
 }

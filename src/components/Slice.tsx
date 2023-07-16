@@ -1,23 +1,29 @@
-import {
-    ComponentProps,
-    CSSProperties
+import React, {
+    ComponentPropsWithoutRef,
+    CSSProperties,
+    ElementType
 } from 'react';
 import {
     SliceStateContext,
     useSlice
 } from '../hooks';
 import clsx from 'clsx';
-import { Gap } from '../models';
+import {
+    Angle,
+    Gap
+} from '../models';
 
-export interface SliceProps extends ComponentProps<'div'> {
-    readonly from: number;
-    readonly to: number;
+export type SliceProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef<T> & {
+    readonly as?: T;
+    readonly from: Angle;
+    readonly to: Angle;
     readonly gapBefore?: Gap;
     readonly gapAfter?: Gap;
-}
+};
 
-export function Slice(props: SliceProps) {
+export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
     const {
+        as: Component = 'div',
         className: classNameProp,
         style: styleProp,
         from: fromProp,
@@ -46,10 +52,10 @@ export function Slice(props: SliceProps) {
     };
 
     return (
-        <div className={className} style={style} {...rest}>
+        <Component className={className} style={style} {...rest}>
             <SliceStateContext.Provider value={state}>
                 {children}
             </SliceStateContext.Provider>
-        </div>
+        </Component>
     );
 }

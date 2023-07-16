@@ -1,7 +1,9 @@
+import { Degrees } from './Angle';
+
 export interface SliceState {
-    readonly from: number;
-    readonly to: number;
-    readonly angle: number;
+    readonly from: Degrees;
+    readonly to: Degrees;
+    readonly angle: Degrees;
 }
 
 export const EmptySliceState: SliceState = {

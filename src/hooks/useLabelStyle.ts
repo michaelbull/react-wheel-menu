@@ -9,7 +9,7 @@ import {
     Orientation
 } from '../models';
 import {
-    orientLabel,
+    styleLabel,
     transformLabel
 } from '../dom';
 
@@ -29,7 +29,7 @@ export function useLabelStyle(props: UseLabelStyleProps): CSSProperties {
     const state = useSliceState();
 
     return {
-        ...orientLabel(orient, justify),
+        ...styleLabel(orient, justify),
         transform: transformLabel(state, orient, offset)
     };
 }

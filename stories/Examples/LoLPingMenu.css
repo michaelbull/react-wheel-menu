@@ -5,30 +5,30 @@
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 100%) 28%, hsl(41, 48%, 38%, 0%) 56%);
 }
 
-.lol-ping-menu__button {
+.lol-ping__button {
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 95%) 56%, transparent 56%);
 }
 
-.lol-ping-menu__button:hover,
-.lol-ping-menu__button:focus {
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 40%) 28%, hsl(180, 70%, 95%) 56%, transparent 56%);
-}
-
-.lol-ping-menu__button--major {
+.lol-ping__button--major {
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(0, 0%, 40%) 28%, hsl(0, 0%, 100%) 74%, transparent 74%);
 }
 
-.lol-ping-menu__button--major:hover,
-.lol-ping-menu__button--major:focus {
+.lol-ping:hover .lol-ping__button,
+.lol-ping:focus .lol-ping__button {
+  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 40%) 28%, hsl(180, 70%, 95%) 56%, transparent 56%);
+}
+
+.lol-ping:hover .lol-ping__button--major,
+.lol-ping:focus .lol-ping__button--major {
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsl(180, 70%, 50%) 28%, hsl(180, 70%, 100%) 74%, transparent 74%);
 }
 
-.lol-ping-menu__icon {
+.lol-ping__icon {
   width: 40px;
   height: 40px;
 }
 
-.lol-ping-menu-indicator {
+.lol-ping-indicator {
   width: 40%;
   height: 40%;
 
@@ -48,7 +48,18 @@
   z-index: 1;
 }
 
-.lol-ping-menu-arrow {
+.lol-ping-indicator__label {
+  color: white;
+
+  font-family: serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  text-shadow: 0 0 4px black;
+}
+
+.lol-ping-arrow {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -62,27 +73,16 @@
   height: 50px;
 }
 
-.lol-ping-menu-indicator__label {
-  color: white;
-
-  font-family: serif;
-  font-size: 1rem;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  text-shadow: 0 0 4px black;
-}
-
-.lol-ping-menu-arrow__bottom {
+.lol-ping-arrow__bottom {
   stroke: hsl(175, 90%, 39%);
   stroke-width: 1px;
 }
 
-.lol-ping-menu-arrow__top {
-  fill: hsl(41, 39%, 56%);
-  filter: drop-shadow(0 0 1px hsla(0, 0%, 0%, 0.4));
+.lol-ping-arrow__center {
+  fill: hsla(0, 0%, 0%, 65%);
 }
 
-.lol-ping-menu-arrow__center {
-  fill: hsla(0, 0%, 0%, 65%);
+.lol-ping-arrow__top {
+  fill: hsl(41, 39%, 56%);
+  filter: drop-shadow(0 0 1px hsla(0, 0%, 0%, 0.4));
 }

@@ -1,3 +1,42 @@
+.circle-menu,
+.circle-menu-slice,
+.circle-menu-layout,
+.circle-menu-label {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.circle-menu,
+.circle-menu-slice,
+.circle-menu-layout {
+  width: 100%;
+  height: 100%;
+
+  background: none;
+  appearance: none;
+  list-style: none;
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  line-height: normal;
+  text-align: center;
+
+  overflow: hidden;
+  overflow: clip;
+}
+
+.circle-menu:focus,
+.circle-menu-slice:focus,
+.circle-menu-layout:focus {
+  outline: none;
+}
+
 .circle-menu {
   position: relative;
 
@@ -5,19 +44,7 @@
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 100%;
-
-  margin: 0;
-  padding: 0;
-  border: 0;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
   border-radius: 50%;
-
-  overflow: clip;
   clip-path: circle(50%);
 }
 
@@ -26,57 +53,28 @@
   bottom: 50%;
   left: 50%;
 
-  width: 100%;
-  height: 100%;
-
-  margin: 0;
-  padding: 0;
-  border: 0;
-
-  box-sizing: border-box;
-  overflow: hidden;
-  overflow: clip;
   transform-origin: bottom left;
 }
 
-.circle-menu-item {
+.circle-menu-layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transform-origin: bottom;
+
+  padding-bottom: 50%;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  width: 100%;
-  height: 100%;
-
-  margin: 0;
-  padding: 0 0 50%;
-  border: 0;
-
-  font-size: 1rem;
-  line-height: normal;
-  text-align: center;
-
-  box-sizing: border-box;
-  transform-origin: bottom;
-}
-
-.circle-menu-item--button {
-  appearance: none;
-  background: none;
-}
-
-.circle-menu-item--anchor {
-  text-decoration: none;
+  flex-direction: column;
 }
 
 .circle-menu-label {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: 0;
-  padding: 0;
-  border: 0;
-
-  box-sizing: border-box;
 }

@@ -90,51 +90,94 @@ npm install --save react-circle-menu
   </tbody>
 </table>
 
-## Usage
+## Example
 
 ```tsx
 import {
-    Anchor,
-    Button,
     CircleMenu,
-    Item,
     Label,
+    Layout,
     Slice
 } from 'react-circle-menu';
 
 export function Example() {
-    function onClickBlue() {
-        console.log('Clicked blue');
+    const red: CSSProperties = { backgroundColor: 'red', color: 'white' };
+    const yellow: CSSProperties = { backgroundColor: 'yellow', color: 'black' };
+    const green: CSSProperties = { backgroundColor: 'green', color: 'white' };
+    const blue: CSSProperties = { backgroundColor: 'blue', color: 'white' };
+
+    function onClickBlue(event: MouseEvent<HTMLButtonElement>) {
+        console.log('Clicked blue', event);
     }
 
     return (
         <CircleMenu style={{ width: 300, height: 300 }}>
-            <Slice from={300} to={60}>
-                <Item style={{ backgroundColor: 'red' }}>
-                    <Label style={{ color: 'white' }}>
-                        Red
-                    </Label>
-                </Item>
+            <Slice from={315} to={45} style={red}>
+                <Layout>
+                    <Label>Red</Label>
+                </Layout>
             </Slice>
 
-            <Slice from={60} to={180}>
-                <Button style={{ backgroundColor: 'blue' }} onClick={onClickBlue}>
-                    <Label style={{ color: 'white' }}>
-                        Blue
-                    </Label>
-                </Button>
+            <Slice from="45deg" to="37.5%" style={yellow}>
+                <Layout direction="vertical" justify="start">
+                    <Label orient="outwards" offset={-30}>Start</Label>
+                </Layout>
+
+                <Layout direction="horizontal" justify="center">
+                    <Label orient="upwards" offset={-10}>Up</Label>
+                    <Label orient="downwards" offset={-10}>Down</Label>
+                </Layout>
+
+                <Layout direction="vertical" justify="end">
+                    <Label orient="inwards" offset={10}>End</Label>
+                </Layout>
             </Slice>
 
-            <Slice from={180} to={300}>
-                <Anchor style={{ backgroundColor: 'green' }} href="https://www.example.com" target="_blank">
-                    <Label style={{ color: 'white' }}>
-                        Green
-                    </Label>
-                </Anchor>
+            <Slice from="37.5%" to="3.92699rad" style={blue} as="button" onClick={onClickBlue}>
+                <Layout>
+                    <Label>Blue</Label>
+                </Layout>
+            </Slice>
+
+            <Slice from="3.92699rad" to="0.875turn" style={green} as="a" href="https://example.com" target="_blank">
+                <Layout>
+                    <Label>Green</Label>
+                </Layout>
             </Slice>
         </CircleMenu>
-    )
+    );
 }
+```
+
+## Usage
+
+A `<CircleMenu>` is composed of one or more `<Slice>`s.
+
+Each `<Slice>` must specify the angle it starts `from` and spans `to`, such as:
+
+- A right-angled slice in [degrees][degree]:
+  - `<Slice from={0} to={90} />`
+- An acute-angled slice in [radians][radian]:
+  - `<Slice from="1rad" to="2rad" />`
+- An obtuse-angled slice in [gradians][gradian]:
+  - `<Slice from="100grad" to="210grad" />`
+- A right-angled slice in [turns][turn]:
+  - `<Slice from="0.5turn" to="0.75turn" />`
+- An obtuse-angled slice in percentages:
+  - `<Slice from="50%" to="85%" />`
+
+The `<Layout>` of a slice determines how the `<Label>`s inside of it are laid
+out.
+
+In the `<Layout>` below, the `<Label>` is positioned at the edge of the slice
+with the the text facing inwards to the center of the circle.
+
+```tsx
+<Slice from={0} to={90}>
+    <Layout direction="vertical" justify="end">
+        <Label orient="inwards">Inwards Label</Label>
+    </Layout>
+</Slice>
 ```
 
 ## Contributing
@@ -150,3 +193,7 @@ This project is available under the terms of the ISC license. See the
 [github]: https://github.com/michaelbull/react-circle-menu
 [storybook]: https://michaelbull.github.io/react-circle-menu/?path=/story/examples
 [wikipedia-pie-menu]: https://en.wikipedia.org/wiki/Pie_menu
+[degree]: https://en.wikipedia.org/wiki/Degree_(angle)
+[radian]: https://en.wikipedia.org/wiki/Radian
+[gradian]: https://en.wikipedia.org/wiki/Gradian
+[turn]: https://en.wikipedia.org/wiki/Turn_(angle)

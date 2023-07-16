@@ -20,40 +20,33 @@
   z-index: 1;
 }
 
-.csgo-buy-menu-button {
+.csgo-item {
   background-color: black;
 }
 
-.csgo-buy-menu-button:hover,
-.csgo-buy-menu-button:focus {
+.csgo-item:hover,
+.csgo-item:focus {
   background-image: radial-gradient(circle, hsl(0, 0%, 50%) 10%, hsl(0, 0%, 0%) 100%);
 }
 
-.csgo-buy-menu-button__content {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-}
-
-.csgo-buy-menu-button__hotkey {
+.csgo-item__hotkey {
   font-size: 1.25rem;
   color: hsl(0, 0%, 60%);
 }
 
-.csgo-buy-menu-button__item {
+.csgo-item__details {
   display: flex;
   justify-content: center;
 }
 
-.csgo-buy-menu-item {
+.csgo-item-details {
   display: flex;
   flex-direction: column;
 
   width: 150px;
 }
 
-.csgo-buy-menu-item__price {
+.csgo-item-details__price {
   margin-bottom: 0.25em;
 
   font-family: sans-serif;
@@ -62,7 +55,7 @@
   color: hsl(114, 88%, 41%);
 }
 
-.csgo-buy-menu-item__name {
+.csgo-item-details__name {
   font-family: sans-serif;
   font-size: 1.25rem;
 

@@ -3,6 +3,7 @@ import {
     rectMidpoint
 } from '../math';
 import { useElementRect } from './useElementRect';
+import { Radians } from '../models';
 
 export interface UseAngleToElementProps {
     readonly element: Element;
@@ -10,7 +11,7 @@ export interface UseAngleToElementProps {
     readonly y: number;
 }
 
-export function useAngleToElement(props: UseAngleToElementProps): number | null {
+export function useAngleToElement(props: UseAngleToElementProps): Radians | null {
     const {
         element,
         x: x2,

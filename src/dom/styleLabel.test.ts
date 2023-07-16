@@ -3,66 +3,66 @@ import {
     expect,
     it
 } from 'vitest';
-import { orientLabel } from './orientLabel';
+import { styleLabel } from './styleLabel';
 import * as CSS from 'csstype';
 
-describe('orientLabel', () => {
-    it('justifies clockwise at the start of the slice', () => {
+describe('styleLabel', () => {
+    it('styles a clockwise label the start of the slice', () => {
         const expected: CSS.Properties = {
             justifyContent: 'flex-start'
         };
 
-        const actual = orientLabel('clockwise', 'start');
+        const actual = styleLabel('clockwise', 'start');
 
         expect(actual).toEqual(expected);
     });
 
-    it('justifies clockwise at the start of the slice', () => {
+    it('styles a clockwise label the center of the slice', () => {
         const expected: CSS.Properties = {
             justifyContent: 'center'
         };
 
-        const actual = orientLabel('clockwise', 'center');
+        const actual = styleLabel('clockwise', 'center');
 
         expect(actual).toEqual(expected);
     });
 
-    it('justifies clockwise at the start of the slice', () => {
+    it('styles a clockwise label the end of the slice', () => {
         const expected: CSS.Properties = {
             justifyContent: 'flex-end'
         };
 
-        const actual = orientLabel('clockwise', 'end');
+        const actual = styleLabel('clockwise', 'end');
 
         expect(actual).toEqual(expected);
     });
 
-    it('justifies counterclockwise at the start of the slice', () => {
+    it('styles a counterclockwise label the start of the slice', () => {
         const expected: CSS.Properties = {
             justifyContent: 'flex-end'
         };
 
-        const actual = orientLabel('counterclockwise', 'start');
+        const actual = styleLabel('counterclockwise', 'start');
 
         expect(actual).toEqual(expected);
     });
 
-    it('justifies counterclockwise at the center of the slice', () => {
+    it('styles a counterclockwise label the center of the slice', () => {
         const expected: CSS.Properties = {
             justifyContent: 'center'
         };
 
-        const actual = orientLabel('counterclockwise', 'center');
+        const actual = styleLabel('counterclockwise', 'center');
 
         expect(actual).toEqual(expected);
     });
 
-    it('justifies counterclockwise at the end of the slice', () => {
+    it('styles a counterclockwise label the end of the slice', () => {
         const expected: CSS.Properties = {
             justifyContent: 'flex-start'
         };
 
-        const actual = orientLabel('counterclockwise', 'end');
+        const actual = styleLabel('counterclockwise', 'end');
 
         expect(actual).toEqual(expected);
     });

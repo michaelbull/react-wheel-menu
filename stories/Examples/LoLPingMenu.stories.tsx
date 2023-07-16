@@ -5,10 +5,10 @@ import React, {
     useState
 } from 'react';
 import {
-    Button,
     CircleMenu,
     Label,
-    Slice as CircleMenuSlice,
+    Layout,
+    Slice,
     useAngleToElement,
     useMousePosition
 } from '../../src';
@@ -75,7 +75,7 @@ function LoLPingMenu() {
 
     return (
         <CircleMenu className="lol-ping-menu" onMouseOut={clearIndication}>
-            <Slice
+            <Ping
                 from={337.5}
                 to={22.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
@@ -86,7 +86,7 @@ function LoLPingMenu() {
                 major
             />
 
-            <Slice
+            <Ping
                 from={22.5}
                 to={67.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
@@ -96,7 +96,7 @@ function LoLPingMenu() {
                 onBlur={clearIndication}
             />
 
-            <Slice
+            <Ping
                 from={67.5}
                 to={112.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
@@ -107,7 +107,7 @@ function LoLPingMenu() {
                 major
             />
 
-            <Slice
+            <Ping
                 from={112.5}
                 to={157.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
@@ -117,7 +117,7 @@ function LoLPingMenu() {
                 onBlur={clearIndication}
             />
 
-            <Slice
+            <Ping
                 from={157.5}
                 to={202.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
@@ -128,7 +128,7 @@ function LoLPingMenu() {
                 major
             />
 
-            <Slice
+            <Ping
                 from={202.5}
                 to={247.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
@@ -138,7 +138,7 @@ function LoLPingMenu() {
                 onBlur={clearIndication}
             />
 
-            <Slice
+            <Ping
                 from={247.5}
                 to={292.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
@@ -149,7 +149,7 @@ function LoLPingMenu() {
                 major
             />
 
-            <Slice
+            <Ping
                 from={292.5}
                 to={337.5}
                 src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
@@ -166,7 +166,7 @@ function LoLPingMenu() {
     );
 }
 
-interface SliceProps {
+interface PingProps {
     readonly from: number;
     readonly to: number;
     readonly major?: boolean;
@@ -177,7 +177,7 @@ interface SliceProps {
     readonly onMouseOver: () => void;
 }
 
-function Slice(props: SliceProps) {
+function Ping(props: PingProps) {
     const {
         from,
         to,
@@ -189,23 +189,24 @@ function Slice(props: SliceProps) {
         onMouseOver
     } = props;
 
-    const className = clsx('lol-ping-menu__button', {
-        'lol-ping-menu__button--major': major
+    const layoutClassName = clsx('lol-ping__button', {
+        'lol-ping__button--major': major
     });
 
     return (
-        <CircleMenuSlice className="lol-ping-menu__slice" from={from} to={to} gapBefore={2} gapAfter={2}>
-            <Button className={className} onFocus={onFocus} onBlur={onBlur} onMouseOver={onMouseOver}>
-                <Label className="lol-ping-menu__label" offset={-20}>
+        <Slice as="button" className="lol-ping" from={from} to={to} gapBefore={2} gapAfter={2} onFocus={onFocus}
+               onBlur={onBlur} onMouseOver={onMouseOver}>
+            <Layout className={layoutClassName}>
+                <Label offset={-20}>
                     <img
-                        className="lol-ping-menu__icon"
+                        className="lol-ping__icon"
                         src={src}
                         alt={alt}
                         referrerPolicy="no-referrer"
                     />
                 </Label>
-            </Button>
-        </CircleMenuSlice>
+            </Layout>
+        </Slice>
     );
 }
 
@@ -233,7 +234,7 @@ function Indicator(props: PropsWithChildren<IndicatorProps>) {
     }
 
     return (
-        <div className="lol-ping-menu-indicator" ref={setIndicator} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+        <div className="lol-ping-indicator" ref={setIndicator} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
             {indicator &&
                 <Arrow x={x} y={y} parent={indicator} mouseOutside={mouseOutside}>
                     {children}
@@ -274,24 +275,24 @@ function Arrow(props: PropsWithChildren<ArrowProps>) {
     if (show) {
         return (
             <>
-                <svg className="lol-ping-menu-arrow" style={style} viewBox="0 0 24 24">
+                <svg className="lol-ping-arrow" style={style} viewBox="0 0 24 24">
                     <path
-                        className="lol-ping-menu-arrow__bottom"
+                        className="lol-ping-arrow__bottom"
                         d="M5 1h.5c1.98 5.77 2.02 15.08 0 22H5C7 16.03 7 6.78 5 1Z"
                     />
 
                     <path
-                        className="lol-ping-menu-arrow__center"
+                        className="lol-ping-arrow__center"
                         d="M8.59 7.41h1.38v9.17H8.59z"
                     />
 
                     <path
-                        className="lol-ping-menu-arrow__top"
+                        className="lol-ping-arrow__top"
                         d="M8.59 16.58 13.17 12 8.59 7.41v-2.8L16 12c-2.46 2.45-7.4 7.31-7.4 7.31z"
                     />
                 </svg>
 
-                <span className="lol-ping-menu-indicator__label">
+                <span className="lol-ping-indicator__label">
                     {children}
                 </span>
             </>

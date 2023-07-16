@@ -1,11 +1,16 @@
 import {
-    Justification,
-    Layout
+    DEFAULT_DIRECTION,
+    DEFAULT_JUSTIFICATION,
+    Direction,
+    Justification
 } from '../models';
 import * as CSS from 'csstype';
 
-export function layoutItem(layout: Layout, justification: Justification): CSS.Properties {
-    switch (layout) {
+export function styleLayout(
+    direction: Direction = DEFAULT_DIRECTION,
+    justification: Justification = DEFAULT_JUSTIFICATION
+): CSS.Properties {
+    switch (direction) {
         // @formatter:off
         case 'vertical':    return layoutVertically(justification);
         case 'horizontal':  return layoutHorizontally(justification);

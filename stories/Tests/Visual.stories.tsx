@@ -1,14 +1,17 @@
-import React, { CSSProperties } from 'react';
+import React, {
+    CSSProperties,
+    PropsWithChildren
+} from 'react';
 import {
-    Button,
-    ButtonProps,
     CircleMenu,
+    Direction,
     Justification,
     Label,
     Layout,
     Offset,
     Orientation,
-    Slice
+    Slice,
+    SliceProps
 } from '../../src';
 import {
     Meta,
@@ -16,12 +19,12 @@ import {
 } from '@storybook/react';
 
 interface StoryProps {
-    readonly itemJustify: Justification;
-    readonly itemLayout: Layout;
+    readonly layoutJustify: Justification;
+    readonly layoutDirection: Direction;
 
+    readonly labelOrient: Orientation;
     readonly labelJustify: Justification;
     readonly labelOffset: Offset;
-    readonly labelOrientation: Orientation;
 }
 
 const meta: Meta<StoryProps> = {
@@ -30,14 +33,14 @@ const meta: Meta<StoryProps> = {
         layout: 'centered'
     },
     args: {
-        itemJustify: 'center',
-        itemLayout: 'vertical',
+        layoutJustify: 'center',
+        layoutDirection: 'vertical',
+        labelOrient: 'downwards',
         labelJustify: 'center',
-        labelOffset: '0px',
-        labelOrientation: 'downwards'
+        labelOffset: '0px'
     },
     argTypes: {
-        itemJustify: {
+        layoutJustify: {
             name: 'Justify',
             control: 'select',
             options: [
@@ -46,18 +49,33 @@ const meta: Meta<StoryProps> = {
                 'end'
             ],
             table: {
-                category: 'Item'
+                category: 'Layout'
             }
         },
-        itemLayout: {
-            name: 'Layout',
+        layoutDirection: {
+            name: 'Direction',
             control: 'select',
             options: [
                 'vertical',
                 'horizontal'
             ],
             table: {
-                category: 'Item'
+                category: 'Layout'
+            }
+        },
+        labelOrient: {
+            name: 'Orient',
+            control: 'select',
+            options: [
+                'downwards',
+                'upwards',
+                'inwards',
+                'outwards',
+                'clockwise',
+                'counterclockwise'
+            ],
+            table: {
+                category: 'Label'
             }
         },
         labelJustify: {
@@ -74,21 +92,6 @@ const meta: Meta<StoryProps> = {
         },
         labelOffset: {
             name: 'Offset',
-            table: {
-                category: 'Label'
-            }
-        },
-        labelOrientation: {
-            name: 'Orientation',
-            control: 'select',
-            options: [
-                'downwards',
-                'upwards',
-                'inwards',
-                'outwards',
-                'clockwise',
-                'counterclockwise'
-            ],
             table: {
                 category: 'Label'
             }
@@ -109,13 +112,13 @@ export const Polar: Story = {
     render: (props) => {
         return (
             <CircleMenu style={style}>
-                <ButtonTest {...props} background="red" height={20} from={285} to={75}>
+                <Button {...props} background="red" height={20} from={285} to={75}>
                     Red
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="blue" height={20} from={105} to={255}>
+                <Button {...props} background="blue" height={20} from={105} to={255}>
                     Blue
-                </ButtonTest>
+                </Button>
             </CircleMenu>
         );
     }
@@ -125,29 +128,29 @@ export const Acute: Story = {
     render: (props) => {
         return (
             <CircleMenu style={style}>
-                <ButtonTest {...props} background="red" height={20} from={330} to={30}>
+                <Button {...props} background="red" height={20} from={330} to={30}>
                     Red
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="yellow" height={20} from={30} to={90}>
+                <Button {...props} background="yellow" height={20} from={30} to={90}>
                     Yellow
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="pink" height={20} from={90} to={150}>
+                <Button {...props} background="pink" height={20} from={90} to={150}>
                     Pink
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="green" height={20} from={150} to={210}>
+                <Button {...props} background="green" height={20} from={150} to={210}>
                     Green
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="purple" height={20} from={210} to={270}>
+                <Button {...props} background="purple" height={20} from={210} to={270}>
                     Purple
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="orange" height={20} from={270} to={330}>
+                <Button {...props} background="orange" height={20} from={270} to={330}>
                     Orange
-                </ButtonTest>
+                </Button>
             </CircleMenu>
         );
     }
@@ -157,52 +160,41 @@ export const Obtuse: Story = {
     render: (props) => {
         return (
             <CircleMenu style={style}>
-                <ButtonTest {...props} background="red" height={30} from={0} to={120}>
+                <Button {...props} background="red" height={30} from={0} to={120}>
                     Red
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="green" height={25} from={120} to={240}>
+                <Button {...props} background="green" height={25} from={120} to={240}>
                     Green
-                </ButtonTest>
+                </Button>
 
-                <ButtonTest {...props} background="blue" height={10} from={240} to={360}>
+                <Button {...props} background="blue" height={10} from={240} to={360}>
                     Blue
-                </ButtonTest>
+                </Button>
             </CircleMenu>
         );
     }
 };
 
-interface ButtonTestProps extends ButtonProps {
-    readonly from: number;
-    readonly to: number;
+interface ButtonProps extends StoryProps, SliceProps<'button'> {
     readonly background: CSSProperties['background'];
     readonly height: number;
-
-    readonly itemJustify: Justification;
-    readonly itemLayout: Layout;
-
-    readonly labelJustify: Justification;
-    readonly labelOffset: string | number;
-    readonly labelOrientation: Orientation;
 }
 
-function ButtonTest(props: ButtonTestProps) {
+function Button(props: PropsWithChildren<ButtonProps>) {
     const {
-        from,
-        to,
         background,
         height,
-        itemJustify,
-        itemLayout,
+        layoutJustify,
+        layoutDirection,
+        labelOrient,
         labelJustify,
         labelOffset,
-        labelOrientation,
         children,
         ...rest
     } = props;
 
-    const style: CSSProperties = {
+    const layoutStyle: CSSProperties = {
         background
     };
 
@@ -214,16 +206,16 @@ function ButtonTest(props: ButtonTestProps) {
     };
 
     return (
-        <Slice from={from} to={to}>
-            <Button style={style} justify={itemJustify} layout={itemLayout} {...rest}>
-                <Label justify={labelJustify} orient={labelOrientation} offset={labelOffset} style={labelStyle}>
+        <Slice as="button" {...rest}>
+            <Layout style={layoutStyle} justify={layoutJustify} direction={layoutDirection}>
+                <Label orient={labelOrient} justify={labelJustify} offset={labelOffset} style={labelStyle}>
                     {children}
                 </Label>
 
-                <Label justify={labelJustify} orient={labelOrientation} style={labelStyle}>
+                <Label justify={labelJustify} orient={labelOrient} style={labelStyle}>
                     {children}
                 </Label>
-            </Button>
+            </Layout>
         </Slice>
     );
 }
