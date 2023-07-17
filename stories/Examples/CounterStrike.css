@@ -1,20 +1,18 @@
 .cs {
+  height: 100vh;
   overflow: auto;
-  height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cs-background::before {
+.cs-background {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
-  content: '';
 
   background-image: url('https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/cs2/maps/dust2_ct_ramp_s2.jpg');
   background-position: center;
@@ -22,7 +20,7 @@
   background-size: cover;
 }
 
-.cs-background::after {
+.cs-background::before {
   position: absolute;
   top: 0;
   right: 0;

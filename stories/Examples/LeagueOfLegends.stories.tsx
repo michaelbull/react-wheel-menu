@@ -36,6 +36,7 @@ export const LeagueOfLegendsStory: StoryObj = {
     render: () => {
         return (
             <div className="lol">
+                <div className="lol-background" />
                 <Menu />
             </div>
         );
