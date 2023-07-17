@@ -58,7 +58,7 @@
   transition: opacity 100ms ease-out;
 }
 
-.ow-option__button:hover::after {
+.ow-option__button:hover::before {
   opacity: 1;
   transition: none;
 }
