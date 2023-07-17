@@ -42,7 +42,7 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const state: SliceState = {
         from,
         to,
-        angle
+        delta: angle
     };
 
     const style: CSSProperties = {

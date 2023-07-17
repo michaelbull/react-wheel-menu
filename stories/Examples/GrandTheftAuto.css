@@ -1,5 +1,6 @@
 .gta {
   height: 100vh;
+  overflow: auto;
 
   display: flex;
   justify-content: center;
@@ -34,8 +35,8 @@
 }
 
 .gta-menu {
-  width: 600px;
-  height: 600px;
+  min-width: 600px;
+  min-height: 600px;
 
   border-radius: 0;
   clip-path: none;

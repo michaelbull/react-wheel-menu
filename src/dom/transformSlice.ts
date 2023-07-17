@@ -12,11 +12,11 @@ export function transformSlice(
 ): CSS.Properties['transform'] {
     const {
         from,
-        angle
+        delta
     } = state;
 
-    const rotation = `rotate(${from + angle - 90}deg)`;
-    const skew = `skew(${angle - 90}deg)`;
+    const rotation = `rotate(${from + delta - 90}deg)`;
+    const skew = `skew(${delta - 90}deg)`;
 
     const translateX = gapWithUnit(gapBefore);
     const translateY = gapWithUnit(gapAfter);

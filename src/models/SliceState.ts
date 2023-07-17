@@ -3,11 +3,11 @@ import { Degrees } from './Angle';
 export interface SliceState {
     readonly from: Degrees;
     readonly to: Degrees;
-    readonly angle: Degrees;
+    readonly delta: Degrees;
 }
 
-export const EmptySliceState: SliceState = {
+export const DefaultSliceState: SliceState = {
     from: 0,
     to: 0,
-    angle: 0
+    delta: 0
 };

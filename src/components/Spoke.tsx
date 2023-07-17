@@ -9,7 +9,10 @@ import {
     Offset
 } from '../models';
 import clsx from 'clsx';
-import { useSpokeStyle } from '../hooks';
+import {
+    SpokeStateContext,
+    useSpoke
+} from '../hooks';
 
 export type SpokeProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
@@ -24,6 +27,7 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         style: styleProp,
         angle,
         offset = DEFAULT_OFFSET,
+        children,
         ...rest
     } = props;
 
@@ -32,7 +36,10 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         classNameProp
     );
 
-    const spokeStyle = useSpokeStyle({
+    const {
+        state,
+        style: spokeStyle
+    } = useSpoke({
         angle,
         offset
     });
@@ -42,9 +49,11 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         ...styleProp
     };
 
-    return <Component
-        className={className}
-        style={style}
-        {...rest}
-    />;
+    return (
+        <Component className={className} style={style} {...rest}>
+            <SpokeStateContext.Provider value={state}>
+                {children}
+            </SpokeStateContext.Provider>
+        </Component>
+    );
 }

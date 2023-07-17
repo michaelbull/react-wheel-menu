@@ -1,20 +1,20 @@
 import {
     DEFAULT_OFFSET,
     DEFAULT_ORIENTATION,
+    Degrees,
     Offset,
-    Orientation,
-    SliceState
+    Orientation
 } from '../models';
 import { rotateLabel } from '../math';
 import * as CSS from 'csstype';
 
 export function transformLabel(
-    state: SliceState,
+    angle: Degrees,
     orientation: Orientation = DEFAULT_ORIENTATION,
     offset: Offset = DEFAULT_OFFSET
 ): CSS.Properties['transform'] {
     const translation = `translateY(${offsetWithUnit(offset)})`;
-    const rotation = `rotate(${rotateLabel(state, orientation)}deg)`;
+    const rotation = `rotate(${rotateLabel(orientation, angle)}deg)`;
 
     return `${translation} ${rotation}`;
 }

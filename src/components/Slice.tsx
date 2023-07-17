@@ -26,8 +26,8 @@ export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
         as: Component = 'div',
         className: classNameProp,
         style: styleProp,
-        from: fromProp,
-        to: toProp,
+        from,
+        to,
         gapBefore,
         gapAfter,
         children,
@@ -43,8 +43,8 @@ export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
         state,
         style: sliceStyle
     } = useSlice({
-        from: fromProp,
-        to: toProp,
+        from,
+        to,
         gapBefore,
         gapAfter
     });

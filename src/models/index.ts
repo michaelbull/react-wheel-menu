@@ -5,3 +5,4 @@ export * from './Justification';
 export * from './Offset';
 export * from './Orientation';
 export * from './SliceState';
+export * from './SpokeState';

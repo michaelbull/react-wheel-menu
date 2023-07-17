@@ -28,7 +28,7 @@ interface StoryProps {
 }
 
 const meta: Meta<StoryProps> = {
-    title: 'Tests/Visual',
+    title: 'Tests/Angles',
     parameters: {
         layout: 'centered'
     },
@@ -108,7 +108,8 @@ const style: CSSProperties = {
 
 type Story = StoryObj<StoryProps>;
 
-export const Polar: Story = {
+export const PolarStory: Story = {
+    name: 'Polar',
     render: (props) => {
         return (
             <CircleMenu style={style}>
@@ -124,7 +125,8 @@ export const Polar: Story = {
     }
 };
 
-export const Acute: Story = {
+export const AcuteStory: Story = {
+    name: 'Acute',
     render: (props) => {
         return (
             <CircleMenu style={style}>
@@ -156,7 +158,8 @@ export const Acute: Story = {
     }
 };
 
-export const Obtuse: Story = {
+export const ObtuseStory: Story = {
+    name: 'Obtuse',
     render: (props) => {
         return (
             <CircleMenu style={style}>

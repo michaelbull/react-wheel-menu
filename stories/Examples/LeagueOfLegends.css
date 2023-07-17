@@ -1,5 +1,6 @@
 .lol {
   height: 100vh;
+  overflow: auto;
 
   display: flex;
   justify-content: center;
@@ -20,8 +21,8 @@
 }
 
 .lol-menu {
-  width: 450px;
-  height: 450px;
+  min-width: 450px;
+  min-height: 450px;
 
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 1) 28%, hsla(41, 48%, 38%, 0) 56%);
 }
@@ -50,8 +51,10 @@
 }
 
 .lol-ping-indicator {
-  width: 40%;
-  height: 40%;
+  position: relative;
+
+  width: 180px;
+  height: 180px;
 
   display: flex;
   align-items: center;
@@ -59,21 +62,30 @@
 
   background-color: hsla(0, 0%, 0%, 65%);
 
-  box-shadow: 0 0 0 0.1875em hsl(41, 48%, 38%);
-  border-radius: 100%;
-
-  outline: 0.1875em solid hsl(41, 39%, 56%);
-  outline-offset: -0.375em;
+  box-shadow: 0 0 0 3px hsl(41, 48%, 38%);
+  border-radius: 50%;
 
   user-select: none;
   z-index: 1;
+}
+
+.lol-ping-indicator::before {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+
+  content: '';
+
+  border-radius: 50%;
+  border: 3px solid hsl(41, 39%, 56%);
 }
 
 .lol-ping-indicator__label {
   color: white;
 
   font-family: serif;
-  font-size: 1rem;
   font-weight: 700;
 
   text-transform: uppercase;

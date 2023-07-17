@@ -5,4 +5,5 @@ export * from './useLayoutStyle';
 export * from './useMousePosition';
 export * from './useSlice';
 export * from './useSliceState';
-export * from './useSpokeStyle';
+export * from './useSpoke';
+export * from './useSpokeState';

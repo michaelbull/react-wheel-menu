@@ -3,9 +3,13 @@ import { useSliceState } from './useSliceState';
 import { transformLayout } from '../dom';
 
 export function useLayoutStyle(): CSSProperties {
-    const { angle } = useSliceState();
+    const { delta } = useSliceState();
 
-    return {
-        transform: transformLayout(angle)
-    };
+    if (delta === 0) {
+        return {};
+    } else {
+        return {
+            transform: transformLayout(delta)
+        };
+    }
 }

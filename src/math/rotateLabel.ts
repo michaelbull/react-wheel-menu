@@ -1,21 +1,15 @@
 import {
     Degrees,
-    Orientation,
-    SliceState
+    Orientation
 } from '../models';
 
-export function rotateLabel(state: SliceState, orientation: Orientation): Degrees {
-    const {
-        from,
-        angle
-    } = state;
-
+export function rotateLabel(orientation: Orientation, angle: Degrees): Degrees {
     switch (orientation) {
         case 'downwards':
-            return -(from + (angle / 2));
+            return -angle;
 
         case 'upwards':
-            return 180 - (from + (angle / 2));
+            return 180 - angle;
 
         case 'inwards':
             return 0;
