@@ -102,8 +102,8 @@ const meta: Meta<StoryProps> = {
 export default meta;
 
 const style: CSSProperties = {
-    width: 300,
-    height: 300
+    width: 600,
+    height: 600
 };
 
 type Story = StoryObj<StoryProps>;

@@ -1,13 +1,9 @@
 import {
     ComponentPropsWithoutRef,
-    CSSProperties,
     ElementType
 } from 'react';
-import { useLabelStyle } from '../hooks';
-import clsx from 'clsx';
+import { useLabel } from '../hooks';
 import {
-    DEFAULT_JUSTIFICATION,
-    DEFAULT_ORIENTATION,
     Justification,
     Offset,
     Orientation
@@ -25,31 +21,22 @@ export function Label<T extends ElementType = 'span'>(props: LabelProps<T>) {
         as: Component = 'span',
         className: classNameProp,
         style: styleProp,
-        orient = DEFAULT_ORIENTATION,
-        justify = DEFAULT_JUSTIFICATION,
+        orient,
+        justify,
         offset,
         ...rest
     } = props;
 
-    const className = clsx(
-        'circle-menu-label',
-        `circle-menu-label--${justify}`,
-        classNameProp
-    );
-
-    const labelStyle = useLabelStyle({
+    const labelProps = useLabel({
+        className: classNameProp,
+        style: styleProp,
         orient,
+        justify,
         offset
     });
 
-    const style: CSSProperties = {
-        ...labelStyle,
-        ...styleProp
-    };
-
     return <Component
-        className={className}
-        style={style}
+        {...labelProps}
         {...rest}
     />;
 }

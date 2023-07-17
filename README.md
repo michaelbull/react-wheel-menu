@@ -35,7 +35,7 @@ npm install --save react-circle-menu
       <td align="center" width="50%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--overwatch-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/f192bf95-d678-471f-8252-1ed5f6e0c9ec" alt="Overwatch" /></a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--overwatch-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/89f5cd2c-71b8-41b0-a19a-8dc63ec149e0" alt="Overwatch" /></a>
         <br />
         <strong>Overwatch</strong>
         <br />

@@ -10,8 +10,11 @@ import {
     modulo
 } from '../math';
 import { transformSlice } from '../dom';
+import clsx from 'clsx';
 
 export interface UseSliceProps {
+    readonly className?: string;
+    readonly style?: CSSProperties;
     readonly from: Angle;
     readonly to: Angle;
     readonly gapBefore?: Gap;
@@ -20,11 +23,14 @@ export interface UseSliceProps {
 
 export interface UseSliceReturn {
     readonly state: SliceState;
+    readonly className: string;
     readonly style: CSSProperties;
 }
 
 export function useSlice(props: UseSliceProps): UseSliceReturn {
     const {
+        className: classNameProp,
+        style: styleProp,
         from: fromProp,
         to: toProp,
         gapBefore = DEFAULT_GAP,
@@ -37,20 +43,27 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const from = modulo(fromDeg, 360);
     const to = modulo(toDeg, 360);
     const delta = modulo(toDeg - fromDeg, 360);
-    const angle = Math.min(150, delta);
+    const cappedDelta = Math.min(150, delta);
 
     const state: SliceState = {
         from,
         to,
-        delta: angle
+        delta: cappedDelta
     };
 
+    const className = clsx(
+        'circle-menu-slice',
+        classNameProp
+    );
+
     const style: CSSProperties = {
-        transform: transformSlice(state, gapBefore, gapAfter)
+        transform: transformSlice(state, gapBefore, gapAfter),
+        ...styleProp
     };
 
     return {
         state,
+        className,
         style
     };
 }

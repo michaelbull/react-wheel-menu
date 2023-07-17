@@ -1,13 +1,9 @@
 import {
     ComponentPropsWithoutRef,
-    CSSProperties,
     ElementType
 } from 'react';
-import { useLayoutStyle } from '../hooks';
-import clsx from 'clsx';
+import { useLayout } from '../hooks';
 import {
-    DEFAULT_DIRECTION,
-    DEFAULT_JUSTIFICATION,
     Direction,
     Justification
 } from '../models';
@@ -21,30 +17,22 @@ export type LayoutProps<T extends ElementType = 'span'> = ComponentPropsWithoutR
 export function Layout<T extends ElementType = 'span'>(props: LayoutProps<T>) {
     const {
         as: Component = 'span',
-        className: classNameProp,
-        style: styleProp,
-        direction = DEFAULT_DIRECTION,
-        justify = DEFAULT_JUSTIFICATION,
+        className,
+        style,
+        direction,
+        justify,
         ...rest
     } = props;
 
-    const className = clsx(
-        'circle-menu-layout',
-        `circle-menu-layout--${direction}`,
-        `circle-menu-layout--${justify}`,
-        classNameProp
-    );
-
-    const layoutStyle = useLayoutStyle();
-
-    const style: CSSProperties = {
-        ...layoutStyle,
-        ...styleProp
-    };
+    const layoutProps = useLayout({
+        className,
+        style,
+        direction,
+        justify
+    });
 
     return <Component
-        className={className}
-        style={style}
+        {...layoutProps}
         {...rest}
     />;
 }

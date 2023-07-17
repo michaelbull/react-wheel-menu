@@ -2,7 +2,7 @@ import {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
-import clsx from 'clsx';
+import { useCircleMenu } from '../hooks';
 
 export type CircleMenuProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
@@ -11,17 +11,16 @@ export type CircleMenuProps<T extends ElementType = 'div'> = ComponentPropsWitho
 export function CircleMenu<T extends ElementType = 'div'>(props: CircleMenuProps<T>) {
     const {
         as: Component = 'div',
-        className: classNameProp,
+        className,
         ...rest
     } = props;
 
-    const className = clsx(
-        'circle-menu',
-        classNameProp
-    );
+    const circleMenuProps = useCircleMenu({
+        className
+    });
 
     return <Component
-        className={className}
+        {...circleMenuProps}
         {...rest}
     />;
 }

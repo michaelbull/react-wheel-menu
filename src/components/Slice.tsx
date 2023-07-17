@@ -1,13 +1,11 @@
 import React, {
     ComponentPropsWithoutRef,
-    CSSProperties,
     ElementType
 } from 'react';
 import {
     SliceStateContext,
     useSlice
 } from '../hooks';
-import clsx from 'clsx';
 import {
     Angle,
     Gap
@@ -24,8 +22,8 @@ export type SliceProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef
 export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
     const {
         as: Component = 'div',
-        className: classNameProp,
-        style: styleProp,
+        className,
+        style,
         from,
         to,
         gapBefore,
@@ -34,28 +32,20 @@ export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
         ...rest
     } = props;
 
-    const className = clsx(
-        'circle-menu-slice',
-        classNameProp
-    );
-
     const {
         state,
-        style: sliceStyle
+        ...sliceProps
     } = useSlice({
+        className,
+        style,
         from,
         to,
         gapBefore,
         gapAfter
     });
 
-    const style: CSSProperties = {
-        ...sliceStyle,
-        ...styleProp
-    };
-
     return (
-        <Component className={className} style={style} {...rest}>
+        <Component {...sliceProps} {...rest}>
             <SliceStateContext.Provider value={state}>
                 {children}
             </SliceStateContext.Provider>
