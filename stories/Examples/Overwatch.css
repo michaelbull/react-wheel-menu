@@ -2,10 +2,6 @@
   overflow: auto;
   height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   background-image: url('https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/bltdad361c29b29b03a/5cef227acf7aa6330ac66561/eichenwalde-screenshot-003.jpg');
   background-position: center;
   background-repeat: no-repeat;
