@@ -20,6 +20,8 @@
 
   line-height: normal;
   text-align: center;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .circle-menu:focus,
@@ -31,7 +33,8 @@
 }
 
 .circle-menu,
-.circle-menu-slice {
+.circle-menu-slice,
+.circle-menu-layout {
   overflow: hidden;
   overflow: clip;
 }
