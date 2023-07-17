@@ -25,6 +25,9 @@ export default meta;
 
 export const GrandTheftAutoStory: StoryObj = {
     name: 'Grand Theft Auto',
+    parameters: {
+        options: { showPanel: false }
+    },
     render: () => {
         return (
             <div className="gta">

@@ -26,6 +26,9 @@ export default meta;
 
 export const CounterStrikeStory: StoryObj = {
     name: 'Counter-Strike',
+    parameters: {
+        options: { showPanel: false }
+    },
     render: () => {
         return (
             <div className="cs">

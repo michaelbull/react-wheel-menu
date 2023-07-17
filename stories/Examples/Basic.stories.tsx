@@ -24,6 +24,9 @@ export default meta;
 
 export const Basic: StoryObj = {
     name: 'Basic',
+    parameters: {
+        options: { showPanel: false }
+    },
     render: () => {
         const red: CSSProperties = { backgroundColor: 'red', color: 'white' };
         const yellow: CSSProperties = { backgroundColor: 'yellow', color: 'black' };

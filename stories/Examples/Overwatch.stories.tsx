@@ -28,6 +28,9 @@ export default meta;
 
 export const OverwatchStory: StoryObj = {
     name: 'Overwatch',
+    parameters: {
+        options: { showPanel: false }
+    },
     render: () => {
         return (
             <div className="ow">

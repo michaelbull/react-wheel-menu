@@ -30,6 +30,9 @@ export default meta;
 
 export const LeagueOfLegendsStory: StoryObj = {
     name: 'League of Legends',
+    parameters: {
+        options: { showPanel: false }
+    },
     render: () => {
         return (
             <div className="lol">
