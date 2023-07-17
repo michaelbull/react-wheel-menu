@@ -61,6 +61,6 @@ function useLabelAngle(): number {
     if (sliceState === DefaultSliceState) {
         return spokeState.angle;
     } else {
-        return sliceState.from + (sliceState.delta / 2);
+        return sliceState.from + (sliceState.size / 2);
     }
 }

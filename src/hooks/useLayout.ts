@@ -29,7 +29,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
         justify = DEFAULT_JUSTIFICATION
     } = props;
 
-    const { delta } = useSliceState();
+    const { size } = useSliceState();
 
     const className = clsx(
         'circle-menu-layout',
@@ -39,7 +39,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
     );
 
     const style: CSSProperties = {
-        transform: transformLayout(delta),
+        transform: transformLayout(size),
         ...styleProp
     };
 

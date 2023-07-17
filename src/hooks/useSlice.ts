@@ -43,12 +43,12 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const from = modulo(fromDeg, 360);
     const to = modulo(toDeg, 360);
     const delta = modulo(toDeg - fromDeg, 360);
-    const cappedDelta = Math.min(150, delta);
+    const size = Math.min(150, delta);
 
     const state: SliceState = {
         from,
         to,
-        delta: cappedDelta
+        size
     };
 
     const className = clsx(
