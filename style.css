@@ -34,9 +34,9 @@
 
 .circle-menu,
 .circle-menu-slice,
+.circle-menu-spoke,
 .circle-menu-layout {
   overflow: hidden;
-  overflow: clip;
 }
 
 .circle-menu {
@@ -47,7 +47,9 @@
   align-items: center;
 
   border-radius: 50%;
+
   clip-path: circle(50%);
+  overflow: clip;
 }
 
 .circle-menu-slice {
