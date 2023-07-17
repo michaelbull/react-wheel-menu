@@ -1,14 +1,10 @@
 .ow {
-  height: 100vh;
   overflow: auto;
-}
+  height: 100%;
 
-.ow-background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-image: url('https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/bltdad361c29b29b03a/5cef227acf7aa6330ac66561/eichenwalde-screenshot-003.jpg');
   background-position: center;
@@ -17,8 +13,14 @@
 }
 
 .ow-menu {
+  /* https://stackoverflow.com/a/33455342 */
+  margin: auto;
+
   border-radius: 0;
   clip-path: none;
+
+  min-width: 738px;
+  min-height: 738px;
 
   width: 100%;
   height: 100%;

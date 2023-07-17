@@ -39,8 +39,8 @@ function Body() {
             </Layout>
 
             <Layout direction="horizontal" justify="center">
-                <Label orient="inwards" style={labelStyle}>Left</Label>
-                <Label orient="inwards" style={labelStyle}>Right</Label>
+                <Label orient="clockwise" style={labelStyle}>Left</Label>
+                <Label orient="counterclockwise" style={labelStyle}>Right</Label>
             </Layout>
 
             <Layout direction="vertical" justify="end">

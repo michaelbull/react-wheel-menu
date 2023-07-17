@@ -1,18 +1,9 @@
 .lol {
-  height: 100vh;
   overflow: auto;
+  height: 100%;
 
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.lol-background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 
   background-image: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd15eac8e2b0de8c5/5db0d3810b39e86c2f83df8d/Preseason_Gameplay_Reveal_Header.jpg');
   background-position: center;
@@ -21,8 +12,14 @@
 }
 
 .lol-menu {
+  /* https://stackoverflow.com/a/33455342 */
+  margin: auto;
+
   min-width: 450px;
   min-height: 450px;
+
+  width: 450px;
+  height: 450px;
 
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 1) 28%, hsla(41, 48%, 38%, 0) 56%);
 }

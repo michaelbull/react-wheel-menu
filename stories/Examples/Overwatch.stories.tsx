@@ -34,7 +34,6 @@ export const OverwatchStory: StoryObj = {
     render: () => {
         return (
             <div className="ow">
-                <div className="ow-background" />
                 <Menu />
             </div>
         );

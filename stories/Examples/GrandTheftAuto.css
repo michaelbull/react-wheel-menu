@@ -1,18 +1,20 @@
 .gta {
-  height: 100vh;
   overflow: auto;
+  height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.gta-background {
+.gta-background::before {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+
+  content: '';
 
   background-image: url('https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/7772/5b063d8c17dd9394e2be4d36b500f9c7d8661096.jpg');
   background-position: center;
@@ -35,8 +37,14 @@
 }
 
 .gta-menu {
+  /* https://stackoverflow.com/a/33455342 */
+  margin: auto;
+
   min-width: 600px;
   min-height: 600px;
+
+  width: 600px;
+  height: 600px;
 
   border-radius: 0;
   clip-path: none;
