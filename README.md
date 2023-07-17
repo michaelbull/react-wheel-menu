@@ -182,19 +182,25 @@ Spokes can be used to visually split slices, for example:
 
 ### `<Layout>`
 
-The `<Layout>` of a slice determines how the `<Label>`s inside of it are laid
-out.
+A `<Layout>` controls the distribution and orientation of `<Label>`s inside a
+`<Slice>` or `<Spoke>`.
 
 In the `<Layout>` below, the `<Label>` is positioned at the edge of the slice
 with the text facing inwards to the center of the circle.
 
 ```tsx
-<CircleMenu style={{width: 300, height: 300 }}>
+<CircleMenu style={{ width: 300, height: 300 }}>
     <Slice from={0} to={90}>
         <Layout direction="vertical" justify="end">
             <Label orient="inwards">Inwards Label</Label>
         </Layout>
     </Slice>
+
+    <Spoke angle="45deg" style={{ width: '10px' }}>
+        <Layout direction="vertical">
+            <Label orient="inwards">Outwards Label</Label>
+        </Layout>
+    </Spoke>
 </CircleMenu>
 ```
 
