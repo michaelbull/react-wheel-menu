@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import { useSegmentState } from './useSegmentState';
 import { transformLayout } from '../dom';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import type {
     Direction,
     Justification

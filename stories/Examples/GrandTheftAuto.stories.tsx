@@ -1,3 +1,8 @@
+import './GrandTheftAuto.css';
+import type {
+    Meta,
+    StoryObj
+} from '@storybook/react';
 import type {
     ComponentProps,
     PropsWithChildren
@@ -8,11 +13,6 @@ import {
     Layout,
     Segment
 } from '../../src';
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react';
-import './GrandTheftAuto.css';
 
 const meta: Meta = {
     title: 'Examples',

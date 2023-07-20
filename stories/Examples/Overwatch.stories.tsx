@@ -1,7 +1,8 @@
+import './Overwatch.css';
 import type {
-    CSSProperties,
-    PropsWithChildren
-} from 'react';
+    Meta,
+    StoryObj
+} from '@storybook/react';
 import type {
     Angle,
     Offset
@@ -14,10 +15,9 @@ import {
     Spoke
 } from '../../src';
 import type {
-    Meta,
-    StoryObj
-} from '@storybook/react';
-import './Overwatch.css';
+    CSSProperties,
+    PropsWithChildren
+} from 'react';
 
 const meta: Meta = {
     title: 'Examples',

@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 export interface UseCircleMenuProps {
     readonly className?: string;

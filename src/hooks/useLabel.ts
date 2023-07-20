@@ -13,7 +13,7 @@ import {
 } from '../models';
 import { transformLabel } from '../dom';
 import { useSpokeState } from './useSpokeState';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 export interface UseLabelProps {
     readonly className?: string;

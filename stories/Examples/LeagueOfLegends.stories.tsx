@@ -1,3 +1,8 @@
+import './LeagueOfLegends.css';
+import type {
+    Meta,
+    StoryObj
+} from '@storybook/react';
 import type {
     CSSProperties,
     PropsWithChildren,
@@ -12,12 +17,7 @@ import {
     useAngleToElement,
     useMousePosition
 } from '../../src';
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react';
-import './LeagueOfLegends.css';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 const meta: Meta = {
     title: 'Examples',

@@ -10,7 +10,7 @@ import {
     modulo
 } from '../math';
 import { transformSegment } from '../dom';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 export interface UseSegmentProps {
     readonly className?: string;

@@ -1,3 +1,8 @@
+import './CounterStrike.css';
+import type {
+    Meta,
+    StoryObj
+} from '@storybook/react';
 import type {
     ComponentProps,
     ReactNode
@@ -9,11 +14,6 @@ import {
     Layout,
     Segment
 } from '../../src';
-import type {
-    Meta,
-    StoryObj
-} from '@storybook/react';
-import './CounterStrike.css';
 
 const meta: Meta = {
     title: 'Examples',

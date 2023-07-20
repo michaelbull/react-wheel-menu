@@ -10,7 +10,7 @@ import {
     modulo
 } from '../math';
 import { transformSpoke } from '../dom';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 export interface UseSpokeProps {
     readonly className?: string;
