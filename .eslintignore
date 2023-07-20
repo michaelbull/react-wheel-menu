@@ -1,0 +1,4 @@
+/dist
+
+!/.storybook
+/storybook-static
