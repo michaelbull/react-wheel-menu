@@ -93,6 +93,7 @@ npm install --save react-circle-menu
 ## Example
 
 ```tsx
+import { CSSProperties } from 'react';
 import {
     CircleMenu,
     Label,
@@ -156,15 +157,15 @@ export function Example() {
 A `<Slice>` must specify the angle it starts `from` and spans `to`, such as:
 
 - A right-angled slice in [degrees][degree]:
-  - `<Slice from={0} to={90} />`
+    - `<Slice from={0} to={90} />`
 - An acute-angled slice in [radians][radian]:
-  - `<Slice from="1rad" to="2rad" />`
+    - `<Slice from="1rad" to="2rad" />`
 - An obtuse-angled slice in [gradians][gradian]:
-  - `<Slice from="100grad" to="210grad" />`
+    - `<Slice from="100grad" to="210grad" />`
 - A right-angled slice in [turns][turn]:
-  - `<Slice from="0.5turn" to="0.75turn" />`
+    - `<Slice from="0.5turn" to="0.75turn" />`
 - An obtuse-angled slice in percentages:
-  - `<Slice from="50%" to="85%" />`
+    - `<Slice from="50%" to="85%" />`
 
 ### `<Spoke>`
 
