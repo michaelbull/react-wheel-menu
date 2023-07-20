@@ -1,9 +1,9 @@
 import './GrandTheftAuto.css';
-import type {
+import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import type {
+import {
     ComponentProps,
     PropsWithChildren
 } from 'react';

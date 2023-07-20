@@ -1,6 +1,6 @@
-import type * as CSS from 'csstype';
-import type { Degrees } from '../angle';
-import type { SpokeOffset } from './SpokeOffset';
+import * as CSS from 'csstype';
+import { Degrees } from '../angle';
+import { SpokeOffset } from './SpokeOffset';
 
 export function transformSpoke(
     angle: Degrees,

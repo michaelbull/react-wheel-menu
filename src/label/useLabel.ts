@@ -1,17 +1,21 @@
-import type { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
+import {
+    DEFAULT_LABEL_ORIENTATION,
+    LabelOrientation
+} from './LabelOrientation';
+import {
+    DEFAULT_LABEL_JUSTIFICATION,
+    LabelJustification
+} from './LabelJustification';
+import { LabelOffset } from './LabelOffset';
 import { clsx } from 'clsx';
-import type { Degrees } from '../angle';
-import { useSpokeState } from '../spoke';
+import { transformLabel } from './transformLabel';
+import { Degrees } from '../angle';
 import {
     DefaultSegmentState,
     useSegmentState
 } from '../segment';
-import type { LabelOrientation } from './LabelOrientation';
-import { DEFAULT_LABEL_ORIENTATION } from './LabelOrientation';
-import type { LabelJustification } from './LabelJustification';
-import { DEFAULT_LABEL_JUSTIFICATION } from './LabelJustification';
-import type { LabelOffset } from './LabelOffset';
-import { transformLabel } from './transformLabel';
+import { useSpokeState } from '../spoke';
 
 export interface UseLabelProps {
     readonly className?: string;

@@ -1,11 +1,15 @@
-import type { CSSProperties } from 'react';
-import { clsx } from 'clsx';
+import { CSSProperties } from 'react';
+import {
+    DEFAULT_LAYOUT_DIRECTION,
+    LayoutDirection
+} from './LayoutDirection';
+import {
+    DEFAULT_LAYOUT_JUSTIFICATION,
+    LayoutJustification
+} from './LayoutJustification';
 import { useSegmentState } from '../segment';
+import { clsx } from 'clsx';
 import { transformLayout } from './transformLayout';
-import type { LayoutDirection } from './LayoutDirection';
-import { DEFAULT_LAYOUT_DIRECTION } from './LayoutDirection';
-import type { LayoutJustification } from './LayoutJustification';
-import { DEFAULT_LAYOUT_JUSTIFICATION } from './LayoutJustification';
 
 export interface UseLayoutProps {
     readonly className?: string;

@@ -1,22 +1,20 @@
-import type {
+import {
     CSSProperties,
     PropsWithChildren
 } from 'react';
-import type {
+import {
+    CircleMenu,
+    Label,
     LabelJustification,
     LabelOrientation,
+    Layout,
     LayoutDirection,
     LayoutJustification,
+    Segment,
     SegmentProps,
     SpokeOffset
 } from '../../src';
 import {
-    CircleMenu,
-    Label,
-    Layout,
-    Segment
-} from '../../src';
-import type {
     Meta,
     StoryObj
 } from '@storybook/react';

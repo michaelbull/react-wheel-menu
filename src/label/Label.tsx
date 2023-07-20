@@ -1,11 +1,11 @@
-import type {
+import {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
+import { LabelOrientation } from './LabelOrientation';
+import { LabelJustification } from './LabelJustification';
+import { LabelOffset } from './LabelOffset';
 import { useLabel } from './useLabel';
-import type { LabelOrientation } from './LabelOrientation';
-import type { LabelJustification } from './LabelJustification';
-import type { LabelOffset } from './LabelOffset';
 
 export type LabelProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;

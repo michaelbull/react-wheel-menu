@@ -1,4 +1,4 @@
-import type { Radians } from './Angle';
+import { Radians } from './Angle';
 import { angleBetween } from './angleBetween';
 import { useMousePosition } from './useMousePosition';
 

@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import type {
+import { Midpoint } from './Midpoint';
+import {
     Options,
     Rect,
     Revalidate,
-    SetElement
+    SetElement,
+    useRect
 } from 'react-use-rect';
-import { useRect } from 'react-use-rect';
-import type { Midpoint } from './Midpoint';
+import { useState } from 'react';
 import { rectMidpoint } from './rectMidpoint';
 
 export interface UseElementMidpointReturn {

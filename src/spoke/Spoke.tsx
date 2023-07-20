@@ -1,9 +1,9 @@
-import type {
+import {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
-import type { Angle } from '../angle';
-import type { SpokeOffset } from './SpokeOffset';
+import { Angle } from '../angle';
+import { SpokeOffset } from './SpokeOffset';
 import { useSpoke } from './useSpoke';
 import { SpokeStateContext } from './useSpokeState';
 

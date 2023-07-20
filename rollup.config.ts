@@ -1,6 +1,6 @@
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
-import type { RollupOptions } from 'rollup';
+import { RollupOptions } from 'rollup';
 import del from 'rollup-plugin-delete';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json' assert { type: 'json' };

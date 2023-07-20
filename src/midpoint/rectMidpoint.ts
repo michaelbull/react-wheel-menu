@@ -1,4 +1,4 @@
-import type { Midpoint } from './Midpoint';
+import { Midpoint } from './Midpoint';
 
 export interface Rect {
     readonly x: number;

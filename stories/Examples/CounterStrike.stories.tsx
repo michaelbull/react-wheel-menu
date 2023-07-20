@@ -1,13 +1,13 @@
 import './CounterStrike.css';
-import type {
+import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import type {
+import {
     ComponentProps,
-    ReactNode
+    ReactNode,
+    useState
 } from 'react';
-import { useState } from 'react';
 import {
     CircleMenu,
     Label,

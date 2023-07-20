@@ -1,4 +1,4 @@
-import type { Radians } from './Angle';
+import { Radians } from './Angle';
 
 export function angleBetween(x1: number, y1: number, x2: number, y2: number): Radians {
     const deltaX = x2 - x1;

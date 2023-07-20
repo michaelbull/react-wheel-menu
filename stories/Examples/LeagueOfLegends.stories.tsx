@@ -1,20 +1,20 @@
 import './LeagueOfLegends.css';
-import type {
+import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import type {
+import {
     CSSProperties,
     PropsWithChildren,
-    ReactNode
+    ReactNode,
+    useState
 } from 'react';
-import { useState } from 'react';
 import { clsx } from 'clsx';
-import type { Midpoint } from '../../src';
 import {
     CircleMenu,
     Label,
     Layout,
+    Midpoint,
     Segment,
     useElementMidpoint,
     useMouseAngle

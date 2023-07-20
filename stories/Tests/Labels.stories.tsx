@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import {
     CircleMenu,
     Label,
@@ -6,7 +6,7 @@ import {
     Segment,
     Spoke
 } from '../../src';
-import type {
+import {
     Meta,
     StoryObj
 } from '@storybook/react';

@@ -2,8 +2,10 @@ import {
     createContext,
     useContext
 } from 'react';
-import type { SegmentState } from './SegmentState';
-import { DefaultSegmentState } from './SegmentState';
+import {
+    DefaultSegmentState,
+    SegmentState
+} from './SegmentState';
 
 export const SegmentStateContext = createContext<SegmentState>(DefaultSegmentState);
 

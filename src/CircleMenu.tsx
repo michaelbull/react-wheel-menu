@@ -1,4 +1,4 @@
-import type {
+import {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';

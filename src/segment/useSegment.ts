@@ -1,12 +1,12 @@
-import type { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import { clsx } from 'clsx';
-import type { Angle } from '../angle';
 import {
+    Angle,
     angleToDegrees,
     moduloDegrees
 } from '../angle';
-import type { SegmentGap } from './SegmentGap';
-import type { SegmentState } from './SegmentState';
+import { SegmentGap } from './SegmentGap';
+import { SegmentState } from './SegmentState';
 import { transformSegment } from './transformSegment';
 
 export interface UseSegmentProps {

@@ -1,5 +1,5 @@
-import type * as CSS from 'csstype';
-import type { Degrees } from '../angle';
+import * as CSS from 'csstype';
+import { Degrees } from '../angle';
 
 export function transformLayout(angle: Degrees): CSS.Properties['transform'] {
     if (angle === 0) {

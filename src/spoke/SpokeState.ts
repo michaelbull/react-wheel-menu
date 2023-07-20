@@ -1,4 +1,4 @@
-import type { Degrees } from '../angle';
+import { Degrees } from '../angle';
 
 export interface SpokeState {
     readonly angle: Degrees;

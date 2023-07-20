@@ -1,8 +1,10 @@
-import type * as CSS from 'csstype';
-import type { Degrees } from '../angle';
-import type { LabelOrientation } from './LabelOrientation';
-import { DEFAULT_LABEL_ORIENTATION } from './LabelOrientation';
-import type { LabelOffset } from './LabelOffset';
+import * as CSS from 'csstype';
+import { Degrees } from '../angle';
+import {
+    DEFAULT_LABEL_ORIENTATION,
+    LabelOrientation
+} from './LabelOrientation';
+import { LabelOffset } from './LabelOffset';
 import { rotateLabel } from './rotateLabel';
 
 export function transformLabel(

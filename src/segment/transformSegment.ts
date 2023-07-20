@@ -1,6 +1,6 @@
-import type * as CSS from 'csstype';
-import type { SegmentGap } from './SegmentGap';
-import type { SegmentState } from './SegmentState';
+import * as CSS from 'csstype';
+import { SegmentGap } from './SegmentGap';
+import { SegmentState } from './SegmentState';
 
 export function transformSegment(
     state: SegmentState,

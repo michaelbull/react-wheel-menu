@@ -1,12 +1,12 @@
-import type { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import { clsx } from 'clsx';
-import type { Angle } from '../angle';
 import {
+    Angle,
     angleToDegrees,
     moduloDegrees
 } from '../angle';
-import type { SpokeOffset } from './SpokeOffset';
-import type { SpokeState } from './SpokeState';
+import { SpokeOffset } from './SpokeOffset';
+import { SpokeState } from './SpokeState';
 import { transformSpoke } from './transformSpoke';
 
 export interface UseSpokeProps {

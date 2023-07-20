@@ -3,8 +3,10 @@ import {
     expect,
     it
 } from 'vitest';
-import type { Rect } from './rectMidpoint';
-import { rectMidpoint } from './rectMidpoint';
+import {
+    Rect,
+    rectMidpoint
+} from './rectMidpoint';
 
 describe('rectMidpoint', () => {
     it('returns the middle x coordinate', () => {

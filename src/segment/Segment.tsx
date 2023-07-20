@@ -1,9 +1,9 @@
-import type {
+import {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
-import type { Angle } from '../angle';
-import type { SegmentGap } from './SegmentGap';
+import { Angle } from '../angle';
+import { SegmentGap } from './SegmentGap';
 import { useSegment } from './useSegment';
 import { SegmentStateContext } from './useSegmentState';
 

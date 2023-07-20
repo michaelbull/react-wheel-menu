@@ -1,10 +1,10 @@
-import type {
+import {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
+import { LayoutDirection } from './LayoutDirection';
+import { LayoutJustification } from './LayoutJustification';
 import { useLayout } from './useLayout';
-import type { LayoutDirection } from './LayoutDirection';
-import type { LayoutJustification } from './LayoutJustification';
 
 export type LayoutProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;

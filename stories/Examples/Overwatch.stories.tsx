@@ -1,20 +1,18 @@
 import './Overwatch.css';
-import type {
+import {
     Meta,
     StoryObj
 } from '@storybook/react';
-import type {
-    Angle,
-    SpokeOffset
-} from '../../src';
 import {
+    Angle,
     CircleMenu,
     Label,
     Layout,
     Segment,
-    Spoke
+    Spoke,
+    SpokeOffset
 } from '../../src';
-import type {
+import {
     CSSProperties,
     PropsWithChildren
 } from 'react';
