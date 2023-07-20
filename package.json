@@ -58,7 +58,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "clsx": "2.0.0"
+    "clsx": "2.0.0",
+    "react-use-rect": "2.0.4"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "0.4.3",

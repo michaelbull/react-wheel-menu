@@ -3,11 +3,12 @@ import type {
     PropsWithChildren
 } from 'react';
 import type {
-    Direction,
-    Justification,
-    Offset,
-    Orientation,
-    SegmentProps
+    LabelJustification,
+    LabelOrientation,
+    LayoutDirection,
+    LayoutJustification,
+    SegmentProps,
+    SpokeOffset
 } from '../../src';
 import {
     CircleMenu,
@@ -21,12 +22,12 @@ import type {
 } from '@storybook/react';
 
 interface StoryProps {
-    readonly layoutJustify: Justification;
-    readonly layoutDirection: Direction;
+    readonly layoutJustify: LayoutJustification;
+    readonly layoutDirection: LayoutDirection;
 
-    readonly labelOrient: Orientation;
-    readonly labelJustify: Justification;
-    readonly labelOffset: Offset;
+    readonly labelOrient: LabelOrientation;
+    readonly labelJustify: LabelJustification;
+    readonly labelOffset: SpokeOffset;
 }
 
 const meta: Meta<StoryProps> = {

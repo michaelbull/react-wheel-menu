@@ -1,0 +1,13 @@
+import type { Degrees } from '../angle';
+
+export interface SegmentState {
+    readonly from: Degrees;
+    readonly to: Degrees;
+    readonly size: Degrees;
+}
+
+export const DefaultSegmentState: SegmentState = {
+    from: 0,
+    to: 0,
+    size: 0
+};

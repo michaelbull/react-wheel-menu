@@ -9,15 +9,16 @@ import type {
     ReactNode
 } from 'react';
 import { useState } from 'react';
+import { clsx } from 'clsx';
+import type { Midpoint } from '../../src';
 import {
     CircleMenu,
     Label,
     Layout,
     Segment,
-    useAngleToElement,
-    useMousePosition
+    useElementMidpoint,
+    useMouseAngle
 } from '../../src';
-import { clsx } from 'clsx';
 
 const meta: Meta = {
     title: 'Examples',
@@ -45,7 +46,6 @@ export const LeagueOfLegendsStory: StoryObj = {
 
 function Menu() {
     const [indicatorLabel, setIndicatorLabel] = useState<ReactNode>(null);
-    const [mouseX, mouseY] = useMousePosition();
 
     function clearIndication() {
         setIndicatorLabel(null);
@@ -169,7 +169,7 @@ function Menu() {
                 onBlur={clearIndication}
             />
 
-            <Indicator x={mouseX} y={mouseY}>
+            <Indicator>
                 {indicatorLabel}
             </Indicator>
         </CircleMenu>
@@ -215,20 +215,14 @@ function Ping(props: PingProps) {
     );
 }
 
-interface IndicatorProps {
-    readonly x: number;
-    readonly y: number;
-}
-
-function Indicator(props: PropsWithChildren<IndicatorProps>) {
-    const {
-        x,
-        y,
-        children
-    } = props;
-
-    const [indicator, setIndicator] = useState<HTMLDivElement | null>(null);
+function Indicator(props: PropsWithChildren) {
+    const { children } = props;
     const [mouseOutside, setMouseOutside] = useState(true);
+
+    const {
+        midpoint,
+        setElement: ref
+    } = useElementMidpoint();
 
     function onMouseOver() {
         setMouseOutside(false);
@@ -239,9 +233,9 @@ function Indicator(props: PropsWithChildren<IndicatorProps>) {
     }
 
     return (
-        <div className="lol-ping-indicator" ref={setIndicator} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-            {indicator &&
-                <Arrow x={x} y={y} parent={indicator} mouseOutside={mouseOutside}>
+        <div className="lol-ping-indicator" ref={ref} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+            {midpoint &&
+                <Arrow midpoint={midpoint} mouseOutside={mouseOutside}>
                     {children}
                 </Arrow>
             }
@@ -250,27 +244,19 @@ function Indicator(props: PropsWithChildren<IndicatorProps>) {
 }
 
 interface ArrowProps {
-    readonly x: number,
-    readonly y: number;
-    readonly parent: Element;
+    readonly midpoint: Midpoint;
     readonly mouseOutside: boolean;
 }
 
 function Arrow(props: PropsWithChildren<ArrowProps>) {
     const {
-        x,
-        y,
-        parent,
+        midpoint,
         mouseOutside,
         children
     } = props;
 
-    const angle = useAngleToElement({
-        element: parent,
-        x,
-        y
-    });
-
+    const [x, y] = midpoint;
+    const angle = useMouseAngle({ x, y });
     const show = mouseOutside && angle !== null && children !== null;
 
     const style: CSSProperties = {

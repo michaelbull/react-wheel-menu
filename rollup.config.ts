@@ -26,7 +26,8 @@ const srcOptions: RollupOptions = {
     external: [
         'clsx',
         'react',
-        'react/jsx-runtime'
+        'react/jsx-runtime',
+        'react-use-rect'
     ]
 };
 

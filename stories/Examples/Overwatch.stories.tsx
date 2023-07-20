@@ -5,7 +5,7 @@ import type {
 } from '@storybook/react';
 import type {
     Angle,
-    Offset
+    SpokeOffset
 } from '../../src';
 import {
     CircleMenu,
@@ -120,7 +120,7 @@ interface OptionProps {
     readonly from: number;
     readonly to: number;
     readonly label: string;
-    readonly offset?: Offset;
+    readonly offset?: SpokeOffset;
     readonly hotkey?: string;
 }
 
