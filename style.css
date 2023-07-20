@@ -37,6 +37,7 @@
 .circle-menu-spoke,
 .circle-menu-layout {
   overflow: hidden;
+  overflow: clip;
 }
 
 .circle-menu {
@@ -49,7 +50,6 @@
   border-radius: 50%;
 
   clip-path: circle(50%);
-  overflow: clip;
 }
 
 .circle-menu-slice {
