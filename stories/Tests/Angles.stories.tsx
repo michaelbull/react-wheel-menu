@@ -1,19 +1,21 @@
-import {
+import type {
     CSSProperties,
     PropsWithChildren
 } from 'react';
-import {
-    CircleMenu,
+import type {
     Direction,
     Justification,
-    Label,
-    Layout,
     Offset,
     Orientation,
-    Slice,
     SliceProps
 } from '../../src';
 import {
+    CircleMenu,
+    Label,
+    Layout,
+    Slice
+} from '../../src';
+import type {
     Meta,
     StoryObj
 } from '@storybook/react';

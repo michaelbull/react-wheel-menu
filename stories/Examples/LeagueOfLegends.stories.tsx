@@ -1,9 +1,9 @@
-import {
+import type {
     CSSProperties,
     PropsWithChildren,
-    ReactNode,
-    useState
+    ReactNode
 } from 'react';
+import { useState } from 'react';
 import {
     CircleMenu,
     Label,
@@ -12,7 +12,7 @@ import {
     useAngleToElement,
     useMousePosition
 } from '../../src';
-import {
+import type {
     Meta,
     StoryObj
 } from '@storybook/react';

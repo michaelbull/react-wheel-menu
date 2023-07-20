@@ -1,13 +1,15 @@
 import { useSliceState } from './useSliceState';
-import { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
+import type {
+    Justification,
+    Offset,
+    Orientation
+} from '../models';
 import {
     DEFAULT_JUSTIFICATION,
     DEFAULT_OFFSET,
     DEFAULT_ORIENTATION,
-    DefaultSliceState,
-    Justification,
-    Offset,
-    Orientation
+    DefaultSliceState
 } from '../models';
 import { transformLabel } from '../dom';
 import { useSpokeState } from './useSpokeState';

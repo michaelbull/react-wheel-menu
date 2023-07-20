@@ -1,8 +1,8 @@
-import {
+import type {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
-import {
+import type {
     Angle,
     Offset
 } from '../models';

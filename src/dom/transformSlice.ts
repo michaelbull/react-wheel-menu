@@ -1,9 +1,9 @@
-import {
-    DEFAULT_GAP,
+import type {
     Gap,
     SliceState
 } from '../models';
-import * as CSS from 'csstype';
+import { DEFAULT_GAP } from '../models';
+import type * as CSS from 'csstype';
 
 export function transformSlice(
     state: SliceState,

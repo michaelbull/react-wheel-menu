@@ -1,17 +1,19 @@
-import {
+import type {
     CSSProperties,
     PropsWithChildren
 } from 'react';
-import {
+import type {
     Angle,
+    Offset
+} from '../../src';
+import {
     CircleMenu,
     Label,
     Layout,
-    Offset,
     Slice,
     Spoke
 } from '../../src';
-import {
+import type {
     Meta,
     StoryObj
 } from '@storybook/react';

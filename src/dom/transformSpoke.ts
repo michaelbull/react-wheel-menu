@@ -1,9 +1,9 @@
-import * as CSS from 'csstype';
-import {
-    DEFAULT_OFFSET,
+import type * as CSS from 'csstype';
+import type {
     Degrees,
     Offset
 } from '../models';
+import { DEFAULT_OFFSET } from '../models';
 
 export function transformSpoke(
     angle: Degrees,

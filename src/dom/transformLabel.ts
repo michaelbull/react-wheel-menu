@@ -1,12 +1,14 @@
-import {
-    DEFAULT_OFFSET,
-    DEFAULT_ORIENTATION,
+import type {
     Degrees,
     Offset,
     Orientation
 } from '../models';
+import {
+    DEFAULT_OFFSET,
+    DEFAULT_ORIENTATION
+} from '../models';
 import { rotateLabel } from '../math';
-import * as CSS from 'csstype';
+import type * as CSS from 'csstype';
 
 export function transformLabel(
     angle: Degrees,

@@ -2,10 +2,8 @@ import {
     createContext,
     useContext
 } from 'react';
-import {
-    DefaultSliceState,
-    SliceState
-} from '../models';
+import type { SliceState } from '../models';
+import { DefaultSliceState } from '../models';
 
 export const SliceStateContext = createContext<SliceState>(DefaultSliceState);
 

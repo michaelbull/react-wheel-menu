@@ -1,15 +1,15 @@
-import {
+import type {
     ComponentProps,
-    ReactNode,
-    useState
+    ReactNode
 } from 'react';
+import { useState } from 'react';
 import {
     CircleMenu,
     Label,
     Layout,
     Slice
 } from '../../src';
-import {
+import type {
     Meta,
     StoryObj
 } from '@storybook/react';

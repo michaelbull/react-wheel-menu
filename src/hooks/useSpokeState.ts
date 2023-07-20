@@ -2,10 +2,8 @@ import {
     createContext,
     useContext
 } from 'react';
-import {
-    DefaultSpokeState,
-    SpokeState
-} from '../models';
+import type { SpokeState } from '../models';
+import { DefaultSpokeState } from '../models';
 
 export const SpokeStateContext = createContext<SpokeState>(DefaultSpokeState);
 

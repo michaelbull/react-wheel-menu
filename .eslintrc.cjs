@@ -21,6 +21,9 @@ module.exports = {
         'react',
         'react-hooks'
     ],
+    rules: {
+        '@typescript-eslint/consistent-type-imports': 'error'
+    },
     settings: {
         react: {
             version: 'detect'

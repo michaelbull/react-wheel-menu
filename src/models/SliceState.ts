@@ -1,4 +1,4 @@
-import { Degrees } from './Angle';
+import type { Degrees } from './Angle';
 
 export interface SliceState {
     readonly from: Degrees;

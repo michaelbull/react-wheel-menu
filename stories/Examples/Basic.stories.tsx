@@ -1,4 +1,4 @@
-import {
+import type {
     CSSProperties,
     MouseEvent
 } from 'react';
@@ -8,7 +8,7 @@ import {
     Layout,
     Slice
 } from '../../src';
-import {
+import type {
     Meta,
     StoryObj
 } from '@storybook/react';

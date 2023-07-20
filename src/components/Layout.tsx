@@ -1,9 +1,9 @@
-import {
+import type {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
 import { useLayout } from '../hooks';
-import {
+import type {
     Direction,
     Justification
 } from '../models';

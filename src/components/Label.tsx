@@ -1,9 +1,9 @@
-import {
+import type {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
 import { useLabel } from '../hooks';
-import {
+import type {
     Justification,
     Offset,
     Orientation

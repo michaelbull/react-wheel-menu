@@ -1,10 +1,10 @@
-import { CSSProperties } from 'react';
-import {
+import type { CSSProperties } from 'react';
+import type {
     Angle,
-    DEFAULT_OFFSET,
     Offset,
     SpokeState
 } from '../models';
+import { DEFAULT_OFFSET } from '../models';
 import {
     angleToDegrees,
     modulo

@@ -1,4 +1,4 @@
-import {
+import type {
     ComponentPropsWithoutRef,
     ElementType
 } from 'react';
@@ -6,7 +6,7 @@ import {
     SliceStateContext,
     useSlice
 } from '../hooks';
-import {
+import type {
     Angle,
     Gap
 } from '../models';

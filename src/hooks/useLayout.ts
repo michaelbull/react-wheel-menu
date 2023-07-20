@@ -1,12 +1,14 @@
-import { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 import { useSliceState } from './useSliceState';
 import { transformLayout } from '../dom';
 import clsx from 'clsx';
-import {
-    DEFAULT_DIRECTION,
-    DEFAULT_JUSTIFICATION,
+import type {
     Direction,
     Justification
+} from '../models';
+import {
+    DEFAULT_DIRECTION,
+    DEFAULT_JUSTIFICATION
 } from '../models';
 
 export interface UseLayoutProps {

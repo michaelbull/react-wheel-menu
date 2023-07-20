@@ -1,10 +1,10 @@
-import { CSSProperties } from 'react';
-import {
+import type { CSSProperties } from 'react';
+import type {
     Angle,
-    DEFAULT_GAP,
     Gap,
     SliceState
 } from '../models';
+import { DEFAULT_GAP } from '../models';
 import {
     angleToDegrees,
     modulo
