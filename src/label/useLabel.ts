@@ -10,12 +10,7 @@ import {
 import { LabelOffset } from './LabelOffset';
 import { clsx } from 'clsx';
 import { transformLabel } from './transformLabel';
-import { Degrees } from '../angle';
-import {
-    DefaultSegmentState,
-    useSegmentState
-} from '../segment';
-import { useSpokeState } from '../spoke';
+import { useLabelAngle } from './useLabelAngle';
 
 export interface UseLabelProps {
     readonly className?: string;
@@ -56,15 +51,4 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
         className,
         style
     };
-}
-
-function useLabelAngle(): Degrees {
-    const segmentState = useSegmentState();
-    const spokeState = useSpokeState();
-
-    if (segmentState === DefaultSegmentState) {
-        return spokeState.angle;
-    } else {
-        return segmentState.from + (segmentState.size / 2);
-    }
 }

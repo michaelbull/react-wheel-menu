@@ -45,7 +45,7 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
     const state: SegmentState = {
         from,
         to,
-        size
+        magnitude: size
     };
 
     const className = clsx(

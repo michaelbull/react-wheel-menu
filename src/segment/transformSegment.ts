@@ -9,11 +9,11 @@ export function transformSegment(
 ): CSS.Properties['transform'] {
     const {
         from,
-        size
+        magnitude
     } = state;
 
-    const rotation = `rotate(${from + size - 90}deg)`;
-    const skew = `skew(${size - 90}deg)`;
+    const rotation = `rotate(${from + magnitude - 90}deg)`;
+    const skew = `skew(${magnitude - 90}deg)`;
     const translation = gapTranslation(gapBefore, gapAfter);
 
     if (translation === null) {

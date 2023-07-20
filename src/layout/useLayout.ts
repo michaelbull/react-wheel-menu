@@ -31,7 +31,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
         justify = DEFAULT_LAYOUT_JUSTIFICATION
     } = props;
 
-    const { size } = useSegmentState();
+    const { magnitude } = useSegmentState();
 
     const className = clsx(
         'circle-menu-layout',
@@ -41,7 +41,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
     );
 
     const style: CSSProperties = {
-        transform: transformLayout(size),
+        transform: transformLayout(magnitude),
         ...styleProp
     };
 
