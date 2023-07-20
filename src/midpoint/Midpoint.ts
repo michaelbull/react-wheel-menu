@@ -1,1 +1,1 @@
-export type Midpoint = [number, number]
+export type Midpoint = [number, number];

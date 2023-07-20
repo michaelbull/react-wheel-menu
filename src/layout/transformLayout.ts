@@ -11,11 +11,13 @@ export function transformLayout(angle: Degrees): CSS.Properties['transform'] {
         const skew = `skew(${-(angle - 90)}deg)`;
         const rotate = `rotate(${90 - (angle / 2)}deg)`;
 
-        return [
+        const transformations = [
             translateX,
             skew,
             rotate,
             translateY
-        ].join(' ');
+        ];
+
+        return transformations.join(' ');
     }
 }

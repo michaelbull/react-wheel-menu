@@ -12,13 +12,24 @@ export function transformLabel(
     orientation: LabelOrientation = DEFAULT_LABEL_ORIENTATION,
     offset?: LabelOffset
 ): CSS.Properties['transform'] {
-    const rotation = `rotate(${rotateLabel(orientation, angle)}deg)`;
+    const translateY = verticalTranslation(offset);
+    const rotate = `rotate(${rotateLabel(orientation, angle)}deg)`;
 
+    const transformations = [
+        translateY,
+        rotate
+    ];
+
+    return transformations
+        .filter(notNull)
+        .join(' ');
+}
+
+function verticalTranslation(offset?: LabelOffset): string | null {
     if (offset === undefined) {
-        return rotation;
+        return null;
     } else {
-        const translation = `translateY(${offsetWithUnit(offset)})`;
-        return `${translation} ${rotation}`;
+        return `translateY(${offsetWithUnit(offset)})`;
     }
 }
 
@@ -28,4 +39,8 @@ function offsetWithUnit(offset: LabelOffset, unit = 'px'): string {
     } else {
         return offset;
     }
+}
+
+function notNull<T>(value: T | null): value is T {
+    return value !== null;
 }

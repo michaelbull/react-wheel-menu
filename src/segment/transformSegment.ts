@@ -12,15 +12,19 @@ export function transformSegment(
         magnitude
     } = state;
 
-    const rotation = `rotate(${from + magnitude - 90}deg)`;
+    const rotate = `rotate(${from + magnitude - 90}deg)`;
     const skew = `skew(${magnitude - 90}deg)`;
-    const translation = gapTranslation(gapBefore, gapAfter);
+    const translate = gapTranslation(gapBefore, gapAfter);
 
-    if (translation === null) {
-        return `${rotation} ${skew}`;
-    } else {
-        return `${rotation} ${skew} ${translation}`;
-    }
+    const transformations = [
+        rotate,
+        skew,
+        translate
+    ];
+
+    return transformations
+        .filter(notNull)
+        .join(' ');
 }
 
 function gapTranslation(before?: SegmentGap, after?: SegmentGap): string | null {
@@ -45,4 +49,8 @@ function gapWithUnit(gap: SegmentGap, unit = 'px'): string {
     } else {
         return gap;
     }
+}
+
+function notNull<T>(value: T | null): value is T {
+    return value !== null;
 }
