@@ -1,12 +1,12 @@
 import type {
     Gap,
-    SliceState
+    SegmentState
 } from '../models';
 import { DEFAULT_GAP } from '../models';
 import type * as CSS from 'csstype';
 
-export function transformSlice(
-    state: SliceState,
+export function transformSegment(
+    state: SegmentState,
     gapBefore: Gap = DEFAULT_GAP,
     gapAfter: Gap = DEFAULT_GAP
 ): CSS.Properties['transform'] {

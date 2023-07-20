@@ -7,7 +7,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice
+    Segment
 } from '../../src';
 import type {
     Meta,
@@ -308,7 +308,7 @@ function Item(props: ItemProps) {
     } = props;
 
     return (
-        <Slice as="li" className="csgo-item" from={from} to={to} gapBefore={2} gapAfter={2}>
+        <Segment as="li" className="csgo-item" from={from} to={to} gapBefore={2} gapAfter={2}>
             <Layout as="button" className="cs-item__button" justify="start" {...rest}>
                 <Label className="cs-item__hotkey" offset={-60} aria-hidden>
                     {hotkey}
@@ -328,6 +328,6 @@ function Item(props: ItemProps) {
                     </span>
                 </Label>
             </Layout>
-        </Slice>
+        </Segment>
     );
 }

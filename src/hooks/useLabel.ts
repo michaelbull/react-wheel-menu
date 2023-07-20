@@ -1,4 +1,4 @@
-import { useSliceState } from './useSliceState';
+import { useSegmentState } from './useSegmentState';
 import type { CSSProperties } from 'react';
 import type {
     Justification,
@@ -9,7 +9,7 @@ import {
     DEFAULT_JUSTIFICATION,
     DEFAULT_OFFSET,
     DEFAULT_ORIENTATION,
-    DefaultSliceState
+    DefaultSegmentState
 } from '../models';
 import { transformLabel } from '../dom';
 import { useSpokeState } from './useSpokeState';
@@ -57,12 +57,12 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
 }
 
 function useLabelAngle(): number {
-    const sliceState = useSliceState();
+    const segmentState = useSegmentState();
     const spokeState = useSpokeState();
 
-    if (sliceState === DefaultSliceState) {
+    if (segmentState === DefaultSegmentState) {
         return spokeState.angle;
     } else {
-        return sliceState.from + (sliceState.size / 2);
+        return segmentState.from + (segmentState.size / 2);
     }
 }

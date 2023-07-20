@@ -6,7 +6,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice
+    Segment
 } from '../../src';
 import type {
     Meta,
@@ -39,13 +39,13 @@ export const Basic: StoryObj = {
 
         return (
             <CircleMenu style={{ width: 300, height: 300 }}>
-                <Slice from={315} to={45} style={red}>
+                <Segment from={315} to={45} style={red}>
                     <Layout>
                         <Label>Red</Label>
                     </Layout>
-                </Slice>
+                </Segment>
 
-                <Slice from="45deg" to="37.5%" style={yellow}>
+                <Segment from="45deg" to="37.5%" style={yellow}>
                     <Layout direction="vertical" justify="start">
                         <Label orient="outwards" offset={-30}>Start</Label>
                     </Layout>
@@ -58,19 +58,20 @@ export const Basic: StoryObj = {
                     <Layout direction="vertical" justify="end">
                         <Label orient="inwards" offset={10}>End</Label>
                     </Layout>
-                </Slice>
+                </Segment>
 
-                <Slice from="37.5%" to="3.92699rad" style={blue} as="button" onClick={onClickBlue}>
+                <Segment from="37.5%" to="3.92699rad" style={blue} as="button" onClick={onClickBlue}>
                     <Layout>
                         <Label>Blue</Label>
                     </Layout>
-                </Slice>
+                </Segment>
 
-                <Slice from="3.92699rad" to="0.875turn" style={green} as="a" href="https://example.com" target="_blank">
+                <Segment from="3.92699rad" to="0.875turn" style={green} as="a" href="https://example.com"
+                         target="_blank">
                     <Layout>
                         <Label>Green</Label>
                     </Layout>
-                </Slice>
+                </Segment>
             </CircleMenu>
         );
     }

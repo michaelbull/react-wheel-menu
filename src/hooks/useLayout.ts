@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { useSliceState } from './useSliceState';
+import { useSegmentState } from './useSegmentState';
 import { transformLayout } from '../dom';
 import clsx from 'clsx';
 import type {
@@ -31,7 +31,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
         justify = DEFAULT_JUSTIFICATION
     } = props;
 
-    const { size } = useSliceState();
+    const { size } = useSegmentState();
 
     const className = clsx(
         'circle-menu-layout',

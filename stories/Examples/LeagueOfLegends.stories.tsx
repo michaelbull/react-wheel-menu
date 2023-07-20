@@ -8,7 +8,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice,
+    Segment,
     useAngleToElement,
     useMousePosition
 } from '../../src';
@@ -200,7 +200,7 @@ function Ping(props: PingProps) {
     });
 
     return (
-        <Slice as="button" className="lol-ping" gapBefore={2} gapAfter={2} aria-label={label} {...rest}>
+        <Segment as="button" className="lol-ping" gapBefore={2} gapAfter={2} aria-label={label} {...rest}>
             <Layout className={layoutClassName}>
                 <Label offset={-20}>
                     <img
@@ -211,7 +211,7 @@ function Ping(props: PingProps) {
                     />
                 </Label>
             </Layout>
-        </Slice>
+        </Segment>
     );
 }
 

@@ -98,7 +98,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice
+    Segment
 } from 'react-circle-menu';
 
 export function Example() {
@@ -113,13 +113,13 @@ export function Example() {
 
     return (
         <CircleMenu style={{ width: 300, height: 300 }}>
-            <Slice from={315} to={45} style={red}>
+            <Segment from={315} to={45} style={red}>
                 <Layout>
                     <Label>Red</Label>
                 </Layout>
-            </Slice>
+            </Segment>
 
-            <Slice from="45deg" to="37.5%" style={yellow}>
+            <Segment from="45deg" to="37.5%" style={yellow}>
                 <Layout direction="vertical" justify="start">
                     <Label orient="outwards" offset={-30}>Start</Label>
                 </Layout>
@@ -132,19 +132,19 @@ export function Example() {
                 <Layout direction="vertical" justify="end">
                     <Label orient="inwards" offset={10}>End</Label>
                 </Layout>
-            </Slice>
+            </Segment>
 
-            <Slice from="37.5%" to="3.92699rad" style={blue} as="button" onClick={onClickBlue}>
+            <Segment from="37.5%" to="3.92699rad" style={blue} as="button" onClick={onClickBlue}>
                 <Layout>
                     <Label>Blue</Label>
                 </Layout>
-            </Slice>
+            </Segment>
 
-            <Slice from="3.92699rad" to="0.875turn" style={green} as="a" href="https://example.com" target="_blank">
+            <Segment from="3.92699rad" to="0.875turn" style={green} as="a" href="https://example.com" target="_blank">
                 <Layout>
                     <Label>Green</Label>
                 </Layout>
-            </Slice>
+            </Segment>
         </CircleMenu>
     );
 }
@@ -152,31 +152,31 @@ export function Example() {
 
 ## Components
 
-### `<Slice>`
+### `<Segment>`
 
-A `<Slice>` must specify the angle it starts `from` and spans `to`, such as:
+A `<Segment>` must specify the angle it starts `from` and spans `to`, such as:
 
-- A right-angled slice in [degrees][degree]:
-    - `<Slice from={0} to={90} />`
-- An acute-angled slice in [radians][radian]:
-    - `<Slice from="1rad" to="2rad" />`
-- An obtuse-angled slice in [gradians][gradian]:
-    - `<Slice from="100grad" to="210grad" />`
-- A right-angled slice in [turns][turn]:
-    - `<Slice from="0.5turn" to="0.75turn" />`
-- An obtuse-angled slice in percentages:
-    - `<Slice from="50%" to="85%" />`
+- A right-angled segment in [degrees][degree]:
+    - `<Segment from={0} to={90} />`
+- An acute-angled segment in [radians][radian]:
+    - `<Segment from="1rad" to="2rad" />`
+- An obtuse-angled segment in [gradians][gradian]:
+    - `<Segment from="100grad" to="210grad" />`
+- A right-angled segment in [turns][turn]:
+    - `<Segment from="0.5turn" to="0.75turn" />`
+- An obtuse-angled segment in percentages:
+    - `<Segment from="50%" to="85%" />`
 
 ### `<Spoke>`
 
 A `<Spoke>` is a straight line radiating from the centre of the `<CircleMenu>`.
 
-Spokes can be used to visually split slices, for example:
+Spokes can be used to visually split segments, for example:
 
 ```tsx
 <CircleMenu style={{ width: 300, height: 300 }}>
-    <Slice from="0deg" to="45deg" style={{ background: 'red' }} />
-    <Slice from="45deg" to="90deg" style={{ background: 'blue' }} />
+    <Segment from="0deg" to="45deg" style={{ background: 'red' }} />
+    <Segment from="45deg" to="90deg" style={{ background: 'blue' }} />
     <Spoke angle="45deg" style={{ background: 'white', height: '100px' }} />
 </CircleMenu>
 ```
@@ -184,18 +184,18 @@ Spokes can be used to visually split slices, for example:
 ### `<Layout>`
 
 A `<Layout>` controls the distribution and orientation of `<Label>`s inside a
-`<Slice>` or `<Spoke>`.
+`<Segment>` or `<Spoke>`.
 
-In the `<Layout>` below, the `<Label>` is positioned at the edge of the slice
+In the `<Layout>` below, the `<Label>` is positioned at the edge of the segment
 with the text facing inwards to the center of the circle.
 
 ```tsx
 <CircleMenu style={{ width: 300, height: 300 }}>
-    <Slice from={0} to={90}>
+    <Segment from={0} to={90}>
         <Layout direction="vertical" justify="end">
             <Label orient="inwards">Inwards Label</Label>
         </Layout>
-    </Slice>
+    </Segment>
 
     <Spoke angle="45deg" style={{ width: '10px' }}>
         <Layout direction="vertical">

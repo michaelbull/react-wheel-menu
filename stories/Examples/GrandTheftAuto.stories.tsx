@@ -6,7 +6,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice
+    Segment
 } from '../../src';
 import type {
     Meta,
@@ -123,14 +123,14 @@ function Weapon(props: PropsWithChildren<WeaponProps>) {
     const label = labelFrom(labelProp, ammo, reserve);
 
     return (
-        <Slice as="button" className="gta-weapon" gapBefore={4} gapAfter={4} aria-label={label} {...rest}>
+        <Segment as="button" className="gta-weapon" gapBefore={4} gapAfter={4} aria-label={label} {...rest}>
             <Layout className="gta-weapon__button" justify="end">
                 <Label className="gta-weapon__label" offset={50}>
                     {children}
                     <Ammo current={ammo} reserve={reserve} />
                 </Label>
             </Layout>
-        </Slice>
+        </Segment>
     );
 }
 

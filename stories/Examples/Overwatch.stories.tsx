@@ -10,7 +10,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice,
+    Segment,
     Spoke
 } from '../../src';
 import type {
@@ -135,7 +135,7 @@ function Option(props: PropsWithChildren<OptionProps>) {
     } = props;
 
     return (
-        <Slice as="li" className="ow-communication-option" gapBefore={1} gapAfter={1} {...rest}>
+        <Segment as="li" className="ow-communication-option" gapBefore={1} gapAfter={1} {...rest}>
             <Layout as="button" className="ow-option__button" justify="start" aria-label={label}>
                 {hotkey &&
                     <Label offset={-110}>
@@ -155,7 +155,7 @@ function Option(props: PropsWithChildren<OptionProps>) {
                     </Label>
                 }
             </Layout>
-        </Slice>
+        </Segment>
     );
 }
 

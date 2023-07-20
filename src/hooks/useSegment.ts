@@ -2,17 +2,17 @@ import type { CSSProperties } from 'react';
 import type {
     Angle,
     Gap,
-    SliceState
+    SegmentState
 } from '../models';
 import { DEFAULT_GAP } from '../models';
 import {
     angleToDegrees,
     modulo
 } from '../math';
-import { transformSlice } from '../dom';
+import { transformSegment } from '../dom';
 import clsx from 'clsx';
 
-export interface UseSliceProps {
+export interface UseSegmentProps {
     readonly className?: string;
     readonly style?: CSSProperties;
     readonly from: Angle;
@@ -21,13 +21,13 @@ export interface UseSliceProps {
     readonly gapAfter?: Gap;
 }
 
-export interface UseSliceReturn {
-    readonly state: SliceState;
+export interface UseSegmentReturn {
+    readonly state: SegmentState;
     readonly className: string;
     readonly style: CSSProperties;
 }
 
-export function useSlice(props: UseSliceProps): UseSliceReturn {
+export function useSegment(props: UseSegmentProps): UseSegmentReturn {
     const {
         className: classNameProp,
         style: styleProp,
@@ -45,19 +45,19 @@ export function useSlice(props: UseSliceProps): UseSliceReturn {
     const delta = modulo(toDeg - fromDeg, 360);
     const size = Math.min(150, delta);
 
-    const state: SliceState = {
+    const state: SegmentState = {
         from,
         to,
         size
     };
 
     const className = clsx(
-        'circle-menu-slice',
+        'circle-menu-segment',
         classNameProp
     );
 
     const style: CSSProperties = {
-        transform: transformSlice(state, gapBefore, gapAfter),
+        transform: transformSegment(state, gapBefore, gapAfter),
         ...styleProp
     };
 

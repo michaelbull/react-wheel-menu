@@ -4,5 +4,5 @@ export * from './Gap';
 export * from './Justification';
 export * from './Offset';
 export * from './Orientation';
-export * from './SliceState';
+export * from './SegmentState';
 export * from './SpokeState';

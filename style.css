@@ -1,5 +1,5 @@
 .circle-menu,
-.circle-menu-slice,
+.circle-menu-segment,
 .circle-menu-spoke,
 .circle-menu-layout,
 .circle-menu-label {
@@ -25,7 +25,7 @@
 }
 
 .circle-menu:focus,
-.circle-menu-slice:focus,
+.circle-menu-segment:focus,
 .circle-menu-spoke:focus,
 .circle-menu-layout:focus,
 .circle-menu-label:focus {
@@ -33,7 +33,7 @@
 }
 
 .circle-menu,
-.circle-menu-slice,
+.circle-menu-segment,
 .circle-menu-spoke,
 .circle-menu-layout {
   overflow: hidden;
@@ -52,7 +52,7 @@
   clip-path: circle(50%);
 }
 
-.circle-menu-slice {
+.circle-menu-segment {
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -82,7 +82,7 @@
   transform-origin: bottom;
 }
 
-.circle-menu-slice > .circle-menu-layout {
+.circle-menu-segment > .circle-menu-layout {
   padding-top: 25%;
   padding-bottom: 50%;
 }

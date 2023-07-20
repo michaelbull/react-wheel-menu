@@ -7,13 +7,13 @@ import type {
     Justification,
     Offset,
     Orientation,
-    SliceProps
+    SegmentProps
 } from '../../src';
 import {
     CircleMenu,
     Label,
     Layout,
-    Slice
+    Segment
 } from '../../src';
 import type {
     Meta,
@@ -181,7 +181,7 @@ export const ObtuseStory: Story = {
     }
 };
 
-interface ButtonProps extends StoryProps, SliceProps<'button'> {
+interface ButtonProps extends StoryProps, SegmentProps<'button'> {
     readonly background: CSSProperties['background'];
     readonly height: number;
 }
@@ -211,7 +211,7 @@ function Button(props: PropsWithChildren<ButtonProps>) {
     };
 
     return (
-        <Slice as="button" {...rest}>
+        <Segment as="button" {...rest}>
             <Layout style={layoutStyle} justify={layoutJustify} direction={layoutDirection}>
                 <Label orient={labelOrient} justify={labelJustify} offset={labelOffset} style={labelStyle}>
                     {children}
@@ -221,6 +221,6 @@ function Button(props: PropsWithChildren<ButtonProps>) {
                     {children}
                 </Label>
             </Layout>
-        </Slice>
+        </Segment>
     );
 }

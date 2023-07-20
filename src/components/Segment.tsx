@@ -3,15 +3,15 @@ import type {
     ElementType
 } from 'react';
 import {
-    SliceStateContext,
-    useSlice
+    SegmentStateContext,
+    useSegment
 } from '../hooks';
 import type {
     Angle,
     Gap
 } from '../models';
 
-export type SliceProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef<T> & {
+export type SegmentProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
     readonly from: Angle;
     readonly to: Angle;
@@ -19,7 +19,7 @@ export type SliceProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef
     readonly gapAfter?: Gap;
 };
 
-export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
+export function Segment<T extends ElementType = 'div'>(props: SegmentProps<T>) {
     const {
         as: Component = 'div',
         className,
@@ -34,8 +34,8 @@ export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
 
     const {
         state,
-        ...sliceProps
-    } = useSlice({
+        ...segmentProps
+    } = useSegment({
         className,
         style,
         from,
@@ -45,10 +45,10 @@ export function Slice<T extends ElementType = 'div'>(props: SliceProps<T>) {
     });
 
     return (
-        <Component {...sliceProps} {...rest}>
-            <SliceStateContext.Provider value={state}>
+        <Component {...segmentProps} {...rest}>
+            <SegmentStateContext.Provider value={state}>
                 {children}
-            </SliceStateContext.Provider>
+            </SegmentStateContext.Provider>
         </Component>
     );
 }

@@ -3,7 +3,7 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Slice,
+    Segment,
     Spoke
 } from '../../src';
 import type {
@@ -50,26 +50,26 @@ function Body() {
     );
 }
 
-export const SlicesStory: StoryObj = {
-    name: 'Slices',
+export const SegmentsStory: StoryObj = {
+    name: 'Segments',
     render: () => {
         return (
             <CircleMenu style={menuStyle}>
-                <Slice from={315} to={45} style={{ backgroundColor: 'red' }}>
+                <Segment from={315} to={45} style={{ backgroundColor: 'red' }}>
                     <Body />
-                </Slice>
+                </Segment>
 
-                <Slice from={45} to={135} style={{ backgroundColor: 'green' }}>
+                <Segment from={45} to={135} style={{ backgroundColor: 'green' }}>
                     <Body />
-                </Slice>
+                </Segment>
 
-                <Slice from={135} to={225} style={{ backgroundColor: 'yellow' }}>
+                <Segment from={135} to={225} style={{ backgroundColor: 'yellow' }}>
                     <Body />
-                </Slice>
+                </Segment>
 
-                <Slice from={225} to={315} style={{ backgroundColor: 'blue' }}>
+                <Segment from={225} to={315} style={{ backgroundColor: 'blue' }}>
                     <Body />
-                </Slice>
+                </Segment>
             </CircleMenu>
         );
     }
