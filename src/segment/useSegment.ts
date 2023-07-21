@@ -40,12 +40,14 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
     const from = moduloDegrees(fromDeg);
     const to = moduloDegrees(toDeg);
     const delta = moduloDegrees(toDeg - fromDeg);
-    const size = Math.min(150, delta);
+    const magnitude = Math.min(150, delta);
 
     const state: SegmentState = {
         from,
         to,
-        magnitude: size
+        magnitude,
+        gapBefore,
+        gapAfter
     };
 
     const className = clsx(
@@ -54,7 +56,7 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
     );
 
     const style: CSSProperties = {
-        transform: transformSegment(state, gapBefore, gapAfter),
+        transform: transformSegment(state),
         ...styleProp
     };
 

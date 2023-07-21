@@ -2,14 +2,12 @@ import * as CSS from 'csstype';
 import { SegmentGap } from './SegmentGap';
 import { SegmentState } from './SegmentState';
 
-export function transformSegment(
-    state: SegmentState,
-    gapBefore?: SegmentGap,
-    gapAfter?: SegmentGap
-): CSS.Properties['transform'] {
+export function transformSegment(state: SegmentState): CSS.Properties['transform'] {
     const {
         from,
-        magnitude
+        magnitude,
+        gapBefore,
+        gapAfter
     } = state;
 
     const rotate = `rotate(${from + magnitude - 90}deg)`;

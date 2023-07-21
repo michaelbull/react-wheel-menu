@@ -1,9 +1,12 @@
 import { Degrees } from '../angle';
+import { SegmentGap } from './SegmentGap';
 
 export interface SegmentState {
     readonly from: Degrees;
     readonly to: Degrees;
     readonly magnitude: Degrees;
+    readonly gapBefore?: SegmentGap;
+    readonly gapAfter?: SegmentGap;
 }
 
 export const DefaultSegmentState: SegmentState = {
