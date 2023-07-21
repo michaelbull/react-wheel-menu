@@ -87,9 +87,15 @@
   transition: opacity 100ms ease-out;
 }
 
-.ow-option__button:hover::before {
+.ow-option__button:hover::before,
+.ow-option__button:focus::before,
+.ow-option__button:active::before {
   opacity: 1;
   transition: none;
+}
+
+.ow-option__button:active::before {
+  background-image: radial-gradient(circle, transparent 0, transparent 92px, hsla(218, 70%, 60%, 0.3) 92px);
 }
 
 .ow-hotkey {
