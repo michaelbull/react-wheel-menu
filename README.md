@@ -148,7 +148,7 @@ export function Example() {
 
 ### `<Segment>`
 
-A `<Segment>` must specify the angle it starts `from` and spans `to`, such as:
+A `<Segment>` must specify the angle it starts `from` and spans `to`, for example:
 
 - A right-angled segment in [degrees][degree]:
     - `<Segment from={0} to={90} />`
