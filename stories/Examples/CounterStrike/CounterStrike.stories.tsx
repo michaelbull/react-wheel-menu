@@ -13,7 +13,7 @@ import {
     Label,
     Layout,
     Segment
-} from '../../src';
+} from '../../../src';
 
 const meta: Meta = {
     title: 'Examples',
@@ -281,12 +281,7 @@ function GrenadesMenu(props: SubMenuProps) {
 
 function TeamImage() {
     return (
-        <img
-            className="cs-menu__team"
-            src="https://static.wikia.nocookie.net/cswikia/images/e/e0/Icon-t-patch-small.png"
-            alt="CT"
-            referrerPolicy="no-referrer"
-        />
+        <div className="cs-menu__team" />
     );
 }
 
@@ -308,7 +303,7 @@ function Item(props: ItemProps) {
     } = props;
 
     return (
-        <Segment as="li" className="csgo-item" from={from} to={to} gapBefore={2} gapAfter={2}>
+        <Segment as="li" className="cs-item" from={from} to={to} gapBefore={2} gapAfter={2}>
             <Layout as="button" className="cs-item__button" justify="start" {...rest}>
                 <Label className="cs-item__hotkey" offset={-60} aria-hidden>
                     {hotkey}

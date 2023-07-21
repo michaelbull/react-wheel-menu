@@ -14,7 +14,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('https://media-rockstargames-com.akamaized.net/tina-uploads/tina-modules/7772/5b063d8c17dd9394e2be4d36b500f9c7d8661096.jpg');
+  background-image: url('./Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,6 +58,10 @@
   z-index: 1;
 }
 
+.gta-weapon {
+  user-select: none;
+}
+
 .gta-weapon__button {
   background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(0, 0%, 20%, 0.6) 19%, hsla(0, 0%, 20%, 0.6) 30.5%, hsla(0, 0%, 10%, 0.8) 30.5%, hsla(0, 0%, 10%, 0.8) 31%, transparent 31%);
 }
@@ -77,8 +81,44 @@
 }
 
 .gta-weapon__icon {
-  width: auto;
+  width: 400px;
   height: 46px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.gta-weapon__icon--pistol {
+  background-image: url('./Pistol.png');
+}
+
+.gta-weapon__icon--smg {
+  background-image: url('./SMG.png');
+}
+
+.gta-weapon__icon--rifle {
+  background-image: url('./Rifle.png');
+}
+
+.gta-weapon__icon--sniper {
+  background-image: url('./Sniper.png');
+}
+
+.gta-weapon__icon--fist {
+  background-image: url('./Fist.png');
+}
+
+.gta-weapon__icon--shotgun {
+  background-image: url('./Shotgun.png');
+}
+
+.gta-weapon__icon--minigun {
+  background-image: url('./Minigun.png');
+}
+
+.gta-weapon__icon--grenade {
+  background-image: url('./Grenade.png');
 }
 
 .gta-weapon-ammo {

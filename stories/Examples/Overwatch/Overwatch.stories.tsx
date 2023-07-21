@@ -11,7 +11,7 @@ import {
     Segment,
     Spoke,
     SpokeOffset
-} from '../../src';
+} from '../../../src';
 import {
     CSSProperties,
     PropsWithChildren
@@ -133,7 +133,7 @@ function Option(props: PropsWithChildren<OptionProps>) {
     } = props;
 
     return (
-        <Segment as="li" className="ow-communication-option" gapBefore={1} gapAfter={1} {...rest}>
+        <Segment as="li" className="ow-option" gapBefore={1} gapAfter={1} {...rest}>
             <Layout as="button" className="ow-option__button" justify="start" aria-label={label}>
                 {hotkey &&
                     <Label offset={-110}>

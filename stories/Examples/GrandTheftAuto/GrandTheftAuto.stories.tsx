@@ -4,7 +4,7 @@ import {
     StoryObj
 } from '@storybook/react';
 import {
-    ComponentProps,
+    CSSProperties,
     PropsWithChildren
 } from 'react';
 import {
@@ -12,7 +12,8 @@ import {
     Label,
     Layout,
     Segment
-} from '../../src';
+} from '../../../src';
+import { clsx } from 'clsx';
 
 const meta: Meta = {
     title: 'Examples',
@@ -42,60 +43,35 @@ function Menu() {
     return (
         <CircleMenu className="gta-menu">
             <Weapon from={337.5} to={22.5} label="Pistol" ammo={88} reserve={12}>
-                <Icon
-                    src="https://vignette.wikia.nocookie.net/gtawiki/images/8/8f/Pistol-GTAVPC-HUD.png"
-                    alt="Pistol Icon"
-                />
+                <Icon name="pistol" />
             </Weapon>
 
             <Weapon from={22.5} to={67.5} label="SMG" ammo={754} reserve={1}>
-                <Icon
-                    src="https://vignette.wikia.nocookie.net/gtawiki/images/5/5e/SMG-GTAVPC-HUD.png"
-                    alt="SMG Icon"
-                />
+                <Icon name="smg" />
             </Weapon>
 
             <Weapon from={67.5} to={112.5} label="Rifle" ammo={34} reserve={60}>
-                <Icon
-                    src="https://vignette.wikia.nocookie.net/gtawiki/images/7/7a/CarbineRifle-GTAVPC-HUD.png"
-                    alt="Rifle Icon"
-                />
+                <Icon name="rifle" />
             </Weapon>
 
             <Weapon from={112.5} to={157.5} label="Sniper" ammo={1} reserve={11}>
-                <Icon
-                    src="https://static.wikia.nocookie.net/gtawiki/images/5/59/SniperRifle-GTAVPC-HUD.png"
-                    alt="Sniper Icon"
-                    style={{ marginLeft: 26, marginTop: -26 }}
-                />
+                <Icon name="sniper" style={{ marginLeft: 26, marginTop: -26 }} />
             </Weapon>
 
             <Weapon from={157.5} to={202.5} label="Fists">
-                <Icon
-                    src="https://vignette.wikia.nocookie.net/gtawiki/images/e/e0/Fist-GTAVPC-HUD.png"
-                    alt="Fists Icon"
-                />
+                <Icon name="fist" />
             </Weapon>
 
             <Weapon from={202.5} to={247.5} label="Shotgun" ammo={92} reserve={8}>
-                <Icon
-                    src="https://vignette.wikia.nocookie.net/gtawiki/images/b/b4/SawedoffShotgun-GTAVPC-HUD.png"
-                    alt="Shotgun Icon"
-                />
+                <Icon name="shotgun" />
             </Weapon>
 
             <Weapon from={247.5} to={292.5} label="Minigun" ammo={77} reserve={100}>
-                <Icon
-                    src="https://vignette.wikia.nocookie.net/gtawiki/images/2/27/Minigun-GTAVPC-HUD.png"
-                    alt="Minigun Icon"
-                />
+                <Icon name="minigun" />
             </Weapon>
 
             <Weapon from={292.5} to={337.5} label="Grenade" ammo={6}>
-                <Icon
-                    src="https://static.wikia.nocookie.net/gtawiki/images/a/a6/Grenade-GTAVPC-HUD.png"
-                    alt="Grenade Icon"
-                />
+                <Icon name="grenade" />
             </Weapon>
 
             <div className="gta-menu__center" />
@@ -144,11 +120,18 @@ function labelFrom(label: string, ammo?: number, reserve?: number): string {
     }
 }
 
-function Icon(props: ComponentProps<'img'>) {
-    return <img
-        className="gta-weapon__icon"
-        referrerPolicy="no-referrer"
-        {...props}
+interface IconProps {
+    readonly name: string;
+    readonly style?: CSSProperties;
+}
+
+function Icon(props: IconProps) {
+    const { name, style } = props;
+    const className = clsx('gta-weapon__icon', `gta-weapon__icon--${name}`);
+
+    return <div
+        className={className}
+        style={style}
     />;
 }
 

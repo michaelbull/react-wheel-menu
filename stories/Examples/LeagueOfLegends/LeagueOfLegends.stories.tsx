@@ -18,7 +18,7 @@ import {
     Segment,
     useElementMidpoint,
     useMouseAngle
-} from '../../src';
+} from '../../../src';
 
 const meta: Meta = {
     title: 'Examples',
@@ -88,8 +88,8 @@ function Menu() {
             <Ping
                 from={337.5}
                 to={22.5}
+                name="retreat"
                 label="Retreat"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/e/e8/Retreat_ping_colorblind.png"
                 onMouseOver={indicateRetreat}
                 onFocus={indicateRetreat}
                 onBlur={clearIndication}
@@ -99,8 +99,8 @@ function Menu() {
             <Ping
                 from={22.5}
                 to={67.5}
+                name="push"
                 label="Push"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d3/Push_ping_colorblind.png"
                 onMouseOver={indicatePush}
                 onFocus={indicatePush}
                 onBlur={clearIndication}
@@ -109,8 +109,8 @@ function Menu() {
             <Ping
                 from={67.5}
                 to={112.5}
+                name="on-my-way"
                 label="On My Way"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/a/a2/On_My_Way_ping_colorblind.png"
                 onMouseOver={indicateOnMyWay}
                 onFocus={indicateOnMyWay}
                 onBlur={clearIndication}
@@ -120,8 +120,8 @@ function Menu() {
             <Ping
                 from={112.5}
                 to={157.5}
+                name="all-in"
                 label="All In"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/5/59/All_In_ping_colorblind.png"
                 onMouseOver={indicateAllIn}
                 onFocus={indicateAllIn}
                 onBlur={clearIndication}
@@ -130,8 +130,8 @@ function Menu() {
             <Ping
                 from={157.5}
                 to={202.5}
+                name="assist-me"
                 label="Assist Me"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/f/fd/Assist_Me_ping_colorblind.png"
                 onMouseOver={indicateAssistMe}
                 onFocus={indicateAssistMe}
                 onBlur={clearIndication}
@@ -141,8 +141,8 @@ function Menu() {
             <Ping
                 from={202.5}
                 to={247.5}
+                name="hold"
                 label="Hold"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c1/Hold_ping_colorblind.png"
                 onMouseOver={indicateHold}
                 onFocus={indicateHold}
                 onBlur={clearIndication}
@@ -151,8 +151,8 @@ function Menu() {
             <Ping
                 from={247.5}
                 to={292.5}
+                name="enemy-missing"
                 label="Enemy Missing"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/d/d1/Enemy_Missing_ping_colorblind.png"
                 onMouseOver={indicateEnemyMissing}
                 onFocus={indicateEnemyMissing}
                 onBlur={clearIndication}
@@ -162,8 +162,8 @@ function Menu() {
             <Ping
                 from={292.5}
                 to={337.5}
+                name="bait"
                 label="Bait"
-                src="https://static.wikia.nocookie.net/leagueoflegends/images/c/ca/Bait_ping_colorblind.png"
                 onMouseOver={indicateBait}
                 onFocus={indicateBait}
                 onBlur={clearIndication}
@@ -177,10 +177,10 @@ function Menu() {
 }
 
 interface PingProps {
+    readonly name: string;
     readonly from: number;
     readonly to: number;
     readonly major?: boolean;
-    readonly src: string;
     readonly label: string;
     readonly onFocus: () => void;
     readonly onBlur: () => void;
@@ -189,8 +189,8 @@ interface PingProps {
 
 function Ping(props: PingProps) {
     const {
+        name,
         major = false,
-        src,
         label,
         ...rest
     } = props;
@@ -199,16 +199,13 @@ function Ping(props: PingProps) {
         'lol-ping__button--major': major
     });
 
+    const iconClassName = clsx('lol-ping__icon', `lol-ping__icon--${name}`);
+
     return (
         <Segment as="button" className="lol-ping" gapBefore={2} gapAfter={2} aria-label={label} {...rest}>
             <Layout className={layoutClassName}>
                 <Label offset={-20}>
-                    <img
-                        className="lol-ping__icon"
-                        src={src}
-                        alt={`"${label}" ping icon`}
-                        referrerPolicy="no-referrer"
-                    />
+                    <div className={iconClassName} />
                 </Label>
             </Layout>
         </Segment>

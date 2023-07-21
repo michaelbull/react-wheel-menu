@@ -14,7 +14,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/cs2/maps/dust2_ct_ramp_s2.jpg');
+  background-image: url('Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,15 +49,37 @@
 .cs-menu__team {
   position: relative;
 
-  padding: 0.5em;
-  border: 0.25em solid hsl(0, 0%, 40%);
+  padding: 4px;
+  border: 12px solid black;
   border-radius: 100%;
-  background-color: black;
 
-  width: 100px;
-  height: 100px;
+  background-color: black;
+  background-image: url('./Team.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 92px;
+  height: 92px;
 
   z-index: 1;
+}
+
+.cs-menu__team::after {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+
+  content: '';
+
+  border: 4px solid hsl(0, 0%, 40%);
+  border-radius: 100%;
+}
+
+.cs-item {
+  user-select: none;
 }
 
 .cs-item__button {

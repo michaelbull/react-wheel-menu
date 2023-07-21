@@ -13,7 +13,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltd15eac8e2b0de8c5/5db0d3810b39e86c2f83df8d/Preseason_Gameplay_Reveal_Header.jpg');
+  background-image: url('./Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,6 +30,10 @@
   height: 450px;
 
   background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 1) 28%, hsla(41, 48%, 38%, 0) 56%);
+}
+
+.lol-ping {
+  user-select: none;
 }
 
 .lol-ping__button {
@@ -61,6 +65,42 @@
 .lol-ping__icon {
   width: 40px;
   height: 40px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.lol-ping__icon--retreat {
+  background-image: url('./Retreat.png');
+}
+
+.lol-ping__icon--push {
+  background-image: url('./Push.png');
+}
+
+.lol-ping__icon--on-my-way {
+  background-image: url('./OnMyWay.png');
+}
+
+.lol-ping__icon--all-in {
+  background-image: url('./AllIn.png');
+}
+
+.lol-ping__icon--assist-me {
+  background-image: url('./AssistMe.png');
+}
+
+.lol-ping__icon--hold {
+  background-image: url('./Hold.png');
+}
+
+.lol-ping__icon--enemy-missing {
+  background-image: url('./EnemyMissing.png');
+}
+
+.lol-ping__icon--bait {
+  background-image: url('./Bait.png');
 }
 
 .lol-ping-indicator {

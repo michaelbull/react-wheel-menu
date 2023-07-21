@@ -35,7 +35,7 @@ npm install --save react-circle-menu
         <br />
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--overwatch-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/Overwatch.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/Overwatch/Overwatch.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -48,7 +48,7 @@ npm install --save react-circle-menu
         <br />
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--counter-strike-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/CounterStrike.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/CounterStrike/CounterStrike.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -63,7 +63,7 @@ npm install --save react-circle-menu
         <br />
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--league-of-legends-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/LeagueOfLegends.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/LeagueOfLegends/LeagueOfLegends.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -76,7 +76,7 @@ npm install --save react-circle-menu
         <br />
         <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--grand-theft-auto-story" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/GrandTheftAuto.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/GrandTheftAuto/GrandTheftAuto.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>

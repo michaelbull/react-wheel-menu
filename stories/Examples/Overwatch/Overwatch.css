@@ -10,7 +10,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('https://images.blz-contentstack.com/v3/assets/blt2477dcaf4ebd440c/bltdad361c29b29b03a/5cef227acf7aa6330ac66561/eichenwalde-screenshot-003.jpg');
+  background-image: url('./Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,6 +71,10 @@
 
   border-radius: 50%;
   border: 8px solid hsla(0, 0%, 70%, 0.8);
+}
+
+.ow-option {
+  user-select: none;
 }
 
 .ow-option__button::before {
