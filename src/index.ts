@@ -1,7 +1,6 @@
 export * from './angle';
 export * from './label';
 export * from './layout';
-export * from './midpoint';
 export * from './segment';
 export * from './spoke';
 

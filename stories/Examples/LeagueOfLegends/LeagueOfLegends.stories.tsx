@@ -14,10 +14,9 @@ import {
     CircleMenu,
     Label,
     Layout,
-    Midpoint,
+    Radians,
     Segment,
-    useElementMidpoint,
-    useMouseAngle
+    useElementToMouseAngle
 } from '../../../src';
 
 const meta: Meta = {
@@ -217,9 +216,9 @@ function Indicator(props: PropsWithChildren) {
     const [mouseOutside, setMouseOutside] = useState(true);
 
     const {
-        midpoint,
-        setElement: ref
-    } = useElementMidpoint();
+        ref,
+        angle
+    } = useElementToMouseAngle();
 
     function onMouseOver() {
         setMouseOutside(false);
@@ -231,8 +230,8 @@ function Indicator(props: PropsWithChildren) {
 
     return (
         <div className="lol-ping-indicator" ref={ref} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-            {midpoint &&
-                <Arrow midpoint={midpoint} mouseOutside={mouseOutside}>
+            {(mouseOutside && angle && children) &&
+                <Arrow angle={angle}>
                     {children}
                 </Arrow>
             }
@@ -241,51 +240,41 @@ function Indicator(props: PropsWithChildren) {
 }
 
 interface ArrowProps {
-    readonly midpoint: Midpoint;
-    readonly mouseOutside: boolean;
+    readonly angle: Radians;
 }
 
 function Arrow(props: PropsWithChildren<ArrowProps>) {
     const {
-        midpoint,
-        mouseOutside,
+        angle,
         children
     } = props;
 
-    const [x, y] = midpoint;
-    const angle = useMouseAngle({ x, y });
-    const show = mouseOutside && angle !== null && children !== null;
-
     const style: CSSProperties = {
-        transform: `rotate(${angle}rad) translateX(182%)`
+        transform: `rotate(${angle}rad) translateX(88px)`
     };
 
-    if (show) {
-        return (
-            <>
-                <svg className="lol-ping-arrow" style={style} viewBox="0 0 24 24">
-                    <path
-                        className="lol-ping-arrow__bottom"
-                        d="M5 1h.5c1.98 5.77 2.02 15.08 0 22H5C7 16.03 7 6.78 5 1Z"
-                    />
+    return (
+        <>
+            <svg className="lol-ping-arrow" style={style} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    className="lol-ping-arrow__bottom"
+                    d="M6.5 1H7c1.98 5.77 2.02 15.08 0 22h-.5c2-6.97 2-16.22 0-22z"
+                />
 
-                    <path
-                        className="lol-ping-arrow__center"
-                        d="M8.59 7.41h1.38v9.17H8.59z"
-                    />
+                <path
+                    className="lol-ping-arrow__center"
+                    d="M10.09 7.41h1.38v9.17h-1.38z"
+                />
 
-                    <path
-                        className="lol-ping-arrow__top"
-                        d="M8.59 16.58 13.17 12 8.59 7.41v-2.8L16 12c-2.46 2.45-7.4 7.31-7.4 7.31z"
-                    />
-                </svg>
+                <path
+                    className="lol-ping-arrow__top"
+                    d="M10.09 16.58 14.67 12l-4.58-4.59v-2.8L17.5 12c-2.46 2.45-7.4 7.31-7.4 7.31z"
+                />
+            </svg>
 
-                <span className="lol-ping-indicator__label">
-                    {children}
-                </span>
-            </>
-        );
-    } else {
-        return null;
-    }
+            <span className="lol-ping-indicator__label">
+                {children}
+            </span>
+        </>
+    );
 }
