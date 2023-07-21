@@ -1,15 +1,9 @@
 # react-circle-menu
 
 <p>
-    <a href="https://www.npmjs.com/package/react-circle-menu" target="_blank" rel="noreferrer">
-      <img alt="npm" src="https://img.shields.io/npm/v/react-circle-menu.svg" />
-    </a>&nbsp;
-    <a href="https://github.com/michaelbull/react-circle-menu/actions?query=workflow%3Aci" target="_blank" rel="noreferrer">
-      <img alt="CI Status" src="https://github.com/michaelbull/react-circle-menu/workflows/ci/badge.svg" />
-    </a>&nbsp;
-    <a href="https://github.com/michaelbull/react-circle-menu/blob/master/LICENSE" target="_blank" rel="noreferrer">
-      <img alt="License" src="https://img.shields.io/github/license/michaelbull/react-circle-menu.svg" />
-    </a>
+    <a href="https://www.npmjs.com/package/react-circle-menu" target="_blank" rel="noreferrer"><img alt="npm" src="https://img.shields.io/npm/v/react-circle-menu.svg" /></a>&nbsp;
+    <a href="https://github.com/michaelbull/react-circle-menu/actions?query=workflow%3Aci" target="_blank" rel="noreferrer"><img alt="CI Status" src="https://github.com/michaelbull/react-circle-menu/workflows/ci/badge.svg" /></a>&nbsp;
+    <a href="https://github.com/michaelbull/react-circle-menu/blob/master/LICENSE" target="_blank" rel="noreferrer"><img alt="License" src="https://img.shields.io/github/license/michaelbull/react-circle-menu.svg" /></a>
 </p>
 <p>
   <a href="https://ko-fi.com/R5R0CFMN6" target="_blank" rel="noreferrer">
