@@ -103,3 +103,44 @@ export const SpokesStory: StoryObj = {
         );
     }
 };
+
+
+export const SpokesOnSegments: StoryObj = {
+    name: 'Spokes on Segments',
+    render: () => {
+        const backgroundColor = 'hsla(0, 0%, 0%, 0.1)';
+
+        return (
+            <CircleMenu style={menuStyle}>
+                <Segment from={315} to={45} style={{ backgroundColor: 'red' }} />
+                <Segment from={45} to={135} style={{ backgroundColor: 'green' }} />
+                <Segment from={135} to={225} style={{ backgroundColor: 'yellow' }} />
+                <Segment from={225} to={315} style={{ backgroundColor: 'blue' }} />
+
+                <Spoke align="right" angle={45} offset={-100} style={{ width: 30, height: 100, backgroundColor }}>
+                    <Layout direction="horizontal" justify="center">
+                        <Label orient="counterclockwise" style={labelStyle}>Right</Label>
+                    </Layout>
+                </Spoke>
+
+                <Spoke align="center" angle={135} offset={-50} style={{ width: 100, height: 200, backgroundColor }}>
+                    <Layout direction="horizontal" justify="center">
+                        <Label orient="inwards" style={labelStyle}>Center</Label>
+                    </Layout>
+                </Spoke>
+
+                <Spoke align="center" angle={225} offset={-125} style={{ width: 200, height: 50, backgroundColor }}>
+                    <Layout direction="horizontal" justify="center">
+                        <Label orient="inwards" style={labelStyle}>Center</Label>
+                    </Layout>
+                </Spoke>
+
+                <Spoke angle={315} align="left" offset={-100} style={{ width: 30, height: 100, backgroundColor }}>
+                    <Layout direction="horizontal" justify="center">
+                        <Label orient="clockwise" style={labelStyle}>Left</Label>
+                    </Layout>
+                </Spoke>
+            </CircleMenu>
+        );
+    }
+};

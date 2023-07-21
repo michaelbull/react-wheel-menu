@@ -6,10 +6,12 @@ import { Angle } from '../angle';
 import { SpokeOffset } from './SpokeOffset';
 import { useSpoke } from './useSpoke';
 import { SpokeStateContext } from './useSpokeState';
+import { SpokeAlignment } from './SpokeAlignment';
 
 export type SpokeProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
     readonly angle: Angle;
+    readonly align?: SpokeAlignment;
     readonly offset?: SpokeOffset;
 };
 
@@ -19,6 +21,7 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         className,
         style,
         angle,
+        align,
         offset,
         children,
         ...rest
@@ -31,6 +34,7 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         className,
         style,
         angle,
+        align,
         offset
     });
 

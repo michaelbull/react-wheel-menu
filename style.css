@@ -65,6 +65,28 @@
   transform-origin: bottom left;
 }
 
+.circle-menu-spoke {
+  position: absolute;
+  height: 50%;
+}
+
+.circle-menu-spoke--left {
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom left;
+}
+
+.circle-menu-spoke--center {
+  bottom: 50%;
+  transform-origin: bottom center;
+}
+
+.circle-menu-spoke--right {
+  bottom: 50%;
+  right: 50%;
+  transform-origin: bottom right;
+}
+
 .circle-menu-layout {
   position: absolute;
   top: 0;
@@ -117,16 +139,6 @@
 
 .circle-menu-layout--horizontal.circle-menu-layout--end {
   justify-content: flex-start;
-}
-
-.circle-menu-spoke {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-
-  height: 50%;
-
-  transform-origin: bottom;
 }
 
 .circle-menu-label {

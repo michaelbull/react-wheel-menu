@@ -8,11 +8,16 @@ import {
 import { SpokeOffset } from './SpokeOffset';
 import { SpokeState } from './SpokeState';
 import { transformSpoke } from './transformSpoke';
+import {
+    DEFAULT_SPOKE_ALIGNMENT,
+    SpokeAlignment
+} from './SpokeAlignment';
 
 export interface UseSpokeProps {
     readonly className?: string;
     readonly style?: CSSProperties;
     readonly angle: Angle;
+    readonly align?: SpokeAlignment;
     readonly offset?: SpokeOffset;
 }
 
@@ -27,6 +32,7 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
         className: classNameProp,
         style: styleProp,
         angle: angleProp,
+        align = DEFAULT_SPOKE_ALIGNMENT,
         offset
     } = props;
 
@@ -39,11 +45,12 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
 
     const className = clsx(
         'circle-menu-spoke',
+        `circle-menu-spoke--${align}`,
         classNameProp
     );
 
     const style: CSSProperties = {
-        transform: transformSpoke(angle, offset),
+        transform: transformSpoke(angle, align, offset),
         ...styleProp
     };
 

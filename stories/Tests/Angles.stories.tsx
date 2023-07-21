@@ -6,13 +6,13 @@ import {
     CircleMenu,
     Label,
     LabelJustification,
+    LabelOffset,
     LabelOrientation,
     Layout,
     LayoutDirection,
     LayoutJustification,
     Segment,
-    SegmentProps,
-    SpokeOffset
+    SegmentProps
 } from '../../src';
 import {
     Meta,
@@ -25,7 +25,7 @@ interface StoryProps {
 
     readonly labelOrient: LabelOrientation;
     readonly labelJustify: LabelJustification;
-    readonly labelOffset: SpokeOffset;
+    readonly labelOffset: LabelOffset;
 }
 
 const meta: Meta<StoryProps> = {
