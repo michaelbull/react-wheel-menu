@@ -52,12 +52,13 @@
 .ow-menu__center {
   position: relative;
 
-  border: 4px solid white;
-
-  border-radius: 50%;
-
   width: 184px;
   height: 184px;
+
+  border: 4px solid white;
+  border-radius: 100%;
+
+  z-index: 1;
 }
 
 .ow-menu__center::before {
@@ -69,8 +70,8 @@
 
   content: '';
 
-  border-radius: 50%;
   border: 8px solid hsla(0, 0%, 70%, 0.8);
+  border-radius: 100%;
 }
 
 .ow-option {
