@@ -23,7 +23,7 @@ export function angleToDegrees(angle: Angle): Degrees {
         const percentage = numberFrom(angle, '%');
         return percentage * 360 / 100;
     } else {
-        throw new Error(`angle must have a unit in [${UNITS.join(', ')}], but was: ${angle}`);
+        throw new Error(`angle must have a unit in [${UNITS_CSV}], but was: ${angle}`);
     }
 }
 
@@ -31,8 +31,11 @@ const UNITS: AngleUnit[] = [
     'deg',
     'grad',
     'rad',
-    'turn'
+    'turn',
+    '%'
 ];
+
+const UNITS_CSV = UNITS.join(', ');
 
 function numberFrom(angle: AngleWithUnit, unit: AngleUnit): number {
     return Number(angle.substring(0, angle.length - unit.length));
