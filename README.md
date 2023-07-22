@@ -99,7 +99,7 @@ npm install --save react-circle-menu
   </tbody>
 </table>
 
-## Example
+## Usage
 
 ```tsx
 import { CSSProperties } from 'react';
