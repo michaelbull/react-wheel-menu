@@ -21,7 +21,7 @@ React components & hooks for building a [radial wheel menu][wikipedia-pie-menu].
 npm install --save react-wheel-menu
 ```
 
-## Examples
+## Showcase
 
 <table>
   <tbody>
@@ -97,7 +97,7 @@ npm install --save react-wheel-menu
   </tbody>
 </table>
 
-## Usage
+## Example
 
 ```tsx
 import { CSSProperties } from 'react';
