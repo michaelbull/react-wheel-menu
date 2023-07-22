@@ -6,11 +6,11 @@ import {
 import { clsx } from 'clsx';
 import {
     Angle,
-    CircleMenu,
     Label,
     Layout,
     Segment,
-    Spoke
+    Spoke,
+    Wheel
 } from '../../../src';
 
 const meta: Meta = {
@@ -39,7 +39,7 @@ export const GenshinImpactStory: StoryObj = {
 
 function Menu() {
     return (
-        <CircleMenu className="genshin-menu">
+        <Wheel className="genshin-menu">
             <div className="genshin-menu__bottom" />
 
             <Shortcut
@@ -108,7 +108,7 @@ function Menu() {
             <Divider angle={337.5} />
 
             <div className="genshin-menu__top" />
-        </CircleMenu>
+        </Wheel>
     );
 }
 

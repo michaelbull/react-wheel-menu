@@ -1,10 +1,10 @@
 import { CSSProperties } from 'react';
 import {
-    CircleMenu,
     Label,
     Layout,
     Segment,
-    Spoke
+    Spoke,
+    Wheel
 } from '../../src';
 import {
     Meta,
@@ -54,7 +54,7 @@ export const SegmentsStory: StoryObj = {
     name: 'Segments',
     render: () => {
         return (
-            <CircleMenu style={menuStyle}>
+            <Wheel style={menuStyle}>
                 <Segment from={315} to={45} style={{ backgroundColor: 'red' }}>
                     <Body />
                 </Segment>
@@ -70,7 +70,7 @@ export const SegmentsStory: StoryObj = {
                 <Segment from={225} to={315} style={{ backgroundColor: 'blue' }}>
                     <Body />
                 </Segment>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };
@@ -83,7 +83,7 @@ export const SpokesStory: StoryObj = {
         const height = `calc(50% - ${width / 2}px)`;
 
         return (
-            <CircleMenu style={menuStyle}>
+            <Wheel style={menuStyle}>
                 <Spoke angle={45} offset={offset} style={{ width, height, backgroundColor: 'red' }}>
                     <Body />
                 </Spoke>
@@ -99,7 +99,7 @@ export const SpokesStory: StoryObj = {
                 <Spoke angle={315} offset={offset} style={{ width, height, backgroundColor: 'blue' }}>
                     <Body />
                 </Spoke>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };
@@ -111,7 +111,7 @@ export const SpokesOnSegments: StoryObj = {
         const backgroundColor = 'hsla(0, 0%, 0%, 0.1)';
 
         return (
-            <CircleMenu style={menuStyle}>
+            <Wheel style={menuStyle}>
                 <Segment from={315} to={45} style={{ backgroundColor: 'red' }} />
                 <Segment from={45} to={135} style={{ backgroundColor: 'green' }} />
                 <Segment from={135} to={225} style={{ backgroundColor: 'yellow' }} />
@@ -140,7 +140,7 @@ export const SpokesOnSegments: StoryObj = {
                         <Label orient="clockwise" style={labelStyle}>Left</Label>
                     </Layout>
                 </Spoke>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };

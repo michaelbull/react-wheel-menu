@@ -37,8 +37,8 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
     const angle = useLabelAngle();
 
     const className = clsx(
-        'circle-menu-label',
-        `circle-menu-label--${justify}`,
+        'wheel-label',
+        `wheel-label--${justify}`,
         classNameProp
     );
 

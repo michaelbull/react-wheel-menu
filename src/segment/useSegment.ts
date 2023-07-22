@@ -51,7 +51,7 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
     };
 
     const className = clsx(
-        'circle-menu-segment',
+        'wheel-segment',
         classNameProp
     );
 

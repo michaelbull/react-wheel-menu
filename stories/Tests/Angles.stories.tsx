@@ -3,7 +3,6 @@ import {
     PropsWithChildren
 } from 'react';
 import {
-    CircleMenu,
     Label,
     LabelJustification,
     LabelOffset,
@@ -12,7 +11,8 @@ import {
     LayoutDirection,
     LayoutJustification,
     Segment,
-    SegmentProps
+    SegmentProps,
+    Wheel
 } from '../../src';
 import {
     Meta,
@@ -113,7 +113,7 @@ export const PolarStory: Story = {
     name: 'Polar',
     render: (props) => {
         return (
-            <CircleMenu style={style}>
+            <Wheel style={style}>
                 <Button {...props} background="red" height={20} from={285} to={75}>
                     Red
                 </Button>
@@ -121,7 +121,7 @@ export const PolarStory: Story = {
                 <Button {...props} background="blue" height={20} from={105} to={255}>
                     Blue
                 </Button>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };
@@ -130,7 +130,7 @@ export const AcuteStory: Story = {
     name: 'Acute',
     render: (props) => {
         return (
-            <CircleMenu style={style}>
+            <Wheel style={style}>
                 <Button {...props} background="red" height={20} from={330} to={30}>
                     Red
                 </Button>
@@ -154,7 +154,7 @@ export const AcuteStory: Story = {
                 <Button {...props} background="orange" height={20} from={270} to={330}>
                     Orange
                 </Button>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };
@@ -163,7 +163,7 @@ export const ObtuseStory: Story = {
     name: 'Obtuse',
     render: (props) => {
         return (
-            <CircleMenu style={style}>
+            <Wheel style={style}>
                 <Button {...props} background="red" height={30} from={0} to={120}>
                     Red
                 </Button>
@@ -175,7 +175,7 @@ export const ObtuseStory: Story = {
                 <Button {...props} background="blue" height={10} from={240} to={360}>
                     Blue
                 </Button>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };

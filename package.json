@@ -1,8 +1,8 @@
 {
-  "name": "react-circle-menu",
+  "name": "react-wheel-menu",
   "version": "0.0.1",
   "description": "React radial wheel menu component",
-  "homepage": "https://github.com/michaelbull/react-circle-menu#readme",
+  "homepage": "https://github.com/michaelbull/react-wheel-menu#readme",
   "type": "module",
   "license": "ISC",
   "style": "style.css",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/michaelbull/react-circle-menu.git"
+    "url": "git+ssh://git@github.com/michaelbull/react-wheel-menu.git"
   },
   "keywords": [
     "react",

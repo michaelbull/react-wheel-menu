@@ -8,10 +8,10 @@ import {
     PropsWithChildren
 } from 'react';
 import {
-    CircleMenu,
     Label,
     Layout,
-    Segment
+    Segment,
+    Wheel
 } from '../../../src';
 import { clsx } from 'clsx';
 
@@ -41,7 +41,7 @@ export const GrandTheftAutoStory: StoryObj = {
 
 function Menu() {
     return (
-        <CircleMenu className="gta-menu">
+        <Wheel className="gta-menu">
             <Weapon from={337.5} to={22.5} label="Pistol" ammo={88} reserve={12}>
                 <Icon name="pistol" />
             </Weapon>
@@ -75,7 +75,7 @@ function Menu() {
             </Weapon>
 
             <div className="gta-menu__center" />
-        </CircleMenu>
+        </Wheel>
     );
 }
 

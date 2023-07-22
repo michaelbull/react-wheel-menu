@@ -9,10 +9,10 @@ import {
     useState
 } from 'react';
 import {
-    CircleMenu,
     Label,
     Layout,
-    Segment
+    Segment,
+    Wheel
 } from '../../../src';
 
 const meta: Meta = {
@@ -47,10 +47,10 @@ function Menu() {
     }
 
     return (
-        <CircleMenu as="ol" className="cs-menu">
+        <Wheel as="ol" className="cs-menu">
             {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
             <TeamImage />
-        </CircleMenu>
+        </Wheel>
     );
 }
 

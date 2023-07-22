@@ -34,9 +34,9 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
     const { magnitude } = useSegmentState();
 
     const className = clsx(
-        'circle-menu-layout',
-        `circle-menu-layout--${direction}`,
-        `circle-menu-layout--${justify}`,
+        'wheel-layout',
+        `wheel-layout--${direction}`,
+        `wheel-layout--${justify}`,
         classNameProp
     );
 

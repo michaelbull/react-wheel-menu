@@ -44,8 +44,8 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
     };
 
     const className = clsx(
-        'circle-menu-spoke',
-        `circle-menu-spoke--${align}`,
+        'wheel-spoke',
+        `wheel-spoke--${align}`,
         classNameProp
     );
 

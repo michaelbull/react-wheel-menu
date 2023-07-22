@@ -1,20 +1,20 @@
 import { clsx } from 'clsx';
 
-export interface UseCircleMenuProps {
+export interface UseWheelProps {
     readonly className?: string;
 }
 
-export interface UseCircleMenuReturn {
+export interface UseWheelReturn {
     readonly className: string;
 }
 
-export function useCircleMenu(props: UseCircleMenuProps): UseCircleMenuReturn {
+export function useWheel(props: UseWheelProps): UseWheelReturn {
     const {
         className: classNameProp
     } = props;
 
     const className = clsx(
-        'circle-menu',
+        'wheel',
         classNameProp
     );
 

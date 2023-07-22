@@ -11,12 +11,12 @@ import {
 } from 'react';
 import { clsx } from 'clsx';
 import {
-    CircleMenu,
     Label,
     Layout,
     Radians,
     Segment,
-    useElementToMouseAngle
+    useElementToMouseAngle,
+    Wheel
 } from '../../../src';
 
 const meta: Meta = {
@@ -83,7 +83,7 @@ function Menu() {
     }
 
     return (
-        <CircleMenu className="lol-menu" onMouseOut={clearIndication}>
+        <Wheel className="lol-menu" onMouseOut={clearIndication}>
             <Ping
                 from={337.5}
                 to={22.5}
@@ -171,7 +171,7 @@ function Menu() {
             <Indicator>
                 {indicatorLabel}
             </Indicator>
-        </CircleMenu>
+        </Wheel>
     );
 }
 

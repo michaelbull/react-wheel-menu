@@ -5,12 +5,12 @@ import {
 } from '@storybook/react';
 import {
     Angle,
-    CircleMenu,
     Label,
     Layout,
     Segment,
     Spoke,
-    SpokeOffset
+    SpokeOffset,
+    Wheel
 } from '../../../src';
 import {
     CSSProperties,
@@ -43,7 +43,7 @@ export const OverwatchStory: StoryObj = {
 
 function Menu() {
     return (
-        <CircleMenu className="ow-menu" as="ul">
+        <Wheel className="ow-menu" as="ul">
             <Option from={337.5} to={22.5} label="Emote" hotkey="5">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -109,7 +109,7 @@ function Menu() {
             <Divider angle={337.5} />
 
             <div className="ow-menu__center" />
-        </CircleMenu>
+        </Wheel>
     );
 }
 

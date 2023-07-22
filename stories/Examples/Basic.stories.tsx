@@ -3,10 +3,10 @@ import {
     MouseEvent
 } from 'react';
 import {
-    CircleMenu,
     Label,
     Layout,
-    Segment
+    Segment,
+    Wheel
 } from '../../src';
 import {
     Meta,
@@ -38,7 +38,7 @@ export const Basic: StoryObj = {
         }
 
         return (
-            <CircleMenu style={{ width: 300, height: 300 }}>
+            <Wheel style={{ width: 300, height: 300 }}>
                 <Segment from={315} to={45} style={red}>
                     <Layout>
                         <Label>Red</Label>
@@ -72,7 +72,7 @@ export const Basic: StoryObj = {
                         <Label>Green</Label>
                     </Layout>
                 </Segment>
-            </CircleMenu>
+            </Wheel>
         );
     }
 };
