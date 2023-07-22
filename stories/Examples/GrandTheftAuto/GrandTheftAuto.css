@@ -48,31 +48,21 @@
   clip-path: none;
 }
 
-.gta-menu__center {
-  width: 54%;
-  height: 54%;
-  border-radius: 50%;
-
-  user-select: none;
-
-  z-index: 1;
-}
-
 .gta-weapon {
   user-select: none;
 }
 
-.gta-weapon__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(0, 0%, 20%, 0.6) 19%, hsla(0, 0%, 20%, 0.6) 30.5%, hsla(0, 0%, 10%, 0.8) 30.5%, hsla(0, 0%, 10%, 0.8) 31%, transparent 31%);
+.gta-weapon__layout {
+  background-image: radial-gradient(circle, transparent 0, transparent 159px, hsla(0, 0%, 20%, 0.6) 160px, hsla(0, 0%, 20%, 0.6) 258px, hsla(0, 0%, 10%, 0.8) 259px, hsla(0, 0%, 10%, 0.8) 263px, transparent 264px);
 }
 
-.gta-weapon:hover .gta-weapon__button,
-.gta-weapon:focus .gta-weapon__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(230, 60%, 40%, 0.6) 19%, hsla(230, 60%, 40%, 0.6) 30.5%, hsla(0, 0%, 10%, 0.8) 30.5%, hsla(0, 0%, 10%, 0.8) 31%, transparent 31%);
+.gta-weapon:hover .gta-weapon__layout,
+.gta-weapon:focus .gta-weapon__layout {
+  background-image: radial-gradient(circle, transparent 0, transparent 159px, hsla(230, 60%, 40%, 0.6) 160px, hsla(230, 60%, 40%, 0.6) 258px, hsla(0, 0%, 10%, 0.8) 259px, hsla(0, 0%, 10%, 0.8) 263px, transparent 264px);
 }
 
-.gta-weapon:active .gta-weapon__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 19%, hsla(230, 60%, 40%, 0.6) 19%, hsla(230, 60%, 40%, 0.6) 30.5%, hsla(230, 80%, 20%, 0.6) 30.5%, hsla(230, 80%, 20%, 0.6) 31.5%, transparent 31.5%);
+.gta-weapon:active .gta-weapon__layout {
+  background-image: radial-gradient(circle, transparent 0, transparent 159px, hsla(230, 60%, 40%, 0.6) 160px, hsla(230, 60%, 40%, 0.6) 258px, hsla(230, 80%, 20%, 0.6) 259px, hsla(230, 80%, 20%, 0.6) 269px, transparent 270px);
 }
 
 .gta-weapon__label {
@@ -135,4 +125,12 @@
 
 .gta-weapon-ammo__reserve {
   color: hsl(0, 0%, 60%);
+}
+
+.gta-menu__center {
+  width: 324px;
+  height: 324px;
+
+  border-radius: 100%;
+  user-select: none;
 }

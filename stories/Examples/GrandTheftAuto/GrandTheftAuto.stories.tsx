@@ -100,7 +100,7 @@ function Weapon(props: PropsWithChildren<WeaponProps>) {
 
     return (
         <Segment as="button" className="gta-weapon" gapBefore={4} gapAfter={4} aria-label={label} {...rest}>
-            <Layout className="gta-weapon__button" justify="end">
+            <Layout className="gta-weapon__layout" justify="end">
                 <Label className="gta-weapon__label" offset={50}>
                     {children}
                     <Ammo current={ammo} reserve={reserve} />
