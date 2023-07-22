@@ -81,6 +81,21 @@ npm install --save react-circle-menu
         &nbsp;
       </td>
     </tr>
+    <tr>
+      <td align="center" width="50%">
+        &nbsp;
+        <br />
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--genshin-impact-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/ef6b192c-13a9-45e4-9826-c9ea2d64d94a" alt="Genshin Impact" /></a>
+        <br />
+        <strong>Genshin Impact</strong>
+        <br />
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--genshin-impact-story" target="_blank">Demo</a>
+        ·
+        <a href="https://github.com/michaelbull/react-circle-menu/blob/master/stories/Examples/GenshinImpact/GenshinImpact.stories.tsx" target="_blank">Code</a>
+        <br />
+        &nbsp;
+      </td>
+    </tr>
   </tbody>
 </table>
 
