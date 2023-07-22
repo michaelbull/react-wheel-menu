@@ -17,8 +17,8 @@ export type LabelProps<T extends ElementType = 'span'> = ComponentPropsWithoutRe
 export function Label<T extends ElementType = 'span'>(props: LabelProps<T>) {
     const {
         as: Component = 'span',
-        className: classNameProp,
-        style: styleProp,
+        className,
+        style,
         orient,
         justify,
         offset,
@@ -26,8 +26,8 @@ export function Label<T extends ElementType = 'span'>(props: LabelProps<T>) {
     } = props;
 
     const labelProps = useLabel({
-        className: classNameProp,
-        style: styleProp,
+        className,
+        style,
         orient,
         justify,
         offset
