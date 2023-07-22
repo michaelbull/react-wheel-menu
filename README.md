@@ -70,7 +70,7 @@ npm install --save react-circle-menu
       <td align="center" width="50%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--grand-theft-auto-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/c58c5221-3da6-4edf-b8b0-6d00baad6c6d" alt="Grand Theft Auto" /></a>
+        <a href="https://michaelbull.github.io/react-circle-menu/?path=/story/examples--grand-theft-auto-story" target="_blank"><img src="https://github.com/michaelbull/react-circle-menu/assets/3253134/5442c291-0f29-4d63-ae51-9b3982b0635e" alt="Grand Theft Auto" /></a>
         <br />
         <strong>Grand Theft Auto</strong>
         <br />
