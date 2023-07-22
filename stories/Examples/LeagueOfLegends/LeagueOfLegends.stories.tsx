@@ -194,8 +194,8 @@ function Ping(props: PingProps) {
         ...rest
     } = props;
 
-    const layoutClassName = clsx('lol-ping__button', {
-        'lol-ping__button--major': major
+    const layoutClassName = clsx('lol-ping__layout', {
+        'lol-ping__layout--major': major
     });
 
     const iconClassName = clsx('lol-ping__icon', `lol-ping__icon--${name}`);

@@ -29,37 +29,37 @@
   width: 450px;
   height: 450px;
 
-  background-image: radial-gradient(circle, transparent 0%, transparent 28%, hsla(41, 48%, 38%, 1) 28%, hsla(41, 48%, 38%, 0) 56%);
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(41, 48%, 38%, 1) 90px, hsla(41, 48%, 38%, 0) 180px);
 }
 
 .lol-ping {
   user-select: none;
 }
 
-.lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(0, 0%, 0%, 0.4) 13.5%, hsla(0, 0%, 0%, 0.4) 28%, transparent 28%);
+.lol-ping__layout {
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(0, 0%, 0%, 0.4) 90px, hsla(0, 0%, 0%, 0.4) 180px, transparent 181px);
 }
 
-.lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(0, 0%, 0%, 0.4) 13.5%, hsla(0, 0%, 0%, 0.4) 38%, transparent 38%);
+.lol-ping__layout--major {
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(0, 0%, 0%, 0.4) 90px, hsla(0, 0%, 0%, 0.4) 220px, transparent 221px);
 }
 
-.lol-ping:hover .lol-ping__button,
-.lol-ping:focus .lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(180, 70%, 40%, 1) 13.5%, hsla(0, 0%, 0%, 0.4) 28%, transparent 28%);
+.lol-ping:hover .lol-ping__layout,
+.lol-ping:focus .lol-ping__layout {
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(180, 70%, 40%, 1) 90px, hsla(0, 0%, 0%, 0.4) 180px, transparent 181px);
 }
 
-.lol-ping:hover .lol-ping__button--major,
-.lol-ping:focus .lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(180, 70%, 40%, 1) 13.5%, hsla(0, 0%, 0%, 0.4) 38%, transparent 38%);
+.lol-ping:hover .lol-ping__layout--major,
+.lol-ping:focus .lol-ping__layout--major {
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(180, 70%, 40%, 1) 90px, hsla(0, 0%, 0%, 0.4) 220px, transparent 221px);
 }
 
-.lol-ping:active .lol-ping__button {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(150, 70%, 40%, 1) 13.5%, hsla(0, 0%, 0%, 0.4) 28%, transparent 28%);
+.lol-ping:active .lol-ping__layout {
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(150, 70%, 40%, 1) 90px, hsla(0, 0%, 0%, 0.4) 180px, transparent 181px);
 }
 
-.lol-ping:active .lol-ping__button--major {
-  background-image: radial-gradient(circle, transparent 0%, transparent 13.5%, hsla(150, 70%, 40%, 1) 13.5%, hsla(0, 0%, 0%, 0.4) 38%, transparent 38%);
+.lol-ping:active .lol-ping__layout--major {
+  background-image: radial-gradient(circle, transparent 0, transparent 89px, hsla(150, 70%, 40%, 1) 90px, hsla(0, 0%, 0%, 0.4) 220px, transparent 221px);
 }
 
 .lol-ping__icon {
@@ -114,9 +114,8 @@
   justify-content: center;
 
   background-color: hsla(0, 0%, 0%, 65%);
-
   box-shadow: 0 0 0 3px hsl(41, 48%, 38%);
-  border-radius: 50%;
+  border-radius: 100%;
 
   user-select: none;
   z-index: 1;
@@ -131,8 +130,8 @@
 
   content: '';
 
-  border-radius: 50%;
   border: 3px solid hsl(41, 39%, 56%);
+  border-radius: 100%;
 }
 
 .lol-ping-indicator__label {
