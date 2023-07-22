@@ -99,14 +99,14 @@ function Menu() {
                 </svg>
             </Option>
 
-            <Line angle={22.5} />
-            <Line angle={67.5} />
-            <Line angle={112.5} />
-            <Line angle={157.5} />
-            <Line angle={202.5} />
-            <Line angle={247.5} />
-            <Line angle={292.5} />
-            <Line angle={337.5} />
+            <Divider angle={22.5} />
+            <Divider angle={67.5} />
+            <Divider angle={112.5} />
+            <Divider angle={157.5} />
+            <Divider angle={202.5} />
+            <Divider angle={247.5} />
+            <Divider angle={292.5} />
+            <Divider angle={337.5} />
 
             <div className="ow-menu__center" />
         </CircleMenu>
@@ -157,11 +157,11 @@ function Option(props: PropsWithChildren<OptionProps>) {
     );
 }
 
-interface LineProps {
+interface DividerProps {
     readonly angle: Angle;
 }
 
-function Line(props: LineProps) {
+function Divider(props: DividerProps) {
     const { angle } = props;
 
     return <Spoke
