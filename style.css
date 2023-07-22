@@ -48,7 +48,6 @@
   align-items: center;
 
   border-radius: 50%;
-
   clip-path: circle(50%);
 }
 
@@ -67,6 +66,7 @@
 
 .wheel-spoke {
   position: absolute;
+  display: block;
   height: 50%;
 }
 

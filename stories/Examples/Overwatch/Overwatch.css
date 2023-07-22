@@ -56,7 +56,7 @@
   height: 184px;
 
   border: 4px solid white;
-  border-radius: 100%;
+  border-radius: 50%;
 
   z-index: 1;
 }
@@ -71,7 +71,7 @@
   content: '';
 
   border: 8px solid hsla(0, 0%, 70%, 0.8);
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 .ow-option {

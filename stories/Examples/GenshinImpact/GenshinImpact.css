@@ -44,7 +44,7 @@
 
   background-color: hsla(0, 0%, 0%, 0.2);
   border: 4px solid hsla(0, 0%, 100%, 0.2);
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 .genshin-menu__bottom::after {
@@ -71,7 +71,7 @@
   left: 155px;
 
   border: 12px solid hsla(0, 0%, 100%, 0.2);
-  border-radius: 100%;
+  border-radius: 50%;
 
   z-index: 1;
 }
@@ -93,7 +93,7 @@
   background-color: hsla(0, 0%, 0%, 0.2);
 
   border: 3px solid hsla(0, 0%, 100%, 0.3);
-  border-radius: 100%;
+  border-radius: 50%;
 
   padding: 3px;
 }
