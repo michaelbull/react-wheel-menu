@@ -24,19 +24,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const CounterStrikeStory: StoryObj = {
+export const CounterStrike: StoryObj = {
     name: 'Counter-Strike',
     parameters: {
         options: { showPanel: false }
     },
-    render: () => {
-        return (
-            <div className="cs">
-                <div className="cs-background" />
-                <Menu />
-            </div>
-        );
-    }
+    render: () => (
+        <div className="cs">
+            <div className="cs-background" />
+            <Menu />
+        </div>
+    )
 };
 
 function Menu() {

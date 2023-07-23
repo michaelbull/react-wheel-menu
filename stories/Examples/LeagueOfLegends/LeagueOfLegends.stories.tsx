@@ -28,19 +28,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const LeagueOfLegendsStory: StoryObj = {
+export const LeagueOfLegends: StoryObj = {
     name: 'League of Legends',
     parameters: {
         options: { showPanel: false }
     },
-    render: () => {
-        return (
-            <div className="lol">
-                <div className="lol-background" />
-                <Menu />
-            </div>
-        );
-    }
+    render: () => (
+        <div className="lol">
+            <div className="lol-background" />
+            <Menu />
+        </div>
+    )
 };
 
 function Menu() {

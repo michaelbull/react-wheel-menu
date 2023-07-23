@@ -26,19 +26,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const OverwatchStory: StoryObj = {
+export const Overwatch: StoryObj = {
     name: 'Overwatch',
     parameters: {
         options: { showPanel: false }
     },
-    render: () => {
-        return (
-            <div className="ow">
-                <div className="ow-background" />
-                <Menu />
-            </div>
-        );
-    }
+    render: () => (
+        <div className="ow">
+            <div className="ow-background" />
+            <Menu />
+        </div>
+    )
 };
 
 function Menu() {

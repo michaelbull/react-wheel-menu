@@ -24,19 +24,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const GrandTheftAutoStory: StoryObj = {
+export const GrandTheftAuto: StoryObj = {
     name: 'Grand Theft Auto',
     parameters: {
         options: { showPanel: false }
     },
-    render: () => {
-        return (
-            <div className="gta">
-                <div className="gta-background" />
-                <Menu />
-            </div>
-        );
-    }
+    render: () => (
+        <div className="gta">
+            <div className="gta-background" />
+            <Menu />
+        </div>
+    )
 };
 
 function Menu() {

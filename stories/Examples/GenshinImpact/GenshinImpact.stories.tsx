@@ -22,19 +22,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const GenshinImpactStory: StoryObj = {
+export const GenshinImpact: StoryObj = {
     name: 'Genshin Impact',
     parameters: {
         options: { showPanel: false }
     },
-    render: () => {
-        return (
-            <div className="genshin">
-                <div className="genshin-background" />
-                <Menu />
-            </div>
-        );
-    }
+    render: () => (
+        <div className="genshin">
+            <div className="genshin-background" />
+            <Menu />
+        </div>
+    )
 };
 
 function Menu() {
