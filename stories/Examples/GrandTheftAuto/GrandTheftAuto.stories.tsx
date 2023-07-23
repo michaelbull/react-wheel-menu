@@ -7,13 +7,13 @@ import {
     CSSProperties,
     PropsWithChildren
 } from 'react';
+import { clsx } from 'clsx';
 import {
     Label,
     Layout,
     Segment,
     Wheel
 } from '../../../src';
-import { clsx } from 'clsx';
 
 const meta: Meta = {
     title: 'Examples',
