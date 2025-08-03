@@ -13,7 +13,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('./Background.jpg');
+  background-image: url('Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,35 +72,35 @@
 }
 
 .lol-ping__icon--retreat {
-  background-image: url('./Retreat.png');
+  background-image: url('Retreat.png');
 }
 
 .lol-ping__icon--push {
-  background-image: url('./Push.png');
+  background-image: url('Push.png');
 }
 
 .lol-ping__icon--on-my-way {
-  background-image: url('./OnMyWay.png');
+  background-image: url('OnMyWay.png');
 }
 
 .lol-ping__icon--all-in {
-  background-image: url('./AllIn.png');
+  background-image: url('AllIn.png');
 }
 
 .lol-ping__icon--assist-me {
-  background-image: url('./AssistMe.png');
+  background-image: url('AssistMe.png');
 }
 
 .lol-ping__icon--hold {
-  background-image: url('./Hold.png');
+  background-image: url('Hold.png');
 }
 
 .lol-ping__icon--enemy-missing {
-  background-image: url('./EnemyMissing.png');
+  background-image: url('EnemyMissing.png');
 }
 
 .lol-ping__icon--bait {
-  background-image: url('./Bait.png');
+  background-image: url('Bait.png');
 }
 
 .lol-ping-indicator {

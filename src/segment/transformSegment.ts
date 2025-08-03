@@ -1,13 +1,13 @@
-import * as CSS from 'csstype';
-import { SegmentGap } from './SegmentGap';
-import { SegmentState } from './SegmentState';
+import type { Properties} from 'csstype';
+import type { SegmentGap } from './SegmentGap';
+import type { SegmentState } from './SegmentState';
 
-export function transformSegment(state: SegmentState): CSS.Properties['transform'] {
+export function transformSegment(state: SegmentState): Properties['transform'] {
     const {
         from,
         magnitude,
         gapBefore,
-        gapAfter
+        gapAfter,
     } = state;
 
     const rotate = `rotate(${from + magnitude - 90}deg)`;
@@ -17,7 +17,7 @@ export function transformSegment(state: SegmentState): CSS.Properties['transform
     const transformations = [
         rotate,
         skew,
-        translate
+        translate,
     ];
 
     return transformations

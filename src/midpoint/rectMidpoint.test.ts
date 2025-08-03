@@ -1,11 +1,11 @@
 import {
     describe,
     expect,
-    it
+    it,
 } from 'vitest';
 import {
-    Rect,
-    rectMidpoint
+    type Rect,
+    rectMidpoint,
 } from './rectMidpoint';
 
 describe('rectMidpoint', () => {
@@ -14,7 +14,7 @@ describe('rectMidpoint', () => {
             x: 100,
             y: 0,
             width: 200,
-            height: 0
+            height: 0,
         };
 
         const midpoint = rectMidpoint(rect);
@@ -28,7 +28,7 @@ describe('rectMidpoint', () => {
             x: 0,
             y: 300,
             width: 0,
-            height: 1000
+            height: 1000,
         };
 
         const midpoint = rectMidpoint(rect);

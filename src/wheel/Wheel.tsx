@@ -1,6 +1,6 @@
-import {
+import type {
     ComponentPropsWithoutRef,
-    ElementType
+    ElementType,
 } from 'react';
 import { useWheel } from './useWheel';
 
@@ -16,7 +16,7 @@ export function Wheel<T extends ElementType = 'div'>(props: WheelProps<T>) {
     } = props;
 
     const wheelProps = useWheel({
-        className
+        className,
     });
 
     return <Component

@@ -1,10 +1,10 @@
 import {
     createContext,
-    useContext
+    useContext,
 } from 'react';
 import {
     DefaultSegmentState,
-    SegmentState
+    type SegmentState,
 } from './SegmentState';
 
 export const SegmentStateContext = createContext<SegmentState>(DefaultSegmentState);

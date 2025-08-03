@@ -1,12 +1,12 @@
-import { CSSProperties } from 'react';
 import { clsx } from 'clsx';
+import type { CSSProperties } from 'react';
 import {
-    Angle,
+    type Angle,
     angleToDegrees,
-    moduloDegrees
+    moduloDegrees,
 } from '../angle';
-import { SegmentGap } from './SegmentGap';
-import { SegmentState } from './SegmentState';
+import type { SegmentGap } from './SegmentGap';
+import type { SegmentState } from './SegmentState';
 import { transformSegment } from './transformSegment';
 
 export interface UseSegmentProps {
@@ -31,7 +31,7 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
         from: fromProp,
         to: toProp,
         gapBefore,
-        gapAfter
+        gapAfter,
     } = props;
 
     const fromDeg = angleToDegrees(fromProp);
@@ -47,22 +47,22 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
         to,
         magnitude,
         gapBefore,
-        gapAfter
+        gapAfter,
     };
 
     const className = clsx(
         'wheel-segment',
-        classNameProp
+        classNameProp,
     );
 
     const style: CSSProperties = {
         transform: transformSegment(state),
-        ...styleProp
+        ...styleProp,
     };
 
     return {
         state,
         className,
-        style
+        style,
     };
 }

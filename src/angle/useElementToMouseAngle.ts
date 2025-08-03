@@ -1,8 +1,8 @@
-import { Radians } from './Angle';
-import { useMousePosition } from './useMousePosition';
-import { RefCallback } from 'react';
-import { angleBetween } from './angleBetween';
+import type { RefCallback } from 'react';
 import { useElementMidpoint } from '../midpoint';
+import type { Radians } from './Angle';
+import { radiansBetween } from './radiansBetween';
+import { useMousePosition } from './useMousePosition';
 
 export interface UseMouseToElementAngleReturn {
     readonly ref: RefCallback<Element>;
@@ -14,13 +14,13 @@ export function useElementToMouseAngle(): UseMouseToElementAngleReturn {
 
     const {
         midpoint,
-        setElement: ref
+        setElement: ref,
     } = useElementMidpoint();
 
     if (midpoint === null) {
         return {
             ref,
-            angle: null
+            angle: null,
         };
     } else {
         const [x1, y1] = midpoint;
@@ -28,7 +28,7 @@ export function useElementToMouseAngle(): UseMouseToElementAngleReturn {
 
         return {
             ref,
-            angle: angleBetween(x1, y1, x2, y2)
+            angle: radiansBetween(x1, y1, x2, y2),
         };
     }
 }

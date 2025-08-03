@@ -1,23 +1,23 @@
-import * as CSS from 'csstype';
-import { Degrees } from '../angle';
+import type { Properties} from 'csstype';
+import type { Degrees } from '../angle';
+import type { LabelOffset } from './LabelOffset';
 import {
     DEFAULT_LABEL_ORIENTATION,
-    LabelOrientation
+    type LabelOrientation,
 } from './LabelOrientation';
-import { LabelOffset } from './LabelOffset';
 import { rotateLabel } from './rotateLabel';
 
 export function transformLabel(
     angle: Degrees,
     orientation: LabelOrientation = DEFAULT_LABEL_ORIENTATION,
-    offset?: LabelOffset
-): CSS.Properties['transform'] {
+    offset?: LabelOffset,
+): Properties['transform'] {
     const translateY = verticalTranslation(offset);
     const rotate = `rotate(${rotateLabel(orientation, angle)}deg)`;
 
     const transformations = [
         translateY,
-        rotate
+        rotate,
     ];
 
     return transformations

@@ -1,40 +1,41 @@
-import './CounterStrike.css';
-import {
+import type {
     Meta,
-    StoryObj
-} from '@storybook/react';
+    StoryObj,
+} from '@storybook/react-vite';
 import {
-    ComponentProps,
-    ReactNode,
-    useState
+    type ComponentProps,
+    type ReactNode,
+    useState,
 } from 'react';
-import {
-    Label,
-    Layout,
-    Segment,
-    Wheel
-} from '../../../src';
+import { Label } from '../../../label';
+import { Layout } from '../../../layout';
+import { Segment } from '../../../segment';
+import { Wheel } from '../../../wheel';
+import './CounterStrike.css';
 
-const meta: Meta = {
+const meta = {
     title: 'Examples',
     parameters: {
-        layout: 'fullscreen'
-    }
-};
+        layout: 'fullscreen',
+    },
+} satisfies Meta;
 
 export default meta;
 
 export const CounterStrike: StoryObj = {
     name: 'Counter-Strike',
     parameters: {
-        options: { showPanel: false }
+        options: {
+            bottomPanelHeight: 0,
+            rightPanelWidth: 0,
+        },
     },
     render: () => (
         <div className="cs">
-            <div className="cs-background" />
-            <Menu />
+            <div className="cs-background"/>
+            <Menu/>
         </div>
-    )
+    ),
 };
 
 function Menu() {
@@ -46,8 +47,8 @@ function Menu() {
 
     return (
         <Wheel as="ol" className="cs-menu">
-            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu} />}
-            <TeamImage />
+            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu}/>}
+            <TeamImage/>
         </Wheel>
     );
 }
@@ -62,27 +63,27 @@ function RootMenu(props: RootMenuProps) {
 
     return (
         <>
-            <Item from={300} to={0} hotkey={1} onClick={() => onChoose(<PistolsMenu onReset={onReset} />)}>
+            <Item from={300} to={0} hotkey={1} onClick={() => onChoose(<PistolsMenu onReset={onReset}/>)}>
                 PISTOLS
             </Item>
 
-            <Item from={0} to={60} hotkey={2} onClick={() => onChoose(<HeavyMenu onReset={onReset} />)}>
+            <Item from={0} to={60} hotkey={2} onClick={() => onChoose(<HeavyMenu onReset={onReset}/>)}>
                 HEAVY
             </Item>
 
-            <Item from={60} to={120} hotkey={3} onClick={() => onChoose(<SmgsMenu onReset={onReset} />)}>
+            <Item from={60} to={120} hotkey={3} onClick={() => onChoose(<SmgsMenu onReset={onReset}/>)}>
                 SMGs
             </Item>
 
-            <Item from={120} to={180} hotkey={4} onClick={() => onChoose(<RiflesMenu onReset={onReset} />)}>
+            <Item from={120} to={180} hotkey={4} onClick={() => onChoose(<RiflesMenu onReset={onReset}/>)}>
                 RIFLES
             </Item>
 
-            <Item from={180} to={240} hotkey={5} onClick={() => onChoose(<GearMenu onReset={onReset} />)}>
+            <Item from={180} to={240} hotkey={5} onClick={() => onChoose(<GearMenu onReset={onReset}/>)}>
                 GEAR
             </Item>
 
-            <Item from={240} to={300} hotkey={6} onClick={() => onChoose(<GrenadesMenu onReset={onReset} />)}>
+            <Item from={240} to={300} hotkey={6} onClick={() => onChoose(<GrenadesMenu onReset={onReset}/>)}>
                 GRENADES
             </Item>
         </>
@@ -279,7 +280,7 @@ function GrenadesMenu(props: SubMenuProps) {
 
 function TeamImage() {
     return (
-        <div className="cs-menu__team" />
+        <div className="cs-menu__team"/>
     );
 }
 

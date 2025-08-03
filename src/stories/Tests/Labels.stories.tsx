@@ -1,21 +1,19 @@
-import { CSSProperties } from 'react';
-import {
-    Label,
-    Layout,
-    Segment,
-    Spoke,
-    Wheel
-} from '../../src';
-import {
+import type {
     Meta,
-    StoryObj
-} from '@storybook/react';
+    StoryObj,
+} from '@storybook/react-vite';
+import type { CSSProperties } from 'react';
+import { Label } from '../../label';
+import { Layout } from '../../layout';
+import { Segment } from '../../segment';
+import { Spoke } from '../../spoke';
+import { Wheel } from '../../wheel';
 
 const meta: Meta = {
     title: 'Tests/Labels',
     parameters: {
-        layout: 'centered'
-    }
+        layout: 'centered',
+    },
 };
 
 export default meta;
@@ -24,11 +22,11 @@ const menuStyle: CSSProperties = {
     width: 600,
     height: 600,
     color: 'white',
-    backgroundColor: 'hsl(0, 0%, 80%)'
+    backgroundColor: 'hsl(0, 0%, 80%)',
 };
 
 const labelStyle: CSSProperties = {
-    margin: '1em'
+    margin: '1em',
 };
 
 function Body() {
@@ -56,23 +54,23 @@ export const SegmentsStory: StoryObj = {
         return (
             <Wheel style={menuStyle}>
                 <Segment from={315} to={45} style={{ backgroundColor: 'red' }}>
-                    <Body />
+                    <Body/>
                 </Segment>
 
                 <Segment from={45} to={135} style={{ backgroundColor: 'green' }}>
-                    <Body />
+                    <Body/>
                 </Segment>
 
                 <Segment from={135} to={225} style={{ backgroundColor: 'yellow' }}>
-                    <Body />
+                    <Body/>
                 </Segment>
 
                 <Segment from={225} to={315} style={{ backgroundColor: 'blue' }}>
-                    <Body />
+                    <Body/>
                 </Segment>
             </Wheel>
         );
-    }
+    },
 };
 
 export const SpokesStory: StoryObj = {
@@ -85,23 +83,23 @@ export const SpokesStory: StoryObj = {
         return (
             <Wheel style={menuStyle}>
                 <Spoke angle={45} offset={offset} style={{ width, height, backgroundColor: 'red' }}>
-                    <Body />
+                    <Body/>
                 </Spoke>
 
                 <Spoke angle={135} offset={offset} style={{ width, height, backgroundColor: 'green' }}>
-                    <Body />
+                    <Body/>
                 </Spoke>
 
                 <Spoke angle={225} offset={offset} style={{ width, height, backgroundColor: 'yellow' }}>
-                    <Body />
+                    <Body/>
                 </Spoke>
 
                 <Spoke angle={315} offset={offset} style={{ width, height, backgroundColor: 'blue' }}>
-                    <Body />
+                    <Body/>
                 </Spoke>
             </Wheel>
         );
-    }
+    },
 };
 
 
@@ -112,10 +110,10 @@ export const SpokesOnSegments: StoryObj = {
 
         return (
             <Wheel style={menuStyle}>
-                <Segment from={315} to={45} style={{ backgroundColor: 'red' }} />
-                <Segment from={45} to={135} style={{ backgroundColor: 'green' }} />
-                <Segment from={135} to={225} style={{ backgroundColor: 'yellow' }} />
-                <Segment from={225} to={315} style={{ backgroundColor: 'blue' }} />
+                <Segment from={315} to={45} style={{ backgroundColor: 'red' }}/>
+                <Segment from={45} to={135} style={{ backgroundColor: 'green' }}/>
+                <Segment from={135} to={225} style={{ backgroundColor: 'yellow' }}/>
+                <Segment from={225} to={315} style={{ backgroundColor: 'blue' }}/>
 
                 <Spoke align="right" angle={45} offset={-100} style={{ width: 30, height: 100, backgroundColor }}>
                     <Layout direction="horizontal" justify="center">
@@ -142,5 +140,5 @@ export const SpokesOnSegments: StoryObj = {
                 </Spoke>
             </Wheel>
         );
-    }
+    },
 };

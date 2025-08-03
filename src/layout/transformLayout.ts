@@ -1,10 +1,10 @@
-import * as CSS from 'csstype';
-import { Degrees } from '../angle';
+import type { Properties} from 'csstype';
+import type { Degrees } from '../angle';
 
 const translateX = 'translateX(-50%)';
 const translateY = 'translateY(50%)';
 
-export function transformLayout(angle: Degrees): CSS.Properties['transform'] {
+export function transformLayout(angle: Degrees): Properties['transform'] {
     if (angle === 0) {
         return undefined;
     } else {
@@ -15,7 +15,7 @@ export function transformLayout(angle: Degrees): CSS.Properties['transform'] {
             translateX,
             skew,
             rotate,
-            translateY
+            translateY,
         ];
 
         return transformations.join(' ');

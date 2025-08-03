@@ -1,19 +1,25 @@
 import '../style.css';
 import './preview.css';
-import { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 const preview: Preview = {
     parameters: {
-        actions: {
-            argTypesRegex: '^on[A-Z].*'
-        },
         controls: {
             matchers: {
                 color: /(background|color)$/i,
-                date: /Date$/
-            }
-        }
-    }
+                date: /Date$/i,
+            },
+        },
+        options: {
+            storySort: {
+                order: [
+                    'Examples',
+                    [ 'Counter-Strike', 'Grand Theft Auto', 'League of Legends', 'Overwatch', 'Genshin Impact'],
+                ],
+                includeNames: true,
+            },
+        },
+    },
 };
 
 export default preview;

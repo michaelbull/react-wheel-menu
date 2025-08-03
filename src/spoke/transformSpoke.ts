@@ -1,16 +1,16 @@
-import * as CSS from 'csstype';
-import { Degrees } from '../angle';
+import type { Properties} from 'csstype';
+import type { Degrees } from '../angle';
 import {
     DEFAULT_SPOKE_ALIGNMENT,
-    SpokeAlignment
+    type SpokeAlignment,
 } from './SpokeAlignment';
-import { SpokeOffset } from './SpokeOffset';
+import type { SpokeOffset } from './SpokeOffset';
 
 export function transformSpoke(
     angle: Degrees,
     alignment: SpokeAlignment = DEFAULT_SPOKE_ALIGNMENT,
-    offset?: SpokeOffset
-): CSS.Properties['transform'] {
+    offset?: SpokeOffset,
+): Properties['transform'] {
     const rotate = `rotate(${angle}deg)`;
     const translateX = horizontalTranslation(alignment);
     const translateY = verticalTranslation(offset);
@@ -18,7 +18,7 @@ export function transformSpoke(
     const transformations = [
         translateX,
         rotate,
-        translateY
+        translateY,
     ];
 
     return transformations

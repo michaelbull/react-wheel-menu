@@ -29,26 +29,26 @@ npm install --save react-wheel-menu
       <td align="center" width="33%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--overwatch" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/89f5cd2c-71b8-41b0-a19a-8dc63ec149e0" alt="Overwatch" /></a>
-        <br />
-        <strong>Overwatch</strong>
-        <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--overwatch" target="_blank">Demo</a>
-        ·
-        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/stories/Examples/Overwatch/Overwatch.stories.tsx" target="_blank">Code</a>
-        <br />
-        &nbsp;
-      </td>
-      <td align="center" width="33%">
-        &nbsp;
-        <br />
         <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--counter-strike" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/a0dec421-10dd-43e3-b335-b26a00c6f4c2" alt="Counter-Strike" /></a>
         <br />
         <strong>Counter-Strike</strong>
         <br />
         <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--counter-strike" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/stories/Examples/CounterStrike/CounterStrike.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/src/stories/Examples/CounterStrike/CounterStrike.stories.tsx" target="_blank">Code</a>
+        <br />
+        &nbsp;
+      </td>
+      <td align="center" width="33%">
+        &nbsp;
+        <br />
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--overwatch" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/89f5cd2c-71b8-41b0-a19a-8dc63ec149e0" alt="Overwatch" /></a>
+        <br />
+        <strong>Overwatch</strong>
+        <br />
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--overwatch" target="_blank">Demo</a>
+        ·
+        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/src/stories/Examples/Overwatch/Overwatch.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -61,7 +61,7 @@ npm install --save react-wheel-menu
         <br />
         <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--grand-theft-auto" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/stories/Examples/GrandTheftAuto/GrandTheftAuto.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/src/stories/Examples/GrandTheftAuto/GrandTheftAuto.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -76,7 +76,7 @@ npm install --save react-wheel-menu
         <br />
         <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--league-of-legends" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/stories/Examples/LeagueOfLegends/LeagueOfLegends.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/src/stories/Examples/LeagueOfLegends/LeagueOfLegends.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -89,7 +89,7 @@ npm install --save react-wheel-menu
         <br />
         <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--genshin-impact" target="_blank">Demo</a>
         ·
-        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/stories/Examples/GenshinImpact/GenshinImpact.stories.tsx" target="_blank">Code</a>
+        <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/src/stories/Examples/GenshinImpact/GenshinImpact.stories.tsx" target="_blank">Code</a>
         <br />
         &nbsp;
       </td>
@@ -100,7 +100,7 @@ npm install --save react-wheel-menu
 ## Example
 
 ```tsx
-import { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 import {
     Label,
     Layout,

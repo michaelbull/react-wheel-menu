@@ -1,31 +1,31 @@
-import {
-    CSSProperties,
-    MouseEvent
-} from 'react';
-import {
-    Label,
-    Layout,
-    Segment,
-    Wheel
-} from '../../src';
-import {
+import type {
     Meta,
-    StoryObj
-} from '@storybook/react';
+    StoryObj,
+} from '@storybook/react-vite';
+import type {
+    CSSProperties,
+    MouseEvent,
+} from 'react';
+import { Label } from '../../label';
+import { Layout } from '../../layout';
+import { Wheel } from '../../wheel';
+import { Segment } from '../../segment';
 
-const meta: Meta = {
+const meta = {
     title: 'Examples',
     parameters: {
-        layout: 'centered'
-    }
-};
+        layout: 'centered',
+    },
+} satisfies Meta;
 
 export default meta;
 
 export const Basic: StoryObj = {
-    name: 'Basic',
     parameters: {
-        options: { showPanel: false }
+        options: {
+            bottomPanelHeight: 0,
+            rightPanelWidth: 0,
+        },
     },
     render: () => {
         const red: CSSProperties = { backgroundColor: 'red', color: 'white' };
@@ -74,5 +74,5 @@ export const Basic: StoryObj = {
                 </Segment>
             </Wheel>
         );
-    }
+    },
 };

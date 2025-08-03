@@ -1,5 +1,5 @@
-import { Degrees } from '../angle';
-import { LabelOrientation } from './LabelOrientation';
+import type { Degrees } from '../angle';
+import type { LabelOrientation } from './LabelOrientation';
 
 export function rotateLabel(orientation: LabelOrientation, angle: Degrees): Degrees {
     switch (orientation) {

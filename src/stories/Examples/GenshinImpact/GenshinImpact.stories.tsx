@@ -1,44 +1,44 @@
-import './GenshinImpact.css';
-import {
+import type {
     Meta,
-    StoryObj
-} from '@storybook/react';
+    StoryObj,
+} from '@storybook/react-vite';
 import { clsx } from 'clsx';
-import {
-    Angle,
-    Label,
-    Layout,
-    Segment,
-    Spoke,
-    Wheel
-} from '../../../src';
+import type { Angle } from '../../../angle';
+import { Label } from '../../../label';
+import { Layout } from '../../../layout';
+import { Segment } from '../../../segment';
+import { Spoke } from '../../../spoke';
+import { Wheel } from '../../../wheel';
+import './GenshinImpact.css';
 
-const meta: Meta = {
+const meta = {
     title: 'Examples',
     parameters: {
-        layout: 'fullscreen'
-    }
-};
+        layout: 'fullscreen',
+    },
+} satisfies Meta;
 
 export default meta;
 
 export const GenshinImpact: StoryObj = {
-    name: 'Genshin Impact',
     parameters: {
-        options: { showPanel: false }
+        options: {
+            bottomPanelHeight: 0,
+            rightPanelWidth: 0,
+        },
     },
     render: () => (
         <div className="genshin">
-            <div className="genshin-background" />
-            <Menu />
+            <div className="genshin-background"/>
+            <Menu/>
         </div>
-    )
+    ),
 };
 
 function Menu() {
     return (
         <Wheel className="genshin-menu">
-            <div className="genshin-menu__bottom" />
+            <div className="genshin-menu__bottom"/>
 
             <Shortcut
                 from={337.5}
@@ -96,16 +96,16 @@ function Menu() {
                 label="Battle Pass"
             />
 
-            <Divider angle={22.5} />
-            <Divider angle={67.5} />
-            <Divider angle={112.5} />
-            <Divider angle={157.5} />
-            <Divider angle={202.5} />
-            <Divider angle={247.5} />
-            <Divider angle={292.5} />
-            <Divider angle={337.5} />
+            <Divider angle={22.5}/>
+            <Divider angle={67.5}/>
+            <Divider angle={112.5}/>
+            <Divider angle={157.5}/>
+            <Divider angle={202.5}/>
+            <Divider angle={247.5}/>
+            <Divider angle={292.5}/>
+            <Divider angle={337.5}/>
 
-            <div className="genshin-menu__top" />
+            <div className="genshin-menu__top"/>
         </Wheel>
     );
 }
@@ -122,7 +122,7 @@ function Shortcut(props: ShortcutProps) {
         from,
         to,
         name,
-        label
+        label,
     } = props;
 
     const iconClassName = clsx('genshin-shortcut__icon', `genshin-shortcut__icon--${name}`);
@@ -131,7 +131,7 @@ function Shortcut(props: ShortcutProps) {
         <Segment as="button" className="genshin-shortcut" from={from} to={to} aria-label={label}>
             <Layout className="genshin-shortcut__layout" justify="end">
                 <Label className="genshin-shortcut__label" offset={54}>
-                    <div className={iconClassName} />
+                    <div className={iconClassName}/>
                 </Label>
             </Layout>
         </Segment>

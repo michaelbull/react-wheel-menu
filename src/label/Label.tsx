@@ -1,10 +1,10 @@
-import {
+import type {
     ComponentPropsWithoutRef,
-    ElementType
+    ElementType,
 } from 'react';
-import { LabelOrientation } from './LabelOrientation';
-import { LabelJustification } from './LabelJustification';
-import { LabelOffset } from './LabelOffset';
+import type { LabelJustification } from './LabelJustification';
+import type { LabelOffset } from './LabelOffset';
+import type { LabelOrientation } from './LabelOrientation';
 import { useLabel } from './useLabel';
 
 export type LabelProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
@@ -30,7 +30,7 @@ export function Label<T extends ElementType = 'span'>(props: LabelProps<T>) {
         style,
         orient,
         justify,
-        offset
+        offset,
     });
 
     return <Component

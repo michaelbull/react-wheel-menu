@@ -1,5 +1,5 @@
-import { Degrees } from '../angle';
-import { SegmentGap } from './SegmentGap';
+import type { Degrees } from '../angle';
+import type { SegmentGap } from './SegmentGap';
 
 export interface SegmentState {
     readonly from: Degrees;
@@ -12,5 +12,5 @@ export interface SegmentState {
 export const DefaultSegmentState: SegmentState = {
     from: 0,
     to: 0,
-    magnitude: 0
+    magnitude: 0,
 };

@@ -1,23 +1,35 @@
 import {
+    type  Meta,
+    type StoryObj,
+} from '@storybook/react-vite';
+import type {
     CSSProperties,
-    PropsWithChildren
+    PropsWithChildren,
 } from 'react';
 import {
+    DEFAULT_LABEL_JUSTIFICATION,
+    DEFAULT_LABEL_ORIENTATION,
     Label,
-    LabelJustification,
-    LabelOffset,
-    LabelOrientation,
-    Layout,
-    LayoutDirection,
-    LayoutJustification,
-    Segment,
-    SegmentProps,
-    Wheel
-} from '../../src';
+    LABEL_JUSTIFICATIONS,
+    LABEL_ORIENTATIONS,
+    type LabelJustification,
+    type LabelOffset,
+    type LabelOrientation,
+} from '../../label';
 import {
-    Meta,
-    StoryObj
-} from '@storybook/react';
+    DEFAULT_LAYOUT_DIRECTION,
+    DEFAULT_LAYOUT_JUSTIFICATION,
+    Layout,
+    LAYOUT_DIRECTIONS,
+    LAYOUT_JUSTIFICATIONS,
+    type LayoutDirection,
+    type LayoutJustification,
+} from '../../layout';
+import {
+    Segment,
+    type SegmentProps,
+} from '../../segment';
+import { Wheel } from '../../wheel';
 
 interface StoryProps {
     readonly layoutJustify: LayoutJustification;
@@ -31,85 +43,70 @@ interface StoryProps {
 const meta: Meta<StoryProps> = {
     title: 'Tests/Angles',
     parameters: {
-        layout: 'centered'
+        layout: 'centered',
     },
     args: {
-        layoutJustify: 'center',
-        layoutDirection: 'vertical',
-        labelOrient: 'downwards',
-        labelJustify: 'center',
-        labelOffset: '0px'
+        layoutJustify: DEFAULT_LAYOUT_JUSTIFICATION,
+        layoutDirection: DEFAULT_LAYOUT_DIRECTION,
+        labelOrient: DEFAULT_LABEL_ORIENTATION,
+        labelJustify: DEFAULT_LABEL_JUSTIFICATION,
+        labelOffset: '0px',
     },
     argTypes: {
         layoutJustify: {
             name: 'Justify',
             control: 'select',
-            options: [
-                'start',
-                'center',
-                'end'
-            ],
+            options: LAYOUT_JUSTIFICATIONS,
             table: {
-                category: 'Layout'
-            }
+                category: 'Layout',
+            },
         },
         layoutDirection: {
             name: 'Direction',
             control: 'select',
-            options: [
-                'vertical',
-                'horizontal'
-            ],
+            options: LAYOUT_DIRECTIONS,
             table: {
-                category: 'Layout'
-            }
+                category: 'Layout',
+            },
         },
         labelOrient: {
             name: 'Orient',
             control: 'select',
-            options: [
-                'downwards',
-                'upwards',
-                'inwards',
-                'outwards',
-                'clockwise',
-                'counterclockwise'
-            ],
+            options: LABEL_ORIENTATIONS,
             table: {
-                category: 'Label'
-            }
+                category: 'Label',
+            },
         },
         labelJustify: {
             name: 'Justify',
             control: 'select',
-            options: [
-                'start',
-                'center',
-                'end'
-            ],
+            options: LABEL_JUSTIFICATIONS,
             table: {
-                category: 'Label'
-            }
+                category: 'Label',
+            },
         },
         labelOffset: {
             name: 'Offset',
             table: {
-                category: 'Label'
-            }
-        }
-    }
+                category: 'Label',
+            },
+        },
+    },
 };
 
 export default meta;
 
 const style: CSSProperties = {
     width: 600,
-    height: 600
+    height: 600,
 };
 
-type Story = StoryObj<StoryProps>;
+type Story = StoryObj<typeof meta>;
 
 export const PolarStory: Story = {
+    args: {
+        labelOffset: '0px',
+    },
     name: 'Polar',
     render: (props) => {
         return (
@@ -123,7 +120,7 @@ export const PolarStory: Story = {
                 </Button>
             </Wheel>
         );
-    }
+    },
 };
 
 export const AcuteStory: Story = {
@@ -156,7 +153,7 @@ export const AcuteStory: Story = {
                 </Button>
             </Wheel>
         );
-    }
+    },
 };
 
 export const ObtuseStory: Story = {
@@ -177,7 +174,7 @@ export const ObtuseStory: Story = {
                 </Button>
             </Wheel>
         );
-    }
+    },
 };
 
 interface ButtonProps extends StoryProps, SegmentProps<'button'> {
@@ -199,14 +196,14 @@ function Button(props: PropsWithChildren<ButtonProps>) {
     } = props;
 
     const layoutStyle: CSSProperties = {
-        background
+        background,
     };
 
     const labelStyle: CSSProperties = {
         height,
         width: '80px',
         color: 'white',
-        background: 'hsla(0, 0%, 0%, 0.3)'
+        background: 'hsla(0, 0%, 0%, 0.3)',
     };
 
     return (

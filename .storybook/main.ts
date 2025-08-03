@@ -3,13 +3,11 @@ import { StorybookConfig } from '@storybook/react-vite';
 const config: StorybookConfig = {
     framework: '@storybook/react-vite',
     stories: [
-        '../stories/**/*.mdx',
-        '../stories/**/*.stories.@(js|jsx|ts|tsx)'
+        '../src/**/*.mdx',
+        '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
     ],
     addons: [
-        '@storybook/addon-links',
-        '@storybook/addon-essentials',
-        '@storybook/addon-interactions'
+        '@storybook/addon-docs',
     ],
     typescript: {
         reactDocgen: 'react-docgen-typescript',
@@ -18,10 +16,10 @@ const config: StorybookConfig = {
             propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
             compilerOptions: {
                 allowSyntheticDefaultImports: false,
-                esModuleInterop: false
-            }
-        }
-    }
+                esModuleInterop: false,
+            },
+        },
+    },
 };
 
 export default config;

@@ -14,7 +14,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('./Background.jpg');
+  background-image: url('Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,7 +56,7 @@
 
   content: '';
 
-  background-image: url('./Mouse.png');
+  background-image: url('Mouse.png');
   background-repeat: no-repeat;
   background-position: center;
 
@@ -108,35 +108,35 @@
 }
 
 .genshin-shortcut__icon--wish {
-  background-image: url('./Wish.png');
+  background-image: url('Wish.png');
 }
 
 .genshin-shortcut__icon--handbook {
-  background-image: url('./Handbook.png');
+  background-image: url('Handbook.png');
 }
 
 .genshin-shortcut__icon--inventory {
-  background-image: url('./Inventory.png');
+  background-image: url('Inventory.png');
 }
 
 .genshin-shortcut__icon--character {
-  background-image: url('./Character.png');
+  background-image: url('Character.png');
 }
 
 .genshin-shortcut__icon--map {
-  background-image: url('./Map.png');
+  background-image: url('Map.png');
 }
 
 .genshin-shortcut__icon--quests {
-  background-image: url('./Quests.png');
+  background-image: url('Quests.png');
 }
 
 .genshin-shortcut__icon--events {
-  background-image: url('./Events.png');
+  background-image: url('Events.png');
 }
 
 .genshin-shortcut__icon--battle-pass {
-  background-image: url('./BattlePass.png');
+  background-image: url('BattlePass.png');
 }
 
 .genshin-menu__divider {

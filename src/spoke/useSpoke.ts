@@ -1,17 +1,17 @@
-import { CSSProperties } from 'react';
 import { clsx } from 'clsx';
+import type { CSSProperties } from 'react';
 import {
-    Angle,
+    type Angle,
     angleToDegrees,
-    moduloDegrees
+    moduloDegrees,
 } from '../angle';
-import { SpokeOffset } from './SpokeOffset';
-import { SpokeState } from './SpokeState';
-import { transformSpoke } from './transformSpoke';
 import {
     DEFAULT_SPOKE_ALIGNMENT,
-    SpokeAlignment
+    type SpokeAlignment,
 } from './SpokeAlignment';
+import type { SpokeOffset } from './SpokeOffset';
+import type { SpokeState } from './SpokeState';
+import { transformSpoke } from './transformSpoke';
 
 export interface UseSpokeProps {
     readonly className?: string;
@@ -33,30 +33,30 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
         style: styleProp,
         angle: angleProp,
         align = DEFAULT_SPOKE_ALIGNMENT,
-        offset
+        offset,
     } = props;
 
     const angleDeg = angleToDegrees(angleProp);
     const angle = moduloDegrees(angleDeg);
 
     const state: SpokeState = {
-        angle
+        angle,
     };
 
     const className = clsx(
         'wheel-spoke',
         `wheel-spoke--${align}`,
-        classNameProp
+        classNameProp,
     );
 
     const style: CSSProperties = {
         transform: transformSpoke(angle, align, offset),
-        ...styleProp
+        ...styleProp,
     };
 
     return {
         state,
         className,
-        style
+        style,
     };
 }

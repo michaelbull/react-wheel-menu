@@ -22,12 +22,10 @@
 !.npm*
 /node_modules
 npm-debug.log*
+
+# Distribution
 /*.tgz
 /dist
-
-# ESLint
-!.eslintignore
-!.eslintrc.cjs
 
 # Storybook
 !/.storybook

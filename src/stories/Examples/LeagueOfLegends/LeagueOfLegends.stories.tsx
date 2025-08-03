@@ -1,44 +1,47 @@
-import './LeagueOfLegends.css';
-import {
+import type {
     Meta,
-    StoryObj
-} from '@storybook/react';
-import {
-    CSSProperties,
-    PropsWithChildren,
-    ReactNode,
-    useState
-} from 'react';
+    StoryObj,
+} from '@storybook/react-vite';
 import { clsx } from 'clsx';
 import {
-    Label,
-    Layout,
-    Radians,
-    Segment,
+    type CSSProperties,
+    type PropsWithChildren,
+    type ReactNode,
+    useState,
+} from 'react';
+import {
+    type Radians,
     useElementToMouseAngle,
-    Wheel
-} from '../../../src';
+} from '../../../angle';
+import { Label } from '../../../label';
+import { Layout } from '../../../layout';
+import { Wheel } from '../../../wheel';
+import { Segment } from '../../../segment';
+import './LeagueOfLegends.css';
 
-const meta: Meta = {
+const meta = {
     title: 'Examples',
     parameters: {
-        layout: 'fullscreen'
-    }
-};
+        layout: 'fullscreen',
+    },
+} satisfies Meta;
 
 export default meta;
 
 export const LeagueOfLegends: StoryObj = {
     name: 'League of Legends',
     parameters: {
-        options: { showPanel: false }
+        options: {
+            bottomPanelHeight: 0,
+            rightPanelWidth: 0,
+        },
     },
     render: () => (
         <div className="lol">
-            <div className="lol-background" />
-            <Menu />
+            <div className="lol-background"/>
+            <Menu/>
         </div>
-    )
+    ),
 };
 
 function Menu() {
@@ -193,7 +196,7 @@ function Ping(props: PingProps) {
     } = props;
 
     const layoutClassName = clsx('lol-ping__layout', {
-        'lol-ping__layout--major': major
+        'lol-ping__layout--major': major,
     });
 
     const iconClassName = clsx('lol-ping__icon', `lol-ping__icon--${name}`);
@@ -202,7 +205,7 @@ function Ping(props: PingProps) {
         <Segment as="button" className="lol-ping" gapBefore={2} gapAfter={2} aria-label={label} {...rest}>
             <Layout className={layoutClassName}>
                 <Label offset={-20}>
-                    <div className={iconClassName} />
+                    <div className={iconClassName}/>
                 </Label>
             </Layout>
         </Segment>
@@ -215,7 +218,7 @@ function Indicator(props: PropsWithChildren) {
 
     const {
         ref,
-        angle
+        angle,
     } = useElementToMouseAngle();
 
     function onMouseOver() {
@@ -244,11 +247,11 @@ interface ArrowProps {
 function Arrow(props: PropsWithChildren<ArrowProps>) {
     const {
         angle,
-        children
+        children,
     } = props;
 
     const style: CSSProperties = {
-        transform: `rotate(${angle}rad) translateX(88px)`
+        transform: `rotate(${angle}rad) translateX(88px)`,
     };
 
     return (

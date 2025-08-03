@@ -1,25 +1,28 @@
 import {
-    useCallback,
     useEffect,
-    useState
+    useState,
 } from 'react';
 
 export function useMousePosition(): [number, number] {
     const [x, setX] = useState(0);
     const [y, setY] = useState(0);
 
-    const onMouseMove = useCallback((event: MouseEvent) => {
-        setX(event.x);
-        setY(event.y);
-    }, []);
-
     useEffect(() => {
-        addEventListener('mousemove', onMouseMove);
+        if (typeof window === 'undefined') {
+            return undefined;
+        } else {
+            function onMouseMove(event: MouseEvent) {
+                setX(event.x);
+                setY(event.y);
+            }
 
-        return function cleanup() {
-            removeEventListener('mousemove', onMouseMove);
-        };
-    }, [onMouseMove]);
+            window.addEventListener('mousemove', onMouseMove);
+
+            return function cleanup() {
+                window.removeEventListener('mousemove', onMouseMove);
+            };
+        }
+    }, []);
 
     return [x, y];
 }

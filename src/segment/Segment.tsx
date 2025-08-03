@@ -1,9 +1,9 @@
-import {
+import type {
     ComponentPropsWithoutRef,
-    ElementType
+    ElementType,
 } from 'react';
-import { Angle } from '../angle';
-import { SegmentGap } from './SegmentGap';
+import type { Angle } from '../angle';
+import type { SegmentGap } from './SegmentGap';
 import { useSegment } from './useSegment';
 import { SegmentStateContext } from './useSegmentState';
 
@@ -37,7 +37,7 @@ export function Segment<T extends ElementType = 'div'>(props: SegmentProps<T>) {
         from,
         to,
         gapBefore,
-        gapAfter
+        gapAfter,
     });
 
     return (

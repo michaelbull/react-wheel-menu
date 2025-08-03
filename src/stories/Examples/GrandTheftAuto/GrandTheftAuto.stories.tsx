@@ -1,78 +1,78 @@
-import './GrandTheftAuto.css';
-import {
+import type {
     Meta,
-    StoryObj
-} from '@storybook/react';
-import {
-    CSSProperties,
-    PropsWithChildren
-} from 'react';
+    StoryObj,
+} from '@storybook/react-vite';
 import { clsx } from 'clsx';
-import {
-    Label,
-    Layout,
-    Segment,
-    Wheel
-} from '../../../src';
+import type {
+    CSSProperties,
+    PropsWithChildren,
+} from 'react';
+import { Label } from '../../../label';
+import { Layout } from '../../../layout';
+import { Segment } from '../../../segment';
+import { Wheel } from '../../../wheel';
+import './GrandTheftAuto.css';
 
-const meta: Meta = {
+const meta = {
     title: 'Examples',
     parameters: {
-        layout: 'fullscreen'
-    }
-};
+        layout: 'fullscreen',
+    },
+} satisfies Meta;
 
 export default meta;
 
 export const GrandTheftAuto: StoryObj = {
-    name: 'Grand Theft Auto',
     parameters: {
-        options: { showPanel: false }
+        options: {
+            bottomPanelHeight: 0,
+            rightPanelWidth: 0,
+        },
     },
     render: () => (
         <div className="gta">
-            <div className="gta-background" />
-            <Menu />
+            <div className="gta-background"/>
+            <Menu/>
         </div>
-    )
+    ),
 };
 
 function Menu() {
     return (
         <Wheel className="gta-menu">
             <Weapon from={337.5} to={22.5} label="Pistol" ammo={88} reserve={12}>
-                <Icon name="pistol" />
+                <Icon name="pistol"/>
             </Weapon>
 
             <Weapon from={22.5} to={67.5} label="SMG" ammo={754} reserve={1}>
-                <Icon name="smg" />
+                <Icon name="smg"/>
             </Weapon>
 
             <Weapon from={67.5} to={112.5} label="Rifle" ammo={34} reserve={60}>
-                <Icon name="rifle" />
+                <Icon name="rifle"/>
             </Weapon>
 
             <Weapon from={112.5} to={157.5} label="Sniper" ammo={1} reserve={11}>
-                <Icon name="sniper" style={{ marginLeft: 26, marginTop: -26 }} />
+                <Icon name="sniper" style={{ marginLeft: 26, marginTop: -26 }}/>
             </Weapon>
 
             <Weapon from={157.5} to={202.5} label="Fists">
-                <Icon name="fist" />
+                <Icon name="fist"/>
             </Weapon>
 
             <Weapon from={202.5} to={247.5} label="Shotgun" ammo={92} reserve={8}>
-                <Icon name="shotgun" />
+                <Icon name="shotgun"/>
             </Weapon>
 
             <Weapon from={247.5} to={292.5} label="Minigun" ammo={77} reserve={100}>
-                <Icon name="minigun" />
+                <Icon name="minigun"/>
             </Weapon>
 
             <Weapon from={292.5} to={337.5} label="Grenade" ammo={6}>
-                <Icon name="grenade" />
+                <Icon name="grenade"/>
             </Weapon>
 
-            <div className="gta-menu__center" />
+            <div className="gta-menu__center"/>
         </Wheel>
     );
 }
@@ -101,7 +101,7 @@ function Weapon(props: PropsWithChildren<WeaponProps>) {
             <Layout className="gta-weapon__layout" justify="end">
                 <Label className="gta-weapon__label" offset={50}>
                     {children}
-                    <Ammo current={ammo} reserve={reserve} />
+                    <Ammo current={ammo} reserve={reserve}/>
                 </Label>
             </Layout>
         </Segment>

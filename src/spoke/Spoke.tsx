@@ -1,12 +1,12 @@
-import {
+import type {
     ComponentPropsWithoutRef,
-    ElementType
+    ElementType,
 } from 'react';
-import { Angle } from '../angle';
-import { SpokeOffset } from './SpokeOffset';
+import type { Angle } from '../angle';
+import type { SpokeAlignment } from './SpokeAlignment';
+import type { SpokeOffset } from './SpokeOffset';
 import { useSpoke } from './useSpoke';
 import { SpokeStateContext } from './useSpokeState';
-import { SpokeAlignment } from './SpokeAlignment';
 
 export type SpokeProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
@@ -35,7 +35,7 @@ export function Spoke<T extends ElementType = 'span'>(props: SpokeProps<T>) {
         style,
         angle,
         align,
-        offset
+        offset,
     });
 
     return (

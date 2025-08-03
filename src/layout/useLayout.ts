@@ -1,14 +1,14 @@
-import { CSSProperties } from 'react';
+import { clsx } from 'clsx';
+import type { CSSProperties } from 'react';
+import { useSegmentState } from '../segment';
 import {
     DEFAULT_LAYOUT_DIRECTION,
-    LayoutDirection
+    type LayoutDirection,
 } from './LayoutDirection';
 import {
     DEFAULT_LAYOUT_JUSTIFICATION,
-    LayoutJustification
+    type LayoutJustification,
 } from './LayoutJustification';
-import { useSegmentState } from '../segment';
-import { clsx } from 'clsx';
 import { transformLayout } from './transformLayout';
 
 export interface UseLayoutProps {
@@ -28,7 +28,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
         className: classNameProp,
         style: styleProp,
         direction = DEFAULT_LAYOUT_DIRECTION,
-        justify = DEFAULT_LAYOUT_JUSTIFICATION
+        justify = DEFAULT_LAYOUT_JUSTIFICATION,
     } = props;
 
     const { magnitude } = useSegmentState();
@@ -37,16 +37,16 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
         'wheel-layout',
         `wheel-layout--${direction}`,
         `wheel-layout--${justify}`,
-        classNameProp
+        classNameProp,
     );
 
     const style: CSSProperties = {
         transform: transformLayout(magnitude),
-        ...styleProp
+        ...styleProp,
     };
 
     return {
         className,
-        style
+        style,
     };
 }

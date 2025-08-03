@@ -1,9 +1,9 @@
-import {
+import type {
     ComponentPropsWithoutRef,
-    ElementType
+    ElementType,
 } from 'react';
-import { LayoutDirection } from './LayoutDirection';
-import { LayoutJustification } from './LayoutJustification';
+import type { LayoutDirection } from './LayoutDirection';
+import type { LayoutJustification } from './LayoutJustification';
 import { useLayout } from './useLayout';
 
 export type LayoutProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
@@ -26,7 +26,7 @@ export function Layout<T extends ElementType = 'span'>(props: LayoutProps<T>) {
         className,
         style,
         direction,
-        justify
+        justify,
     });
 
     return <Component

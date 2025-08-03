@@ -1,11 +1,11 @@
-import { addons } from '@storybook/manager-api';
-import { create } from '@storybook/theming';
-import pkg from '../package.json' assert { type: 'json' };
+import { addons } from 'storybook/manager-api';
+import { create } from 'storybook/theming';
+import pkg from '../package.json' with { type: 'json' };
 
 addons.setConfig({
     theme: create({
         base: 'light',
         brandTitle: `${pkg.name} v${pkg.version}`,
-        brandUrl: pkg.homepage
-    })
+        brandUrl: pkg.homepage,
+    }),
 });

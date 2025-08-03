@@ -10,15 +10,15 @@ export interface UseWheelReturn {
 
 export function useWheel(props: UseWheelProps): UseWheelReturn {
     const {
-        className: classNameProp
+        className: classNameProp,
     } = props;
 
     const className = clsx(
         'wheel',
-        classNameProp
+        classNameProp,
     );
 
     return {
-        className
+        className,
     };
 }

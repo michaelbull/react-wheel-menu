@@ -1,12 +1,12 @@
-import { Degrees } from '../angle';
+import type { Degrees } from '../angle';
 import {
     DefaultSegmentState,
-    SegmentState,
-    useSegmentState
+    type SegmentState,
+    useSegmentState,
 } from '../segment';
 import {
     DefaultSpokeState,
-    useSpokeState
+    useSpokeState,
 } from '../spoke';
 
 export function useLabelAngle(): Degrees {

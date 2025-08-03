@@ -1,14 +1,14 @@
-import { CSSProperties } from 'react';
-import {
-    DEFAULT_LABEL_ORIENTATION,
-    LabelOrientation
-} from './LabelOrientation';
+import { clsx } from 'clsx';
+import type { CSSProperties } from 'react';
 import {
     DEFAULT_LABEL_JUSTIFICATION,
-    LabelJustification
+    type LabelJustification,
 } from './LabelJustification';
-import { LabelOffset } from './LabelOffset';
-import { clsx } from 'clsx';
+import type { LabelOffset } from './LabelOffset';
+import {
+    DEFAULT_LABEL_ORIENTATION,
+    type LabelOrientation,
+} from './LabelOrientation';
 import { transformLabel } from './transformLabel';
 import { useLabelAngle } from './useLabelAngle';
 
@@ -31,7 +31,7 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
         style: styleProp,
         orient = DEFAULT_LABEL_ORIENTATION,
         justify = DEFAULT_LABEL_JUSTIFICATION,
-        offset
+        offset,
     } = props;
 
     const angle = useLabelAngle();
@@ -39,16 +39,16 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
     const className = clsx(
         'wheel-label',
         `wheel-label--${justify}`,
-        classNameProp
+        classNameProp,
     );
 
     const style: CSSProperties = {
         transform: transformLabel(angle, orient, offset),
-        ...styleProp
+        ...styleProp,
     };
 
     return {
         className,
-        style
+        style,
     };
 }

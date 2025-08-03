@@ -14,7 +14,7 @@
   bottom: 0;
   left: 0;
 
-  background-image: url('./Background.jpg');
+  background-image: url('Background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,35 +80,35 @@
 }
 
 .gta-weapon__icon--pistol {
-  background-image: url('./Pistol.png');
+  background-image: url('Pistol.png');
 }
 
 .gta-weapon__icon--smg {
-  background-image: url('./SMG.png');
+  background-image: url('SMG.png');
 }
 
 .gta-weapon__icon--rifle {
-  background-image: url('./Rifle.png');
+  background-image: url('Rifle.png');
 }
 
 .gta-weapon__icon--sniper {
-  background-image: url('./Sniper.png');
+  background-image: url('Sniper.png');
 }
 
 .gta-weapon__icon--fist {
-  background-image: url('./Fist.png');
+  background-image: url('Fist.png');
 }
 
 .gta-weapon__icon--shotgun {
-  background-image: url('./Shotgun.png');
+  background-image: url('Shotgun.png');
 }
 
 .gta-weapon__icon--minigun {
-  background-image: url('./Minigun.png');
+  background-image: url('Minigun.png');
 }
 
 .gta-weapon__icon--grenade {
-  background-image: url('./Grenade.png');
+  background-image: url('Grenade.png');
 }
 
 .gta-weapon-ammo {
