@@ -4,7 +4,10 @@ import {
     DEFAULT_LABEL_JUSTIFICATION,
     type LabelJustification,
 } from './LabelJustification';
-import type { LabelOffset } from './LabelOffset';
+import {
+    DEFAULT_LABEL_OFFSET,
+    type LabelOffset,
+} from './LabelOffset';
 import {
     DEFAULT_LABEL_ORIENTATION,
     type LabelOrientation,
@@ -31,7 +34,7 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
         style: styleProp,
         orient = DEFAULT_LABEL_ORIENTATION,
         justify = DEFAULT_LABEL_JUSTIFICATION,
-        offset,
+        offset = DEFAULT_LABEL_OFFSET,
     } = props;
 
     const angle = useLabelAngle();

@@ -9,7 +9,10 @@ import {
     DEFAULT_SPOKE_ALIGNMENT,
     type SpokeAlignment,
 } from './SpokeAlignment';
-import type { SpokeOffset } from './SpokeOffset';
+import {
+    DEFAULT_SPOKE_OFFSET,
+    type SpokeOffset,
+} from './SpokeOffset';
 import type { SpokeState } from './SpokeState';
 import { transformSpoke } from './transformSpoke';
 
@@ -33,7 +36,7 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
         style: styleProp,
         angle: angleProp,
         align = DEFAULT_SPOKE_ALIGNMENT,
-        offset,
+        offset = DEFAULT_SPOKE_OFFSET,
     } = props;
 
     const angleDeg = angleToDegrees(angleProp);

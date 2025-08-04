@@ -5,7 +5,7 @@ import type { SpokeOffset } from './SpokeOffset';
 export function transformSpoke(
     transform: Properties['transform'],
     angle: Degrees,
-    offset?: SpokeOffset,
+    offset: SpokeOffset,
 ): Properties['transform'] {
     const rotate = `rotate(${angle}deg)`;
     const translateY = verticalTranslation(offset);
@@ -22,9 +22,9 @@ export function transformSpoke(
         .join(' ');
 }
 
-function verticalTranslation(offset?: SpokeOffset): string | undefined {
-    if (offset === undefined) {
-        return undefined;
+function verticalTranslation(offset: SpokeOffset): string {
+    if (offset === 0 || offset === '') {
+        return '';
     } else {
         return `translateY(${offsetWithUnit(offset)})`;
     }

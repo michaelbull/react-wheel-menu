@@ -11,7 +11,7 @@ export function transformLabel(
     transform: Properties['transform'],
     angle: Degrees,
     orientation: LabelOrientation = DEFAULT_LABEL_ORIENTATION,
-    offset?: LabelOffset,
+    offset: LabelOffset,
 ): Properties['transform'] {
     const translateY = verticalTranslation(offset);
     const rotate = `rotate(${rotateLabel(orientation, angle)}deg)`;
@@ -28,9 +28,9 @@ export function transformLabel(
         .join(' ');
 }
 
-function verticalTranslation(offset?: LabelOffset): string | undefined {
-    if (offset === undefined) {
-        return undefined;
+function verticalTranslation(offset: LabelOffset): string {
+    if (offset === 0 || offset === '') {
+        return '';
     } else {
         return `translateY(${offsetWithUnit(offset)})`;
     }

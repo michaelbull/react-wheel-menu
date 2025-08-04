@@ -8,6 +8,7 @@ import type {
 } from 'react';
 import {
     DEFAULT_LABEL_JUSTIFICATION,
+    DEFAULT_LABEL_OFFSET,
     DEFAULT_LABEL_ORIENTATION,
     Label,
     LABEL_JUSTIFICATIONS,
@@ -50,7 +51,7 @@ const meta: Meta<StoryProps> = {
         layoutDirection: DEFAULT_LAYOUT_DIRECTION,
         labelOrient: DEFAULT_LABEL_ORIENTATION,
         labelJustify: DEFAULT_LABEL_JUSTIFICATION,
-        labelOffset: '0px',
+        labelOffset: DEFAULT_LABEL_OFFSET,
     },
     argTypes: {
         layoutJustify: {
@@ -105,7 +106,7 @@ type Story = StoryObj<typeof meta>;
 
 export const PolarStory: Story = {
     args: {
-        labelOffset: '0px',
+        labelOffset: DEFAULT_LABEL_OFFSET,
     },
     name: 'Polar',
     render: (props) => {
