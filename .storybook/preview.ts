@@ -16,9 +16,9 @@ const preview: Preview = {
                     'Examples',
                     [
                         'Counter-Strike',
+                        'Overwatch',
                         'Grand Theft Auto',
                         'League of Legends',
-                        'Overwatch',
                         'Genshin Impact',
                     ],
                 ],
