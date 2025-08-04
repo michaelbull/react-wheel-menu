@@ -10,7 +10,7 @@ export function transformSpoke(
     offset: SpokeOffset = DEFAULT_SPOKE_OFFSET,
     transform?: Properties['transform'],
 ): Properties['transform'] {
-    const rotate = `rotate(${angle}deg)`;
+    const rotate = rotation(angle);
     const translateY = verticalTranslation(offset);
 
     const transformations = [
@@ -25,6 +25,14 @@ export function transformSpoke(
     return transformations
         .filter(notEmpty)
         .join(' ');
+}
+
+function rotation(angle: number): string {
+    if (angle === 0) {
+        return '';
+    } else {
+        return `rotate(${angle}deg)`;
+    }
 }
 
 function verticalTranslation(offset: SpokeOffset): string {

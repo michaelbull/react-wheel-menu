@@ -12,8 +12,8 @@ export function transformLayout(
     if (angle === 0) {
         return transform;
     } else {
-        const skew = `skew(${-(angle - 90)}deg)`;
-        const rotate = `rotate(${90 - (angle / 2)}deg)`;
+        const skew = skewing(angle);
+        const rotate = rotation(angle);
 
         const transformations = [
             translateX,
@@ -29,6 +29,26 @@ export function transformLayout(
         return transformations
             .filter(notEmpty)
             .join(' ');
+    }
+}
+
+function skewing(angle: number): string {
+    const degrees = -(angle - 90);
+
+    if (degrees === 0) {
+        return '';
+    } else {
+        return `skew(${degrees}deg)`;
+    }
+}
+
+function rotation(angle: number): string {
+    const degrees = 90 - (angle / 2);
+
+    if (degrees === 0) {
+        return '';
+    } else {
+        return `rotate(${degrees}deg)`;
     }
 }
 

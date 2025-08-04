@@ -14,8 +14,8 @@ export function transformSegment(
         gapAfter,
     } = state;
 
-    const rotate = `rotate(${from + magnitude - 90}deg)`;
-    const skew = `skew(${magnitude - 90}deg)`;
+    const rotate = rotation(from, magnitude);
+    const skew = skewing(magnitude);
     const translate = gapTranslation(gapBefore, gapAfter);
 
     const transformations = [
@@ -31,6 +31,26 @@ export function transformSegment(
     return transformations
         .filter(notEmpty)
         .join(' ');
+}
+
+function rotation(from: number, magnitude: number): string {
+    const degrees = from + magnitude - 90;
+
+    if (degrees === 0) {
+        return '';
+    } else {
+        return `rotate(${degrees}deg)`;
+    }
+}
+
+function skewing(magnitude: number): string {
+    const degrees = magnitude - 90;
+
+    if (degrees === 0) {
+        return '';
+    } else {
+        return `skew(${degrees}deg)`;
+    }
 }
 
 function gapTranslation(before?: SegmentGap, after?: SegmentGap): string {
