@@ -22,7 +22,7 @@ npm install --save react-wheel-menu
       <td align="center" width="33%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--counter-strike" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/a0dec421-10dd-43e3-b335-b26a00c6f4c2" alt="Counter-Strike" /></a>
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--counter-strike" target="_blank"><img src="images/counterstrike.png" alt="Counter-Strike" /></a>
         <br />
         <strong>Counter-Strike</strong>
         <br />
@@ -35,7 +35,7 @@ npm install --save react-wheel-menu
       <td align="center" width="33%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--overwatch" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/89f5cd2c-71b8-41b0-a19a-8dc63ec149e0" alt="Overwatch" /></a>
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--overwatch" target="_blank"><img src="images/overwatch.png" alt="Overwatch" /></a>
         <br />
         <strong>Overwatch</strong>
         <br />
@@ -48,7 +48,7 @@ npm install --save react-wheel-menu
       <td align="center" width="33%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--grand-theft-auto" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/5442c291-0f29-4d63-ae51-9b3982b0635e" alt="Grand Theft Auto" /></a>
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--grand-theft-auto" target="_blank"><img src="images/gta.png" alt="Grand Theft Auto" /></a>
         <br />
         <strong>Grand Theft Auto</strong>
         <br />
@@ -63,7 +63,7 @@ npm install --save react-wheel-menu
       <td align="center" width="33%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--league-of-legends" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/27812098-f3ff-446e-a794-1d26144d0cf5" alt="League of Legends" /></a>
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--league-of-legends" target="_blank"><img src="images/league.png" alt="League of Legends" /></a>
         <br />
         <strong>League of Legends</strong>
         <br />
@@ -76,7 +76,7 @@ npm install --save react-wheel-menu
       <td align="center" width="33%">
         &nbsp;
         <br />
-        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--genshin-impact" target="_blank"><img src="https://github.com/michaelbull/react-wheel-menu/assets/3253134/ef6b192c-13a9-45e4-9826-c9ea2d64d94a" alt="Genshin Impact" /></a>
+        <a href="https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--genshin-impact" target="_blank"><img src="images/genshin.png" alt="Genshin Impact" /></a>
         <br />
         <strong>Genshin Impact</strong>
         <br />
