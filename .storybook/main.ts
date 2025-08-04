@@ -1,7 +1,14 @@
 import { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-    framework: '@storybook/react-vite',
+    framework: {
+        name: '@storybook/react-vite',
+        options: {
+            builder: {
+                viteConfigPath: '.storybook/vite.config.ts',
+            },
+        },
+    },
     stories: [
         '../src/**/*.mdx',
         '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
