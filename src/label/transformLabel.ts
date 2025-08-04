@@ -19,11 +19,13 @@ export function transformLabel(
     const transformations = [
         translateY,
         rotate,
-        transform,
     ];
 
+    if (transform !== undefined) {
+        transformations.push(transform);
+    }
+
     return transformations
-        .filter(notUndefined)
         .filter(notEmpty)
         .join(' ');
 }
@@ -42,10 +44,6 @@ function offsetWithUnit(offset: LabelOffset, unit = 'px'): string {
     } else {
         return offset;
     }
-}
-
-function notUndefined<T>(value: T | undefined): value is T {
-    return value !== undefined;
 }
 
 function notEmpty(value: string): boolean {

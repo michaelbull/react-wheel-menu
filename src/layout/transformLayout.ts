@@ -20,18 +20,16 @@ export function transformLayout(
             skew,
             rotate,
             translateY,
-            transform,
         ];
 
+        if (transform !== undefined) {
+            transformations.push(transform);
+        }
+
         return transformations
-            .filter(notUndefined)
             .filter(notEmpty)
             .join(' ');
     }
-}
-
-function notUndefined<T>(value: T | undefined): value is T {
-    return value !== undefined;
 }
 
 function notEmpty(value: string): boolean {
