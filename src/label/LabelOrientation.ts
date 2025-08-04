@@ -13,6 +13,6 @@ export const LABEL_ORIENTATIONS: LabelOrientation[] = [
     'outwards',
     'clockwise',
     'counterclockwise',
-]
+];
 
 export const DEFAULT_LABEL_ORIENTATION: LabelOrientation = 'downwards';
