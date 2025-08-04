@@ -31,17 +31,25 @@ describe('useMousePosition', () => {
     });
 
     it('returns the initial position as [0, 0]', () => {
-        const { result } = renderHook(() => useMousePosition());
+        const { result } = renderHook(() => {
+            return useMousePosition();
+        });
+
         expect(result.current).toEqual([0, 0]);
     });
 
     it('attaches the mousemove event listener on mount', () => {
-        renderHook(() => useMousePosition());
+        renderHook(() => {
+            return useMousePosition();
+        });
+
         expect(addSpy).toHaveBeenCalledWith('mousemove', expect.any(Function));
     });
 
     it('updates the position when the mouse moves', () => {
-        const { result } = renderHook(() => useMousePosition());
+        const { result } = renderHook(() => {
+            return useMousePosition();
+        });
 
         act(() => {
             fireEvent.mouseMove(window, { clientX: 150, clientY: 250 });
@@ -51,7 +59,9 @@ describe('useMousePosition', () => {
     });
 
     it('updates the position correctly on subsequent mouse moves', () => {
-        const { result } = renderHook(() => useMousePosition());
+        const { result } = renderHook(() => {
+            return useMousePosition();
+        });
 
         act(() => {
             fireEvent.mouseMove(window, { clientX: 150, clientY: 250 });
@@ -67,7 +77,9 @@ describe('useMousePosition', () => {
     });
 
     it('removes the mousemove event listener on unmount', () => {
-        const { unmount } = renderHook(() => useMousePosition());
+        const { unmount } = renderHook(() => {
+            return useMousePosition();
+        });
 
         unmount();
 
