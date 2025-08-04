@@ -8,8 +8,6 @@
 
 React components & hooks for building a [radial wheel menu][wikipedia-pie-menu].
 
-[Demo][storybook]
-
 ## Installation
 
 ```shell
@@ -219,7 +217,6 @@ This project is available under the terms of the ISC license. See the
 
 [npm]: https://www.npmjs.com/package/react-wheel-menu
 [github]: https://github.com/michaelbull/react-wheel-menu
-[storybook]: https://michaelbull.github.io/react-wheel-menu/
 [wikipedia-pie-menu]: https://en.wikipedia.org/wiki/Pie_menu
 [degree]: https://en.wikipedia.org/wiki/Degree_(angle)
 [radian]: https://en.wikipedia.org/wiki/Radian
