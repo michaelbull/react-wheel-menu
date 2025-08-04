@@ -26,7 +26,9 @@ export default defineConfig({
         dts({
             tsconfigPath: './tsconfig.app.json',
             exclude: [
-                'src/stories',
+                '**/*.stories.*',
+                '**/*.test.ts',
+                '**/*.spec.ts',
             ],
         }),
     ],
