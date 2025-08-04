@@ -47,7 +47,7 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
 
     const style: CSSProperties = {
         ...styleProp,
-        transform: transformLabel(styleProp?.transform, angle, orient, offset),
+        transform: transformLabel(angle, orient, offset, styleProp?.transform),
     };
 
     return {
