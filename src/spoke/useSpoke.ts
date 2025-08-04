@@ -44,14 +44,14 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
     };
 
     const className = clsx(
+        classNameProp,
         'wheel-spoke',
         `wheel-spoke--${align}`,
-        classNameProp,
     );
 
     const style: CSSProperties = {
-        transform: transformSpoke(angle, align, offset),
         ...styleProp,
+        transform: transformSpoke(styleProp?.transform, angle, offset),
     };
 
     return {

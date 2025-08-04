@@ -34,15 +34,15 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
     const { magnitude } = useSegmentState();
 
     const className = clsx(
+        classNameProp,
         'wheel-layout',
         `wheel-layout--${direction}`,
         `wheel-layout--${justify}`,
-        classNameProp,
     );
 
     const style: CSSProperties = {
-        transform: transformLayout(magnitude),
         ...styleProp,
+        transform: transformLayout(styleProp?.transform, magnitude),
     };
 
     return {

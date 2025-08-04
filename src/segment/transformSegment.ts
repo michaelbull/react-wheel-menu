@@ -1,8 +1,12 @@
-import type { Properties} from 'csstype';
+import type { Properties } from 'csstype';
 import type { SegmentGap } from './SegmentGap';
 import type { SegmentState } from './SegmentState';
 
-export function transformSegment(state: SegmentState): Properties['transform'] {
+export function transformSegment(
+    transform: Properties['transform'],
+    state: SegmentState,
+): Properties['transform'] {
+
     const {
         from,
         magnitude,
@@ -18,14 +22,16 @@ export function transformSegment(state: SegmentState): Properties['transform'] {
         rotate,
         skew,
         translate,
+        transform,
     ];
 
     return transformations
-        .filter(notNull)
+        .filter(notUndefined)
+        .filter(notEmpty)
         .join(' ');
 }
 
-function gapTranslation(before?: SegmentGap, after?: SegmentGap): string | null {
+function gapTranslation(before?: SegmentGap, after?: SegmentGap): string | undefined {
     if (before !== undefined && after !== undefined) {
         const translateX = gapWithUnit(before);
         const translateY = gapWithUnit(after);
@@ -37,7 +43,7 @@ function gapTranslation(before?: SegmentGap, after?: SegmentGap): string | null 
         const translateY = gapWithUnit(after);
         return `translateY(-${translateY})`;
     } else {
-        return null;
+        return undefined;
     }
 }
 
@@ -49,6 +55,10 @@ function gapWithUnit(gap: SegmentGap, unit = 'px'): string {
     }
 }
 
-function notNull<T>(value: T | null): value is T {
-    return value !== null;
+function notUndefined<T>(value: T | undefined): value is T {
+    return value !== undefined;
+}
+
+function notEmpty(value: string): boolean {
+    return value.length > 0;
 }

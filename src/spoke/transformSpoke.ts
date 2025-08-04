@@ -1,47 +1,30 @@
-import type { Properties} from 'csstype';
+import type { Properties } from 'csstype';
 import type { Degrees } from '../angle';
-import {
-    DEFAULT_SPOKE_ALIGNMENT,
-    type SpokeAlignment,
-} from './SpokeAlignment';
 import type { SpokeOffset } from './SpokeOffset';
 
 export function transformSpoke(
+    transform: Properties['transform'],
     angle: Degrees,
-    alignment: SpokeAlignment = DEFAULT_SPOKE_ALIGNMENT,
     offset?: SpokeOffset,
 ): Properties['transform'] {
     const rotate = `rotate(${angle}deg)`;
-    const translateX = horizontalTranslation(alignment);
     const translateY = verticalTranslation(offset);
 
     const transformations = [
-        translateX,
         rotate,
         translateY,
+        transform,
     ];
 
     return transformations
-        .filter(notNull)
+        .filter(notUndefined)
+        .filter(notEmpty)
         .join(' ');
 }
 
-function horizontalTranslation(alignment: SpokeAlignment): string | null {
-    switch (alignment) {
-        case 'left':
-            return null;
-
-        case 'center':
-            return '';
-
-        case 'right':
-            return null;
-    }
-}
-
-function verticalTranslation(offset?: SpokeOffset): string | null {
+function verticalTranslation(offset?: SpokeOffset): string | undefined {
     if (offset === undefined) {
-        return null;
+        return undefined;
     } else {
         return `translateY(${offsetWithUnit(offset)})`;
     }
@@ -55,6 +38,10 @@ function offsetWithUnit(offset: SpokeOffset, unit = 'px'): string {
     }
 }
 
-function notNull<T>(value: T | null): value is T {
-    return value !== null;
+function notUndefined<T>(value: T | undefined): value is T {
+    return value !== undefined;
+}
+
+function notEmpty(value: string): boolean {
+    return value.length > 0;
 }

@@ -51,13 +51,13 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
     };
 
     const className = clsx(
-        'wheel-segment',
         classNameProp,
+        'wheel-segment',
     );
 
     const style: CSSProperties = {
-        transform: transformSegment(state),
         ...styleProp,
+        transform: transformSegment(styleProp?.transform, state),
     };
 
     return {

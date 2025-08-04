@@ -37,14 +37,14 @@ export function useLabel(props: UseLabelProps): UseLabelReturn {
     const angle = useLabelAngle();
 
     const className = clsx(
+        classNameProp,
         'wheel-label',
         `wheel-label--${justify}`,
-        classNameProp,
     );
 
     const style: CSSProperties = {
-        transform: transformLabel(angle, orient, offset),
         ...styleProp,
+        transform: transformLabel(styleProp?.transform, angle, orient, offset),
     };
 
     return {

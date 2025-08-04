@@ -14,8 +14,8 @@ export function useWheel(props: UseWheelProps): UseWheelReturn {
     } = props;
 
     const className = clsx(
-        'wheel',
         classNameProp,
+        'wheel',
     );
 
     return {
