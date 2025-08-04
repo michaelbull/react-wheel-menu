@@ -5,11 +5,6 @@
     <a href="https://github.com/michaelbull/react-wheel-menu/actions?query=workflow%3Aci" target="_blank" rel="noreferrer"><img alt="CI Status" src="https://github.com/michaelbull/react-wheel-menu/workflows/ci/badge.svg" /></a>&nbsp;
     <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/LICENSE" target="_blank" rel="noreferrer"><img alt="License" src="https://img.shields.io/github/license/michaelbull/react-wheel-menu.svg" /></a>
 </p>
-<p>
-  <a href="https://ko-fi.com/R5R0CFMN6" target="_blank" rel="noreferrer">
-    <img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg" />
-  </a>
-</p>
 
 React components & hooks for building a [radial wheel menu][wikipedia-pie-menu].
 
@@ -223,7 +218,7 @@ This project is available under the terms of the ISC license. See the
 
 [npm]: https://www.npmjs.com/package/react-wheel-menu
 [github]: https://github.com/michaelbull/react-wheel-menu
-[storybook]: https://michaelbull.github.io/react-wheel-menu/?path=/story/examples
+[storybook]: https://michaelbull.github.io/react-wheel-menu/
 [wikipedia-pie-menu]: https://en.wikipedia.org/wiki/Pie_menu
 [degree]: https://en.wikipedia.org/wiki/Degree_(angle)
 [radian]: https://en.wikipedia.org/wiki/Radian
