@@ -30,3 +30,7 @@ npm-debug.log*
 # Storybook
 !/.storybook
 /storybook-static
+*storybook.log
+
+# Vitest
+/coverage
