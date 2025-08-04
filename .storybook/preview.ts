@@ -14,7 +14,13 @@ const preview: Preview = {
             storySort: {
                 order: [
                     'Examples',
-                    [ 'Counter-Strike', 'Grand Theft Auto', 'League of Legends', 'Overwatch', 'Genshin Impact'],
+                    [
+                        'Counter-Strike',
+                        'Grand Theft Auto',
+                        'League of Legends',
+                        'Overwatch',
+                        'Genshin Impact',
+                    ],
                 ],
                 includeNames: true,
             },
