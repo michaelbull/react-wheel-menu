@@ -102,6 +102,7 @@ import {
     Segment,
     Wheel
 } from 'react-wheel-menu';
+import 'react-wheel-menu/style.css';
 
 export function Example() {
     const red: CSSProperties = { backgroundColor: 'red', color: 'white' };
