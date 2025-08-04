@@ -5,7 +5,7 @@ import {
 } from 'vitest';
 import { radiansBetween } from './radiansBetween';
 
-describe('angleBetween', () => {
+describe('radiantsBetween', () => {
     it('returns the angle in radians between two points at a right angle', () => {
         const actual = radiansBetween(0, 0, 5, 5);
         expect(actual).toBe(0.7853981633974483);
