@@ -23,8 +23,8 @@ export default defineConfig({
     plugins: [
         dts({
             tsconfigPath: './tsconfig.app.json',
-            include: [
-                'src',
+            exclude: [
+                'src/stories',
             ],
         }),
     ],
