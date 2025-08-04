@@ -8,14 +8,14 @@
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
   "main": "dist/index.cjs",
-  "style": "style.css",
+  "style": "dist/index.css",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./style.css": "./style.css"
+    "./index.css": "./dist/index.css"
   },
   "author": {
     "name": "Michael Bull",
@@ -38,8 +38,7 @@
     "menu"
   ],
   "files": [
-    "dist",
-    "style.css"
+    "dist"
   ],
   "scripts": {
     "clean": "rimraf coverage dist storybook-static",

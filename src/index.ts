@@ -1,3 +1,5 @@
+import './index.css';
+
 export * from './angle/Angle';
 export * from './angle/angleToDegrees';
 export * from './angle/moduloDegrees';
