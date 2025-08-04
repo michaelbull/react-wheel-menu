@@ -1,10 +1,8 @@
 import { clsx } from 'clsx';
 import type { CSSProperties } from 'react';
-import {
-    type Angle,
-    angleToDegrees,
-    moduloDegrees,
-} from '../angle';
+import type { Angle } from '../angle/Angle';
+import { angleToDegrees } from '../angle/angleToDegrees';
+import { moduloDegrees } from '../angle/moduloDegrees';
 import type { SegmentGap } from './SegmentGap';
 import type { SegmentState } from './SegmentState';
 import { transformSegment } from './transformSegment';

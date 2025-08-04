@@ -1,4 +1,4 @@
-import type { Degrees } from '../angle';
+import type { Degrees } from '../angle/Angle';
 import type { SegmentGap } from './SegmentGap';
 
 export interface SegmentState {

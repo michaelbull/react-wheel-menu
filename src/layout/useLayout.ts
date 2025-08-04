@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 import type { CSSProperties } from 'react';
-import { useSegmentState } from '../segment';
+import { useSegmentState } from '../segment/useSegmentState';
 import {
     DEFAULT_LAYOUT_DIRECTION,
     type LayoutDirection,

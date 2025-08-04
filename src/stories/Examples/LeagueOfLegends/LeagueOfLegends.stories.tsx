@@ -9,14 +9,12 @@ import {
     type ReactNode,
     useState,
 } from 'react';
-import {
-    type Radians,
-    useElementToMouseAngle,
-} from '../../../angle';
-import { Label } from '../../../label';
-import { Layout } from '../../../layout';
-import { Wheel } from '../../../wheel';
-import { Segment } from '../../../segment';
+import type { Radians } from '../../../angle/Angle';
+import { useElementToMouseAngle } from '../../../angle/useElementToMouseAngle';
+import { Label } from '../../../label/Label';
+import { Layout } from '../../../layout/Layout';
+import { Segment } from '../../../segment/Segment';
+import { Wheel } from '../../../wheel/Wheel';
 import './LeagueOfLegends.css';
 
 const meta = {

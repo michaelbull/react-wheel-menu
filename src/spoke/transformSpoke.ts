@@ -1,5 +1,5 @@
 import type { Properties } from 'csstype';
-import type { Degrees } from '../angle';
+import type { Degrees } from '../angle/Angle';
 import {
     DEFAULT_SPOKE_OFFSET,
     type SpokeOffset,

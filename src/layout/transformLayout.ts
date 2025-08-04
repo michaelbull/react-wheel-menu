@@ -1,5 +1,5 @@
 import type { Properties } from 'csstype';
-import type { Degrees } from '../angle';
+import type { Degrees } from '../angle/Angle';
 
 const translateX = 'translateX(-50%)';
 const translateY = 'translateY(50%)';

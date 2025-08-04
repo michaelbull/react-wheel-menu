@@ -6,31 +6,37 @@ import type {
     CSSProperties,
     PropsWithChildren,
 } from 'react';
+import { Label } from '../../label/Label';
 import {
     DEFAULT_LABEL_JUSTIFICATION,
-    DEFAULT_LABEL_OFFSET,
-    DEFAULT_LABEL_ORIENTATION,
-    Label,
     LABEL_JUSTIFICATIONS,
-    LABEL_ORIENTATIONS,
     type LabelJustification,
+} from '../../label/LabelJustification';
+import {
+    DEFAULT_LABEL_OFFSET,
     type LabelOffset,
+} from '../../label/LabelOffset';
+import {
+    DEFAULT_LABEL_ORIENTATION,
+    LABEL_ORIENTATIONS,
     type LabelOrientation,
-} from '../../label';
+} from '../../label/LabelOrientation';
+import { Layout } from '../../layout/Layout';
 import {
     DEFAULT_LAYOUT_DIRECTION,
-    DEFAULT_LAYOUT_JUSTIFICATION,
-    Layout,
     LAYOUT_DIRECTIONS,
-    LAYOUT_JUSTIFICATIONS,
     type LayoutDirection,
+} from '../../layout/LayoutDirection';
+import {
+    DEFAULT_LAYOUT_JUSTIFICATION,
+    LAYOUT_JUSTIFICATIONS,
     type LayoutJustification,
-} from '../../layout';
+} from '../../layout/LayoutJustification';
 import {
     Segment,
     type SegmentProps,
-} from '../../segment';
-import { Wheel } from '../../wheel';
+} from '../../segment/Segment';
+import { Wheel } from '../../wheel/Wheel';
 
 interface StoryProps {
     readonly layoutJustify: LayoutJustification;

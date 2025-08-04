@@ -1,13 +1,11 @@
-import type { Degrees } from '../angle';
+import type { Degrees } from '../angle/Angle';
 import {
     DefaultSegmentState,
     type SegmentState,
-    useSegmentState,
-} from '../segment';
-import {
-    DefaultSpokeState,
-    useSpokeState,
-} from '../spoke';
+} from '../segment/SegmentState';
+import { useSegmentState } from '../segment/useSegmentState';
+import { DefaultSpokeState } from '../spoke/SpokeState';
+import { useSpokeState } from '../spoke/useSpokeState';
 
 export function useLabelAngle(): Degrees {
     const segment = useSegmentState();
@@ -23,6 +21,10 @@ export function useLabelAngle(): Degrees {
 }
 
 function segmentCenter(state: SegmentState): Degrees {
-    const { from, magnitude } = state;
+    const {
+        from,
+        magnitude,
+    } = state;
+
     return from + (magnitude / 2);
 }

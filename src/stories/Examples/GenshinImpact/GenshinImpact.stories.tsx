@@ -3,12 +3,12 @@ import type {
     StoryObj,
 } from '@storybook/react-vite';
 import { clsx } from 'clsx';
-import type { Angle } from '../../../angle';
-import { Label } from '../../../label';
-import { Layout } from '../../../layout';
-import { Segment } from '../../../segment';
-import { Spoke } from '../../../spoke';
-import { Wheel } from '../../../wheel';
+import type { Angle } from '../../../angle/Angle';
+import { Label } from '../../../label/Label';
+import { Layout } from '../../../layout/Layout';
+import { Segment } from '../../../segment/Segment';
+import { Spoke } from '../../../spoke/Spoke';
+import { Wheel } from '../../../wheel/Wheel';
 import './GenshinImpact.css';
 
 const meta = {

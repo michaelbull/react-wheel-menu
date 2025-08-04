@@ -1,5 +1,5 @@
 import type { RefCallback } from 'react';
-import { useElementMidpoint } from '../midpoint';
+import { useElementMidpoint } from '../midpoint/useElementMidpoint';
 import type { Radians } from './Angle';
 import { radiansBetween } from './radiansBetween';
 import { useMousePosition } from './useMousePosition';

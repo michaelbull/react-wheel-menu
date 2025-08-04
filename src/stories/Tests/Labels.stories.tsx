@@ -3,11 +3,11 @@ import type {
     StoryObj,
 } from '@storybook/react-vite';
 import type { CSSProperties } from 'react';
-import { Label } from '../../label';
-import { Layout } from '../../layout';
-import { Segment } from '../../segment';
-import { Spoke } from '../../spoke';
-import { Wheel } from '../../wheel';
+import { Label } from '../../label/Label';
+import { Layout } from '../../layout/Layout';
+import { Segment } from '../../segment/Segment';
+import { Spoke } from '../../spoke/Spoke';
+import { Wheel } from '../../wheel/Wheel';
 
 const meta: Meta = {
     title: 'Tests/Labels',

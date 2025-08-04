@@ -6,16 +6,14 @@ import type {
     CSSProperties,
     PropsWithChildren,
 } from 'react';
+import type { Angle } from '../../../angle/Angle';
+import { Label } from '../../../label/Label';
+import { Layout } from '../../../layout/Layout';
+import { Segment } from '../../../segment/Segment';
+import { Spoke } from '../../../spoke/Spoke';
+import type { SpokeOffset } from '../../../spoke/SpokeOffset';
+import { Wheel } from '../../../wheel/Wheel';
 import './Overwatch.css';
-import type { Angle } from '../../../angle';
-import { Label } from '../../../label';
-import { Layout } from '../../../layout';
-import { Segment } from '../../../segment';
-import {
-    Spoke,
-    type SpokeOffset,
-} from '../../../spoke';
-import { Wheel } from '../../../wheel';
 
 const meta = {
     title: 'Examples',

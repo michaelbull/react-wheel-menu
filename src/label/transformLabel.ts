@@ -1,5 +1,5 @@
 import type { Properties } from 'csstype';
-import type { Degrees } from '../angle';
+import type { Degrees } from '../angle/Angle';
 import {
     DEFAULT_LABEL_OFFSET,
     type LabelOffset,
