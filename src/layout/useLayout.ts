@@ -42,7 +42,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
 
     const style: CSSProperties = {
         ...styleProp,
-        transform: transformLayout(styleProp?.transform, magnitude),
+        transform: transformLayout(magnitude, styleProp?.transform),
     };
 
     return {

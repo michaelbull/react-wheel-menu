@@ -3,8 +3,8 @@ import type { SegmentGap } from './SegmentGap';
 import type { SegmentState } from './SegmentState';
 
 export function transformSegment(
-    transform: Properties['transform'],
     state: SegmentState,
+    transform?: Properties['transform'],
 ): Properties['transform'] {
 
     const {

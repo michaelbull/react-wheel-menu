@@ -1,11 +1,14 @@
 import type { Properties } from 'csstype';
 import type { Degrees } from '../angle';
-import type { SpokeOffset } from './SpokeOffset';
+import {
+    DEFAULT_SPOKE_OFFSET,
+    type SpokeOffset,
+} from './SpokeOffset';
 
 export function transformSpoke(
-    transform: Properties['transform'],
     angle: Degrees,
-    offset: SpokeOffset,
+    offset: SpokeOffset = DEFAULT_SPOKE_OFFSET,
+    transform?: Properties['transform'],
 ): Properties['transform'] {
     const rotate = `rotate(${angle}deg)`;
     const translateY = verticalTranslation(offset);

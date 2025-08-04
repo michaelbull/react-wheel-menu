@@ -54,7 +54,7 @@ export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
 
     const style: CSSProperties = {
         ...styleProp,
-        transform: transformSpoke(styleProp?.transform, angle, offset),
+        transform: transformSpoke(angle, offset, styleProp?.transform),
     };
 
     return {

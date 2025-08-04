@@ -57,7 +57,7 @@ export function useSegment(props: UseSegmentProps): UseSegmentReturn {
 
     const style: CSSProperties = {
         ...styleProp,
-        transform: transformSegment(styleProp?.transform, state),
+        transform: transformSegment(state, styleProp?.transform),
     };
 
     return {

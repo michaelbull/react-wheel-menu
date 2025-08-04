@@ -5,8 +5,8 @@ const translateX = 'translateX(-50%)';
 const translateY = 'translateY(50%)';
 
 export function transformLayout(
-    transform: Properties['transform'],
     angle: Degrees,
+    transform?: Properties['transform'],
 ): Properties['transform'] {
 
     if (angle === 0) {
