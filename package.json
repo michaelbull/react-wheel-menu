@@ -1,6 +1,6 @@
 {
   "name": "react-wheel-menu",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "React components & hooks for building a radial wheel menu",
   "homepage": "https://github.com/michaelbull/react-wheel-menu#readme",
   "type": "module",
