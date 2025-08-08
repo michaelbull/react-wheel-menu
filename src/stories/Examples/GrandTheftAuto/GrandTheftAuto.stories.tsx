@@ -127,7 +127,7 @@ function Icon(props: IconProps) {
     const { name, style } = props;
     const className = clsx('gta-weapon__icon', `gta-weapon__icon--${name}`);
 
-    return <div
+    return <span
         className={className}
         style={style}
     />;

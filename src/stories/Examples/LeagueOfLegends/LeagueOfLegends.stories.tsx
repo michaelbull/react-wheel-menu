@@ -203,7 +203,7 @@ function Ping(props: PingProps) {
         <Segment as="button" className="lol-ping" gapBefore={2} gapAfter={2} aria-label={label} {...rest}>
             <Layout className={layoutClassName}>
                 <Label offset={-20}>
-                    <div className={iconClassName}/>
+                    <span className={iconClassName}/>
                 </Label>
             </Layout>
         </Segment>

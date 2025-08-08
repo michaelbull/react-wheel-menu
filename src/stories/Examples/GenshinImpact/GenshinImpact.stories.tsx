@@ -131,7 +131,7 @@ function Shortcut(props: ShortcutProps) {
         <Segment as="button" className="genshin-shortcut" from={from} to={to} aria-label={label}>
             <Layout className="genshin-shortcut__layout" justify="end">
                 <Label className="genshin-shortcut__label" offset={54}>
-                    <div className={iconClassName}/>
+                    <span className={iconClassName}/>
                 </Label>
             </Layout>
         </Segment>
