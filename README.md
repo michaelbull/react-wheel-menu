@@ -1,10 +1,8 @@
 # react-wheel-menu
 
-<p>
-    <a href="https://www.npmjs.com/package/react-wheel-menu" target="_blank" rel="noreferrer"><img alt="npm" src="https://img.shields.io/npm/v/react-wheel-menu.svg" /></a>&nbsp;
-    <a href="https://github.com/michaelbull/react-wheel-menu/actions?query=workflow%3Aci" target="_blank" rel="noreferrer"><img alt="CI Status" src="https://github.com/michaelbull/react-wheel-menu/workflows/ci/badge.svg" /></a>&nbsp;
-    <a href="https://github.com/michaelbull/react-wheel-menu/blob/master/LICENSE" target="_blank" rel="noreferrer"><img alt="License" src="https://img.shields.io/github/license/michaelbull/react-wheel-menu" /></a>
-</p>
+[![npm](https://img.shields.io/npm/v/react-wheel-menu.svg)][npm]
+[![CI Status](https://github.com/michaelbull/react-wheel-menu/workflows/ci/badge.svg)](https://github.com/michaelbull/react-wheel-menu/actions?query=workflow%3Aci)
+[![License](https://img.shields.io/github/license/michaelbull/react-wheel-menu.svg)](LICENSE)
 
 React components & hooks for building a [radial wheel menu][wikipedia-pie-menu].
 
