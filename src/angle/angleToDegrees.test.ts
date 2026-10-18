@@ -3,6 +3,7 @@ import {
     expect,
     it,
 } from 'vitest';
+import type { Angle } from './Angle';
 import { angleToDegrees } from './angleToDegrees';
 
 describe('angleToDegrees', () => {
@@ -28,5 +29,10 @@ describe('angleToDegrees', () => {
 
     it('returns the angle converted to degrees if the unit is %', () => {
         expect(angleToDegrees('75%')).toBe(270);
+    });
+
+    it('throws for an angle with an unknown unit', () => {
+        const angle = '90px' as Angle;
+        expect(() => angleToDegrees(angle)).toThrow('angle must have a unit in [deg, grad, rad, turn, %], but was: 90px');
     });
 });
