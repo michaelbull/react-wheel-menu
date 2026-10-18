@@ -21,6 +21,10 @@ export * from './layout/transformLayout';
 export * from './layout/useLayout';
 
 export * from './pointer/Point';
+export * from './pointer/PointerBearing';
+export * from './pointer/pointerDegrees';
+export * from './pointer/pointerDistance';
+export * from './pointer/useElementToPointer';
 export * from './pointer/usePointerPosition';
 
 export * from './segment/Segment';

@@ -9,6 +9,13 @@ export interface UseMouseToElementAngleReturn {
     readonly angle: Radians | null;
 }
 
+/**
+ * The angle from the centre of the element that `ref` is given to, to the pointer, in radians
+ * clockwise from east, or `null` until the element is measured.
+ *
+ * Prefer `useElementToPointer`, which gives the direction in degrees clockwise from north (the
+ * convention of a segment's `from` and `to`) and the distance.
+ */
 export function useElementToMouseAngle(): UseMouseToElementAngleReturn {
     const mousePosition = useMousePosition();
 
