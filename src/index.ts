@@ -34,6 +34,10 @@ export * from './segment/transformSegment';
 export * from './segment/useSegment';
 export * from './segment/useSegmentState';
 
+export * from './selection/degreesWithin';
+export * from './selection/segmentAt';
+export * from './selection/SegmentSpan';
+
 export * from './spoke/Spoke';
 export * from './spoke/SpokeAlignment';
 export * from './spoke/SpokeOffset';
