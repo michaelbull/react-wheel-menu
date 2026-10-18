@@ -28,6 +28,7 @@ export interface UseSpokeReturn {
     readonly style: CSSProperties;
 }
 
+// eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix -- a hook in the public API, so that it can call hooks later without breaking its callers
 export function useSpoke(props: UseSpokeProps): UseSpokeReturn {
     const {
         className: classNameProp,

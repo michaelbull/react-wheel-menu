@@ -37,10 +37,6 @@ export default defineConfig(
                 version: '17.0.0',
             },
         },
-        rules: {
-            /* every feature exposes a use* hook as public API, whether or not it calls other hooks today */
-            '@eslint-react/no-unnecessary-use-prefix': 'off',
-        },
     },
     {
         files: ['**/*.{js,mjs}'],

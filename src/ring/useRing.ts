@@ -21,6 +21,7 @@ export interface UseRingReturn {
     readonly style: CSSProperties;
 }
 
+// eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix -- a hook in the public API, so that it can call hooks later without breaking its callers
 export function useRing(props: UseRingProps): UseRingReturn {
     const {
         className: classNameProp,

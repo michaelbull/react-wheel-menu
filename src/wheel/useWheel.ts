@@ -8,6 +8,7 @@ export interface UseWheelReturn {
     readonly className: string;
 }
 
+// eslint-disable-next-line @eslint-react/no-unnecessary-use-prefix -- a hook in the public API, so that it can call hooks later without breaking its callers
 export function useWheel(props: UseWheelProps): UseWheelReturn {
     const {
         className: classNameProp,
