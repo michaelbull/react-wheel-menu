@@ -16,6 +16,11 @@ export type SegmentProps<T extends ElementType = 'div'> = ComponentPropsWithoutR
     readonly to: Angle;
     readonly gapBefore?: SegmentGap;
     readonly gapAfter?: SegmentGap;
+    /**
+     * The segment's name for selection. In a wheel that selects by direction, a segment with a
+     * value can become active.
+     */
+    readonly value?: string;
 };
 
 export function Segment<T extends ElementType = 'div'>(props: SegmentProps<T>) {
@@ -27,6 +32,7 @@ export function Segment<T extends ElementType = 'div'>(props: SegmentProps<T>) {
         to,
         gapBefore,
         gapAfter,
+        value,
         children,
         ...rest
     } = props;
@@ -41,6 +47,7 @@ export function Segment<T extends ElementType = 'div'>(props: SegmentProps<T>) {
         to,
         gapBefore,
         gapAfter,
+        value,
     });
 
     return (

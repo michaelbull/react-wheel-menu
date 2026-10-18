@@ -43,9 +43,14 @@ export * from './segment/transformSegment';
 export * from './segment/useSegment';
 export * from './segment/useSegmentState';
 
+export * from './selection/activeSegment';
 export * from './selection/degreesWithin';
+export * from './selection/ringAt';
 export * from './selection/segmentAt';
 export * from './selection/SegmentSpan';
+export * from './selection/SelectableSegment';
+export * from './selection/useWheelSelection';
+export * from './selection/WheelSelection';
 
 export * from './spoke/Spoke';
 export * from './spoke/SpokeAlignment';
@@ -57,3 +62,5 @@ export * from './spoke/useSpokeState';
 
 export * from './wheel/useWheel';
 export * from './wheel/Wheel';
+export * from './wheel/WheelDeadZone';
+export * from './wheel/WheelSelect';

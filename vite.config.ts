@@ -37,6 +37,7 @@ export default defineConfig({
             exclude: [
                 '**/*.stories.*',
                 '**/*.test.ts',
+                '**/*.test.tsx',
                 '**/*.spec.ts',
             ],
         }),
