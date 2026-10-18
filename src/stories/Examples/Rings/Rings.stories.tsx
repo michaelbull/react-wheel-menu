@@ -47,7 +47,7 @@ function CompassSegment(props: CompassSegmentProps) {
     const to = from + SEGMENT_DEGREES;
 
     return (
-        <Segment className="rings-segment" from={from} to={to}>
+        <Segment className="rings-segment" value={label} from={from} to={to}>
             <Layout>
                 <Label>{label}</Label>
             </Layout>
@@ -57,7 +57,7 @@ function CompassSegment(props: CompassSegmentProps) {
 
 export const Rings: StoryObj = {
     render: () => (
-        <Wheel className="rings">
+        <Wheel className="rings" select="direction" deadZone={0.25}>
             <Ring className="rings-ring--outer" inner={0.6} outer={1}>
                 {COMPASS.map((label, index) => <CompassSegment key={label} index={index} label={`Far ${label}`} />)}
             </Ring>

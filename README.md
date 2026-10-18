@@ -204,6 +204,119 @@ with the text facing inwards to the center of the wheel.
 </Wheel>
 ```
 
+### `<Ring>`
+
+A `<Ring>` is a band of the wheel between two radii. The `inner` and `outer`
+radii are shares of the radius of the wheel: `0` is the centre and `1` is the
+edge. Thus a wheel scales by its `width` alone. The segments in a ring show only
+inside its band, and their labels move to the middle of the band.
+
+```tsx
+<Wheel style={{ width: 400, height: 400 }}>
+    <Ring inner={0.6} outer={1}>
+        <Segment from={-22.5} to={22.5}>
+            <Layout>
+                <Label>Far N</Label>
+            </Layout>
+        </Segment>
+    </Ring>
+
+    <Ring inner={0.25} outer={0.6}>
+        <Segment from={-22.5} to={22.5}>
+            <Layout>
+                <Label>N</Label>
+            </Layout>
+        </Segment>
+    </Ring>
+</Wheel>
+```
+
+The hole of a ring is cut with a CSS mask, and a mask does not change where the
+pointer hits. With `select="hover"`, the segments of a ring thus also take the
+hover in its hole. Put the inner rings after the outer rings, so that each inner
+ring is on top. Or use `select="direction"`.
+
+See the [Rings demo][demo-rings].
+
+## Selection by direction
+
+All angles in this library are in degrees clockwise from north. This includes
+`from` and `to` of a `<Segment>`, and the direction of the pointer.
+
+By default, a wheel shows the active segment with CSS `:hover` only. With
+`select="direction"`, the wheel tracks the pointer and finds the segment that
+the pointer points at. The distance has no limit, so the pointer can go past the
+edge of the wheel. This is the pie menu of Blender or the comms wheel of
+Overwatch: the wheel opens at the cursor, the user flicks in a direction, and
+lets go.
+
+- Give each segment a `value`. Only a segment with a `value` can become active.
+- The active segment has the `data-active` attribute. Style it with
+  `.wheel-segment[data-active]`.
+- `deadZone` is a share of the radius around the centre. Nothing is active in
+  the dead zone, so the user can let go there to cancel.
+- With rings, the distance picks the ring and the direction picks the segment.
+  Past the edge of the outermost ring, the outermost ring is used, so a long
+  flick still picks a segment.
+- `initialPointer` gives the position of the pointer before it first moves, for
+  example the position of the key press that opened the wheel.
+
+The wheel never calls back when the selection changes. Read the selection with
+`useWheelSelection()` in a component inside the wheel, at the time that your app
+decides the gesture ends (for example on `pointerup` or a key release):
+
+```tsx
+function Release() {
+    const { active } = useWheelSelection();
+
+    useEffect(() => {
+        function onPointerUp() {
+            console.log('Chose', active);
+        }
+
+        window.addEventListener('pointerup', onPointerUp);
+        return () => window.removeEventListener('pointerup', onPointerUp);
+    }, [active]);
+
+    return null;
+}
+
+<Wheel select="direction" deadZone={0.3} style={{ width: 260, height: 260 }}>
+    <Segment value="undo" from={-45} to={45} />
+    <Segment value="copy" from={45} to={135} />
+    <Segment value="paste" from={135} to={225} />
+    <Segment value="cut" from={225} to={315} />
+    <Release />
+</Wheel>
+```
+
+`useWheelSelection()` gives `active` (the `value` of the active segment, or
+`null`) and `pointer` (the direction and distance of the pointer from the
+centre, or `null`).
+
+An app that finds the active segment itself can give it to the wheel with the
+`active` prop: `<Wheel active="undo">`.
+
+See the [Flick demo][demo-flick].
+
+### Helpers
+
+These pure functions and hooks give the same values as the wheel, for an app
+that tracks the pointer itself:
+
+- `usePointerPosition(initial?)`: the position of the pointer from pointer
+  events, so a mouse, a pen and a touch all work. It is `null` until the
+  position is known.
+- `useElementToPointer(options?)`: the direction and distance of the pointer
+  from the centre of an element, and the radius of the element.
+- `pointerDegrees(midpoint, point)`: the direction from `midpoint` to `point`.
+- `pointerDistance(midpoint, point)`: the distance in pixels.
+- `degreesWithin(degrees, from, to)`: whether a direction is in a span, also a
+  span across north. `from` is inclusive and `to` is exclusive.
+- `segmentAt(segments, degrees)`: the segment that holds a direction, or `null`.
+- `activeSegment(segments, pointer, deadZone)`: the value of the active segment,
+  with rings and the dead zone, or `null`.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on [GitHub][github].
@@ -220,3 +333,5 @@ This project is available under the terms of the ISC license. See the
 [radian]: https://en.wikipedia.org/wiki/Radian
 [gradian]: https://en.wikipedia.org/wiki/Gradian
 [turn]: https://en.wikipedia.org/wiki/Turn_(angle)
+[demo-rings]: https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--rings
+[demo-flick]: https://michaelbull.github.io/react-wheel-menu/?path=/story/examples--flick

@@ -22,7 +22,7 @@
   background: #4b5e82;
 }
 
-.rings-segment:hover {
+.rings-segment[data-active] {
   background: #e0a030;
   color: #1d2330;
 }
