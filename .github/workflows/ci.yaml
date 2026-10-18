@@ -1,60 +1,88 @@
-name: ci
+name: CI
 
 on:
-  push:
-    paths-ignore:
-      - 'LICENSE'
-
   pull_request:
-    paths-ignore:
-      - 'LICENSE'
+    branches: [ "master" ]
+  push:
+    branches: [ "master" ]
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v.4.4.0
+      - name: Checkout Project
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          cache: npm
+          persist-credentials: false
 
-      - run: npm ci
-      - run: npm list
-      - run: npm run lint
-      - run: npm run build
-      - run: CI=true npm test
+      - name: Setup
+        uses: $/.github/actions/setup
+
+      - name: Audit GitHub Actions
+        uses: zizmorcore/zizmor-action@85b2b9fb8e3325e7a23d7d0a9d7ba5ae0f999e3e # v0.7.1
+        with:
+          advanced-security: false
+
+      - name: List Dependencies
+        run: npm list
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
 
   deploy:
-    needs: build
-    if: github.ref == 'refs/heads/master' && github.event_name == 'push' && needs.build.result == 'success'
+    name: Deploy Storybook
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' && github.repository == 'michaelbull/react-wheel-menu'
+    needs: build
+
+    permissions:
+      contents: read
+      pages: write # deploy Storybook to GitHub Pages
+      id-token: write # let GitHub Pages verify the origin of the deployment
+
+    concurrency:
+      group: pages
+      cancel-in-progress: false
 
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v.4.4.0
+      - name: Checkout Project
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          cache: npm
+          persist-credentials: false
 
-      - run: npm ci
+      - name: Setup
+        uses: $/.github/actions/setup
 
-      - run: npm run build:storybook
+      - name: Build Storybook
+        run: npm run build:storybook
 
-      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
-      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v.3.0.1
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          path: './storybook-static'
+          path: ./storybook-static
 
-      - uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

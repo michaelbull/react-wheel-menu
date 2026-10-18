@@ -1,0 +1,20 @@
+name: Setup
+description: Setup Mise and install npm dependencies
+
+runs:
+  using: composite
+
+  steps:
+    - name: Setup Mise
+      uses: jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7 # v5.2.0
+
+    - name: Cache npm
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ~/.npm
+        key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        restore-keys: npm-${{ runner.os }}-
+
+    - name: Install Dependencies
+      shell: bash
+      run: npm ci
