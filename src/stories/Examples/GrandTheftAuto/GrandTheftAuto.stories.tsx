@@ -12,10 +12,16 @@ import { Layout } from '../../../layout/Layout';
 import { Segment } from '../../../segment/Segment';
 import { Wheel } from '../../../wheel/Wheel';
 import './GrandTheftAuto.css';
+import source from './GrandTheftAuto.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'fullscreen',
     },
 } satisfies Meta;
@@ -23,12 +29,6 @@ const meta = {
 export default meta;
 
 export const GrandTheftAuto: StoryObj = {
-    parameters: {
-        options: {
-            bottomPanelHeight: 0,
-            rightPanelWidth: 0,
-        },
-    },
     render: () => (
         <div className="gta">
             <div className="gta-background"/>

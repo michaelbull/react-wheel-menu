@@ -10,10 +10,16 @@ import { Segment } from '../../../segment/Segment';
 import { Spoke } from '../../../spoke/Spoke';
 import { Wheel } from '../../../wheel/Wheel';
 import './GenshinImpact.css';
+import source from './GenshinImpact.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'fullscreen',
     },
 } satisfies Meta;
@@ -21,12 +27,6 @@ const meta = {
 export default meta;
 
 export const GenshinImpact: StoryObj = {
-    parameters: {
-        options: {
-            bottomPanelHeight: 0,
-            rightPanelWidth: 0,
-        },
-    },
     render: () => (
         <div className="genshin">
             <div className="genshin-background"/>

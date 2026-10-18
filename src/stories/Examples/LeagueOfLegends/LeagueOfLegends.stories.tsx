@@ -16,10 +16,16 @@ import { Layout } from '../../../layout/Layout';
 import { Segment } from '../../../segment/Segment';
 import { Wheel } from '../../../wheel/Wheel';
 import './LeagueOfLegends.css';
+import source from './LeagueOfLegends.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'fullscreen',
     },
 } satisfies Meta;
@@ -28,12 +34,6 @@ export default meta;
 
 export const LeagueOfLegends: StoryObj = {
     name: 'League of Legends',
-    parameters: {
-        options: {
-            bottomPanelHeight: 0,
-            rightPanelWidth: 0,
-        },
-    },
     render: () => (
         <div className="lol">
             <div className="lol-background"/>

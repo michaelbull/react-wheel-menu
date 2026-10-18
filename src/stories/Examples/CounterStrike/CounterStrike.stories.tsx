@@ -12,10 +12,16 @@ import { Layout } from '../../../layout/Layout';
 import { Segment } from '../../../segment/Segment';
 import { Wheel } from '../../../wheel/Wheel';
 import './CounterStrike.css';
+import source from './CounterStrike.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'fullscreen',
     },
 } satisfies Meta;
@@ -24,12 +30,6 @@ export default meta;
 
 export const CounterStrike: StoryObj = {
     name: 'Counter-Strike',
-    parameters: {
-        options: {
-            bottomPanelHeight: 0,
-            rightPanelWidth: 0,
-        },
-    },
     render: () => (
         <div className="cs">
             <div className="cs-background"/>

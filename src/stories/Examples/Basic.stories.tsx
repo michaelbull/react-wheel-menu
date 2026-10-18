@@ -10,10 +10,16 @@ import { Label } from '../../label/Label';
 import { Layout } from '../../layout/Layout';
 import { Segment } from '../../segment/Segment';
 import { Wheel } from '../../wheel/Wheel';
+import source from './Basic.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'centered',
     },
 } satisfies Meta;
@@ -21,12 +27,6 @@ const meta = {
 export default meta;
 
 export const Basic: StoryObj = {
-    parameters: {
-        options: {
-            bottomPanelHeight: 0,
-            rightPanelWidth: 0,
-        },
-    },
     render: () => {
         const red: CSSProperties = { backgroundColor: 'red', color: 'white' };
         const yellow: CSSProperties = { backgroundColor: 'yellow', color: 'black' };

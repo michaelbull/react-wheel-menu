@@ -15,10 +15,16 @@ import { Segment } from '../../../segment/Segment';
 import { useWheelSelection } from '../../../selection/useWheelSelection';
 import { Wheel } from '../../../wheel/Wheel';
 import './Flick.css';
+import source from './Flick.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'fullscreen',
     },
 } satisfies Meta;

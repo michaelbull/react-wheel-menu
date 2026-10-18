@@ -8,10 +8,16 @@ import { Ring } from '../../../ring/Ring';
 import { Segment } from '../../../segment/Segment';
 import { Wheel } from '../../../wheel/Wheel';
 import './Rings.css';
+import source from './Rings.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'centered',
     },
 } satisfies Meta;

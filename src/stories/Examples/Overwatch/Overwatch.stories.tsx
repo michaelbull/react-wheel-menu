@@ -14,10 +14,16 @@ import { Spoke } from '../../../spoke/Spoke';
 import type { SpokeOffset } from '../../../spoke/SpokeOffset';
 import { Wheel } from '../../../wheel/Wheel';
 import './Overwatch.css';
+import source from './Overwatch.stories.tsx?raw';
 
 const meta = {
     title: 'Examples',
     parameters: {
+        docs: {
+            source: {
+                code: source,
+            },
+        },
         layout: 'fullscreen',
     },
 } satisfies Meta;
@@ -25,12 +31,6 @@ const meta = {
 export default meta;
 
 export const Overwatch: StoryObj = {
-    parameters: {
-        options: {
-            bottomPanelHeight: 0,
-            rightPanelWidth: 0,
-        },
-    },
     render: () => (
         <div className="ow">
             <div className="ow-background"/>
