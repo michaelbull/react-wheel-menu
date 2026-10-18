@@ -1,7 +1,4 @@
-import {
-    useCallback,
-    useState,
-} from 'react';
+import { useState } from 'react';
 import {
     type Options,
     type Rect,
@@ -21,9 +18,9 @@ export interface UseElementMidpointReturn {
 export function useElementMidpoint(options?: Options): UseElementMidpointReturn {
     const [midpoint, setMidpoint] = useState<Midpoint | null>(null);
 
-    const dispatchChange = useCallback((rect: Rect) => {
+    function dispatchChange(rect: Rect) {
         setMidpoint(rectMidpoint(rect));
-    }, []);
+    }
 
     const [setElement, revalidate] = useRect(dispatchChange, options);
 

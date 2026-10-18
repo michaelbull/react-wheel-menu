@@ -1,7 +1,4 @@
-import {
-    useCallback,
-    useState,
-} from 'react';
+import { useState } from 'react';
 import {
     type Options,
     type Rect,
@@ -21,9 +18,9 @@ export interface UseElementCircleReturn {
 export function useElementCircle(options?: Options): UseElementCircleReturn {
     const [circle, setCircle] = useState<Circle | null>(null);
 
-    const dispatchChange = useCallback((rect: Rect) => {
+    function dispatchChange(rect: Rect) {
         setCircle(rectCircle(rect));
-    }, []);
+    }
 
     const [setElement, revalidate] = useRect(dispatchChange, options);
 
