@@ -9,10 +9,10 @@ import {
     type ReactNode,
     useState,
 } from 'react';
-import type { Radians } from '../../../angle/Angle';
-import { useElementToMouseAngle } from '../../../angle/useElementToMouseAngle';
+import type { Degrees } from '../../../angle/Angle';
 import { Label } from '../../../label/Label';
 import { Layout } from '../../../layout/Layout';
+import { useElementToPointer } from '../../../pointer/useElementToPointer';
 import { Segment } from '../../../segment/Segment';
 import { Wheel } from '../../../wheel/Wheel';
 import './LeagueOfLegends.css';
@@ -216,8 +216,8 @@ function Indicator(props: PropsWithChildren) {
 
     const {
         ref,
-        angle,
-    } = useElementToMouseAngle();
+        pointer,
+    } = useElementToPointer();
 
     function onMouseOver() {
         setMouseOutside(false);
@@ -229,8 +229,8 @@ function Indicator(props: PropsWithChildren) {
 
     return (
         <div className="lol-ping-indicator" ref={ref} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-            {(mouseOutside && angle !== null && children !== undefined) &&
-                <Arrow angle={angle}>
+            {(mouseOutside && pointer !== null && children !== undefined) &&
+                <Arrow degrees={pointer.degrees}>
                     {children}
                 </Arrow>
             }
@@ -238,18 +238,23 @@ function Indicator(props: PropsWithChildren) {
     );
 }
 
+/**
+ * The arrow is drawn pointing east, and a direction is measured from north.
+ */
+const ARROW_NORTH_DEGREES: Degrees = -90;
+
 interface ArrowProps {
-    readonly angle: Radians;
+    readonly degrees: Degrees;
 }
 
 function Arrow(props: PropsWithChildren<ArrowProps>) {
     const {
-        angle,
+        degrees,
         children,
     } = props;
 
     const style: CSSProperties = {
-        transform: `rotate(${angle}rad) translateX(88px)`,
+        transform: `rotate(${degrees + ARROW_NORTH_DEGREES}deg) translateX(88px)`,
     };
 
     return (

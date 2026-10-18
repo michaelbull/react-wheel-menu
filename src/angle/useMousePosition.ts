@@ -3,8 +3,8 @@ import { usePointerPosition } from '../pointer/usePointerPosition';
 /**
  * The position of the pointer, or `[0, 0]` until it first moves.
  *
- * Prefer `usePointerPosition`, which returns `null` until a position is known instead of a false
- * `[0, 0]`.
+ * @deprecated Use `usePointerPosition`, which returns `null` until a position is known instead of
+ * a false `[0, 0]`.
  */
 export function useMousePosition(): [number, number] {
     const position = usePointerPosition();
