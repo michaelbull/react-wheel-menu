@@ -71,7 +71,7 @@ describe('useElementToMouseAngle', () => {
         expect(result.current.angle).toBeCloseTo((-3 * Math.PI) / 4); // Approx -3 * PI / 4
     });
 
-    it('updates the angle when the mouse moves', () => {
+    it('updates the angle when the pointer moves', () => {
         const { result } = renderHook(() => useElementToMouseAngle());
 
         act(() => {
@@ -90,7 +90,7 @@ describe('useElementToMouseAngle', () => {
         expect(result.current.angle).toBeCloseTo((-3 * Math.PI) / 4);
 
         act(() => {
-            fireEvent.mouseMove(window, { clientX: 200, clientY: 100 });
+            fireEvent.pointerMove(window, { clientX: 200, clientY: 100 });
         });
 
         expect(result.current.angle).toBeCloseTo(-Math.PI / 2);

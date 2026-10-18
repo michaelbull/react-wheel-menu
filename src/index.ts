@@ -20,6 +20,9 @@ export * from './layout/LayoutJustification';
 export * from './layout/transformLayout';
 export * from './layout/useLayout';
 
+export * from './pointer/Point';
+export * from './pointer/usePointerPosition';
+
 export * from './segment/Segment';
 export * from './segment/SegmentGap';
 export * from './segment/SegmentState';

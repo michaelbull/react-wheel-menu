@@ -1,28 +1,18 @@
-import {
-    useEffect,
-    useState,
-} from 'react';
+import { usePointerPosition } from '../pointer/usePointerPosition';
 
+/**
+ * The position of the pointer, or `[0, 0]` until it first moves.
+ *
+ * Prefer `usePointerPosition`, which returns `null` until a position is known instead of a false
+ * `[0, 0]`.
+ */
 export function useMousePosition(): [number, number] {
-    const [x, setX] = useState(0);
-    const [y, setY] = useState(0);
+    const position = usePointerPosition();
 
-    useEffect(() => {
-        if (typeof window === 'undefined') {
-            return undefined;
-        } else {
-            function onMouseMove(event: MouseEvent) {
-                setX(event.x);
-                setY(event.y);
-            }
-
-            window.addEventListener('mousemove', onMouseMove);
-
-            return function cleanup() {
-                window.removeEventListener('mousemove', onMouseMove);
-            };
-        }
-    }, []);
-
-    return [x, y];
+    if (position === null) {
+        return [0, 0];
+    } else {
+        const [x, y] = position;
+        return [x, y];
+    }
 }

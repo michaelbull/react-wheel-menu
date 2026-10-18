@@ -38,51 +38,51 @@ describe('useMousePosition', () => {
         expect(result.current).toEqual([0, 0]);
     });
 
-    it('attaches the mousemove event listener on mount', () => {
+    it('attaches the pointermove event listener on mount', () => {
         renderHook(() => {
             return useMousePosition();
         });
 
-        expect(addSpy).toHaveBeenCalledWith('mousemove', expect.any(Function));
+        expect(addSpy).toHaveBeenCalledWith('pointermove', expect.any(Function));
     });
 
-    it('updates the position when the mouse moves', () => {
+    it('updates the position when the pointer moves', () => {
         const { result } = renderHook(() => {
             return useMousePosition();
         });
 
         act(() => {
-            fireEvent.mouseMove(window, { clientX: 150, clientY: 250 });
+            fireEvent.pointerMove(window, { clientX: 150, clientY: 250 });
         });
 
         expect(result.current).toEqual([150, 250]);
     });
 
-    it('updates the position correctly on subsequent mouse moves', () => {
+    it('updates the position correctly on subsequent pointer moves', () => {
         const { result } = renderHook(() => {
             return useMousePosition();
         });
 
         act(() => {
-            fireEvent.mouseMove(window, { clientX: 150, clientY: 250 });
+            fireEvent.pointerMove(window, { clientX: 150, clientY: 250 });
         });
 
         expect(result.current).toEqual([150, 250]);
 
         act(() => {
-            fireEvent.mouseMove(window, { clientX: 300, clientY: 400 });
+            fireEvent.pointerMove(window, { clientX: 300, clientY: 400 });
         });
 
         expect(result.current).toEqual([300, 400]);
     });
 
-    it('removes the mousemove event listener on unmount', () => {
+    it('removes the pointermove event listener on unmount', () => {
         const { unmount } = renderHook(() => {
             return useMousePosition();
         });
 
         unmount();
 
-        expect(removeSpy).toHaveBeenCalledWith('mousemove', expect.any(Function));
+        expect(removeSpy).toHaveBeenCalledWith('pointermove', expect.any(Function));
     });
 });
