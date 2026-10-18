@@ -60,7 +60,7 @@ export * from './spoke/transformSpoke';
 export * from './spoke/useSpoke';
 export * from './spoke/useSpokeState';
 
+export * from './wheel/DirectionalWheel';
 export * from './wheel/useWheel';
 export * from './wheel/Wheel';
 export * from './wheel/WheelDeadZone';
-export * from './wheel/WheelSelect';

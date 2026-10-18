@@ -232,20 +232,20 @@ inside its band, and their labels move to the middle of the band.
 ```
 
 The hole of a ring is cut with a CSS mask, and a mask does not change where the
-pointer hits. With `select="hover"`, the segments of a ring thus also take the
-hover in its hole. Put the inner rings after the outer rings, so that each inner
-ring is on top. Or use `select="direction"`.
+pointer hits. In a `<Wheel>`, the segments of a ring thus also take the hover in
+its hole. Put the inner rings after the outer rings, so that each inner ring is
+on top. Or use a `<DirectionalWheel>`.
 
 See the [Rings demo][demo-rings].
 
-## Selection by direction
+## `<DirectionalWheel>`
 
 All angles in this library are in degrees clockwise from north. This includes
 `from` and `to` of a `<Segment>`, and the direction of the pointer.
 
-By default, a wheel shows the active segment with CSS `:hover` only. With
-`select="direction"`, the wheel tracks the pointer and finds the segment that
-the pointer points at. The distance has no limit, so the pointer can go past the
+A `<Wheel>` shows the segment under the pointer with CSS `:hover` only. A
+`<DirectionalWheel>` tracks the pointer and finds the segment that the pointer
+points at. The distance has no limit, so the pointer can go past the
 edge of the wheel. This is the pie menu of Blender or the comms wheel of
 Overwatch: the wheel opens at the cursor, the user flicks in a direction, and
 lets go.
@@ -281,21 +281,22 @@ function Release() {
     return null;
 }
 
-<Wheel select="direction" deadZone={0.3} style={{ width: 260, height: 260 }}>
+<DirectionalWheel deadZone={0.3} style={{ width: 260, height: 260 }}>
     <Segment value="undo" from={-45} to={45} />
     <Segment value="copy" from={45} to={135} />
     <Segment value="paste" from={135} to={225} />
     <Segment value="cut" from={225} to={315} />
     <Release />
-</Wheel>
+</DirectionalWheel>
 ```
 
 `useWheelSelection()` gives `active` (the `value` of the active segment, or
 `null`) and `pointer` (the direction and distance of the pointer from the
 centre, or `null`).
 
-An app that finds the active segment itself can give it to the wheel with the
-`active` prop: `<Wheel active="undo">`.
+An app that finds the active segment itself (for example with the helpers
+below) uses a `<Wheel>` and gives it the `active` prop: `<Wheel active="undo">`.
+The active segment then has `data-active`, as in a `<DirectionalWheel>`.
 
 See the [Flick demo][demo-flick].
 

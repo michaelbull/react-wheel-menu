@@ -6,7 +6,7 @@ import { Label } from '../../../label/Label';
 import { Layout } from '../../../layout/Layout';
 import { Ring } from '../../../ring/Ring';
 import { Segment } from '../../../segment/Segment';
-import { Wheel } from '../../../wheel/Wheel';
+import { DirectionalWheel } from '../../../wheel/DirectionalWheel';
 import './Rings.css';
 import source from './Rings.stories.tsx?raw';
 
@@ -63,7 +63,7 @@ function CompassSegment(props: CompassSegmentProps) {
 
 export const Rings: StoryObj = {
     render: () => (
-        <Wheel className="rings" select="direction" deadZone={0.25}>
+        <DirectionalWheel className="rings" deadZone={0.25}>
             <Ring className="rings-ring--outer" inner={0.6} outer={1}>
                 {COMPASS.map((label, index) => <CompassSegment key={label} index={index} label={`Far ${label}`} />)}
             </Ring>
@@ -71,6 +71,6 @@ export const Rings: StoryObj = {
             <Ring className="rings-ring--inner" inner={0.25} outer={0.6}>
                 {COMPASS.map((label, index) => <CompassSegment key={label} index={index} label={label} />)}
             </Ring>
-        </Wheel>
+        </DirectionalWheel>
     ),
 };

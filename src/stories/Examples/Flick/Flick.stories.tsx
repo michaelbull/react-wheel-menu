@@ -13,7 +13,7 @@ import { Layout } from '../../../layout/Layout';
 import type { Point } from '../../../pointer/Point';
 import { Segment } from '../../../segment/Segment';
 import { useWheelSelection } from '../../../selection/useWheelSelection';
-import { Wheel } from '../../../wheel/Wheel';
+import { DirectionalWheel } from '../../../wheel/DirectionalWheel';
 import './Flick.css';
 import source from './Flick.stories.tsx?raw';
 
@@ -115,11 +115,11 @@ function FlickWheel(props: FlickWheelProps) {
     };
 
     return (
-        <Wheel className="flick__wheel" style={style} select="direction" deadZone={DEAD_ZONE} initialPointer={origin}>
+        <DirectionalWheel className="flick__wheel" style={style} deadZone={DEAD_ZONE} initialPointer={origin}>
             {ACTIONS.map((action, index) => <ActionSegment key={action} index={index} action={action} />)}
             <span className="flick__cancel">Cancel</span>
             <Release onRelease={onRelease} />
-        </Wheel>
+        </DirectionalWheel>
     );
 }
 
