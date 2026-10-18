@@ -1,0 +1,28 @@
+.rings {
+  width: 400px;
+  height: 400px;
+  background: #1d2330;
+  color: #fff;
+  font-size: 13px;
+}
+
+.rings-segment {
+  background: #3a4a66;
+}
+
+.rings-segment:nth-child(odd) {
+  background: #2e3b52;
+}
+
+.rings-ring--inner .rings-segment {
+  background: #5a6f96;
+}
+
+.rings-ring--inner .rings-segment:nth-child(odd) {
+  background: #4b5e82;
+}
+
+.rings-segment:hover {
+  background: #e0a030;
+  color: #1d2330;
+}

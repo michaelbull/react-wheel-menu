@@ -1,5 +1,9 @@
 import { clsx } from 'clsx';
+import type { Properties } from 'csstype';
 import type { CSSProperties } from 'react';
+import { ringLayoutShift } from '../ring/ringLayoutShift';
+import type { RingState } from '../ring/RingState';
+import { useRingState } from '../ring/useRingState';
 import { useSegmentState } from '../segment/useSegmentState';
 import {
     DEFAULT_LAYOUT_DIRECTION,
@@ -32,6 +36,7 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
     } = props;
 
     const { magnitude } = useSegmentState();
+    const ring = useRingState();
 
     const className = clsx(
         classNameProp,
@@ -42,11 +47,23 @@ export function useLayout(props: UseLayoutProps): UseLayoutReturn {
 
     const style: CSSProperties = {
         ...styleProp,
-        transform: transformLayout(magnitude, styleProp?.transform),
+        transform: transformLayout(magnitude, withRingShift(ring, styleProp?.transform)),
     };
 
     return {
         className,
         style,
     };
+}
+
+function withRingShift(ring: RingState, transform?: Properties['transform']): Properties['transform'] {
+    const shift = ringLayoutShift(ring);
+
+    if (shift === undefined) {
+        return transform;
+    } else if (transform === undefined) {
+        return shift;
+    } else {
+        return `${shift} ${transform}`;
+    }
 }
