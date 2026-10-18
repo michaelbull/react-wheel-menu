@@ -229,7 +229,7 @@ function Indicator(props: PropsWithChildren) {
 
     return (
         <div className="lol-ping-indicator" ref={ref} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-            {(mouseOutside && angle && children) &&
+            {(mouseOutside && angle !== null && children !== undefined) &&
                 <Arrow angle={angle}>
                     {children}
                 </Arrow>

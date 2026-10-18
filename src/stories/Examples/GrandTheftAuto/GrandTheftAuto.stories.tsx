@@ -143,13 +143,13 @@ function Ammo(props: AmmoProps) {
 
     return (
         <span className="gta-weapon-ammo">
-            {current &&
+            {current !== undefined &&
                 <span className="gta-weapon-menu-ammo__current">
                     {current}
                 </span>
             }
 
-            {reserve &&
+            {reserve !== undefined &&
                 <span className="gta-weapon-ammo__reserve">
                     &nbsp;/{reserve}
                 </span>

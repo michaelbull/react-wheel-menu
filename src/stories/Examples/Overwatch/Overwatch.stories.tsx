@@ -133,7 +133,7 @@ function Option(props: PropsWithChildren<OptionProps>) {
     return (
         <Segment as="li" className="ow-option" gapBefore={1} gapAfter={1} {...rest}>
             <Layout as="button" className="ow-option__button" justify="start" aria-label={label}>
-                {hotkey &&
+                {hotkey !== undefined &&
                     <Label offset={-110}>
                         <span className="ow-hotkey">
                             <span className="ow-hotkey__label">{hotkey}</span>
@@ -145,7 +145,7 @@ function Option(props: PropsWithChildren<OptionProps>) {
                     {label}
                 </Label>
 
-                {children &&
+                {children !== undefined &&
                     <Label className="ow-option__icon" offset={-140}>
                         {children}
                     </Label>

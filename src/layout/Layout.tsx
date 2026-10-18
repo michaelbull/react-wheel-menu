@@ -1,5 +1,6 @@
 import type {
     ComponentPropsWithoutRef,
+    CSSProperties,
     ElementType,
 } from 'react';
 import type { LayoutDirection } from './LayoutDirection';
@@ -8,6 +9,8 @@ import { useLayout } from './useLayout';
 
 export type LayoutProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
+    readonly className?: string;
+    readonly style?: CSSProperties;
     readonly direction?: LayoutDirection;
     readonly justify?: LayoutJustification;
 }

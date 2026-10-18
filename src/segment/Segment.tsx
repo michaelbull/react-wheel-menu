@@ -1,5 +1,6 @@
 import type {
     ComponentPropsWithoutRef,
+    CSSProperties,
     ElementType,
 } from 'react';
 import type { Angle } from '../angle/Angle';
@@ -9,6 +10,8 @@ import { SegmentStateContext } from './useSegmentState';
 
 export type SegmentProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
+    readonly className?: string;
+    readonly style?: CSSProperties;
     readonly from: Angle;
     readonly to: Angle;
     readonly gapBefore?: SegmentGap;

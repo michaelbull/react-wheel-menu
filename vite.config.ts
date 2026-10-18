@@ -1,7 +1,7 @@
-/// <reference types="vitest" />
-
-import { defineConfig } from 'vite';
+import babel from '@rolldown/plugin-babel';
+import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
     build: {
@@ -13,16 +13,25 @@ export default defineConfig({
                 'cjs',
             ],
         },
-        rollupOptions: {
+        rolldownOptions: {
             external: [
                 'clsx',
                 'react',
                 'react/jsx-runtime',
+                'react-compiler-runtime',
                 'react-use-rect',
             ],
         },
     },
     plugins: [
+        react(),
+        babel({
+            presets: [
+                reactCompilerPreset({
+                    target: '17',
+                }),
+            ],
+        }),
         dts({
             tsconfigPath: './tsconfig.app.json',
             exclude: [

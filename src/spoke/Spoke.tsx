@@ -1,5 +1,6 @@
 import type {
     ComponentPropsWithoutRef,
+    CSSProperties,
     ElementType,
 } from 'react';
 import type { Angle } from '../angle/Angle';
@@ -10,6 +11,8 @@ import { SpokeStateContext } from './useSpokeState';
 
 export type SpokeProps<T extends ElementType = 'span'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
+    readonly className?: string;
+    readonly style?: CSSProperties;
     readonly angle: Angle;
     readonly align?: SpokeAlignment;
     readonly offset?: SpokeOffset;

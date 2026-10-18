@@ -39,15 +39,15 @@ export const CounterStrike: StoryObj = {
 };
 
 function Menu() {
-    const [submenu, setSubMenu] = useState<ReactNode>(null);
+    const [submenu, setSubmenu] = useState<ReactNode>(null);
 
     function onReset() {
-        setSubMenu(null);
+        setSubmenu(null);
     }
 
     return (
         <Wheel as="ol" className="cs-menu">
-            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubMenu}/>}
+            {submenu ?? <RootMenu onReset={onReset} onChoose={setSubmenu}/>}
             <TeamImage/>
         </Wheel>
     );
@@ -314,7 +314,7 @@ function Item(props: ItemProps) {
                             {children}
                         </span>
 
-                        {price &&
+                        {price !== undefined &&
                             <span className="cs-item-details__price">
                                 ${price}
                             </span>

@@ -6,6 +6,7 @@ import { useWheel } from './useWheel';
 
 export type WheelProps<T extends ElementType = 'div'> = ComponentPropsWithoutRef<T> & {
     readonly as?: T;
+    readonly className?: string;
 };
 
 export function Wheel<T extends ElementType = 'div'>(props: WheelProps<T>) {
