@@ -1,12 +1,9 @@
-export type LayoutJustification =
-    | 'start'
-    | 'center'
-    | 'end';
-
-export const LAYOUT_JUSTIFICATIONS: LayoutJustification[] = [
+export const LAYOUT_JUSTIFICATIONS = [
     'start',
     'center',
     'end',
-];
+] as const;
+
+export type LayoutJustification = (typeof LAYOUT_JUSTIFICATIONS)[number];
 
 export const DEFAULT_LAYOUT_JUSTIFICATION: LayoutJustification = 'center';

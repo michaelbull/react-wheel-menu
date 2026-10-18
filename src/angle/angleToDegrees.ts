@@ -1,8 +1,9 @@
-import type {
-    Angle,
-    AngleUnit,
-    AngleWithUnit,
-    Degrees,
+import {
+    type Angle,
+    ANGLE_UNITS,
+    type AngleUnit,
+    type AngleWithUnit,
+    type Degrees,
 } from './Angle';
 
 export function angleToDegrees(angle: Angle): Degrees {
@@ -27,15 +28,7 @@ export function angleToDegrees(angle: Angle): Degrees {
     }
 }
 
-const UNITS: AngleUnit[] = [
-    'deg',
-    'grad',
-    'rad',
-    'turn',
-    '%',
-];
-
-const UNITS_CSV = UNITS.join(', ');
+const UNITS_CSV = ANGLE_UNITS.join(', ');
 
 function numberFrom(angle: AngleWithUnit, unit: AngleUnit): number {
     return Number(angle.substring(0, angle.length - unit.length));
